@@ -1,7 +1,7 @@
 # Máster Universitario en Ingeniería de Software y Sistemas Informáticos
 ## Asignatura Desarrollo Web: Full Stack
 ### Profesor: [D. Jesús Pérez Melero](https://www.linkedin.com/in/jesusperezmelero/)
-### PER XXXXX - [Código de apoyo y ejercicios](https://github.com/UnirCs/DWFS-GLOBAL).
+### PER 14085 - [Código de apoyo y enunciados](https://github.com/UnirCs/DWFS-GLOBAL).
 
 
 Usaremos este repositorio para nuestro trabajo colaborativo a través del curso.
