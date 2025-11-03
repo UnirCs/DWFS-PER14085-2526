@@ -1,0 +1,87 @@
+:root {
+  --color-primario: #052f4b;
+  --color-secundario: #5b9eaf;
+  --color-texto: #ffffff;
+  --color-fondo: #f4f4f4;
+  --color-sombra: rgba(0, 0, 0, 0.2);
+}
+body {
+    background-color: var(--color-fondo);
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.leftpanel {
+    float: left;
+    border-radius: 5px;
+    width: 200px;
+    background-color: var(--color-primario);
+    padding: 15px;
+    color: var(--color-texto);
+}
+
+.centralpanel {
+    margin-left: 220px;
+    margin-right: 220px;
+    padding: 15px;
+}
+
+.blank_space {
+    height: 220px;
+}
+
+.intro {
+    background-color: var(--color-secundario);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--color-fondo);
+    box-shadow: 0 4px 8px var(--color-sombra);
+    overflow: hidden;
+    border-color: var(--color-fondo);
+    border-width: 5px;
+    border-style: solid;
+
+    position: relative;
+    left: -150px; /* mueve el bloque 200px hacia la izquierda */
+    z-index: 10; /* asegura que quede por encima del leftpanel */
+}
+
+.intro_left {
+    background-color: transparent;
+    float: left;
+    width: 25%;
+}
+.intro_right {
+    background-color: transparent;
+    float: left;
+    width: 70%;
+    line-height: 1.5em;
+}
+
+.section {
+    background-color: var(--color-fondo);
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    box-shadow: 0 4px 8px var(--color-sombra);
+    margin-top: 20px;
+    width: 80%;
+}
+
+.section h4 {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    padding: 5px;
+}
+
+.section p {
+    font-size: 11pt;
+    padding: 0%;
+    margin: 0%;
+}
+
+.section span {
+    font-size: small;
+    color: gray;
+}
