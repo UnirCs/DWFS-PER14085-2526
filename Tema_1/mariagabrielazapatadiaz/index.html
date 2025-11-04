@@ -1,50 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>CV Gabby Zapata</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
-    <div class="leftpanel">
-        <div class="blank_space"></div>
-        <h3>Competencias profesionales</h1>
-        <ul>
-            <li>Liderazgo de equipos de desarrollo</li>
-            <li>Gestión de proyectos de software</li>
-            <li>Comunicación efectiva con clientes y equipos multidisciplinarios</li>
-        </ul>
-        <h3>Competencias técnicas</h3>   
-        <ul>
-            <li>Bases de datos: MySQL (diseño, consultas, optimización).</li>
-            <li>Frameworks: React, Django, Spring Boot</li>
-            <li>Herramientas: Git, Docker, Jenkins</li>
-        </ul>   
-        <h3>Idiomas</h3>
-            <ul>
-                <li>Inglés B2</li>
-            </ul>
-    </div>
-    <div class="centralpanel">
-        <div class="intro">
-            <div class="intro_left"><img src="img/Gabby.png" width="200" alt="Foto de Gabby Zapata"></div>
-            <div class="intro_right">
-                <h1>GABRIELA ZAPATA</h1>
-                <h2>Software Developer</h2>
-                <span>Email: gabby.ecuador@gmail.com</span><br>
-                <span>Telf.: +593 99 810 4414</span><br>
-                <span>Web: www.codesbygabby.com</span>
-            </div>
-        </div>
-        <div class="section">
-            <h4>Perfil profesional</h4>
-            <p>Soy una profesional comprometida y orientada a resultados, con habilidades demostradas en programación, manejo de bases de datos y liderazgo de equipos de desarrollo. Capaz de adaptarse rápidamente a nuevos entornos y desafíos, siempre buscando oportunidades para aprender y crecer.</p>
 
-            <h4>Formación académica</h4>
-            <p>Maestría en Ingeniería de Software y Sistemas Informáticos</p>
-            <span>UNIR, La Rioja - España</span><br>
-            <span>Nov 2025 - Presente</span>
-        </div>
+<!-- 
+-------------------------------------------
+Desarrollado por: Ma. Gabriela Zapata Díaz
+Fecha: 4 de noviembre de 2025
+-------------------------------------------
+
+Descripción del CV:
+Cabecera con foto, nombre, rol y datos de contacto.
+Cuerpo dividido en dos columnas:
+- Columna izquierda (barra lateral) con competencias profesionales, técnicas e idiomas.
+Además se han creado las siguientes secciones para el CV:
+- Competencias profesionales
+- Competencias técnicas
+- Idiomas
+- Información personal, que está dividida en:
+  - Perfil profesional
+  - Formación académica
+  - Experiencia laboral
+  - Logros
+ Para la información personal se usó una tabla para organizar mejor los datos.    
+ En el CSS se usaron identificadores para acoplarse a la metodología BEM, para una mejor organización y mantenimiento del código.
+-->
+
+<body>
+    <div class="cv">
+        <aside class="cv__sidebar">
+            <div class="cv__spacer"></div>
+
+            <section class="cv__section cv__section--skills">
+                <h3 class="cv__title">Competencias profesionales</h3>
+                <ul class="cv__list">
+                    <li class="cv__list-item">Liderazgo de equipos de desarrollo</li>
+                    <li class="cv__list-item">Gestión de proyectos de software</li>
+                    <li class="cv__list-item">Comunicación efectiva con clientes y equipos multidisciplinarios</li>
+                </ul>
+            </section>
+
+            <section class="cv__section cv__section--tech">
+                <h3 class="cv__title">Competencias técnicas</h3>
+                <ul class="cv__list">
+                    <li class="cv__list-item">Bases de datos: MySQL (diseño, consultas, optimización).</li>
+                    <li class="cv__list-item">Frameworks: React, Django, Spring Boot</li>
+                    <li class="cv__list-item">Herramientas: Git, Docker, Jenkins</li>
+                </ul>
+            </section>
+
+            <section class="cv__section cv__section--languages">
+                <h3 class="cv__title">Idiomas</h3>
+                <ul class="cv__list">
+                    <li class="cv__list-item">Inglés B2</li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="cv__main">
+            <section class="cv__intro">
+                <div class="cv__intro-left">
+                    <img src="img/Gabby.png" alt="Foto de Gabby Zapata" class="cv__photo" width="200">
+                </div>
+                <div class="cv__intro-right">
+                    <h1 class="cv__name">GABRIELA ZAPATA</h1>
+                    <h2 class="cv__role">Software Developer</h2>
+                    <p class="cv__contact">Email: gabby.ecuador@gmail.com<br>
+                        Telf.: +593 99 810 4414<br>
+                        Web: <a href="http://www.codesbygabby.com" target="_blank">www.codesbygabby.com</a></p>
+                </div>
+            </section>
+
+            <section class="cv__info">
+                <table width="100%">
+                    <tbody>
+                        <!-- PERFIL PROFESIONAL -->
+                        <tr>
+                            <td colspan="2">
+                                <h4>Perfil profesional</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p>Soy una profesional comprometida y orientada a resultados, con habilidades
+                                    demostradas en programación, manejo de bases de datos y liderazgo de equipos de
+                                    desarrollo. Capaz de adaptarse rápidamente a nuevos entornos y desafíos, siempre
+                                    buscando oportunidades para aprender y crecer.</p>
+                            </td>
+                        </tr>
+                        <!-- FORMACIÓN ACADÉMICA -->
+                        <!-- 1 -->
+                        <tr>
+                            <td colspan="2">
+                                <h4>Formación académica</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title">Maestría en Ingeniería de Software y Sistemas Informáticos</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%"><span>UNIR, La Rioja - España</span></td>
+                            <td width="75%"><span>Nov 2025 - Presente</span></td>
+                        </tr>
+                        <!-- 2 -->
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title">Ingeniería en Sistemas y Computación</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>PUCE, Quito - Ecuador</span></td>
+                            <td><span>Sep 1995 - Nov 2002</span></td>
+                        </tr>
+                        <!-- EXPERIENCIA LABORAL -->
+                        <tr>
+                            <td colspan="2">
+                                <h4>Experiencia laboral</h4>
+                            </td>
+                        </tr>
+                        <!-- 1 -->
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title__experience">Jefe de desarrollo de software</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%"><span>MAZ-TI, Quito - Ecuador</span></td>
+                            <td width="75%"><span>Ene 2009 - Presente</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p>En esta empresa he tenido la oportunidad de trabajar con varias empresas del sector
+                                    turístico, del sector de la construcción y del sector de la educación. Dirijo el
+                                    desarrollo y actualización el software Geco ERP (<a href="http://www.geco.com.ec" target="_blank">www.geco.com.ec</a>), y de varios
+                                    sistemas desarrollados para otras empresas.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title">Herramientas:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <ul>
+                                    <li>Lenguajes de programación: JavaScript, TypeScript, PHP, SQL</li>
+                                    <li>Frameworks: ExtJs, Angular, CodeIgniter</li>
+                                    <li>Bases de datos: MySQL, MariaDB</li>
+                                    <li>Control de versiones: Git</li>
+                                    <li>Otros: cPanel - WHM, Arquitectura MVC, Metodologías Ágiles</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 2 -->
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title__experience">Programador Sr.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%"><span>Fondos Pichincha, Quito - Ecuador</span></td>
+                            <td width="75%"><span>Dic 2005 - Ene 2009</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <ul>
+                                    <li>Desarrollo y Mantenimiento del sistema SBS/Fondos</li>
+                                    <li>Desarrollo y Mantenimiento del sistema Fondos.com</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title">Herramientas:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <ul>
+                                    <li>Suit Oracle 9i</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 3 -->
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title__experience">Programador Jr.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%"><span>Gestor Inc.</span></td>
+                            <td width="75%"><span>Oct 2003 - Dic 2005</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p>Participación en el desarrollo del sistema GESTOR de fondos de inversión y
+                                    fideicomisos.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title">Herramientas:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <ul>
+                                    <li>Suit Oracle 9i</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- 4 -->
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title__experience">Administrador de sistemas</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%"><span>Egar S.A.</span></td>
+                            <td width="75%"><span>Ene 2003 - Oct 2003</span></td>
+                        </tr>
+                        <!-- 5 -->
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title__experience">Programador Jr.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%"><span>Atphone, Quito - Ecuador</span></td>
+                            <td width="75%"><span>Ago 2001 - Sep 2002</span></td>
+                        </tr>
+                        <!-- 6 -->
+                        <tr>
+                            <td colspan="2">
+                                <p class="cv__title__experience">Programador Jr.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%"><span>Solo Imagen S.A., Quito - Ecuador</span></td>
+                            <td width="75%"><span>Abr 2001 - Ago 2001</span></td>
+                        </tr>
+                        <!-- LOGROS -->
+                        <tr>
+                            <td colspan="2">
+                                <h4>Logros</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <ul>
+                                    <li>Lideré el desarrollo y la actualización del software Geco ERP, mejorando su
+                                        funcionalidad y adaptabilidad a varios sectores industriales.</li>
+                                    <li>Dirigí un equipo multidisciplinario en proyectos de desarrollo utilizando
+                                        tecnologías como PHP, MySql, Sencha ExtJS y Angular.</li>
+                                    <li>Desarrollé sistemas personalizados con arquitectura MVC mejorando la
+                                        escalabilidad y mantenimiento del software.</li>
+                                    <li>Gestioné servidores y entornos web utilizando cPanel y WHM, asegurando la
+                                        estabilidad y seguridad de las plataformas.</li>
+                                    <li>Implementé soluciones tecnológicas para empresas de turismo, construcción y
+                                        educación, optimizando sus procesos internos.</li>
+                                    <li>Optimicé los tiempos de carga y respuesta de Geco ERP, incrementando la
+                                        productividad de los usuarios en un 25%.</li>
+                                    <li>Implementé pruebas automatizadas y procesos de integración continua, reduciendo
+                                        errores en producción en un 40%.</li>
+                                    <li>Coordiné la migración exitosa de bases de datos, siempre garantizando la
+                                        integridad y seguridad de los datos.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
     </div>
 </body>
+
 </html>
