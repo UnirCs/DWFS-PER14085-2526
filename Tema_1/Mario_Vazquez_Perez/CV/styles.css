@@ -1,0 +1,99 @@
+/* Generic elements */
+
+* {
+    font-family: 'Arial', sans-serif;
+}
+
+li {
+    margin: 15px;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #333;
+    margin: 30px 0 5px 0;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #333;
+    margin: 15px 0 5px 0;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #31a6fa;
+    margin: 15px 0 2px 0;
+    letter-spacing: 1px;
+}
+
+h4 {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0 1px 0;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+    margin: 1px 0;
+}
+
+/* Classes */
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0F8FF;
+    padding: 4dvh 0;
+}
+
+.sep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0 15px;
+    border: 1px solid #bfb5a6;
+}
+
+.img-container {
+    width: 400px;
+    height: 300px;
+    border: 1px solid #CCC;
+    border-radius: 150px;
+    overflow: hidden;
+    margin: 15px 0 5px 0;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.element p {
+    margin: 5px 0;
+}
+
+/* IDs */
+
+#about-me {
+    line-height: 1.25;
+}
+
+#tech-container {
+    display: flex;
+}
