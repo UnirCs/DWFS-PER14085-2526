@@ -1,14 +1,12 @@
-/* =========================
-   Variables y tipografía
-   ========================= */
+/* Vars */
 :root{
-    --bg: #0f172a;              /* slate-900 */
-    --panel: #111827;           /* gray-900 */
-    --muted: #94a3b8;           /* slate-400 */
-    --text: #e5e7eb;            /* gray-200 */
-    --accent: #22d3ee;          /* cyan-400 */
-    --accent-2: #60a5fa;        /* blue-400 */
-    --border: #1f2937;          /* gray-800 */
+    --bg: #0f172a;
+    --panel: #111827;
+    --muted: #94a3b8;
+    --text: #e5e7eb;
+    --accent: #22d3ee;
+    --accent-2: #60a5fa;
+    --border: #1f2937;
     --ring: rgba(34, 211, 238, .35);
     --shadow: 0 10px 25px rgba(0,0,0,.35);
     --radius: 18px;
@@ -22,13 +20,13 @@
 
 @media (prefers-color-scheme: light){
     :root{
-        --bg: #f8fafc;            /* slate-50 */
+        --bg: #f8fafc;
         --panel: #ffffff;
-        --muted: #475569;         /* slate-600 */
-        --text: #0f172a;          /* slate-900 */
-        --accent: #0891b2;        /* cyan-700 */
-        --accent-2: #2563eb;      /* blue-600 */
-        --border: #e5e7eb;        /* gray-200 */
+        --muted: #475569;
+        --text: #0f172a;
+        --accent: #0891b2;
+        --accent-2: #2563eb;
+        --border: #e5e7eb;
         --ring: rgba(2,132,199,.25);
         --shadow: 0 10px 25px rgba(2,6,23,.08);
     }
@@ -41,6 +39,7 @@ html{
     font-feature-settings: "liga","kern","clig";
     scroll-behavior: smooth;
 }
+
 *,*::before,*::after{ box-sizing: inherit; }
 
 body{
@@ -53,9 +52,7 @@ body{
     line-height: 1.6;
 }
 
-/* =========================
-   Layout general
-   ========================= */
+/* Layout */
 body > section{
     display: block;
     padding: 0 var(--sp-2);
@@ -105,9 +102,7 @@ h3::before{
     opacity: .9;
 }
 
-/* =========================
-   Cabecera
-   ========================= */
+/* Head */
 .head{
     max-width: var(--maxw);
     margin: var(--sp-5) auto var(--sp-4);
@@ -121,11 +116,10 @@ h3::before{
     align-items: center;
 }
 
-/* Avatar más grande */
 .img-container{
     grid-area: avatar;
-    width: 130px;            /* antes 96px */
-    aspect-ratio: 1 / 1;     /* mantiene el círculo perfecto */
+    width: 130px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid transparent;
@@ -144,39 +138,15 @@ h3::before{
     display: block;
 }
 
-/* Nombre y subtítulo en la segunda columna, uno bajo otro */
+/* Title */
 .head h1{
     grid-area: name;
-    margin: 0 1.5rem;   /* separación hacia abajo */
+    margin: 0 1.5rem;
 }
 .head h2{
     grid-area: subtitle;
     margin: 0 1.5rem;
     color: var(--muted);
-}
-
-/* ===== Responsivo: pila vertical ===== */
-@media (max-width: 420px){
-    .head{
-        grid-template-columns: 1fr;
-        grid-template-areas:
-      "avatar"
-      "name"
-      "subtitle";
-        text-align: center;
-        gap: var(--sp-2);
-        padding: 0 var(--sp-2);
-    }
-    .img-container{ margin: 0 auto; width: 72px; }
-}
-
-/* =========================
-   Texto y listas
-   ========================= */
-#about-me{
-    margin: 0;
-    font-size: 1rem;
-    color: var(--text);
 }
 
 ul{
@@ -216,29 +186,27 @@ ul{
 
 .element ul {
     list-style: disc;
-    padding-left: 1.5rem; /* sangría para que se vea el punto */
+    padding-left: 1.5rem;
     margin: .5rem 0 0 0;
-    display: block;       /* desactiva el grid para listas internas */
+    display: block;
 }
 
 
-/* =========================
-   Tech Stack (rejilla)
-   ========================= */
+/* Tech stack grid */
 #tech-container ul{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: .9rem;
 }
 #tech-container li{
-    display: inline-flex;           /* centra vertical y horizontal */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: .65rem 1rem;
-    min-height: 44px;               /* altura uniforme */
-    white-space: nowrap;            /* NO envolver línea */
-    overflow: hidden;               /* ocultar exceso */
-    text-overflow: ellipsis;        /* mostrar "…" si no cabe */
+    min-height: 44px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border: 1px solid var(--border);
     border-radius: 999px;
     font-weight: 600;
@@ -249,15 +217,14 @@ ul{
             color-mix(in oklab, var(--accent-2) 55%, transparent)) border-box;
     transition: transform .15s ease, box-shadow .2s ease, letter-spacing .15s ease;
 }
+
 #tech-container li:hover{
     transform: translateY(-1px);
     letter-spacing: .2px;
     box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
 
-/* =========================
-   Enlaces y foco accesible
-   ========================= */
+
 a{
     color: var(--accent);
     text-decoration: none;
@@ -271,16 +238,17 @@ a:focus-visible{
     box-shadow: 0 0 0 4px var(--ring);
 }
 
-/* =========================
-   Separación entre secciones
-   ========================= */
 section + section .sep{
     margin-top: 0;
 }
 
-/* =========================
-   Responsividad
-   ========================= */
+#about-me{
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+/* Responsive */
 @media (max-width: 720px){
     .head{
         grid-template-columns: 72px 1fr;
@@ -292,7 +260,6 @@ section + section .sep{
     #tech-container ul{ grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
 }
 
-/* Responsivo: permitir dos líneas en pantallas pequeñas */
 @media (max-width: 520px){
     #tech-container ul{
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -308,38 +275,13 @@ section + section .sep{
 @media (max-width: 420px){
     .head{
         grid-template-columns: 1fr;
+        grid-template-areas:
+      "avatar"
+      "name"
+      "subtitle";
         text-align: center;
         gap: var(--sp-2);
+        padding: 0 var(--sp-2);
     }
-    .img-container{
-        margin: 0 auto;
-    }
-}
-
-/* =========================
-   Modo impresión
-   ========================= */
-@media print{
-    :root{
-        --bg: #ffffff;
-        --panel: #ffffff;
-        --text: #000000;
-        --muted: #333333;
-        --border: #dddddd;
-        --shadow: none;
-    }
-    body{
-        background: #fff;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    .head, section .sep{
-        box-shadow: none;
-        border: 1px solid var(--border);
-        page-break-inside: avoid;
-    }
-    a{
-        color: #000;
-        text-decoration: underline;
-    }
+    .img-container{ margin: 0 auto; width: 72px; }
 }
