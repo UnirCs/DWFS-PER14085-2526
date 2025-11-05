@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  margin-inline: 25%;
+  margin-block: 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin: 0px;
+    padding-block: 16px;
+}
+
+hr {
+    margin: 0;
+    border: 2px solid #444;
+}
+
+.header__subtitle {
+    margin: 0px;
+}
+
+.header__title {
+    margin: 0;
+}
+
+li.contact__item  > a {
+    text-decoration: none;
+}
