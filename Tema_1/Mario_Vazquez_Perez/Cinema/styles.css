@@ -226,3 +226,15 @@ footer > * {
         width:18px;
     }
 }
+
+.wheelchair-space {
+    width: 75px;
+}
+
+.seat-space {
+    width: 38px;
+}
+
+.big-space {
+    width: 86px;
+}
