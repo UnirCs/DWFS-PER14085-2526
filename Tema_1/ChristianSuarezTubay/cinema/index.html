@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNIR-CINEMA</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark text-light d-flex flex-column min-vh-100">
+
+    <!-- Encabezado -->
+    <header class="text-center py-4 mb-4">
+        <h1 class="fw-bold text-warning">UNIR-CINEMA</h1>
+        <h4 class="text-light">Selección de Butacas</h4>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="container text-center flex-grow-1">
+
+        <!-- Pantalla -->
+        <div class="pantalla mb-4 mx-auto">PANTALLA</div>
+
+        <!-- Butacas -->
+        <div class="butacas-container mx-auto mb-5">
+            <!-- Filas con letras -->
+            <div class="row justify-content-center mb-2 align-items-center">
+                <div class="col-auto letra-fila">Fila 1</div>
+                <div class="col-auto"><div class="butaca libre" title="A1"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="A2"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="A3"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="A4"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="A5"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="A6"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="A7"></div></div>
+            </div>
+
+            <div class="row justify-content-center mb-2 align-items-center">
+                <div class="col-auto letra-fila">Fila 2</div>
+                <div class="col-auto"><div class="butaca libre" title="B1"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="B2"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="B3"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="B4"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="B5"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="B6"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="B7"></div></div>
+            </div>
+
+            <div class="row justify-content-center mb-2 align-items-center">
+                <div class="col-auto letra-fila">Fila 3</div>
+                <div class="col-auto"><div class="butaca libre" title="C1"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="C2"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C3"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C4"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C5"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C6"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="C7"></div></div>
+            </div>
+
+            <div class="row justify-content-center mb-2 align-items-center">
+                <div class="col-auto letra-fila">Fila 4</div>
+                <div class="col-auto"><div class="butaca libre" title="C1"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C2"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C3"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C4"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C5"></div></div>
+                <div class="col-auto"><div class="butaca libre" title="C6"></div></div>
+                <div class="col-auto"><div class="butaca ocupada" title="C7"></div></div>
+            </div>
+        </div>
+
+        <!-- Leyenda -->
+        <div class="leyenda mb-5">
+            <div class="row justify-content-center">
+                <div class="col-auto"><span class="butaca libre small"></span> Libre</div>
+                <div class="col-auto"><span class="butaca ocupada small"></span> Ocupada</div>
+            </div>
+        </div>
+
+        <!-- Formulario de reserva -->
+        <form class="bg-light text-dark p-4 rounded shadow-sm mx-auto">
+            <h5 class="mb-3 text-center text-dark">Formulario de Reserva</h5>
+            <div class="mb-3">
+                <label for="numAsientos" class="form-label">Indica cuántos asientos quieres reservar</label>
+                <select id="numAsientos" class="form-select" required>
+                    <option value="">Selecciona...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-warning w-100 fw-bold">Confirmar Reserva</button>
+        </form>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-dark text-center py-3 mt-5">
+        <p class="mb-1 fw-bold">UNIR-CINEMA</p>
+        <p class="mb-0">📍 Avenida 9 de Octubre - Guayaquil</p>
+        <p class="mb-0">📞 +593 111 222 333 | ✉️ info@unir_cinema.com</p>
+    </footer>
+</body>
+</html>
