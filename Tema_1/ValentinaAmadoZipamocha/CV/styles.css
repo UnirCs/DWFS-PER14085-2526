@@ -63,12 +63,12 @@
     gap: 0.6rem; /* espacio entre icono y texto */
     padding: 6px 0;
 }
-.skill-list li i {
-    color: darkmagenta;
-    font-size: 1.1rem;
+
+.skill-list li img {
     width: 1.2rem;
-    text-align: center;
+    height: 1.2rem;
 }
+
 .footer {
     text-align: center;
     font-size: 0.9rem;
