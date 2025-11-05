@@ -8,6 +8,7 @@
     crossorigin="anonymous"/>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./images/favicon.ico">
+    <script src="./main.js"></script>
     <title>Cines Auria</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
                             <button class="seat btn p-0"></button>
                             <button class="seat btn p-0"></button>
                             <button class="seat btn p-0 seat--occupied" aria-disabled="true"></button>
-                            <button class="seat btn p-0"></button>
+                            <button class="seat btn p-0 seat--occupied" aria-disabled="true"></button>
                             <button class="seat btn p-0"></button>
                             <button class="seat btn p-0"></button>
                         </div>
@@ -89,7 +90,7 @@
                         <div class="theater__seats">
                             <button class="seat btn p-0"></button>
                             <button class="seat btn p-0"></button>
-                            <button class="seat btn p-0 seat--selected" aria-pressed="true"></button>
+                            <button class="seat btn p-0"></button>
                             <button class="seat btn p-0"></button>
                             <button class="seat btn p-0"></button>
                             <button class="seat btn p-0"></button>
@@ -206,9 +207,11 @@
         </section>
         <section class="tickets__form">
             <form>
-                <div>
+                <div class="tickets__form-input">
                     <label for="ticket-number">Indique cuántos asientos desea reservar</label>
                     <input id="ticket-number" name="ticket-number" type="number">
+                </div>
+                <div class="tickets__form-button">
                     <button>Confirmar reserva</button>
                 </div>
             </form>

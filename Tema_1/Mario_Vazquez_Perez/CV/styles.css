@@ -2,7 +2,7 @@
 :root{
     --bg: #0f172a;
     --panel: #111827;
-    --muted: #94a3b8;
+    --muted: #50555e;
     --text: #e5e7eb;
     --accent: #22d3ee;
     --accent-2: #60a5fa;
@@ -16,20 +16,6 @@
     --sp-3: 1.5rem;
     --sp-4: 2rem;
     --sp-5: 3rem;
-}
-
-@media (prefers-color-scheme: light){
-    :root{
-        --bg: #f8fafc;
-        --panel: #ffffff;
-        --muted: #475569;
-        --text: #0f172a;
-        --accent: #0891b2;
-        --accent-2: #2563eb;
-        --border: #e5e7eb;
-        --ring: rgba(2,132,199,.25);
-        --shadow: 0 10px 25px rgba(2,6,23,.08);
-    }
 }
 
 html{
