@@ -1,0 +1,39 @@
+#header{
+    background-color: blue;
+    color: white; /* opcional para legibilidad */
+    text-align: center;
+}
+#header img {
+    width: 200px;
+    height: 200px;
+    
+    display: block;
+    margin: 0 auto; /*centra horizontalmente*/
+    padding-top: 10px;
+}
+#header h1 {
+    font-size: 20px;}
+
+#header h2 {
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+
+.seccion{
+    border: 1px solid rgb(197, 190, 190);
+    border-radius: 5px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    
+}
+
+.seccion h3 {
+    color: rgb(55, 77, 242);
+}
+
+.seccion ul {
+    padding-inline-start: 10px;
+}
+.seccion ul li {
+    font-weight: bold;
+}
