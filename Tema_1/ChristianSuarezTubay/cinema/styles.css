@@ -55,6 +55,7 @@ body {
 /* Formulario */
 form {
     background-color: #f8f9fa;
+    max-width: 400px;
 }
 
 /* Footer */
