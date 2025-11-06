@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIR-Cinema</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>BIENVENIDO A SU EXPERIENCIA FAVORITA</h1>
+            <img src="Logo.jpg" alt="Logo de UNIR-Cinema" width="150">
+        </div>
+    </header>
+    <main>
+        <section id="peliculas">
+            <h2>CARTELERA</h2>
+            <ul>
+                <li>
+                    <h3>Now You See Me: Now You Don't</h3>
+                    <p>Los Cuatro Jinetes están de regreso… y no vienen solos. Una nueva generación de ilusionistas se une al equipo para llevar la magia al siguiente nivel. Más giros, más trampas, más espectáculo. Nada es lo que parece... y esta vez, menos que nunca.</p>
+                    <img src="poster1.png" alt="Poster de la Película Now You See Me: Now You Don't">
+                </li>
+                <li>
+                    <h3>One Battle After Another</h3>
+                    <p>En un mundo donde la guerra nunca termina, un grupo de soldados debe enfrentarse a su destino en el campo de batalla. La lucha por la supervivencia los llevará a tomar decisiones difíciles y a cuestionar sus propias creencias.</p>
+                    <img src="poster2.jpg" alt="Poster de la Película One Battle After Another">
+                </li>
+                <li>
+                    <h3>Good Fortune</h3>
+                    <p>En un pequeño pueblo, la llegada de un forastero cambia la vida de sus habitantes. Con su carisma y habilidades, les muestra que la suerte está de su lado, pero ¿a qué precio?</p>
+                    <img src="poster3.png" alt="Poster de la Película Good Fortune">
+                </li>
+            </ul>
+        </section>
+        <section id="silleteria">
+            <h2>Selección de Sillas</h2>
+            <form>
+                <label for="sillas">Seleccione la cantidad de sillas:</label>
+                <select id="sillas" name="sillas">
+                    <option value="1">1 Silla</option>
+                    <option value="2">2 Sillas</option>
+                    <option value="3">3 Sillas</option>
+                    <option value="4">4 Sillas</option>
+                    <option value="5">5 Sillas</option>
+                </select>
+                <button type="submit">Reservar</button>
+                <p><sub>Nota: Máximo 5 sillas por transacción.</sub></p>
+            </form>
+            <div class="contenedor-sala">
+                <table class="sala">
+                    <tr>
+                        <td colspan="8" class="pantalla">PANTALLA</td>
+                    </tr>
+                    <tr>
+                        <td class="asiento disponible" data-row="A" data-seat="1">A1</td>
+                        <td class="asiento disponible" data-row="A" data-seat="2">A2</td>
+                        <td class="asiento ocupado"  data-row="A" data-seat="3">A3</td>
+                        <td class="asiento disponible" data-row="A" data-seat="4">A4</td>
+                        <td class="asiento disponible" data-row="A" data-seat="5">A5</td>
+                        <td class="asiento disponible" data-row="A" data-seat="6">A6</td>
+                        <td class="asiento disponible" data-row="A" data-seat="7">A7</td>
+                        <td class="asiento disponible" data-row="A" data-seat="8">A8</td>
+                    </tr>
+                    <tr>
+                        <td class="asiento disponible" data-row="B" data-seat="1">B1</td>
+                        <td class="asiento disponible" data-row="B" data-seat="2">B2</td>
+                        <td class="asiento disponible" data-row="B" data-seat="3">B3</td>
+                        <td class="asiento disponible" data-row="B" data-seat="4">B4</td>
+                        <td class="asiento ocupado"  data-row="B" data-seat="5">B5</td>
+                        <td class="asiento disponible" data-row="B" data-seat="6">B6</td>
+                        <td class="asiento disponible" data-row="B" data-seat="7">B7</td>
+                        <td class="asiento disponible" data-row="B" data-seat="8">B8</td>
+                    </tr>
+                    <tr>
+                        <td class="asiento disponible" data-row="C" data-seat="1">C1</td>
+                        <td class="asiento ocupado"  data-row="C" data-seat="2">C2</td>
+                        <td class="asiento disponible" data-row="C" data-seat="3">C3</td>
+                        <td class="asiento disponible" data-row="C" data-seat="4">C4</td>
+                        <td class="asiento disponible" data-row="C" data-seat="5">C5</td>
+                        <td class="asiento disponible" data-row="C" data-seat="6">C6</td>
+                        <td class="asiento disponible" data-row="C" data-seat="7">C7</td>
+                        <td class="asiento disponible" data-row="C" data-seat="8">C8</td>
+                    </tr>
+                    <tr>
+                        <td class="asiento disponible" data-row="D" data-seat="1">D1</td>
+                        <td class="asiento disponible" data-row="D" data-seat="2">D2</td>
+                        <td class="asiento disponible" data-row="D" data-seat="3">D3</td>
+                        <td class="asiento disponible" data-row="D" data-seat="4">D4</td>
+                        <td class="asiento disponible" data-row="D" data-seat="5">D5</td>
+                        <td class="asiento disponible" data-row="D" data-seat="6">D6</td>
+                        <td class="asiento disponible" data-row="D" data-seat="7">D7</td>
+                        <td class="asiento disponible" data-row="D" data-seat="8">D8</td>
+                    </tr>
+                </table>
+                <div class="Contenedor-leyenda">
+                    <div class="leyenda">
+                        <div><span class="key disponible"></span> Disponible</div>
+                        <div><span class="key seleccionado"></span> Seleccionado</div>
+                        <div><span class="key ocupado"></span> Ocupado</div>
+                        <p>Asientos seleccionados: <span id="seleccionadas">—</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 UNIR-Cinema. Todos los derechos reservados.</p>
+        <p>Desarrollado por Valentina Amado</p>
+    </footer>
+</body>
+</html>
