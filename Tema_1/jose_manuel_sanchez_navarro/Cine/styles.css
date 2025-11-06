@@ -48,7 +48,7 @@ td{
 
 
 td.asiento-ocupado {
-  color: yellow;
+  /*color: yellow;*/
   background-color: yellow; 
 }
 
