@@ -37,3 +37,7 @@
 .seccion ul li {
     font-weight: bold;
 }
+
+li p {
+    font-weight: normal;
+}
