@@ -125,6 +125,8 @@ body {
     background-color: #273759;
     text-align: center;
     font-size: 1.2em;
+    height: 100px;
+    line-height: 100px;
 }
 
 #silleteria table {
@@ -151,11 +153,17 @@ body {
 .sala td {
     width: 70px;
     height: 55px;
-    border: 1px solid #999;
+    border: 1px solid #273759;
     text-align: center;
     vertical-align: middle;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.1em;
+}
+
+td.no {
+    font-weight: bold;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .asiento.disponible { background: #f5f5f5; cursor: pointer; }
