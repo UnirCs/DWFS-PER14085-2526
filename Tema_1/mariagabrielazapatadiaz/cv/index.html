@@ -4,31 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>CV Gabby Zapata</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- 
--------------------------------------------
-Desarrollado por: Ma. Gabriela Zapata Díaz
-Fecha: 4 de noviembre de 2025
--------------------------------------------
-
-Descripción del CV:
-Cabecera con foto, nombre, rol y datos de contacto.
-Cuerpo dividido en dos columnas:
-- Columna izquierda (barra lateral) con competencias profesionales, técnicas e idiomas.
-Además se han creado las siguientes secciones para el CV:
-- Competencias profesionales
-- Competencias técnicas
-- Idiomas
-- Información personal, que está dividida en:
-  - Perfil profesional
-  - Formación académica
-  - Experiencia laboral
-  - Logros
- Para la información personal se usó una tabla para organizar mejor los datos.    
- En el CSS se usaron identificadores para acoplarse a la metodología BEM, para una mejor organización y mantenimiento del código.
--->
 
 <body>
     <div class="cv">
@@ -65,10 +43,10 @@ Además se han creado las siguientes secciones para el CV:
         <main class="cv__main">
             <section class="cv__intro">
                 <div class="cv__intro-left">
-                    <img src="img/Gabby.png" alt="Foto de Gabby Zapata" class="cv__photo" width="200">
+                    <img src="img/Gabby.png" alt="Foto de Gabby Zapata" class="cv__photo" width="180">
                 </div>
                 <div class="cv__intro-right">
-                    <h1 class="cv__name">GABRIELA ZAPATA</h1>
+                    <h1 class="cv__name">Gabriela Zapata</h1>
                     <h2 class="cv__role">Software Developer</h2>
                     <p class="cv__contact">Email: gabby.ecuador@gmail.com<br>
                         Telf.: +593 99 810 4414<br>
@@ -78,36 +56,49 @@ Además se han creado las siguientes secciones para el CV:
 
             <section class="cv__info">
                 <table width="100%">
-                    <tbody>
-                        <!-- PERFIL PROFESIONAL -->
+                    <!-- PERFIL PROFESIONAL -->
+                    <thead>
                         <tr>
-                            <td colspan="2">
-                                <h4>Perfil profesional</h4>
-                            </td>
+                            <th>
+                                Perfil profesional
+                            </th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <td colspan="2">
+                            <td>
                                 <p>Soy una profesional comprometida y orientada a resultados, con habilidades
                                     demostradas en programación, manejo de bases de datos y liderazgo de equipos de
                                     desarrollo. Capaz de adaptarse rápidamente a nuevos entornos y desafíos, siempre
                                     buscando oportunidades para aprender y crecer.</p>
                             </td>
                         </tr>
-                        <!-- FORMACIÓN ACADÉMICA -->
-                        <!-- 1 -->
+                    </tbody>
+                    <tfoot>
                         <tr>
-                            <td colspan="2">
-                                <h4>Formación académica</h4>
-                            </td>
+                            <td>--Fin perfil profesional--</td>
                         </tr>
+                    </tfoot>
+                </table>
+                <table width="100%">
+                    <!-- FORMACIÓN ACADÉMICA -->
+                    <!-- 1 -->
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                Formación académica
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td colspan="2">
                                 <p class="cv__title">Maestría en Ingeniería de Software y Sistemas Informáticos</p>
                             </td>
                         </tr>
                         <tr>
-                            <td width="25%"><span>UNIR, La Rioja - España</span></td>
-                            <td width="75%"><span>Nov 2025 - Presente</span></td>
+                            <td width="50%"><span>UNIR, La Rioja - España</span></td>
+                            <td width="50%"><span>Nov 2025 - Presente</span></td>
                         </tr>
                         <!-- 2 -->
                         <tr>
@@ -119,12 +110,23 @@ Además se han creado las siguientes secciones para el CV:
                             <td><span>PUCE, Quito - Ecuador</span></td>
                             <td><span>Sep 1995 - Nov 2002</span></td>
                         </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>--Fin perfil formación académica--</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <table width="100%">
+                    <thead>
                         <!-- EXPERIENCIA LABORAL -->
                         <tr>
-                            <td colspan="2">
-                                <h4>Experiencia laboral</h4>
-                            </td>
+                            <th colspan="2">
+                                Experiencia laboral
+                            </th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <!-- 1 -->
                         <tr>
                             <td colspan="2">
@@ -132,14 +134,15 @@ Además se han creado las siguientes secciones para el CV:
                             </td>
                         </tr>
                         <tr>
-                            <td width="25%"><span>MAZ-TI, Quito - Ecuador</span></td>
-                            <td width="75%"><span>Ene 2009 - Presente</span></td>
+                            <td width="50%"><span>MAZ-TI, Quito - Ecuador</span></td>
+                            <td width="50%"><span>Ene 2009 - Presente</span></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <p>En esta empresa he tenido la oportunidad de trabajar con varias empresas del sector
                                     turístico, del sector de la construcción y del sector de la educación. Dirijo el
-                                    desarrollo y actualización el software Geco ERP (<a href="http://www.geco.com.ec" target="_blank">www.geco.com.ec</a>), y de varios
+                                    desarrollo y actualización el software Geco ERP (<a href="http://www.geco.com.ec"
+                                        target="_blank">www.geco.com.ec</a>), y de varios
                                     sistemas desarrollados para otras empresas.</p>
                             </td>
                         </tr>
@@ -166,8 +169,8 @@ Además se han creado las siguientes secciones para el CV:
                             </td>
                         </tr>
                         <tr>
-                            <td width="25%"><span>Fondos Pichincha, Quito - Ecuador</span></td>
-                            <td width="75%"><span>Dic 2005 - Ene 2009</span></td>
+                            <td width="50%"><span>Fondos Pichincha, Quito - Ecuador</span></td>
+                            <td width="50%"><span>Dic 2005 - Ene 2009</span></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -196,8 +199,8 @@ Además se han creado las siguientes secciones para el CV:
                             </td>
                         </tr>
                         <tr>
-                            <td width="25%"><span>Gestor Inc.</span></td>
-                            <td width="75%"><span>Oct 2003 - Dic 2005</span></td>
+                            <td width="50%"><span>Gestor Inc.</span></td>
+                            <td width="50%"><span>Oct 2003 - Dic 2005</span></td>
                         </tr>
                         <tr>
                             <td colspan="2">
@@ -224,8 +227,8 @@ Además se han creado las siguientes secciones para el CV:
                             </td>
                         </tr>
                         <tr>
-                            <td width="25%"><span>Egar S.A.</span></td>
-                            <td width="75%"><span>Ene 2003 - Oct 2003</span></td>
+                            <td width="50%"><span>Egar S.A.</span></td>
+                            <td width="50%"><span>Ene 2003 - Oct 2003</span></td>
                         </tr>
                         <!-- 5 -->
                         <tr>
@@ -234,8 +237,8 @@ Además se han creado las siguientes secciones para el CV:
                             </td>
                         </tr>
                         <tr>
-                            <td width="25%"><span>Atphone, Quito - Ecuador</span></td>
-                            <td width="75%"><span>Ago 2001 - Sep 2002</span></td>
+                            <td width="50%"><span>Atphone, Quito - Ecuador</span></td>
+                            <td width="50%"><span>Ago 2001 - Sep 2002</span></td>
                         </tr>
                         <!-- 6 -->
                         <tr>
@@ -244,17 +247,28 @@ Además se han creado las siguientes secciones para el CV:
                             </td>
                         </tr>
                         <tr>
-                            <td width="25%"><span>Solo Imagen S.A., Quito - Ecuador</span></td>
-                            <td width="75%"><span>Abr 2001 - Ago 2001</span></td>
+                            <td width="50%"><span>Solo Imagen S.A., Quito - Ecuador</span></td>
+                            <td width="50%"><span>Abr 2001 - Ago 2001</span></td>
                         </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>--Fin experiencia laboral--</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <table width="100%">
+                    <thead>
                         <!-- LOGROS -->
                         <tr>
-                            <td colspan="2">
-                                <h4>Logros</h4>
-                            </td>
+                            <th>
+                                Logros profesionales
+                            </th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <td colspan="2">
+                            <td>
                                 <ul>
                                     <li>Lideré el desarrollo y la actualización del software Geco ERP, mejorando su
                                         funcionalidad y adaptabilidad a varios sectores industriales.</li>
@@ -267,7 +281,7 @@ Además se han creado las siguientes secciones para el CV:
                                     <li>Implementé soluciones tecnológicas para empresas de turismo, construcción y
                                         educación, optimizando sus procesos internos.</li>
                                     <li>Optimicé los tiempos de carga y respuesta de Geco ERP, incrementando la
-                                        productividad de los usuarios en un 25%.</li>
+                                        productividad de los usuarios en un 50%.</li>
                                     <li>Implementé pruebas automatizadas y procesos de integración continua, reduciendo
                                         errores en producción en un 40%.</li>
                                     <li>Coordiné la migración exitosa de bases de datos, siempre garantizando la
@@ -276,6 +290,11 @@ Además se han creado las siguientes secciones para el CV:
                             </td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>--Fin logros profesionales--</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </section>
         </main>
