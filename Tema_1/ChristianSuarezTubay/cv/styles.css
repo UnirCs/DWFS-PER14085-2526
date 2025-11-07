@@ -1,0 +1,80 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.puesto {
+    color: #030E73;
+    font-weight: bold;
+}
+
+.contacto {
+    font-size: 0.9em;
+    color: #666;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+h2 {
+    border-bottom: 2px solid #030E73;
+    padding-bottom: 5px;
+    color: #030E73;
+}
+
+.experiencia {
+    margin-bottom: 15px;
+}
+
+.fecha {
+    float: right;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.habilidades {
+    list-style: none;
+    padding: 0;
+}
+
+.habilidades li {
+    background: #030E73;
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 5px 5px 0 0;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 30px;
+}
