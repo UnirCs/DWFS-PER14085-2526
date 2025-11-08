@@ -1,6 +1,4 @@
 ![](./img/img-1.png)
-![](./img/img-2.png)
-
 <h1 align="center"> CV - Porfolio Assigment </h1>
 
 <h5>Project Description:</h5>
