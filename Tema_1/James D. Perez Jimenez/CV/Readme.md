@@ -14,5 +14,7 @@
   <li>Animate CSS Library</li>
 </ul>
 
+<p>Note: Two screenshots were taken from my CV page to capture the entire design.</p>
+
 <p>Developer: James D. Pérez Jiménez</p>
 <h6>Build in 2025</h6>
