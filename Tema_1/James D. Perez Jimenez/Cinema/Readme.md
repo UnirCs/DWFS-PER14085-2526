@@ -9,6 +9,7 @@
   <li>CSS 3</li>
   <li>GitHub</li>
   <li>Bootstrap</li>
+  <li>JavaScript</li>
   <li>Bootstrap Icons</li>
   <li>Animate CSS Library</li>
 </ul>
