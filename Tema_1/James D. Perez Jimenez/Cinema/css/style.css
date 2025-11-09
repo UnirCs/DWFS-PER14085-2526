@@ -1,4 +1,8 @@
 
+/* =======================================================
+   = GLOBAL VARIABLES
+   ======================================================= 
+*/
 :root {
     --bs-primary: #1E40AF;
     --bs-primary-rgb: 30, 64, 175;
@@ -6,6 +10,11 @@
     --bs-body-color: #1E293B;
     --bs-border-color: #E2E8F0;
 }
+
+/* =======================================================
+   = LAYOUT STRUCTURE
+   ======================================================= 
+*/
 
 .bg-panel {
     background: #E2E8F0;
@@ -42,13 +51,6 @@
     font-size: clamp(1.1rem, 2.6vw, 2rem);
 }
 
-@media (max-width: 400px) {
-    .promo-movie {
-        gap: .75rem;
-        padding: .75rem !important;
-    }
-}
-
 .seats {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -56,24 +58,9 @@
     width: 100%;
 }
 
-@media (max-width: 992px) {
-    .seats {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-        gap: 10px;
-    }
-}
-
-@media (max-width: 576px) {
-    .seats {
-        grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
-        gap: 8px;
-    }
-}
-
 .seat {
     width: 100%;
     aspect-ratio: 1 / 1;
-    /* mantiene cuadrado */
     display: grid;
     place-items: center;
     border-width: 2px;
@@ -108,7 +95,7 @@
 .seat.btn.btn-secondary {
     background: #CBD5E1;
     border-color: #CBD5E1;
-    color: #64748B;
+    color: #334155;
 }
 
 .seat.btn {
@@ -122,6 +109,27 @@
 .seat:focus-visible {
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb), .28);
+}
+
+@media (max-width: 400px) {
+    .promo-movie {
+        gap: .75rem;
+        padding: .75rem !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .seats {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .seats {
+        grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
+        gap: 8px;
+    }
 }
 
 @media (max-width: 768px) {

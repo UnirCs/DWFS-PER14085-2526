@@ -156,6 +156,8 @@ body {
 }
 
 .contact-info div {
+  color: #ffffff;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -171,11 +173,6 @@ body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Iconos */
-.contact-info div {
-  color: #ffffff;
-  font-size: 0.9rem;
-}
 
 .contact-info div a {
   color: #ffffff;
