@@ -1,0 +1,74 @@
+
+.Header-Info{
+align-items: flex-start;
+flex-direction: column;
+text-align:start;
+display: flex;
+margin-bottom: 30px;
+
+
+}
+
+.Header-Info .ImagenPerfil{
+position: relative;
+align-self: flex-end;
+width: 100px;
+height: 100px;
+object-fit: cover;
+margin: 40px;
+}
+
+
+.Header-Info .CurriculumTitulo{
+position: relative;
+align-self:center;
+
+}
+
+.Header-Info  .Nombre{
+position: relative;
+align-self: start;
+
+}
+
+.Header-Info .Nacionalidad,
+.Header-Info .Direccion,
+.Header-Info .edad{
+position: relative;
+align-self: start;
+
+}
+
+body{
+align-items: stretch;
+flex-direction: column;
+display: flex;
+text-align: center;
+margin-bottom: 100px;
+}
+
+body .Experiencia,
+body .Habilidades,
+body .Educacion{
+width: 1000px;
+align-self: center;
+position: relative;
+
+
+}
+
+table, th, td{
+border: 1px solid black;
+border-collapse: collapse;
+
+}
+.Habilidades .Total td {
+  border: none;          
+}
+
+footer {
+ display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+}
