@@ -1,0 +1,128 @@
+     body {
+            min-height: 100vh;
+            padding: 20px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container-main {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .screen-label {
+            text-align: center;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 80px;
+        }
+
+      
+
+        .seats-container {
+            margin-bottom: 30px;
+        }
+
+        .row-label {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .seats-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .row-letter {
+            width: 30px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+        }
+
+        .seat {
+            width: 35px;
+            height: 35px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0;
+            padding: 0;
+        }
+
+        .seat.available {
+            background-color: #4CAF50;
+        }
+
+        .pass{
+
+            background-color: #FFFf;
+        }
+
+       
+
+        .seat.occupied {
+            background-color: #E74C3C;
+            cursor: not-allowed;
+        }
+
+        .seat.selected {
+            background-color: #FF6B6B;
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #FF6B6B;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+        }
+
+        .legend-box {
+            width: 25px;
+            height: 25px;
+            border-radius: 6px;
+        }
+
+        .legend-box.available {
+            background-color: #4CAF50;
+        }
+
+        .legend-box.selected {
+            background-color: #FF6B6B;
+        }
+
+        .legend-box.occupied {
+            background-color: #E74C3C;
+        }
+
+       
