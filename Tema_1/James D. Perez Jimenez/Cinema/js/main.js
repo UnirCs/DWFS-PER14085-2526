@@ -57,7 +57,7 @@ function render(){
 }
 
 function clampDesired(){
-  let v = parseInt(qtyEl.value, 10);
+  let v = Number.parseInt(qtyEl.value, 10);
   if(Number.isNaN(v) || v < 1) v = 1;
   if(v > 12) v = 12;
   qtyEl.value = v;
