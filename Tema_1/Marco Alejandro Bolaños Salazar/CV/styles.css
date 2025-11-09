@@ -1,0 +1,86 @@
+  html,
+  body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font: 110%/1.5 "Fira Sans", Helvetica, sans-serif;
+  }
+
+
+  .formatoLabel {
+      display: block;
+  }
+
+  .centrar {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .tamanoLinea {
+      width: 90%;
+  }
+
+  .divCompleto {
+      width: 100%;
+      height: 100%;
+      display: flex;
+  }
+
+  .divVertical {
+      width: 30%;
+      float: left;
+      background-color: #1C2C9E;
+      color: white;
+      height: 100%;
+      padding-top: 75px;
+  }
+
+  .divDatosVertical {
+      width: 100%;
+      display: grid;
+      padding-top: 2%;
+  }
+
+  .divFoto {
+      display: contents;
+      padding-top: 10%;
+      text-align: center;
+
+  }
+
+  .divFoto img {
+      vertical-align: middle;
+      border-radius: 50%;
+      border: 5px solid white;
+      width: 70%;
+  }
+
+  .divDatos {
+      width: 70%;
+      display: inline-block;
+      text-align: left;
+      padding-bottom: 5px;
+      padding-top: 5%;
+  }
+
+  .datosPersonales {
+      color: white;
+      background-color: #1C2C9E;
+      padding-bottom: 5%;
+      padding-top: 5%;
+  }
+
+  .letraDatos {
+      text-align: justify;
+      padding-left: 15%;
+  }
+
+  .datos {
+      padding-left: 15%;
+      width: 80%;
+  }
+
+  ul[name="contacto"] {
+      list-style-type: none;
+  }
