@@ -53,7 +53,7 @@ p br {
     content: " ";
 }
 
-h2, h3, h4, h5, h6, h7 {
+h2, h3, h4, h5, h6 {
     color: #555;
     font-size: 1.2em;
     margin-top: 20px;
