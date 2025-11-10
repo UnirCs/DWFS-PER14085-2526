@@ -1,0 +1,32 @@
+.Contenedor-Cine{
+align-items: center;
+flex-direction: column;
+text-align: center;
+display: flex; 
+}
+
+.Contenedor-Cine .Butacas{
+border: 1px solid black;
+border-collapse: collapse;
+
+}
+
+
+.Contenedor-Cine .Butacas td,
+.Contenedor-Cine .Butacas th {
+border: 1px solid black;
+padding: 5px;
+}
+
+
+
+
+.Butacas td input[type="checkbox"]{
+cursor: pointer;
+}
+
+.Contenedor-Cine .Enviar{
+flex-direction: column;
+padding: 5px;
+margin: 10px;
+}
