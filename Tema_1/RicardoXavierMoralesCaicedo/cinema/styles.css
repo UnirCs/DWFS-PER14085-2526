@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.pantalla {
+    background-color: #ddd;
+    color: #000;
+    padding: 8px;
+    width: 60%;
+    margin: 0 auto 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sala {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.fila {
+    display: contents;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #444;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+input[type="checkbox"]:checked+label {
+    background-color: #2ecc71;
+}
+
+label.ocupado {
+    background-color: #e74c3c;
+    cursor: not-allowed;
+}
+
+.fila-letra {
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ffcc00;
+}
