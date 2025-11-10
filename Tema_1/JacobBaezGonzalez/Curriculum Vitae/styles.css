@@ -44,7 +44,7 @@ header {
     text-align: center;
     padding: 2.5rem 1rem;
     background: linear-gradient(135deg, #57847d, #428d7a);
-    color: white;
+    color: #1a1a1a;
     border-radius: 12px 12px 0 0;
     margin: -1.5rem -1.5rem 2rem -1.5rem;
 }
@@ -163,7 +163,7 @@ section ul li::before {
 /* ========================================
    7. RESUMEN
    ======================================== */
-.resumen label {
+.resumen p {
     display: block;
     font-size: 1.1rem;
     color: #4a5568;
@@ -192,14 +192,14 @@ section ul li::before {
     margin-bottom: 0.3rem;
 }
 
-.experiencia label {
+.experiencia p {
     display: block;
     font-size: 0.95rem;
     color: #718096;
     margin-bottom: 0.4rem;
 }
 
-.experiencia label:last-of-type {
+.experiencia p:last-of-type {
     color: #4a5568;
     font-size: 1rem;
     line-height: 1.6;
