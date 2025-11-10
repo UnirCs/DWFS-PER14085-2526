@@ -1,0 +1,61 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    line-height: 1.6; 
+    margin: 40px auto; 
+    max-width: 800px; 
+    padding: 20px;
+    color: #333;
+}
+
+.perfil {
+   text-align: center;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid #004d99;
+}
+
+.perfil h1 {
+    
+    color: #004d99;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 5px 0 15px 0;
+}
+
+p {
+    margin-bottom: 15px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 2px solid #eee;
+}
+
+body > p {
+    text-align: justify;
+    font-style: italic;
+    margin-top: 0;
+}
+
+p br {
+    margin-bottom: 3px;
+    display: block;
+    content: " ";
+}
+
+h2, h3, h4, h5, h6, h7 {
+    color: #555;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
