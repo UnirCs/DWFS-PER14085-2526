@@ -66,3 +66,35 @@ label.ocupado {
     font-weight: bold;
     color: #ffcc00;
 }
+
+.leyenda {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.cuadro {
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+}
+
+.disponible {
+    background-color: #444;
+}
+
+.seleccionado {
+    background-color: #2ecc71;
+}
+
+.ocupado {
+    background-color: #e74c3c;
+}
