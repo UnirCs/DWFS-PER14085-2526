@@ -1,0 +1,86 @@
+body {
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.screen {
+    width: 60%;
+    max-width: 700px;
+    height: 50px;
+    text-align: center;
+    margin: 30px auto 40px auto;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.screen__title {
+    font-size: 22px;
+    margin: 0;
+    color: #333;
+    letter-spacing: 3px;
+}
+
+.seats {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+}
+
+.seats table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    table-layout: fixed;
+}
+
+.seats td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seats td:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.seats__available {
+    background-color: #2196F3;
+}
+
+
+.seats__available:hover {
+    background-color: #9e9e9e;
+}
+
+.seats__reserved {
+    background-color: #4CAF50;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.seats__left, .seats__right {
+    flex-shrink: 0;
+}
+
+.seats__mid {
+    flex-shrink: 0;
+}
