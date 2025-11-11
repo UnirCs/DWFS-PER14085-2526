@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CINEMA - Reserva de sillas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -164,14 +164,14 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="formulario__etiqueta">Asientos Seleccionados:</label>
+                                        <div class="formulario__etiqueta">Asientos Seleccionados:</div>
                                         <div id="selectedSeats" class="formulario__pantalla-seleccion p-2 bg-dark rounded">
                                             <span class="text-muted">Selecciona tus asientos en el mapa</span>
                                         </div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="formulario__etiqueta">Total a Pagar:</label>
+                                        <div class="formulario__etiqueta">Total a Pagar:</div>
                                         <div class="formulario__pantalla-precio">
                                             <span id="totalPrice">$0</span>
                                         </div>
@@ -223,7 +223,7 @@
                         <i class="fas fa-clock pie-pagina__icono"></i>
                         <p class="pie-pagina__texto mb-0 mt-2">
                             <strong>Horarios:</strong><br>
-                            Todos los díaas<br>
+                            Todos los días<br>
                             14:00 - 02:00
                         </p>
                     </div>
@@ -236,12 +236,13 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
     <script>
         const PRECIO_ASIENTO = 12;
         let asientosSeleccionados = [];
         let maximoAsientos = 1;
+        const manejadoresClick = new Map();
 
         document.addEventListener('DOMContentLoaded', function() {
             const asientos = document.querySelectorAll('.asiento--disponible');
@@ -250,28 +251,31 @@
             const precioTotal = document.getElementById('totalPrice');
             const botonConfirmar = document.getElementById('confirmBtn');
 
+            function manejarClickAsiento() {
+                const idAsiento = this.dataset.seat;
+                
+                if (this.classList.contains('asiento--seleccionado')) {
+                    this.classList.remove('asiento--seleccionado');
+                    this.classList.add('asiento--disponible');
+                    asientosSeleccionados = asientosSeleccionados.filter(s => s !== idAsiento);
+                } else if (asientosSeleccionados.length < maximoAsientos) {
+                    this.classList.remove('asiento--disponible');
+                    this.classList.add('asiento--seleccionado');
+                    asientosSeleccionados.push(idAsiento);
+                }
+                
+                actualizarPantalla();
+            }
+
             selectorCantidadAsientos.addEventListener('change', function() {
-                maximoAsientos = parseInt(this.value);
+                maximoAsientos = Number.parseInt(this.value);
                 reiniciarSeleccion();
             });
 
-            asientos.forEach(asiento => {
-                asiento.addEventListener('click', function() {
-                    const idAsiento = this.getAttribute('data-seat');
-                    
-                    if (this.classList.contains('asiento--seleccionado')) {
-                        this.classList.remove('asiento--seleccionado');
-                        this.classList.add('asiento--disponible');
-                        asientosSeleccionados = asientosSeleccionados.filter(s => s !== idAsiento);
-                    } else if (asientosSeleccionados.length < maximoAsientos) {
-                        this.classList.remove('asiento--disponible');
-                        this.classList.add('asiento--seleccionado');
-                        asientosSeleccionados.push(idAsiento);
-                    }
-                    
-                    actualizarPantalla();
-                });
-            });
+            for (const asiento of asientos) {
+                manejadoresClick.set(asiento.dataset.seat, manejarClickAsiento);
+                asiento.addEventListener('click', manejarClickAsiento);
+            }
 
             function actualizarPantalla() {
                 if (asientosSeleccionados.length === 0) {
@@ -289,10 +293,10 @@
 
             function reiniciarSeleccion() {
                 asientosSeleccionados = [];
-                document.querySelectorAll('.asiento--seleccionado').forEach(asiento => {
+                for (const asiento of document.querySelectorAll('.asiento--seleccionado')) {
                     asiento.classList.remove('asiento--seleccionado');
                     asiento.classList.add('asiento--disponible');
-                });
+                }
                 actualizarPantalla();
             }
 
@@ -307,12 +311,16 @@
                 const mensaje = `¿Confirmar reserva de ${asientosSeleccionados.length} asiento(s)?\n\nAsientos: ${asientosSeleccionados.join(', ')}\nTotal: $${asientosSeleccionados.length * PRECIO_ASIENTO}`;
                 
                 if (confirm(mensaje)) {
-                    asientosSeleccionados.forEach(idAsiento => {
+                    for (const idAsiento of asientosSeleccionados) {
                         const elementoAsiento = document.querySelector(`[data-seat="${idAsiento}"]`);
                         elementoAsiento.classList.remove('asiento--seleccionado');
                         elementoAsiento.classList.add('asiento--ocupado');
-                        elementoAsiento.removeEventListener('click', arguments.callee);
-                    });
+                        const manejador = manejadoresClick.get(idAsiento);
+                        if (manejador) {
+                            elementoAsiento.removeEventListener('click', manejador);
+                            manejadoresClick.delete(idAsiento);
+                        }
+                    }
                     
                     alert('¡Reserva confirmada! Gracias por elegir UNIR-CINEMA.');
                     reiniciarSeleccion();

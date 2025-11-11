@@ -69,6 +69,7 @@
     padding: 30px 20px;
     border-radius: 15px;
     border: 2px solid rgba(255, 193, 7, 0.2);
+    animation: aparecerArriba 0.8s ease;
 }
 
 .sala__fila {
@@ -82,10 +83,10 @@
 .sala__etiqueta-fila {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #ffc107;
+    color: #000000;
     min-width: 30px;
     text-align: center;
-    background: rgba(255, 193, 7, 0.1);
+    background: #ffc107;
     padding: 10px;
     border-radius: 50%;
     border: 2px solid rgba(255, 193, 7, 0.3);
@@ -115,13 +116,13 @@
 }
 
 .asiento--disponible {
-    background: linear-gradient(135deg, #28a745, #20c997);
-    color: white;
+    background: linear-gradient(135deg, #1e7e34, #155724);
+    color: #ffffff;
     border-color: #1e7e34;
 }
 
 .asiento--disponible:hover {
-    background: linear-gradient(135deg, #34ce57, #2dd4aa);
+    background: linear-gradient(135deg, #28a745, #1e7e34);
     transform: translateY(-2px) scale(1.05);
     box-shadow: 
         0 4px 15px rgba(40, 167, 69, 0.4),
@@ -173,6 +174,7 @@
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 193, 7, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: aparecerArriba 1s ease;
 }
 
 .formulario__titulo {
@@ -186,16 +188,16 @@
 }
 
 .formulario__selector {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
     border: 1px solid rgba(255, 193, 7, 0.3);
-    color: #ffffff;
+    color: #000000;
 }
 
 .formulario__selector:focus {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: #ffffff;
     border-color: #ffc107;
     box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
-    color: #ffffff;
+    color: #000000;
 }
 
 .formulario__selector option {
@@ -281,12 +283,4 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.sala {
-    animation: aparecerArriba 0.8s ease;
-}
-
-.formulario {
-    animation: aparecerArriba 1s ease;
 }
