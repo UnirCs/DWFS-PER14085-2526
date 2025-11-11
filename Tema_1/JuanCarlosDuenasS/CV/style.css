@@ -44,7 +44,7 @@ h3 {
 }
 
 .marco_div {
-    border: 3px solid black; /* grosor, tipo, color */
+    border: 3px solid blue; /* grosor, tipo, color */
     padding: 20px;            /* espacio interno */
     margin: 30px auto;        /* centra el div */
  }
