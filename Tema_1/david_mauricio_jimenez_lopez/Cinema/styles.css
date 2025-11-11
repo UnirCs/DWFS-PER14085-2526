@@ -5,7 +5,7 @@
     min-height: 100vh;
 }
 
-.titulo-cine {
+.cine__titulo {
     background: linear-gradient(45deg, #ffc107, #ff8c00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -15,12 +15,12 @@
     letter-spacing: 2px;
 }
 
-.contenedor-pantalla {
+.pantalla {
     position: relative;
     margin-bottom: 3rem;
 }
 
-.pantalla {
+.pantalla__contenedor {
     background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
     color: #333;
     padding: 20px 80px;
@@ -38,7 +38,7 @@
     z-index: 2;
 }
 
-.resplandor-pantalla {
+.pantalla__resplandor {
     position: absolute;
     top: 0;
     left: 50%;
@@ -57,21 +57,21 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.elemento-leyenda {
+.leyenda__elemento {
     display: flex;
     align-items: center;
     color: #ffffff;
     font-size: 0.9rem;
 }
 
-.asientos-cine {
+.sala {
     background: rgba(0, 0, 0, 0.3);
     padding: 30px 20px;
     border-radius: 15px;
     border: 2px solid rgba(255, 193, 7, 0.2);
 }
 
-.fila-asientos {
+.sala__fila {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +79,7 @@
     margin-bottom: 10px;
 }
 
-.etiqueta-fila {
+.sala__etiqueta-fila {
     font-weight: bold;
     font-size: 1.2rem;
     color: #ffc107;
@@ -91,7 +91,7 @@
     border: 2px solid rgba(255, 193, 7, 0.3);
 }
 
-.rejilla-asientos {
+.sala__rejilla-asientos {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
@@ -114,13 +114,13 @@
     position: relative;
 }
 
-.asiento.disponible {
+.asiento--disponible {
     background: linear-gradient(135deg, #28a745, #20c997);
     color: white;
     border-color: #1e7e34;
 }
 
-.asiento.disponible:hover {
+.asiento--disponible:hover {
     background: linear-gradient(135deg, #34ce57, #2dd4aa);
     transform: translateY(-2px) scale(1.05);
     box-shadow: 
@@ -129,7 +129,7 @@
     border-color: #ffc107;
 }
 
-.asiento.ocupado {
+.asiento--ocupado {
     background: linear-gradient(135deg, #dc3545, #c82333);
     color: white;
     cursor: not-allowed;
@@ -137,14 +137,14 @@
     opacity: 0.7;
 }
 
-.asiento.ocupado::before {
+.asiento--ocupado::before {
     content: '✕';
     position: absolute;
     font-size: 1rem;
     color: white;
 }
 
-.asiento.seleccionado {
+.asiento--seleccionado {
     background: linear-gradient(135deg, #ffc107, #ff8c00);
     color: #000;
     border-color: #e0a800;
@@ -168,42 +168,42 @@
     }
 }
 
-.formulario-reserva {
+.formulario {
     background: rgba(108, 117, 125, 0.9) !important;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 193, 7, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.formulario-reserva h3 {
+.formulario__titulo {
     color: #ffc107;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.etiqueta-formulario {
+.formulario__etiqueta {
     color: #ffffff;
     font-weight: 600;
 }
 
-.selector-formulario {
+.formulario__selector {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 193, 7, 0.3);
     color: #ffffff;
 }
 
-.selector-formulario:focus {
+.formulario__selector:focus {
     background-color: rgba(255, 255, 255, 0.15);
     border-color: #ffc107;
     box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
     color: #ffffff;
 }
 
-.selector-formulario option {
+.formulario__selector option {
     background-color: #343a40;
     color: #ffffff;
 }
 
-.pantalla-asientos-seleccionados {
+.formulario__pantalla-seleccion {
     min-height: 50px;
     display: flex;
     align-items: center;
@@ -212,7 +212,7 @@
     border: 1px solid rgba(255, 193, 7, 0.3);
 }
 
-.pantalla-precio {
+.formulario__pantalla-precio {
     background: linear-gradient(135deg, #ffc107, #ff8c00);
     color: #000;
     padding: 15px 20px;
@@ -223,7 +223,7 @@
     box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
 }
 
-.boton-advertencia {
+.formulario__boton {
     background: linear-gradient(135deg, #ffc107, #ff8c00);
     border: none;
     color: #000;
@@ -237,42 +237,40 @@
     box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
 }
 
-.boton-advertencia:hover:not(:disabled) {
+.formulario__boton:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(255, 193, 7, 0.5);
     background: linear-gradient(135deg, #ff8c00, #ffc107);
 }
 
-.boton-advertencia:disabled {
+.formulario__boton--deshabilitado {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-footer.fondo-negro {
+.pie-pagina {
     background: linear-gradient(135deg, #000000, #1a1a1a) !important;
     border-top: 3px solid #ffc107;
 }
 
-footer h4 {
+.pie-pagina__titulo {
     color: #ffc107;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-footer .texto-advertencia {
+.pie-pagina__icono {
     color: #ffc107 !important;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-footer p {
+.pie-pagina__texto {
     color: #cccccc;
 }
 
-footer strong {
+.pie-pagina__texto strong {
     color: #ffffff;
 }
-
-
 
 @keyframes aparecerArriba {
     from {
@@ -285,10 +283,10 @@ footer strong {
     }
 }
 
-.asientos-cine {
+.sala {
     animation: aparecerArriba 0.8s ease;
 }
 
-.formulario-reserva {
+.formulario {
     animation: aparecerArriba 1s ease;
 }
