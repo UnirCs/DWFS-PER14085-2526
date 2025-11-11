@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Cinema UNIR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="code.js"></script>
+</head>
+
+<body onload="doTable()">
+    <!-- Header -->
+    <header>
+        <h1>Cinema UNIR</h1>
+        <p>Donde las historias cobran vida</p>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <p class="title">Reservación de asientos Sala 1</p>
+        <div class="screen">Pantalla</div>
+        <div id="tabla"></div>
+        <form class="reservations">
+            <label for="nro_asientos">Indica el número de asientos que deseas reservar:</label><br>
+            <input type="number" id="nro_asientos" name="nro_asientos">
+            <div id="mensaje"></div><br>
+            <button type="button" class="btn btn-primary" onclick="suggest()">Reservar Asientos</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Cinema UNIR</h2>
+        <p>Av. del Cine #123, Quito, Ecuador <br>
+            (02) 234-5678 | info@cinemaunir.ec</p>
+        <div class="social-icons mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+        </div>
+        <p class="reserves">© 2025 Cinema UNIR- Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

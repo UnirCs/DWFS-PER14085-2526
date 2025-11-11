@@ -49,9 +49,9 @@ table {
 }
 
 th {
-    color: white !important;
-    font-size: 1.2rem !important;
-    background-color: transparent !important;
+    color: white;
+    font-size: 1.2rem;
+    background-color: transparent;
 }
 
 .title {
@@ -75,8 +75,7 @@ th {
 }
 
 .row {
-    background-color: transparent !important;
-    color: white !important;
+    background-color: transparent;
 }
 
 .free,
