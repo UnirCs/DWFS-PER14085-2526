@@ -13,6 +13,7 @@ function setup() {
             // Nuevo asiento
             fila.push({
                 id: idContador++,
+				// Safe: randomness is not used for security purposes
                 estado: Boolean(Math.round(Math.random())) // Estado aleatorio
             });
         }
