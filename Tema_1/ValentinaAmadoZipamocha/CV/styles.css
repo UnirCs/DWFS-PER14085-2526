@@ -1,0 +1,79 @@
+.cv-header {
+    font-style: italic; /* Cursiva */
+    text-align: center; /* Centrado */
+    background-color: lightgray; /* Fondo gris claro */
+    padding: 10px; /* Relleno */
+    border: 1px solid #eee; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.name {
+    text-align: center; /* Centrado */
+    font-weight: bold; /* Negrita */
+    color: darkmagenta; /* Color magenta oscuro */
+}
+
+.cv-picture {
+    display: block;
+    margin: 0 auto; /* Centrar la imagen */
+    border-radius: 50%; /* Imagen circular */
+}
+.cv-body {
+    font-family: Arial, sans-serif; /* Fuente legible */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin: 20px; /* Márgenes */
+    color: #333; /* Color de texto oscuro para buen contraste */
+}
+.cv-section {
+    margin-bottom: 20px; /* Espacio entre secciones */
+}
+
+.first-section {
+    background-image:radial-gradient(circle, #f0e6f6, #d4b5e6); /* Degradado radial */
+    padding: 10px; /* Relleno */
+    border: 1px solid #eee; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+}
+.section {
+    background-color: #f9f9f9; /* Fondo gris claro */
+    padding: 10px; /* Relleno */
+    border: 1px solid #eee; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.name-section {
+    text-align: left;
+    font-weight: bold;
+    color: darkmagenta;
+}
+
+/* estilos para la lista de habilidades con iconos */
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.skill-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem; /* espacio entre icono y texto */
+    padding: 6px 0;
+}
+
+.skill-list li img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #000000;
+    margin-top: 50px;
+    background-image: linear-gradient(to right, #747474, #f7f5f5);
+    padding: 10px;
+}
