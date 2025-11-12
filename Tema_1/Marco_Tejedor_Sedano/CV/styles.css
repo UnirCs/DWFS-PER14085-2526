@@ -1,0 +1,23 @@
+.body{
+    font-family: monospace;
+}
+
+.cabecera-cv{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: aquamarine;
+    margin : 0px;
+}
+.cabecera-cv img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin : 5px;
+}
+
+.info-contacto{
+    font-size: 1em;
+
+    margin : 0px;
+}
