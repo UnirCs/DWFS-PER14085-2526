@@ -4,20 +4,44 @@
 
 .cabecera-cv{
     text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    background-color: aquamarine;
-    margin : 0px;
+    background-color: #0098CD;
+    margin : 10px;
+    padding: 5px;
+    border: 1px solid black
 }
+
 .cabecera-cv img{
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    margin : 5px;
 }
 
-.info-contacto{
-    font-size: 1em;
+.cabecera-cv h1{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white
+}
+.cabecera-cv h2{
+    font-size: 1.4em;
+    font-weight: bold;
+    color: white
+}
 
-    margin : 0px;
+.seccion-cv{
+    margin : 10px;
+    padding: 5px;
+    border: 1px outset black
+}
+
+.seccion-cv h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: blue;
+
+}
+.seccion-cv h4{
+    font-size: 1.2em;
+}
+.seccion-cv h4{
+    font-size: 1.2em;
 }
