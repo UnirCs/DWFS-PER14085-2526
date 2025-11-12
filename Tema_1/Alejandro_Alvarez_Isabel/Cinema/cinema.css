@@ -52,7 +52,6 @@ body {
     cursor: pointer;
     user-select: none;
     border-radius: 4px;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
