@@ -66,10 +66,10 @@
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const cantidad = parseInt(document.getElementById('cantidad').value);
+      const cantidad = Number.parseInt(document.getElementById('cantidad').value);
       const filaSeleccionada = document.getElementById('fila').value;
 
-      if (isNaN(cantidad) || cantidad < 1 || !filaSeleccionada) {
+      if (Number.isNaN(cantidad) || cantidad < 1 || !filaSeleccionada) {
         alert("Por favor, ingresa una cantidad válida y selecciona una fila.");
         return;
       }
