@@ -4,6 +4,8 @@ p {
     font-family: sans-serif;
 }
 
+p:hover {background-color: #ffc107}
+
 h1 {
     color: #0055aa;
     text-transform: uppercase;
@@ -27,30 +29,41 @@ h4 {
     text-align: left;
 }
 
-.principal {
+h3 + p {
+    background-color: lightgray;
+}
+
+h4 ~ p {
+    background-color: cornflowerblue;
+}
+
+.body {
+    background-color: whitesmoke;
+}
+.body_principal {
     background-color: #8FAAC4;
-    text-align: center; /* Centra el contenido */
+    text-align: center;
     font-family: sans-serif;
 }
 
-.secundario {
+.body_secundario {
     text-align: left;
     font-family: sans-serif;
 }
 
 .imagen-redonda {
-    width: 200px;              /* tamaño de la imagen */
-    height: 200px;             /* mantener forma cuadrada */
-    border-radius: 50%;        /* redondear (50% = círculo) */
-    border: 4px solid #555;    /* color y grosor del marco */
-    object-fit: cover;         /* recorta para llenar el contorno */
-    display: block;            /* necesario para centrar con margin */
-    margin: 0 auto;            /* centra horizontalmente */
-    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* sombra suave */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #555;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .marco_div {
-    border: 3px solid blue; /* grosor, tipo, color */
-    padding: 20px;            /* espacio interno */
-    margin: 30px auto;        /* centra el div */
+    border: 3px solid blue;
+    padding: 20px;
+    margin: 30px auto;
  }
