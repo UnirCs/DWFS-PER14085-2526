@@ -1,0 +1,84 @@
+.box-container{
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+}
+
+.box-container .image img {
+    height: 160px;
+    width: 160px;
+    border-radius: 10px 10px;
+    box-shadow: 0 0 0 8px rebeccapurple;
+}
+
+.name {
+    /*min-height: 2vh;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+}
+
+.name header h2 {
+    color: rgb(19, 113, 196);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 50px;
+    font-style: oblique 40deg;
+    text-decoration: underline overline;
+    letter-spacing: 3px;
+}
+
+.contacto {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    border-radius: 5px 5px;
+    box-shadow: 0 0 0 2px rgba(78, 72, 72, 0.438);
+    padding: 1px 5px;
+    margin-bottom: 10px;
+}
+
+.resumen {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    border-radius: 5px 5px;
+    box-shadow: 0 0 0 2px rgba(78, 72, 72, 0.438);
+    padding: 1px 5px;
+    margin-bottom: 10px;
+}
+
+.resumen h2 {
+    font-size: 20px;
+    font-style: oblique;
+    letter-spacing: 3px;
+    color: rgb(19, 113, 196);
+}
+
+.habilidades {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    border-radius: 5px 5px;
+    box-shadow: 0 0 0 2px rgba(78, 72, 72, 0.438);
+    padding: 1px 5px;
+    margin-bottom: 10px;
+}
+
+.experiencia {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    border-radius: 5px 5px;
+    box-shadow: 0 0 0 2px rgba(78, 72, 72, 0.438);
+    padding: 1px 5px;
+    margin-bottom: 10px;
+}
+
+.educacion {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    border-radius: 5px 5px;
+    box-shadow: 0 0 0 2px rgba(78, 72, 72, 0.438);
+    padding: 1px 5px;
+    margin-bottom: 10px;
+}

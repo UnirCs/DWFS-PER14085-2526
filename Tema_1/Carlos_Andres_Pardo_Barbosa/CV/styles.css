@@ -1,0 +1,174 @@
+
+:root {
+    --gris: #2E2E2E;
+    --ink-muted: rgba(46,46,46,.8);
+    --divider: rgba(46,46,46,.2);
+}
+
+
+body {
+    background-color: #FFF8E7;
+    color: var(--gris);
+    font-family: 'Cinzel', serif;
+    line-height: 1.6;
+}
+
+
+#header {
+    background: linear-gradient(rgba(222, 176, 152, 0.85), rgba(213, 79, 9, 0.85));
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.contenedor-redondo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+}
+
+.contenedor-redondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-family: 'Uncial Antiqua', cursive;
+    margin-bottom: 0.5rem;
+    color: var(--gris);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--gris-muted);
+    font-weight: 400;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--divider);
+    font-family: 'Uncial Antiqua', cursive;
+}
+
+.campaign-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.campaign-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+}
+
+.campaign-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.campaign-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+.campaign-subtitle {
+    color: #deb098;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Colores de las cards */
+.campaign-card:nth-child(1) {
+    background: linear-gradient(135deg, #4d5bc8, #031353);
+}
+
+.campaign-card:nth-child(2) {
+    background: linear-gradient(135deg, #577c52, #172314);
+}
+
+.campaign-card:nth-child(3) {
+    background: linear-gradient(135deg, #613b41, #2f1b1e);
+}
+
+/* =========================
+   Skills Section
+   ========================= */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    background-color: rgba(0,0,0,.05);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+.material-symbols-outlined {
+    font-size: 2.5rem;
+    color: rgba(213, 79, 9, 0.85);
+}
+
+.skill-text {
+    color: var(--ink-muted);
+    font-weight: 600;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 50px;
+    background-color: rgba(0,0,200,.05);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+.contact-card:hover {
+    transform: scale(1.05);
+}
