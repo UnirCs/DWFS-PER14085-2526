@@ -18,7 +18,8 @@
     background: black;
     height: 400px;
     border: 1px solid #ffffff;
-    margin: 20px;
+    margin: 0 auto;        /* Centrado */
+    width: 45%
 }
 .silla_ocupada {
     width: 50px;
@@ -36,6 +37,13 @@
     display: inline-block; /* 👈 clave para que estén en la misma línea */
     margin: 5px;           /* separa un poco los cuadrados */
 }
+.formulario {
+    background: black;
+    height: 200px;
+    border: 1px solid #ffffff;
+    margin: 20px;
+}
+
 
 p{
     color: white;
@@ -54,7 +62,7 @@ h1 {
 }
 
 h2 {
-    color: #0055aa;
+    color: red;
     text-align: center;
 }
 
@@ -74,6 +82,15 @@ h3 + p {
     background-color: lightgray;
 }
 
+.formulario > h2 {
+    color: yellow;
+    font-size: medium;
+}
+
+.etiquetas {
+    color: yellow;
+}
+
 h4 ~ p {
     background-color: cornflowerblue;
 }
@@ -82,18 +99,10 @@ h4 ~ p {
     background-color: whitesmoke;
 }
 
-.imagen-redonda {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid #555;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+.pie_pagina{
+    background: black;
+    color: black;
+    text-align:center;
+    padding:10px;
+
 }
-.marco_div {
-    border: 3px solid blue;
-    padding: 20px;
-    margin: 30px auto;
- }
