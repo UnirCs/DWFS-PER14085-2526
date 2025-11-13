@@ -199,7 +199,15 @@ function dimBrightness(dimFactor) {
     let outputPath = 'output/tucan_dimed.jpg';
     let pixels = handler.getPixels();
 
-    //Aqui tu codigo
+    for (let i = 0; i < pixels.length; i++)
+    {
+        for (let j = 0; j < pixels[i].length; j++)
+        {
+            pixels[i][j][0] = pixels[i][j][0] / dimFactor;
+            pixels[i][j][1] = pixels[i][j][1] / dimFactor;
+            pixels[i][j][2] = pixels[i][j][2] / dimFactor;
+        }
+    }
 
     handler.savePixels(pixels, outputPath);
 }
@@ -246,7 +254,23 @@ function merge(alphaFirst, alphaSecond) {
 
     let pixels = [];
 
-    //Aqui tu codigo
+    // Multiplicar cada pixel por el factor de fusion
+    // 2 Sumar valor de cada canal de pixel -> de cada imagen
+
+    if(alphaFirst + alphaSecond > 1)
+    {
+        for (let i = 0; i < catPixels.length; i++)
+        {
+            for (let j = 0; j < catPixels[i].length; j++)
+            {
+                pixels[i][j][0] = (catPixels[i][j][0] * alphaFirst) + (dogPixels[i][j][0] * alphaSecond);
+                pixels[i][j][1] = (catPixels[i][j][1] * alphaFirst) + (dogPixels[i][j][1] * alphaSecond);
+                pixels[i][j][2] = (catPixels[i][j][2] * alphaFirst) + (dogPixels[i][j][2] * alphaSecond);
+            }
+        }
+    }
+    else console.log("Aplha fusion factors should be > 1 ")
+
 
     dogHandler.savePixels(pixels, outputPath);
 }
