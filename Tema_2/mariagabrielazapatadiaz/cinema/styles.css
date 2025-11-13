@@ -80,17 +80,23 @@ th {
 
 .free,
 .occupied {
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     height: 2em;
     width: 2em;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .free {
     background-color: transparent;
+    color: var(--primary-color);
 }
 
 .occupied {
     background-color: var(--primary-color);
+    color: var(--dark-bg);
 }
 
 .reservations {
