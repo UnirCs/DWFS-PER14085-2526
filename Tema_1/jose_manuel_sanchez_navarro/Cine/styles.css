@@ -1,0 +1,86 @@
+*{
+  text-align:center;
+}
+body {
+  background-color : black;
+}
+
+h1{
+  padding: 30px;
+}
+.contenedor-pagina{
+  border:1px solid yellow ;
+  padding: 10px;
+}
+.espaciado {
+  padding: 100px;
+  background-color: rgb(88, 88, 97);
+}
+.compra-butaca{
+  margin-top: 30px;
+}
+footer {
+  margin: 20px;
+  padding: 20px;
+}
+
+footer , h1 {
+  background-color : grey;
+}
+
+h1, footer p {
+  color : white;
+}
+
+table{
+  border-collapse: separate;
+  border-spacing: 12px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+td{
+  border:1px solid yellow;
+  height: 20px;
+  width: 20px;
+}
+
+
+
+td.asiento-ocupado {
+  /*color: yellow;*/
+  background-color: yellow; 
+}
+
+
+th, label{
+  color: yellow;
+}
+
+th {
+  font-size: 10px;
+  /* Alinear el contenido del <th> en la parte superior de la celda */
+  vertical-align: top;
+}
+
+form{
+  margin-top: 15px;
+}
+
+ .input-asientos{
+ border-radius: 10%;
+ width: 50px;
+ height: 20px;
+}
+
+.boton-submit {
+ border-radius: 10%;
+ height: 30px;
+ background-color: yellow;
+}
+
+.boton-submit:hover{
+  transform: scale(1.08);
+  background-color: yellowgreen;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
