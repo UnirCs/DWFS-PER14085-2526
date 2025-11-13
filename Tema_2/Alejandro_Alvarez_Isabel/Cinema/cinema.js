@@ -17,10 +17,15 @@ function setup() {
         // Nueva fila
         let fila = [];
         for (let j = 0; j < N; j++) {
-            // Nuevo asiento
+            let state = false;
+            let dice = Math.random();
+
+            if (dice < 0.5) state = true;
+            else state = false;
+
             fila.push({
                 id: idContador++,
-                estado: false // Estado inicial libre
+                estado: state,
             });
         }
         butacas.push(fila);
@@ -38,7 +43,7 @@ function checkRowAvailable(row, num)
 {
     if (row.length < num)
     {
-        return false;
+        return -1;
     }
 
     for (let j = 0; j <= row.length - num; j++)
@@ -47,7 +52,6 @@ function checkRowAvailable(row, num)
         for (let k = 0; k < num; k++)
         {
             const seat = row[j + k];
-
             if (seat.estado)
             {
                 free = false;
@@ -58,48 +62,65 @@ function checkRowAvailable(row, num)
 
         if (free)
         {
-            return true;
+            return j;
         }
     }
-    return false;
+    return -1;
 }
+
 function suggest(seats)
 {
     let finalSet = new Set();
     let butacas = setup();
 
-    if(butacas.length > seats) return finalSet;
-
-    for(let i = 0; i < butacas[0].length; i++)
-    {
-        if (!checkRowAvailable(butacas[i], seats)) return finalSet;
-    }
+    if(seats > butacas[0].length) return finalSet;
 
     for (let i = butacas.length - 1; i >= 0; i--)
     {
-        if (!checkRowAvailable(butacas[i], seats)) continue;
-        else
+        const fila = butacas[i];
+        const startIndex = checkRowAvailable(fila, seats);
+
+        if (startIndex !== -1)
         {
-            for(let j = 0; j < butacas[i].length; j++)
+            for(let k = 0; k < seats; k++)
             {
-                for (let k = 0; k < butacas[i].length; k++)
-                {
-                    if(butacas[i].estado === false)
-                    {
-                        finalSet.push(butacas[i].id);
-                    }
-                    else continue;
-                }
+                const seat = fila[startIndex + k];
+                finalSet.add(seat.id);
             }
+            return finalSet;
         }
     }
     return finalSet;
 }
 
+/*
 let tickets = new Set();
 tickets = suggest(5);
+console.log(tickets);
 
+let tickets = new Set();
+tickets = suggest(0);
 console.log(tickets);
+
+let tickets = new Set();
+tickets = suggest(11);
+console.log(tickets);
+
+let tickets = new Set();
+tickets = suggest(10);
+console.log(tickets);
+
+*/
+
 console.log(butacas);
+
+let tickets = new Set();
+tickets = suggest(5);
 console.log(tickets);
+
+
+
+
+
+
 
