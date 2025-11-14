@@ -1,0 +1,59 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+}
+.cinema-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #000;
+    border-radius: 8px;
+    border: 1px solid #ffd700;
+    box-shadow: 0 6px 18px #ffd700;
+}
+/*Pantalla*/
+.screen {
+    background-color: #444;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+/* Ajuste de estilo de los checkboxes */
+.form-check-input {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 2px solid #ffd700;
+    background-color: transparent;
+}
+
+/* Cambio color cuando selecciono el asiento */
+.form-check-input:checked {
+    background-color: #ffd700;
+    border-color: #ffd700;
+}
+
+/*Quito puntero y cambio de color cuando esta ocupado*/
+.form-check-input:disabled {
+    background-color: #555;
+    border-color: #555;
+    cursor: not-allowed;
+}
+
+/*Texto del label*/
+.seat-label {
+    width: 60px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
