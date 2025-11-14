@@ -1,0 +1,309 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #f8f8f8;
+}
+
+/* Bloque: cv */
+.cv {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+/* Bloque: cabecera */
+.cabecera {
+    background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    border-bottom: 3px solid #000;
+}
+
+/* Elemento: cabecera__perfil */
+.cabecera__perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Elemento: cabecera__foto */
+.cabecera__foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    filter: grayscale(100%);
+}
+
+/* Elemento: cabecera__nombre */
+.cabecera__nombre {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+/* Elemento: cabecera__titulo */
+.cabecera__titulo {
+    font-size: 1.3em;
+    opacity: 0.9;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Bloque: seccion */
+.seccion {
+    padding: 30px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.seccion:last-child {
+    border-bottom: none;
+}
+
+/* Elemento: seccion__encabezado */
+.seccion__encabezado {
+    color: #1a1a1a;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Elemento: seccion__subencabezado */
+.seccion__subencabezado {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+}
+
+/* Bloque: contacto */
+.contacto__lista {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* Elemento: contacto__elemento */
+.contacto__elemento {
+    background-color: #f5f5f5;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border-left: 4px solid #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Elemento: contacto__etiqueta */
+.contacto__etiqueta {
+    color: #1a1a1a;
+}
+
+/* Bloque: resumen */
+.resumen__texto {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: justify;
+    color: #404040;
+    background-color: #fafafa;
+    padding: 20px;
+    border-left: 5px solid #666;
+    border-radius: 5px;
+}
+
+/* Bloque: habilidades */
+.habilidades__lista {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Elemento: habilidades__elemento */
+.habilidades__elemento {
+    background: linear-gradient(135deg, #4a4a4a, #2c2c2c);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Modificador: habilidades__elemento--hover */
+.habilidades__elemento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #666;
+    background: linear-gradient(135deg, #333, #1a1a1a);
+}
+
+/* Bloque: experiencia */
+.experiencia__elemento {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border-left: 5px solid #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experiencia__elemento:last-child {
+    margin-bottom: 0;
+}
+
+/* Elemento: experiencia__empresa */
+.experiencia__empresa {
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Elemento: experiencia__fechas */
+.experiencia__fechas {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+/* Elemento: experiencia__tareas */
+.experiencia__tareas {
+    margin-left: 20px;
+}
+
+/* Elemento: experiencia__tarea */
+.experiencia__tarea {
+    margin-bottom: 8px;
+    color: #404040;
+    position: relative;
+}
+
+.experiencia__tarea:before {
+    content: "";
+    color: #666;
+    margin-right: 8px;
+    font-size: 0.8em;
+}
+
+/* Bloque: educacion */
+.educacion__elemento {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border-left: 5px solid #666;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.educacion__elemento:last-child {
+    margin-bottom: 0;
+}
+
+/* Elemento: educacion__institucion */
+.educacion__institucion {
+    color: #2c2c2c;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Elemento: educacion__fechas */
+.educacion__fechas {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .cv {
+        margin: 10px;
+        border-radius: 0;
+    }
+    
+    .cabecera {
+        padding: 30px 20px;
+    }
+    
+    .cabecera__nombre {
+        font-size: 2em;
+    }
+    
+    .seccion {
+        padding: 20px;
+    }
+    
+    .contacto__lista {
+        grid-template-columns: 1fr;
+    }
+    
+    .habilidades__lista {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecera__foto {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .cabecera__nombre {
+        font-size: 1.8em;
+    }
+    
+    .cabecera__titulo {
+        font-size: 1.1em;
+    }
+}
+
+/* Efectos para impresión */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .cv {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .cabecera {
+        background: #2c2c2c !important;
+    }
+    
+    .habilidades__elemento {
+        background: #4a4a4a !important;
+    }
+}
+
