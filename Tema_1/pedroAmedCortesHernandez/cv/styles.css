@@ -1,0 +1,65 @@
+.body{
+    background-color: white;
+}
+
+.contenedor{
+    margin: 0 auto;
+    height: auto;
+    width: 1080px;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    box-shadow: 10px 10px #5394cf;
+    font-family: Roboto, Arial, Tahoma, sans-serif;
+}
+
+#headerCV{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px lightslategray;
+}
+
+#imagenPerfil{
+    width: 120px;
+}
+
+#infoPerfil{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#cv{
+    width: 350px;
+}
+
+#nombrePerfil{
+    width: auto;
+}
+
+#infoContacto{
+    font-size: large;
+    font-style: italic;
+}
+
+.tablaInfo{
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px lightslategray;
+    text-align: left;
+}
+
+.imagenIcono{
+    width: 32px;
+    padding-right: 10px;
+}
+
+.infoDataTd{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+}
