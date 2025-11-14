@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+#container {
+  max-width: 900px;
+  width: 90%;
+  margin: 30px auto;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+}
+#personal {
+  margin-top: 25px;
+}
+
+#head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#head h1 {
+  margin-bottom: 5px;
+}
+
+#head h2 {
+  margin-top: 0;
+}
+
+#profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+}
+
+.info-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 15px;
+}
+
+.info-list span {
+  text-align: right;
+  color: #555;
+}
+
+.info-list strong {
+  font-weight: 700;
+}
+
+.text-color {
+  color: #555;
+}
+
+.job-entry {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.job-date {
+  flex-basis: 180px;
+  padding-right: 20px;
+}
+
+.job-details {
+  flex: 1;
+}
+
+.job-details p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+.skills-list {
+  columns: 2;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  padding-bottom: 8px;
+}
