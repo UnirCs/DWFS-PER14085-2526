@@ -155,12 +155,12 @@
         const lstCheckBox = document.querySelectorAll('.seat input');
         const textarea = document.querySelector('.reservation__seats');
 
-        for (let i = 0; i < lstCheckBox.length; i++) {
-            lstCheckBox[i].addEventListener('change', function() {
-                let selected = [];
-                for (let j = 0; j < lstCheckBox.length; j++) {
-                    if (lstCheckBox[j].checked) {
-                        selected.push(lstCheckBox[j].id);
+        for (const checkbox of lstCheckBox) {
+            checkbox.addEventListener('change', () => {
+                const selected = [];
+                for (const cb of lstCheckBox) {
+                    if (cb.checked) {
+                        selected.push(cb.id);
                     }
                 }
                 textarea.value = selected.join(', ');
