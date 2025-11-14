@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema BGA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="cinema-container">
+    <header>CINEMA BGA</header>
+
+    <div class="screen">PANTALLA</div>
+
+    <div id="seats">
+      <div class="seat-row">
+        <span class="seat-label">A</span>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat selected"></div>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="seat-row">
+        <span class="seat-label">B</span>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="seat-row">
+        <span class="seat-label">C</span>
+        <div class="seat selected"></div>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="seat-row">
+        <span class="seat-label">D</span>
+        <div class="seat"></div>
+        <div class="seat selected"></div>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="seat-row">
+        <span class="seat-label">E</span>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat selected"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <p>¿Cuántos asientos quieres reservar?</p>
+      <input type="number" class="form-control w-25 mx-auto" min="1" max="10" placeholder="0">
+      <button class="btn btn-confirm">Confirmar Reserva</button>
+    </div>
+
+    <footer>
+      <br><strong>Cinema BGA</strong>
+      <br><strong>Dirección:</strong> Avenida Siempre Viva 742
+      <br><strong>Teléfono:</strong> (607) 123 456
+      <br><strong>Email:</strong> info@cinebga.com
+    </footer>
+  </div>
+</body>
+</html>
