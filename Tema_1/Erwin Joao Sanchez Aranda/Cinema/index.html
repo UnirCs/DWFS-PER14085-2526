@@ -155,14 +155,17 @@
         const lstCheckBox = document.querySelectorAll('.seat input');
         const textarea = document.querySelector('.reservation__seats');
 
-        lstCheckBox.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const selected = Array.from(lstCheckBox)
-                    .filter(cb => cb.checked)
-                    .map(cb => cb.id);
+        for (let i = 0; i < lstCheckBox.length; i++) {
+            lstCheckBox[i].addEventListener('change', function() {
+                let selected = [];
+                for (let j = 0; j < lstCheckBox.length; j++) {
+                    if (lstCheckBox[j].checked) {
+                        selected.push(lstCheckBox[j].id);
+                    }
+                }
                 textarea.value = selected.join(', ');
             });
-        });
+        }
 
         const btnReserve = document.querySelector('#btnReserve');
         btnReserve.addEventListener('click', () => {
