@@ -1,0 +1,475 @@
+/* =======================================================
+   = GLOBAL VARIABLES
+   ======================================================= 
+*/
+:root {
+  --bg: #707073;
+  --surface: #112130;
+  --card: #0b1721;
+  --paper: #ffffff;
+  --ink: #0e1116;
+  --muted: #4b5563;
+  --accent: #707073;
+  --accent-ink: #fff;
+  --ring: #94a3b8;
+  --radius: 18px;
+  --gap: 22px;
+}
+
+/* 
+  =======================================================
+  = BASE STYLES
+  ======================================================= 
+*/
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background: linear-gradient(90deg, var(--bg) 0 50%, #e9eef3 50%);
+  color: #475569;
+}
+
+/* =======================================================
+   = LAYOUT STRUCTURE
+   ======================================================= 
+*/
+#page {
+  gap: var(--gap);
+  max-width: 960px;
+  padding: var(--gap);
+  margin-inline: auto;
+}
+
+#content {
+  padding: 36px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 24px rgba(2, 12, 32, 0.08);
+}
+
+/* =======================================================
+   = TYPOGRAPHY AND UTILITIES
+   ======================================================= 
+*/
+.summary p {
+  color: #475569;
+}
+
+.mtb-10 {
+  margin: 2.5rem 0px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* =======================================================
+   = HERO SECTION (Header name + subtitle)
+   ======================================================= 
+*/
+
+.cv-header{
+    display: grid;
+    grid-template-columns: auto 0.5fr;
+    gap: var(--gap);
+    margin-top: 1rem;
+}
+
+.cv-header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--accent);
+}
+
+.hero .overline {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+.hero h1 {
+  color: var(--accent);
+  font-size: clamp(2rem, 3.2vw + 1rem, 3.2rem);
+  margin: 0.8rem 0;
+  line-height: 1.1;
+}
+
+.animate__animated {
+  --animate-duration: 1.5s;
+}
+
+.hero .accent {
+  color: var(--accent);
+}
+
+
+
+/* =======================================================
+   = SECTION TITLES
+   ======================================================= 
+*/
+.section {
+  margin-top: 28px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #334155;
+  border-bottom: 2px solid #e6edf5;
+  padding-bottom: 0.6rem;
+  margin-top: 10px;
+}
+
+.section-title::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  background: var(--accent);
+}
+
+/* =======================================================
+   = CONTACT INFORMATION
+   ======================================================= 
+*/
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.contact-info div {
+  color: #ffffff;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg);
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-info div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.contact-info div a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* =======================================================
+   = EXPERIENCE & EDUCATION SECTIONS
+   ======================================================= 
+*/
+.xp {
+  padding: 18px 0;
+  border-bottom: 1px dashed #e8eef6;
+}
+
+.xp:last-child {
+  border-bottom: 0;
+}
+
+.xp-header,
+.xp-education-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--accent);
+}
+
+.xp-role,
+.xp-university {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.xp-company {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+}
+
+.xp-eductational-program {
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.xp-eductational-highlights {
+  margin: 1rem 0 0 0;
+  color: #334155;
+}
+
+.xp-dates,
+.xp-education-dates {
+  white-space: nowrap;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* =======================================================
+   = BULLETED LISTS
+   ======================================================= 
+*/
+.bullets {
+  margin: 0.6rem 0 0 1rem;
+  padding: 0;
+}
+
+.bullets li {
+  margin: 0.28rem 0;
+}
+
+/* =======================================================
+   = SKILLS TABLE
+   ======================================================= 
+*/
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+  margin-top: 1rem;
+}
+
+.skills-grid h3 {
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.skills-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-grid li {
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.skills-grid i {
+  color: var(--accent);
+}
+
+.skills-grid .tools,
+.skills-grid .platforms {
+  color: #fff;
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+.skills-grid .tools h3, 
+.skills-grid .platforms h3,
+.skills-grid .tools ul, 
+.skills-grid .platforms ul,
+.skills-grid .tools li,
+.skills-grid .platforms li,
+.skills-grid .tools i,
+.skills-grid .platforms i
+{
+  color: #fff;
+}
+
+/* =======================================================
+   = LINKS & SOCIALS
+   ======================================================= 
+*/
+
+.social-link {
+  text-decoration: none;
+  color: var(--accent);
+  transition: color 0.2s ease-in-out;
+}
+
+.social-link:hover {
+  color: #334155;
+}
+
+/* =========================
+   = Responsive breakpoints
+   ========================= 
+*/
+
+@media (max-width: 1024px) {
+  :root {
+    --gap: 18px;
+    --radius: 16px;
+  }
+
+  #page {
+    padding: var(--gap);
+  }
+
+  #content {
+    padding: 28px;
+  }
+
+  .xp-header,
+  .xp-education-title {
+    gap: 12px;
+  }
+
+  .skills-table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  body {
+    background: #e9eef3;
+  }
+
+  #page {
+    padding: 16px;
+  }
+
+  #content {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 4.5vw + 0.8rem, 2.4rem);
+  }
+
+  .cv-header {
+    grid-template-columns: auto;
+  }
+
+  .cv-header-img img{
+    display: none;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .section-title::before {
+    width: 16px;
+    height: 16px;
+  }
+
+  .xp-header,
+  .xp-education-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .xp-dates,
+  .xp-education-dates {
+    margin-top: 0.4rem;
+    white-space: normal;
+  }
+
+  .summary p {
+    font-size: 0.98rem;
+  }
+
+  .bullets {
+    margin-left: 1rem;
+  }
+
+  .skills-grid 
+  { 
+    grid-template-columns: 1fr; 
+  }
+  .skills-grid .tools { 
+    grid-column: auto; 
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --gap: 16px;
+  }
+
+  .contact-info {
+     grid-template-columns: 1fr;
+  }
+
+  .hero .overline {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    letter-spacing: 0.1em;
+  }
+
+  .section-title::before {
+    width: 14px;
+    height: 14px;
+  }
+
+  .skills-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 0.82rem;
+  }
+
+  .skills-table th,
+  .skills-table td {
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --gap: 14px;
+  }
+
+  #content {
+    padding: 16px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .summary p {
+    font-size: 0.95rem;
+  }
+
+  .skills-table th,
+  .skills-table td {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
