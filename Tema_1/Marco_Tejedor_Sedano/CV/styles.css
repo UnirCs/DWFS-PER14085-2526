@@ -1,0 +1,47 @@
+.body{
+    font-family: monospace;
+}
+
+.cabecera-cv{
+    text-align: center;
+    background-color: #0098CD;
+    margin : 10px;
+    padding: 5px;
+    border: 1px solid black
+}
+
+.cabecera-cv img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.cabecera-cv h1{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white
+}
+.cabecera-cv h2{
+    font-size: 1.4em;
+    font-weight: bold;
+    color: white
+}
+
+.seccion-cv{
+    margin : 10px;
+    padding: 5px;
+    border: 1px outset black
+}
+
+.seccion-cv h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: blue;
+
+}
+.seccion-cv h4{
+    font-size: 1.2em;
+}
+.seccion-cv h4{
+    font-size: 1.2em;
+}
