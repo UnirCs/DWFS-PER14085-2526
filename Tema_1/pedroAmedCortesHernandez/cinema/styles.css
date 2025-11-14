@@ -1,0 +1,84 @@
+.body{
+    background-color: #2f3133;
+}
+
+.contenedor{
+    margin: 0 auto;
+    height: auto;
+    width: 1080px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    font-family: Roboto, Arial, Tahoma, sans-serif;
+}
+
+#pantalla{
+    width: 100%;
+    height: 320px;
+    background-color: dodgerblue;
+    display: flex;
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#pasillo{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagenButaca{
+    margin: 0 auto 4px auto;
+    width: 24px;
+    display: block;
+}
+
+.celdaButaca{
+    text-align: center;
+    vertical-align: top;
+}
+
+#footerCinema{
+    width: 100%;
+    background-color: #212529;
+    color: white;
+    font-weight: bolder;
+}
+
+#formularioReservaAsientos{
+    margin: 0 auto;
+    width: 640px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+td[estado="disponible"]{
+    .imagenButaca{
+        background-color: #aaff9c;
+    }
+    :hover{
+        background-color: dodgerblue;
+        cursor: pointer;
+    }
+}
+
+td[estado="ocupado"]{
+    .imagenButaca{
+        background-color: #dc3545;
+        cursor: not-allowed;
+    }
+}
+
+td[estado="noDisponible"]{
+    .imagenButaca{
+        background-color: #212529;
+        cursor: not-allowed;
+    }
+}
