@@ -1,0 +1,56 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color:black;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.cv.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: blue;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blue;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 10px 0 5px;
+    color:darkblue;
+    letter-spacing: 0.5px;
+}
+
+.puesto {
+    border-bottom: 2px solid black;
+    font-size: 1.2em;
+    font-weight: bold;
+    color:black;
+}
+
+.contacto {
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+}
+
+.resumen, .experiencia, .educacion, .habilidades {
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
