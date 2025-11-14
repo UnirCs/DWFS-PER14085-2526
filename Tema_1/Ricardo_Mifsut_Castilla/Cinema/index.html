@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIR-CINEMA</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <!-- El diseño de la sala del cine sera pantalla asientos el numero de filas es igual al de columnas, las filas seran enumeradas de manera ascedente desde la pantalla.La sala tiene 100 butacas -> 10x10-->
+    <header class = "header">
+        <h1 class = "h1">UNIR-CINEMA</h1>
+    </header>
+    
+    <h2 class = "h2">Pantalla</h2>
+    <!-- Se utilizara una tabla para la vista de las butacas, la cabecera representa la primera fila mientras que el resto de filas serviran para representar el resto de las butacas -->
+
+    
+    <table class="table">
+        <!-- Primera fila -->
+        <thead class="table_thead">
+
+            <tr class="table_thead_tr-1">
+                <td class = "informacion">Fila 1</td>
+                <th></th>
+                <th></th>
+                <th class = ocupado></th>
+                <th class = ocupado></th>
+                <th class = ocupado></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <!-- Resto de filas -->
+        <tr class="table_tr-2">
+            <td class = "informacion">Fila 2</td>
+            <td class = ocupado></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="table_tr-3">
+            <td class = "informacion">Fila 3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class = ocupado></td>
+            <td></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td></td>
+        </tr>
+        <tr class="table_tr-4">
+            <td class = "informacion">Fila 4</td>
+            <td class = ocupado></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class = ocupado></td>
+        </tr>
+        <tr class="table_tr-5">
+            <td class = "informacion">Fila 5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class = ocupado></td>
+            <td></td>
+            <td></td>
+            <td class = ocupado></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="table_tr-6">
+            <td class = "informacion">Fila 6</td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+        </tr>
+        <tr class="table_tr-7">
+            <td class = "informacion">Fila 7</td>
+            <td></td>
+            <td class = ocupado></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+        </tr>
+        <tr class="table_tr-8">
+            <td class = "informacion">Fila 8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="table_tr-9">
+            <td class = "informacion">Fila 9</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="table_tr-10">
+            <td class = "informacion">Fila 10</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class = ocupado></td>
+            <td class = ocupado></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+
+    </table>
+
+
+    <p class = "leyenda">Leyenda:<br>Verde: Butaca libre <br>
+    Rojo:Butaca ocupada</p>
+
+
+    <form action="" class="form">
+        <label for="asientos" class = "form_label">Nº de asientos a reservar:</label>
+
+        <input class = "form_inputNumber" type="number" name="asientos" id="asientos" required = "true" value="0">
+<br>
+        <input class = "form_button" type="button" value="Reservar">
+
+    </form>
+
+
+
+    <footer class = "footer"><h3>Contacto:</h3>
+    <h4>Nombre: UNIR-CINEMA</h4>
+    <h4>Dirección: Avenida de la Paz, 143 Logroño</h4>
+    <h4>Correo: cinefullstack@unircinema.com</h4>
+    <h4>Telefono: 941209743</h4>
+</footer>
+
+    
+
+</body>
+</html>
