@@ -34,30 +34,31 @@ function suggest(n) {
     if (n>N) return new Set()   //retorna vacio si el valor ingresado es mayor al valor de numero de filas y columnas
 
     const sugeridos = new Set();
+    let encontrado = false;
 
-    for (let i = N - 1; i >= 0; i--) {       //Buscar asientos mas lejanos
-        for (let j = 0; j <= N - n; j++) {   
+
+    for (let i = N - 1; i >= 0 && !encontrado; i--) {       //Buscar asientos mas lejanos
+        for (let j = 0; j <= N - n && !encontrado; j++) {   
             let libres = true;  
-            for (let k = 0; k < n; k++) {   //verifica si los n asientos desde j hasta j+n-1 están libres
+            for (let k = 0; k < n && libres; k++) {   //verifica si los n asientos desde j hasta j+n-1 están libres
                 if (butacas[i][j + k].estado) {
                     libres = false;
-                    break; // no sigue verificando
                 }
             }
-            if (libres) { //si esta libre se añade el id y se devuelve
+            if (libres && !encontrado) { //si esta libre se añade el id y se devuelve
                 for (let k = 0; k < n; k++) {
                     sugeridos.add(butacas[i][j + k].id);
                 }
-                return sugeridos;
+                encontrado = true;
             }
         }
     }
-    return new Set();
+    return sugeridos;
 }
 
 
 butacas[9][0].estado = true;  //ocupar butaca
-butacas[9][8].estado = true;  //ocupar butaca
-butacas[9][4].estado = true;  //ocupar butaca
+butacas[9][8].true = true;  //ocupar butaca
+butacas[9][4].true = true;  //ocupar butaca
 
 console.log("Butacas solicitadas:", suggest(5))  //ejecutar suggest
