@@ -4,65 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filtros de Imágenes</title>
-  <link href="css/estilos.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
   <h1>TONALIDADES DE IMÁGENES</h1>
 
-  <table border="1" role="presentation">
-    <thead>
-      <tr>
-        <th scope="col">Descripción</th>
-        <th scope="col">Resultado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="titulo">Imagen original</td>
-        <td><img src="input/tucan.jpg" alt="Tucán original" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Imagen en tono rojo</td>
-        <td><img src="output/tucan_red.jpg" alt="Tucán rojo" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Imagen en tono verde</td>
-        <td><img src="output/tucan_green.jpg" alt="Tucán verde" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Imagen en tono azul</td>
-        <td><img src="output/tucan_blue.jpg" alt="Tucán azul" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Escala de grises</td>
-        <td><img src="output/tucan_grey.jpg" alt="Tucán en escala de grises" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Blanco y negro</td>
-        <td><img src="output/tucan_black_and_white.jpg" alt="Tucán blanco y negro" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Brillo reducido</td>
-        <td><img src="output/tucan_dimed.jpg" alt="Tucán con brillo reducido" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Colores invertidos</td>
-        <td><img src="output/tucan_inverse.jpg" alt="Tucán con colores invertidos" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Imagen reducida</td>
-        <td><img src="output/tucan_scale_down.jpg" alt="Tucán reducido" loading="lazy"></td>
-      </tr>
-      <tr>
-        <td class="titulo">Imagen fusionada (gato + perro)</td>
-        <td><img src="output/merged.jpg" alt="Fusión de gato y perro" loading="lazy"></td>
-      </tr>
-    </tbody>
-  </table>
+  <section class="galeria">
+    <figure>
+      <img src="input/tucan.jpg" alt="Tucán original" loading="lazy">
+      <figcaption class="titulo">Imagen original</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_red.jpg" alt="Tucán en tono rojo" loading="lazy">
+      <figcaption class="titulo">Tono rojo</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_green.jpg" alt="Tucán en tono verde" loading="lazy">
+      <figcaption class="titulo">Tono verde</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_blue.jpg" alt="Tucán en tono azul" loading="lazy">
+      <figcaption class="titulo">Tono azul</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_grey.jpg" alt="Tucán en escala de grises" loading="lazy">
+      <figcaption class="titulo">Escala de grises</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_black_and_white.jpg" alt="Tucán blanco y negro" loading="lazy">
+      <figcaption class="titulo">Blanco y negro</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_dimed.jpg" alt="Tucán con brillo reducido" loading="lazy">
+      <figcaption class="titulo">Brillo reducido</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_inverse.jpg" alt="Tucán con colores invertidos" loading="lazy">
+      <figcaption class="titulo">Colores invertidos</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/tucan_scale_down.jpg" alt="Tucán reducido" loading="lazy">
+      <figcaption class="titulo">Imagen reducida</figcaption>
+    </figure>
+
+    <figure>
+      <img src="output/merged.jpg" alt="Fusión de gato y perro" loading="lazy">
+      <figcaption class="titulo">Fusión gato + perro</figcaption>
+    </figure>
+  </section>
+
   <div class="pie-pagina">
-     NOTA: Si alguna imagen no se muestra, asegúrate de haber ejecutado <b>actividad.js</b> con Node.js.<br>
-     Ejemplo: <code>node actividad.js</code>
+    NOTA: Si alguna imagen no se muestra, asegúrate de haber ejecutado <b>actividad.js</b> con Node.js.<br>
+    Ejemplo: <code>node actividad.js</code>
   </div>
 </body>
 </html>
