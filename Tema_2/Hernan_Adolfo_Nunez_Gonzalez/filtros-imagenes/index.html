@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FILTROS DE IMAGENES.</title>
+
+<link href="css/estilos.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <h1>TONALIDADES DE IMÁGENES</h1>
+  <table border="1" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="titulo">IMAGEN ORIGINAL</td>
+    </tr>
+    <tr>
+      <td><img src="input/tucan.jpg" alt="Tucán original" /></td>
+    </tr>
+
+    <tr>
+      <td class="titulo">IMAGEN EN TONO ROJO</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_red.jpg" alt="Tucán rojo" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN EN TONO VERDE</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_green.jpg" alt="Tucán verde" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN EN TONO AZUL</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_blue.jpg" alt="Tucán azul" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN EN ESCALA DE GRISES</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_grey.jpg" alt="Tucán gris" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN EN BLANCO Y NEGRO</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_black_and_white.jpg" alt="Tucán blanco y negro" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN CON BRILLO REDUCIDO</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_dimed.jpg" alt="Tucán brillo reducido" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN CON COLORES INVERTIDOS</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_inverse.jpg" alt="Tucán invertido" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN REDUCIDA</td>
+    </tr>
+    <tr>
+      <td><img src="output/tucan_scale_down.jpg" alt="Tucán reducido" onerror="this.style.display='none';" /></td>
+    </tr>
+    <tr>
+      <td class="titulo">IMAGEN FUSIONADA (GATO + PERRO)</td>
+    </tr>
+    <tr>
+      <td><img src="output/merged.jpg" alt="Imagen fusionada" onerror="this.style.display='none';" /></td>
+    </tr>
+  </table>
+  <div class="pie-pagina">
+     NOTA: Si alguna imagen no se muestra, asegúrate de haber ejecutado <b>actividad.js</b> con Node.js.<br>
+     Ejemplo: <code>node actividad.js</code>
+  </div>
+</body>
+</html>
