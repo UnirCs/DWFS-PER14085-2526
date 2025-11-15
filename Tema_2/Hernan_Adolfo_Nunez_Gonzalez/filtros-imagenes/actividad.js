@@ -1,5 +1,5 @@
 //=====================================
-//🖼️ UNIR - FILTROS DE IMÁGENES
+//🖼️ UNIR - FILTROS DE IMÁGENES.
 //Archivo: actividad.js
 //=====================================
 
@@ -10,7 +10,27 @@ const path = 'input/tucan.jpg';
 const handler = new ImageHandler(path);
 
 /**
-* Ejemplo de construcción de una imagen.
+ * 🔧 Función genérica para aplicar transformaciones de color.
+ * Centraliza la lógica de recorrido de pixeles y elimina duplicación.
+ */
+function applyFilter(outputPath, transformFn) {
+  const pixels = handler.getPixels();
+  const [width, height] = handler.getShape();
+  const newPixels = [];
+
+  for (let i = 0; i < width; i++) {
+    const newRow = [];
+    for (let j = 0; j < height; j++) {
+      newRow.push(transformFn(pixels[i][j]));
+    }
+    newPixels.push(newRow);
+  }
+
+  handler.savePixels(newPixels, outputPath, width, height);
+}
+
+/**
+* 🧩 Ejemplo de construcción de una imagen.
 */
 function ejemplo() {
   const outputPath = 'output/ejemplo.jpg';
@@ -31,115 +51,71 @@ function ejemplo() {
 }
 
 /**
- * Escala de rojos
+ * 🔴 Escala de rojos
  */
 function redConverter() {
-  const outputPath = 'output/tucan_red.jpg';
-  const pixels = handler.getPixels();
-  const [width, height] = handler.getShape(); // Orden coherente con ImageHandler
-  const newPixels = [];
-
-  for (let i = 0; i < width; i++) {
-    const newRow = [];
-    for (let j = 0; j < height; j++) {
-      const [r] = pixels[i][j];
-      newRow.push([r, 0, 0]);
-    }
-    newPixels.push(newRow);
-  }
-
-  handler.savePixels(newPixels, outputPath, width, height);
+  applyFilter('output/tucan_red.jpg', ([r]) => [r, 0, 0]);
 }
 
 /**
- * Escala de verdes
+ * 🟢 Escala de verdes
  */
 function greenConverter() {
-  const outputPath = 'output/tucan_green.jpg';
-  const pixels = handler.getPixels();
-  const [width, height] = handler.getShape();
-  const newPixels = [];
-
-  for (let i = 0; i < width; i++) {
-    const newRow = [];
-    for (let j = 0; j < height; j++) {
-      const [, g] = pixels[i][j];
-      newRow.push([0, g, 0]);
-    }
-    newPixels.push(newRow);
-  }
-
-  handler.savePixels(newPixels, outputPath, width, height);
+  applyFilter('output/tucan_green.jpg', ([, g]) => [0, g, 0]);
 }
 
 /**
- * Escala de azules
+ * 🔵 Escala de azules
  */
 function blueConverter() {
-  const outputPath = 'output/tucan_blue.jpg';
-  const pixels = handler.getPixels();
-  const [width, height] = handler.getShape();
-  const newPixels = [];
-
-  for (let i = 0; i < width; i++) {
-    const newRow = [];
-    for (let j = 0; j < height; j++) {
-      const [, , b] = pixels[i][j];
-      newRow.push([0, 0, b]);
-    }
-    newPixels.push(newRow);
-  }
-
-  handler.savePixels(newPixels, outputPath, width, height);
+  applyFilter('output/tucan_blue.jpg', ([,, b]) => [0, 0, b]);
 }
 
 /**
- * Escala de grises
+ * ⚫ Escala de grises
  */
 function greyConverter() {
-  const outputPath = 'output/tucan_grey.jpg';
-  const pixels = handler.getPixels();
-  const [width, height] = handler.getShape();
-  const newPixels = [];
-
-  for (let i = 0; i < width; i++) {
-    const newRow = [];
-    for (let j = 0; j < height; j++) {
-      const [r, g, b] = pixels[i][j];
-      const avg = Math.round((r + g + b) / 3);
-      newRow.push([avg, avg, avg]);
-    }
-    newPixels.push(newRow);
-  }
-
-  handler.savePixels(newPixels, outputPath, width, height);
+  applyFilter('output/tucan_grey.jpg', ([r, g, b]) => {
+    const avg = Math.round((r + g + b) / 3);
+    return [avg, avg, avg];
+  });
 }
 
 /**
- * Blanco y negro
+ * ⚪ Blanco y negro
  */
 function blackAndWhiteConverter() {
-  const outputPath = 'output/tucan_black_and_white.jpg';
-  const pixels = handler.getPixels();
-  const [width, height] = handler.getShape();
-  const newPixels = [];
-
-  for (let i = 0; i < width; i++) {
-    const newRow = [];
-    for (let j = 0; j < height; j++) {
-      const [r, g, b] = pixels[i][j];
-      const avg = (r + g + b) / 3;
-      const value = avg < 128 ? 0 : 255;
-      newRow.push([value, value, value]);
-    }
-    newPixels.push(newRow);
-  }
-
-  handler.savePixels(newPixels, outputPath, width, height);
+  applyFilter('output/tucan_black_and_white.jpg', ([r, g, b]) => {
+    const avg = (r + g + b) / 3;
+    const value = avg < 128 ? 0 : 255;
+    return [value, value, value];
+  });
 }
 
 /**
- * Reducción a la mitad
+ * 💡 Reducir brillo
+ */
+function dimBrightness(dimFactor) {
+  applyFilter('output/tucan_dimed.jpg', ([r, g, b]) => [
+    Math.round(r / dimFactor),
+    Math.round(g / dimFactor),
+    Math.round(b / dimFactor),
+  ]);
+}
+
+/**
+ * 🌈 Invertir colores
+ */
+function invertColors() {
+  applyFilter('output/tucan_inverse.jpg', ([r, g, b]) => [
+    255 - r,
+    255 - g,
+    255 - b,
+  ]);
+}
+
+/**
+ * 🔽 Reducción a la mitad
  */
 function scaleDown() {
   const outputPath = 'output/tucan_scale_down.jpg';
@@ -159,53 +135,7 @@ function scaleDown() {
 }
 
 /**
- * Reducir brillo
- */
-function dimBrightness(dimFactor) {
-  const outputPath = 'output/tucan_dimed.jpg';
-  const pixels = handler.getPixels();
-  const [width, height] = handler.getShape();
-  const newPixels = [];
-
-  for (let i = 0; i < width; i++) {
-    const newRow = [];
-    for (let j = 0; j < height; j++) {
-      const [r, g, b] = pixels[i][j];
-      newRow.push([
-        Math.round(r / dimFactor),
-        Math.round(g / dimFactor),
-        Math.round(b / dimFactor),
-      ]);
-    }
-    newPixels.push(newRow);
-  }
-
-  handler.savePixels(newPixels, outputPath, width, height);
-}
-
-/**
- * Invertir colores
- */
-function invertColors() {
-  const outputPath = 'output/tucan_inverse.jpg';
-  const pixels = handler.getPixels();
-  const [width, height] = handler.getShape();
-  const newPixels = [];
-
-  for (let i = 0; i < width; i++) {
-    const newRow = [];
-    for (let j = 0; j < height; j++) {
-      const [r, g, b] = pixels[i][j];
-      newRow.push([255 - r, 255 - g, 255 - b]);
-    }
-    newPixels.push(newRow);
-  }
-
-  handler.savePixels(newPixels, outputPath, width, height);
-}
-
-/**
- * Fusionar imágenes
+ * 🐱🐶 Fusionar imágenes
  */
 function merge(alphaFirst, alphaSecond) {
   const catHandler = new ImageHandler('input/cat.jpg');
@@ -235,9 +165,9 @@ function merge(alphaFirst, alphaSecond) {
 }
 
 /**
- * Programa de prueba
- * NO DEBES MODIFICAR ESTAS LÍNEAS DE CÓDIGO
- */
+* 🧪 Programa de prueba
+* NO DEBES MODIFICAR ESTAS LÍNEAS DE CÓDIGO.
+*/
 const optionN = 9;
 
 for (let i = 1; i <= optionN; i++) {
