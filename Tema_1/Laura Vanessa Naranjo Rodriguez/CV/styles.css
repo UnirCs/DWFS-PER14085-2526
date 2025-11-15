@@ -1,0 +1,41 @@
+body {
+	background-color: mistyrose;
+}
+
+h2 {
+	text-align: center;
+	font-family: Broadway;
+}
+
+.imagen{
+	background-color:rgba(255,99,71,0.3);
+	text-align: center;
+}
+
+.contacto{
+	border-style: ridge;
+	margin: 10px;
+	border-color:darksalmon;
+	font-family: candara;
+}
+
+.resumen{
+	border-style: ridge;
+	margin: 10px;
+	border-color:darksalmon;
+	font-family: candara;
+}
+
+.laboral-educacion{
+	border-style: ridge;
+	margin: 10px;
+	border-color:darksalmon;
+	font-family: candara;
+}
+
+.habilidades{
+	border-style: ridge;
+	margin: 10px;
+	border-color:darksalmon;
+	font-family: candara;
+}
