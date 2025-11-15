@@ -1,77 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>FILTROS DE IMAGENES.</title>
-
-<link href="css/estilos.css" rel="stylesheet" type="text/css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtros de Imágenes</title>
+  <link href="css/estilos.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
   <h1>TONALIDADES DE IMÁGENES</h1>
-  <table border="1" cellpadding="0" cellspacing="0">
-    <tr>
-      <td class="titulo">IMAGEN ORIGINAL</td>
-    </tr>
-    <tr>
-      <td><img src="input/tucan.jpg" alt="Tucán original" /></td>
-    </tr>
 
-    <tr>
-      <td class="titulo">IMAGEN EN TONO ROJO</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_red.jpg" alt="Tucán rojo" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN EN TONO VERDE</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_green.jpg" alt="Tucán verde" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN EN TONO AZUL</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_blue.jpg" alt="Tucán azul" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN EN ESCALA DE GRISES</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_grey.jpg" alt="Tucán gris" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN EN BLANCO Y NEGRO</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_black_and_white.jpg" alt="Tucán blanco y negro" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN CON BRILLO REDUCIDO</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_dimed.jpg" alt="Tucán brillo reducido" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN CON COLORES INVERTIDOS</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_inverse.jpg" alt="Tucán invertido" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN REDUCIDA</td>
-    </tr>
-    <tr>
-      <td><img src="output/tucan_scale_down.jpg" alt="Tucán reducido" onerror="this.style.display='none';" /></td>
-    </tr>
-    <tr>
-      <td class="titulo">IMAGEN FUSIONADA (GATO + PERRO)</td>
-    </tr>
-    <tr>
-      <td><img src="output/merged.jpg" alt="Imagen fusionada" onerror="this.style.display='none';" /></td>
-    </tr>
+  <table border="1" role="presentation">
+    <thead>
+      <tr>
+        <th scope="col">Descripción</th>
+        <th scope="col">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="titulo">Imagen original</td>
+        <td><img src="input/tucan.jpg" alt="Tucán original" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Imagen en tono rojo</td>
+        <td><img src="output/tucan_red.jpg" alt="Tucán rojo" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Imagen en tono verde</td>
+        <td><img src="output/tucan_green.jpg" alt="Tucán verde" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Imagen en tono azul</td>
+        <td><img src="output/tucan_blue.jpg" alt="Tucán azul" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Escala de grises</td>
+        <td><img src="output/tucan_grey.jpg" alt="Tucán en escala de grises" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Blanco y negro</td>
+        <td><img src="output/tucan_black_and_white.jpg" alt="Tucán blanco y negro" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Brillo reducido</td>
+        <td><img src="output/tucan_dimed.jpg" alt="Tucán con brillo reducido" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Colores invertidos</td>
+        <td><img src="output/tucan_inverse.jpg" alt="Tucán con colores invertidos" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Imagen reducida</td>
+        <td><img src="output/tucan_scale_down.jpg" alt="Tucán reducido" loading="lazy"></td>
+      </tr>
+      <tr>
+        <td class="titulo">Imagen fusionada (gato + perro)</td>
+        <td><img src="output/merged.jpg" alt="Fusión de gato y perro" loading="lazy"></td>
+      </tr>
+    </tbody>
   </table>
   <div class="pie-pagina">
      NOTA: Si alguna imagen no se muestra, asegúrate de haber ejecutado <b>actividad.js</b> con Node.js.<br>

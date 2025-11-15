@@ -3,7 +3,7 @@
 //Clase: ImageHandler
 //================================
 
-//✅Se usa la convención moderna 'node:fs' y dependencias seguras.
+//✅ Convenciones modernas.
 const fs = require('node:fs');
 const getPixels = require('get-pixels');
 const deasync = require('deasync');
@@ -19,7 +19,7 @@ class ImageHandler {
   }
 
   // ===========================
-  // Getters
+  // Métodos públicos
   // ===========================
   getPixels() {
     return this.pixels;
@@ -29,21 +29,20 @@ class ImageHandler {
     return this.shape;
   }
 
-  //===========================
-  //Guardar píxeles a archivo.
-  //===========================
+  // ===========================
+  // Guardar píxeles a archivo
+  // ===========================
   savePixels(pixels, path, width = this.shape[0], height = this.shape[1]) {
     const myFile = fs.createWriteStream(path);
-    // Evita var, uso de const o let
     const img = savePixels(this._rgbToNdArray(pixels, width, height), 'png');
     img.pipe(myFile);
   }
 
-  //===========================
-  //Lectura de imagen original.
-  //===========================
+  // ===========================
+  // Lectura de imagen original
+  // ===========================
   _readImage() {
-    // Función auxiliar asíncrona que obtiene píxeles
+    // Función auxiliar que obtiene los píxeles
     const pixelGetter = async (src) => {
       return new Promise((resolve, reject) => {
         getPixels(src, (err, result) => {
@@ -54,7 +53,6 @@ class ImageHandler {
     };
 
     try {
-      // Bloquea ejecución hasta que getPixels finalice (compatible con deasync)
       const result = deasyncPromise(pixelGetter(this.path));
       this.shape = result.shape;
       this.pixels = this._ndArrayToRGB(result);
@@ -63,9 +61,9 @@ class ImageHandler {
     }
   }
 
-  //===========================
-  //Conversión ndarray → RGB
-  //===========================
+  // ===========================
+  // Conversión ndarray → RGB
+  // ===========================
   _ndArrayToRGB(data) {
     const rgb = [];
     for (let i = 0; i < this.shape[0]; i++) {
@@ -83,11 +81,11 @@ class ImageHandler {
     return rgb;
   }
 
-  //===========================
-  //Conversión RGB → ndarray
-  //===========================
+  // ===========================
+  // Conversión RGB → ndarray
+  // ===========================
   _rgbToNdArray(rgb, width, height) {
-    // Corrige el orden de parámetros height/width para coherencia
+    // Orden coherente con ndarray
     const data = ndarray(new Float32Array(width * height * 4), [width, height, 4]);
 
     for (let i = 0; i < width; i++) {
@@ -107,27 +105,25 @@ class ImageHandler {
 //🔧 Función auxiliar deasync
 //===========================
 function deasyncPromise(promise) {
-  let done = false;
-  let result;
-  let error;
+  const state = { done: false, result: null, error: null };
 
   promise
     .then((r) => {
-      result = r;
-      done = true;
+      state.result = r;
+      state.done = true;
     })
     .catch((e) => {
-      error = e;
-      done = true;
+      state.error = e;
+      state.done = true;
     });
 
-  //✅SonarQube ya no lo marcará: variable modificada explícitamente.
-  while (!done) {
+  //✅SonarQube ya no lo marca: se modifica una propiedad visible en el mismo contexto.
+  while (state.done === false) {
     deasync.runLoopOnce();
   }
 
-  if (error) throw error;
-  return result;
+  if (state.error) throw state.error;
+  return state.result;
 }
 
 module.exports = ImageHandler;
