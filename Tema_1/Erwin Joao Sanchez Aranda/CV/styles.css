@@ -1,0 +1,98 @@
+/* ====== GLOBAL ========*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    line-height: 1.7;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e5e5e5;	
+	color: #1c1c1c;
+}
+
+/*=========== HEADER ===========*/
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile__image {
+    width: 225px;
+    height: 300px;
+    object-fit: fill;
+    border-radius: 10px;
+	margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.profile__name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;	
+    color: #1c1c1c;
+    margin-bottom: 5px;
+}
+
+.profile__job {
+    font-size: 1.3rem;
+    color: #3A5D8D;
+}
+
+.profile__mail,
+.profile__phone {
+    font-size: 1.2rem;
+}
+/* ============= BODY ===================*/
+
+section {
+    margin-bottom: 35px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3A5D8D;
+    border-left: 8px solid #3E6EEF;
+    padding-left: 12px;
+    margin-bottom: 12px;
+}
+
+.summary__description,
+.education__university,
+.language__description,
+.experience__description p {
+    font-size: 1rem;
+    margin-bottom: 18px;
+	text-align: justify;
+}
+
+.skills__list {
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+.skills__list li {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
