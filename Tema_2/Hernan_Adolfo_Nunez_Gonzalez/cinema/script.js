@@ -21,8 +21,6 @@ indicesDiv.id = "indices-reservados";
 indicesDiv.style.marginTop = "10px";
 indicesDiv.style.textAlign = "center";
 indicesDiv.style.fontSize = "14px";
-
-// 🔧 Ajuste: se agrega dentro de .formulario para mantener visibilidad
 document.querySelector(".formulario").appendChild(indicesDiv);
 
 let butacas = [];
@@ -33,8 +31,6 @@ let seleccionActual = new Set();
 //==============================
 function renderSala() {
   sala.innerHTML = "";
-
-  //Reemplazo de forEach por for...of (mejor legibilidad y rendimiento)
   for (const [i, fila] of butacas.entries()) {
     const filaDiv = document.createElement("div");
     filaDiv.classList.add("fila");
@@ -48,7 +44,6 @@ function renderSala() {
       const asiento = document.createElement("div");
       asiento.classList.add("asiento");
 
-      //Evita negaciones confusas (mejor legibilidad)
       if (butaca.estado === true) asiento.classList.add("ocupado");
       if (seleccionActual.has(butaca.id)) asiento.classList.add("seleccionado");
 
@@ -64,7 +59,6 @@ function renderSala() {
 //==============================
 //Cargar las butacas del servidor:
 //==============================
-// Preferencia por top-level await (si el entorno lo soporta)
 async function cargarButacas() {
   const respuesta = await fetch("/butacas");
   butacas = await respuesta.json();
@@ -75,7 +69,6 @@ async function cargarButacas() {
 //Solicitar sugerencia de asientos:
 //==============================
 btnSugerir.addEventListener("click", async () => {
-  // ✅ Recomendación: usar Number.parseInt en lugar de parseInt
   const cantidad = Number.parseInt(inputCantidad.value, 10);
   if (!Number.isInteger(cantidad) || cantidad < 1) {
     mostrarMensaje("⚠️ Ingresa una cantidad válida.", "warning");
@@ -140,7 +133,6 @@ function mostrarMensaje(texto, tipo) {
 //==============================
 //Obtener número de fila de un asiento:
 //==============================
-// 🔧 Refactor: siempre devuelve un tipo consistente (número o null)
 function obtenerFilaDeAsiento(idAsiento) {
   for (const [i, fila] of butacas.entries()) {
     for (const butaca of fila) {
@@ -163,8 +155,6 @@ function obtenerIndicesDeAsiento(idAsiento) {
 }
 
 //==============================
-//Inicialización:
+//Inicialización con top-level await (ES2022):
 //==============================
-(async () => {
-  await cargarButacas();
-})();
+await cargarButacas();
