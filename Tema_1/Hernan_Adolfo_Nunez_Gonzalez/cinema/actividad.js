@@ -4,17 +4,21 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 
+//Seguridad: evita exponer la versión del framework Express.
+app.disable("x-powered-by");
+
+// Middleware para interpretar JSON y servir archivos estáticos
 app.use(express.json());
 app.use(express.static(__dirname)); // Sirve index.html, script.js, style.css, etc.
 
 //=========================
 //CONFIGURACIÓN DE BUTACAS:
 //=========================
-const N = 10; //Número de filas.
-const M = 10; //Número de columnas.
+const N = 10;//Número de filas.
+const M = 10;//Número de columnas.
 let butacas = [];
 
-//Inicializa la matriz de butacas:
+// Inicializa la matriz de butacas
 function setup() {
   let idContador = 1;
   const matriz = [];
@@ -33,9 +37,9 @@ function setup() {
 
 butacas = setup();
 
-//==============================
+// ==============================
 // FUNCIONES DE LÓGICA DEL CINE:
-//==============================
+// ==============================
 
 // Función auxiliar: busca asientos contiguos disponibles en una fila
 function buscarAsientosDisponibles(fila, numAsientos) {
@@ -47,6 +51,7 @@ function buscarAsientosDisponibles(fila, numAsientos) {
       consecutivos++;
       if (inicio === -1) inicio = j;
       if (consecutivos === numAsientos) {
+        // Devuelve los IDs de los asientos contiguos disponibles
         return fila.slice(inicio, inicio + numAsientos).map(b => b.id);
       }
     } else {
@@ -58,7 +63,7 @@ function buscarAsientosDisponibles(fila, numAsientos) {
   return null; // No hay suficientes asientos contiguos en esta fila
 }
 
-// Función suggest: busca asientos contiguos disponibles
+//Función principal: sugiere asientos contiguos disponibles
 function suggest(numAsientos) {
   if (numAsientos > M) {
     console.log("❌ No caben tantos asientos en una sola fila.");
@@ -78,15 +83,15 @@ function suggest(numAsientos) {
 }
 
 //==================================
-// RUTAS DEL SERVIDOR:
+//RUTAS DEL SERVIDOR (ENDPOINTS):
 //==================================
 
-// Devuelve todas las butacas (para renderizar la sala)
+//Devuelve todas las butacas (para renderizar la sala).
 app.get("/butacas", (req, res) => {
   res.json(butacas);
 });
 
-// Sugerir butacas contiguas
+//Sugerir butacas contiguas.
 app.post("/suggest", (req, res) => {
   const { cantidad } = req.body;
   const sugeridos = suggest(cantidad);
@@ -113,9 +118,9 @@ app.post("/reservar", (req, res) => {
   res.json({ mensaje: "Reserva confirmada", butacas });
 });
 
-// ==============================
-// INICIAR SERVIDOR:
-// ==============================
+//==============================
+//INICIAR SERVIDOR:
+//==============================
 app.listen(PORT, () => {
   console.log(`✅ Servidor ejecutándose en: http://localhost:${PORT}`);
 });
