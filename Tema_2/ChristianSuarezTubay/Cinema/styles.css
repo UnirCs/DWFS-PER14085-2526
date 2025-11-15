@@ -1,0 +1,65 @@
+body {
+    background-color: #1c1c1c;
+}
+
+/* Pantalla */
+.pantalla {
+    width: 100%;
+    max-width: 1000px;
+    height: 250px;
+    background-color: #dcdcdc;
+    color: #000;
+    font-weight: bold;
+    padding: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Butacas */
+.butacas-container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.butaca {
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 4px;
+}
+
+.butaca.libre {
+    background-color: #198754; /* Verde */
+}
+
+.butaca.ocupada {
+    background-color: #dc3545; /* Rojo */
+}
+
+.letra-fila {
+    width: 100px;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+/* Leyenda */
+.butaca.small {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Formulario */
+form {
+    background-color: #f8f9fa;
+    max-width: 400px;
+}
+
+/* Footer */
+footer {
+    background-color: #ffc107;
+    color: #000;
+}
