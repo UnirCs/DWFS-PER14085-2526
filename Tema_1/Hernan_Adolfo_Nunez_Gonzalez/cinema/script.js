@@ -1,8 +1,6 @@
 //=========================
-//🎬UNIR-CINEMA - script.js:
+//🎬 UNIR-CINEMA - script.js:
 //=========================
-
-//====== script.js ======
 
 //Elementos del DOM:
 const sala = document.getElementById("sala");
@@ -24,20 +22,20 @@ indicesDiv.style.marginTop = "10px";
 indicesDiv.style.textAlign = "center";
 indicesDiv.style.fontSize = "14px";
 
-//🔧AJUSTE IMPORTANTE: antes lo agregabas a .container (que está cerca del pie de página).
-//Para evitar que quede debajo del pie de página, lo movemos a .formulario.
+// 🔧 Ajuste: se agrega dentro de .formulario para mantener visibilidad
 document.querySelector(".formulario").appendChild(indicesDiv);
 
 let butacas = [];
 let seleccionActual = new Set();
 
 //==============================
-//Renderizar la sala de cine:
+// Renderizar la sala de cine:
 //==============================
 function renderSala() {
   sala.innerHTML = "";
-  
-  butacas.forEach((fila, i) => {
+
+  //Reemplazo de forEach por for...of (mejor legibilidad y rendimiento)
+  for (const [i, fila] of butacas.entries()) {
     const filaDiv = document.createElement("div");
     filaDiv.classList.add("fila");
 
@@ -46,28 +44,30 @@ function renderSala() {
     etiquetaFila.textContent = `Fila ${i + 1}`;
     filaDiv.appendChild(etiquetaFila);
 
-    fila.forEach((butaca) => {
+    for (const butaca of fila) {
       const asiento = document.createElement("div");
       asiento.classList.add("asiento");
 
-      if (butaca.estado) asiento.classList.add("ocupado");
+      //Evita negaciones confusas (mejor legibilidad)
+      if (butaca.estado === true) asiento.classList.add("ocupado");
       if (seleccionActual.has(butaca.id)) asiento.classList.add("seleccionado");
 
       asiento.textContent = butaca.id;
       asiento.dataset.id = butaca.id;
       filaDiv.appendChild(asiento);
-    });
+    }
 
     sala.appendChild(filaDiv);
-  });
+  }
 }
 
 //==============================
 //Cargar las butacas del servidor:
 //==============================
+// Preferencia por top-level await (si el entorno lo soporta)
 async function cargarButacas() {
-  const res = await fetch("/butacas");
-  butacas = await res.json();
+  const respuesta = await fetch("/butacas");
+  butacas = await respuesta.json();
   renderSala();
 }
 
@@ -75,19 +75,20 @@ async function cargarButacas() {
 //Solicitar sugerencia de asientos:
 //==============================
 btnSugerir.addEventListener("click", async () => {
-  const cantidad = parseInt(inputCantidad.value);
-  if (!cantidad || cantidad < 1) {
+  // ✅ Recomendación: usar Number.parseInt en lugar de parseInt
+  const cantidad = Number.parseInt(inputCantidad.value, 10);
+  if (!Number.isInteger(cantidad) || cantidad < 1) {
     mostrarMensaje("⚠️ Ingresa una cantidad válida.", "warning");
     return;
   }
 
-  const res = await fetch("/suggest", {
+  const respuesta = await fetch("/suggest", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ cantidad }),
   });
 
-  const sugeridos = await res.json();
+  const sugeridos = await respuesta.json();
   seleccionActual = new Set(sugeridos);
 
   if (sugeridos.length === 0) {
@@ -108,7 +109,7 @@ btnSugerir.addEventListener("click", async () => {
       seleccionActual.clear();
       mostrarMensaje("✅ ¡Reserva confirmada!", "success");
 
-      const indices = sugeridos.map(id => obtenerIndicesDeAsiento(id));
+      const indices = sugeridos.map((id) => obtenerIndicesDeAsiento(id));
       indicesDiv.textContent = `🪑 Índices de los asientos reservados: ${indices.join(" | ")}`;
     }
   }
@@ -121,35 +122,41 @@ btnSugerir.addEventListener("click", async () => {
 //==============================
 function mostrarMensaje(texto, tipo) {
   mensajeDiv.textContent = texto;
-  if (tipo === "error") mensajeDiv.style.color = "#d32f2f";
-  else if (tipo === "warning") mensajeDiv.style.color = "#f57c00";
-  else if (tipo === "success") mensajeDiv.style.color = "#388e3c";
-  else mensajeDiv.style.color = "white";
+  switch (tipo) {
+    case "error":
+      mensajeDiv.style.color = "#d32f2f";
+      break;
+    case "warning":
+      mensajeDiv.style.color = "#f57c00";
+      break;
+    case "success":
+      mensajeDiv.style.color = "#388e3c";
+      break;
+    default:
+      mensajeDiv.style.color = "white";
+  }
 }
 
 //==============================
 //Obtener número de fila de un asiento:
 //==============================
+// 🔧 Refactor: siempre devuelve un tipo consistente (número o null)
 function obtenerFilaDeAsiento(idAsiento) {
-  for (let i = 0; i < butacas.length; i++) {
-    for (let j = 0; j < butacas[i].length; j++) {
-      if (butacas[i][j].id === idAsiento) {
-        return i + 1;
-      }
+  for (const [i, fila] of butacas.entries()) {
+    for (const butaca of fila) {
+      if (butaca.id === idAsiento) return i + 1;
     }
   }
-  return "?";
+  return null;
 }
 
 //==============================
 //Obtener índices [fila][columna] de un asiento:
 //==============================
 function obtenerIndicesDeAsiento(idAsiento) {
-  for (let i = 0; i < butacas.length; i++) {
-    for (let j = 0; j < butacas[i].length; j++) {
-      if (butacas[i][j].id === idAsiento) {
-        return `[${i}][${j}]`;
-      }
+  for (const [i, fila] of butacas.entries()) {
+    for (const [j, butaca] of fila.entries()) {
+      if (butaca.id === idAsiento) return `[${i}][${j}]`;
     }
   }
   return "";
@@ -158,4 +165,6 @@ function obtenerIndicesDeAsiento(idAsiento) {
 //==============================
 //Inicialización:
 //==============================
-cargarButacas();
+(async () => {
+  await cargarButacas();
+})();
