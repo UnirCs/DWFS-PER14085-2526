@@ -70,7 +70,7 @@ header h1 {
   display: flex;/*Elemento flexible.*/
   align-items: center;/*Alineación del elemento.*/
   justify-content: center;/*Alineación del elemento.*/
-  cursor: pointer;/*Activación de cursos cuando se sobreponga al asiento.*/
+  cursor: pointer;/*Activación de cursor cuando se sobreponga al asiento.*/
   color: #FFD600;/*Color del texto.*/
   transition: all 0.3s;/*Efecto de transición del elemento con velocidad.*/
 }
@@ -84,14 +84,14 @@ header h1 {
 /*EFECTO DE ASIENTO OCUPADO:*/
 .asiento.ocupado {
   background-color: #444444;/*Color de fondo.*/
-  color: #B0B0B0;/*Color del texto (mayor contraste que #888888).*/
+  color: #D9D9D9;/*Color del texto (antes #888888, ahora cumple contraste).*/
   cursor: not-allowed;/*Cursor deshabilitado.*/
 }
 
 /*EFECTO DE ASIENTO SELECCIONADO:*/
 .asiento.seleccionado {
   background-color: #FFD600;/*Color de fondo.*/
-  color: #111111;/*Color del texto (antes white, ahora más oscuro para contraste).*/
+  color: #1A1A1A;/*Color del texto (antes white, mejor contraste).*/
   border: 2px solid #FFD600;/*Grosor y color del borde.*/
 }
 
@@ -103,12 +103,12 @@ header h1 {
   display: inline-block;/*Elemento en linea.*/
   padding: 8px 12px;/*Borde de los indices (arriba, abajo).*/
   margin-top: 15px;/*Margen superior.*/
-  color: #333333;/*Color del texto.*/
+  color: #222222;/*Color del texto (ligeramente más oscuro para contraste).*/
 }
 
 /*PIE DE PAGINA:*/
 .pie-pagina {/*Clase creada para el pie de página.*/
   margin-top: 40px;/*Margen superior.*/
   font-size: 0.9em;/*Tamaño del texto.*/
-  color: #BBBBBB;/*Color del texto.*/
+  color: #CCCCCC;/*Color del texto (mejor contraste con fondo oscuro).*/
 }
