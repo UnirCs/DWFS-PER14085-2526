@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/* ================================
+   🎬 UNIR-FILTROS IMAGENES - ESTILO GENERAL:
+================================ */
+
+/*CUERPO DEL SITIO WEB:*/
+body {
+    margin: 0 0 0 0;/*Margen del sitio web (arriba, derecho, izquierdo, abajo).*/
+    font-family: Arial, sans-serif;/*Fuente del texto.*/
+    text-align: center;/*Alineación del texto.*/
+    background-color:#000000;/*Color de fondo de la página.*/
+}
+
+/*TITULO PRINCIPAL:*/
+.titulo {
+    font-weight: bold;/*Grosor del texto.*/
+    background-color: #F2F2F2;/*Color de fondo del título.*/
+}
+
+/*PRIMER TITULO:*/
+h1 {
+    background-color: #333333;/*Color de fondo del título 1.*/
+    color: white;/*Color del texto.*/
+    padding: 15px 0;/*Distancia arriba y derecho.*/
+    margin-bottom: 20px;/*Margen inferior.*/
+}
+
+/*TABLA:*/
+table {
+    width: 90%;/*Anchura de la tabla.*/
+    margin: 0 auto;/*Margen (arriba, derecho).*/
+    border-collapse: collapse;/*Borde uniforme.*/
+}
+
+/*CELDAS:*/
+td {
+    border: 1px solid #DDDDDD;/*Grosor del bordes y color solido.*/
+    padding: 10px;/*Distancia del borde superior.*/
+    vertical-align: top;/*Alineación vertical.*/
+}
+
+/*IMAGENES:*/
+img {
+    max-width: 90%;/*Anchura máxima de la imagen.*/
+    height: auto;/*Altura automática de la imagen.*/
+    border-radius: 5px;/*Borde redondeada de la imagen.*/
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);/*Sombredos de la imagen.*/
+}
+
+/*PIE DE PAGINA:*/
+.pie-pagina {/*Clase creada para el pie de página.*/
+    margin-top: 30px;/*Margen superior del texto.*/
+    font-size: 15px;/*Tamaño del texto.*/
+    color: #FFFFFF;/*Color del texto.*/
+}

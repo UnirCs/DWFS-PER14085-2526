@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/*CUERPO DEL SITIO WEB:*/
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/*Fuente del texto.*/
+  margin: 0;/*Margen del sitio web.*/
+  background-color: #F4F6F8;/*Color del fondo.*/
+  color: #333333;/*Color del texto.*/
+}
+
+/* ----- CABECERA: ----- */
+.header {
+  background-color: #1E73BE;/*Color del fondo.*/
+  color: white;/*Color del texto.*/
+  text-align: center;/*Alineación del texto.*/
+  padding: 30px 20px;/*Borde del encabezado (arriba, derecho).*/
+}
+
+/* ----- FOTOGRAFIA: ----- */
+.foto img {
+  width: 200px;/*Anchura.*/
+  height: 230px;/*Altura.*/
+  object-fit: cover;/*Mantiene las proporciones.*/
+  border: 4px solid white;/*Grosor y color del borde.*/
+  border-radius: 0;/*Nivel de borde redondeado.*/
+}
+
+/* Información del encabezado */
+.info-header h1 {
+  margin: 15px 0 5px;/*Margen (arriba, derecho, izquierdo).*/
+  font-size: 2em;/*Tamaño del texto.*/
+}
+
+.info-header h2 {
+  margin: 0;/*Margen (arriba).*/
+  font-weight: 400;/*Grosor del texto.*/
+}
+
+/* ----- CONTENIDO PRINCIPAL ----- */
+.contenido {
+  max-width: 800px;/*Máximo ancho.*/
+  margin: 40px auto;/*Margen (arriba, derecho automático).*/
+  background-color: white;/*Color del fondo.*/
+  padding: 30px;/*Borde de contenido principal (arriba).*/
+  border-radius: 12px;/*Nivel de borde redondeado.*/
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);/*Sombra y color (arriba, derecho, izquierdo, abajo).*/
+}
+
+.bloque {
+  margin-bottom: 30px;/*Margen inferior.*/
+}
+
+h3 {
+  border-bottom: 2px solid #1E73BE;/*Grosor y color del borde inferior.*/
+  padding-bottom: 5px;/*Borde de subtitulo (abajo).*/
+  margin-bottom: 10px;/*Margen inferior.*/
+  color: #1E73BE;/*Color del texto.*/
+}
+
+/* ----- TRABAJOS: ----- */
+.trabajo {
+  margin-bottom: 15px;/*Margen inferior.*/
+}
+
+.trabajo h4 {
+  color: #1E73BE;/*Color del texto.*/
+  margin: 5px 0;/*Margen (arriba, derecho).*/
+}
+
+.trabajo span {
+  font-style: italic;/*Fuente del texto.*/
+  color: #555555;/*Color del texto.*/
+}
+
+/* ----- HABILIDADES (ajuste con viñetas): ----- */
+.habilidades ul {
+  list-style-type: disc;/*Activación de viñetas clásicas (•).*/
+  padding-left: 40px;/*Borde izquierdo de las viñetas.*/
+  margin: 0;/*Margen (arriba).*/
+}
+
+.habilidades li {
+  background: none;/*Sin color del fondo.*/
+  padding: 5px 0;/*Borde de habilidades (arriba, abajo).*/
+  margin: 4px 0;/*Borde de habilidades (arriba, abajo).*/
+  border-radius: 0;/*Nivel de borde redondeado.*/
+  color: #333333;/*Color del texto.*/
+  line-height: 1.6;/*Altura de la linea.*/
+  font-size: 1em;/*Tamaño del texto.*/
+}
+
+/* ----- PIE DE PÁGINA ----- */
+.pie-pagina {/*Clase creada para el pie de página.*/
+  background-color: #1E73BE;/*Color del fondo.*/
+  color: white;/*Color del texto.*/
+  text-align: center;/*Alineación del texto.*/
+  padding: 15px;/*Borde del pie de página (arriba).*/
+  font-size: 0.9em;/*Tamaño del texto.*/
+}
