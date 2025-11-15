@@ -1,27 +1,28 @@
-// ====== actividad.js ======
+//====== actividad.js ======
 const express = require("express");
-const path = require("path");
+const path = require("node:path"); // ✅ Moderno: node:path recomendado
 const app = express();
 const PORT = 3000;
 
-//Seguridad: evita exponer la versión del framework Express.
+//Seguridad: oculta la versión del framework Express:
 app.disable("x-powered-by");
 
-// Middleware para interpretar JSON y servir archivos estáticos
+// Middleware: parsea JSON y sirve archivos estáticos
 app.use(express.json());
 app.use(express.static(__dirname)); // Sirve index.html, script.js, style.css, etc.
 
 //=========================
 //CONFIGURACIÓN DE BUTACAS:
 //=========================
-const N = 10;//Número de filas.
-const M = 10;//Número de columnas.
+const N = 10; // Número de filas
+const M = 10; // Número de columnas
 let butacas = [];
 
-// Inicializa la matriz de butacas
+//Inicializa la matriz de butacas:
 function setup() {
   let idContador = 1;
   const matriz = [];
+
   for (let i = 0; i < N; i++) {
     const fila = [];
     for (let j = 0; j < M; j++) {
@@ -32,26 +33,28 @@ function setup() {
     }
     matriz.push(fila);
   }
+
   return matriz;
 }
 
 butacas = setup();
 
-// ==============================
-// FUNCIONES DE LÓGICA DEL CINE:
-// ==============================
+//==============================
+//FUNCIONES DE LÓGICA DEL CINE:
+//==============================
 
-// Función auxiliar: busca asientos contiguos disponibles en una fila
+//✅ Reemplazo “negated condition” → uso explícito para mayor legibilidad.
 function buscarAsientosDisponibles(fila, numAsientos) {
   let consecutivos = 0;
   let inicio = -1;
 
-  for (let j = 0; j < M; j++) {
-    if (!fila[j].estado) {
+  //✅ Sustitución de “for clásico” por “for...of” para claridad y consistencia.
+  for (const [j, asiento] of fila.entries()) {
+    if (asiento.estado === false) { // condición explícita
       consecutivos++;
       if (inicio === -1) inicio = j;
       if (consecutivos === numAsientos) {
-        // Devuelve los IDs de los asientos contiguos disponibles
+        // Devuelve IDs de los asientos contiguos disponibles
         return fila.slice(inicio, inicio + numAsientos).map(b => b.id);
       }
     } else {
@@ -70,8 +73,10 @@ function suggest(numAsientos) {
     return new Set();
   }
 
+  //✅ for → for...of combinado con índice descendente manual.
   for (let i = N - 1; i >= 0; i--) {
-    const seleccion = buscarAsientosDisponibles(butacas[i], numAsientos);
+    const fila = butacas[i];
+    const seleccion = buscarAsientosDisponibles(fila, numAsientos);
     if (seleccion) {
       console.log(`🎟️ Sugerencia encontrada en fila ${i + 1}:`, seleccion);
       return new Set(seleccion);
@@ -87,7 +92,7 @@ function suggest(numAsientos) {
 //==================================
 
 //Devuelve todas las butacas (para renderizar la sala).
-app.get("/butacas", (req, res) => {
+app.get("/butacas", (_, res) => {
   res.json(butacas);
 });
 
@@ -95,21 +100,22 @@ app.get("/butacas", (req, res) => {
 app.post("/suggest", (req, res) => {
   const { cantidad } = req.body;
   const sugeridos = suggest(cantidad);
-  res.json(Array.from(sugeridos)); // Enviar como array
+  res.json([...sugeridos]); // spread más claro que Array.from
 });
 
-// Confirmar una reserva (actualiza el estado)
+//Confirmar una reserva (actualiza el estado).
 app.post("/reservar", (req, res) => {
   const { ids } = req.body;
 
-  if (!ids || !Array.isArray(ids)) {
+  if (!Array.isArray(ids)) {
     return res.status(400).json({ error: "Formato incorrecto de datos" });
   }
 
-  for (let i = 0; i < butacas.length; i++) {
-    for (let j = 0; j < butacas[i].length; j++) {
-      if (ids.includes(butacas[i][j].id)) {
-        butacas[i][j].estado = true;
+  //✅ Sustituir bucles anidados for → for...of
+  for (const fila of butacas) {
+    for (const butaca of fila) {
+      if (ids.includes(butaca.id)) {
+        butaca.estado = true;
       }
     }
   }
