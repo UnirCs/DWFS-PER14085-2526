@@ -84,14 +84,14 @@ header h1 {
 /*EFECTO DE ASIENTO OCUPADO:*/
 .asiento.ocupado {
   background-color: #444444;/*Color de fondo.*/
-  color: #888888;/*Color del texto.*/
+  color: #B0B0B0;/*Color del texto (mayor contraste que #888888).*/
   cursor: not-allowed;/*Cursor deshabilitado.*/
 }
 
 /*EFECTO DE ASIENTO SELECCIONADO:*/
 .asiento.seleccionado {
   background-color: #FFD600;/*Color de fondo.*/
-  color: white;/*Color del texto.*/
+  color: #111111;/*Color del texto (antes white, ahora más oscuro para contraste).*/
   border: 2px solid #FFD600;/*Grosor y color del borde.*/
 }
 
