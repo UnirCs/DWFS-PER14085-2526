@@ -30,8 +30,8 @@ function setup() {
  */
 function suggest(num, butacas) {
     let butacasSugeridas = new Set();
+    let maxColCondition = num <= butacas[i].length
     for (let i = butacas.length - 1; i >= 0 && butacasSugeridas.size < num; i--) {
-        let maxColCondition = num <= butacas[i].length
         butacasSugeridas = new Set();
         for (let j = 0; j < butacas[i].length && maxColCondition && butacasSugeridas.size < num; j++) {
             if (butacas[i][j].estado === false) {
