@@ -1,0 +1,19 @@
+  html,
+  body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font: 110%/1.5 "Fira Sans", Helvetica, sans-serif;
+  }
+
+  footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+  }
+
+  div[name="A"]>div:hover,div[name="B"]>div:hover,div[name="C"]>div:hover,div[name="D"]>div:hover,div[name="E"]>div:hover {
+  background-color: steelblue; 
+}
