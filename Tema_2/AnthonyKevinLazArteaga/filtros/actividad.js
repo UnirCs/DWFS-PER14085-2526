@@ -34,6 +34,33 @@ function ejemplo() {
 }
 
 /**
+ * merge - Junta dos imagenes con cierto factor de fusion
+ * Una forma de conseguirlo es sumar el valor de cada canal de cada píxel de cada imagen, habiéndolo multiplicado antes por el factor de fusión correspondiente.
+ * @param pixels - pixeles de una imagen
+ * @param type - tipo a seleccionar R,G,B
+ */
+function selectRGB (pixels, type){
+    for (const row of pixels) {
+        for (const pixel of row) {
+            switch (type) {
+                case "R":
+                    pixel[1] = 0;
+                    pixel[2] = 0;
+                    break;
+                case "G":
+                    pixel[0] = 0;
+                    pixel[2] = 0;
+                    break;
+                case "B":
+                    pixel[0] = 0;
+                    pixel[1] = 0;
+                    break;
+            }
+        }
+    }
+}
+
+/**
  * Esta función debe transformar una imagen en escala de rojos.
  *
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
@@ -42,15 +69,7 @@ function redConverter() {
     let outputPath = 'output/tucan_red.jpg';
     let pixels = handler.getPixels();
 
-    //Aqui tu codigo
-    for (let i = 0; i < pixels.length; i++) {
-        for (let j = 0; j < pixels[i].length; j++) {
-            // Tomamos R G B
-            // pixels[i][k][0] = 0;
-            pixels[i][j][1] = 0;
-            pixels[i][j][2] = 0;
-        }
-    }
+    selectRGB(pixels, 'R');
 
     handler.savePixels(pixels, outputPath);
 }
@@ -65,13 +84,7 @@ function greenConverter() {
     let pixels = handler.getPixels();
 
     //Aqui tu codigo
-    for (let i = 0; i < pixels.length; i++) {
-        for (let j = 0; j < pixels[i].length; j++) {
-            pixels[i][j][0] = 0;
-            //pixels[i][j][1] = 0;
-            pixels[i][j][2] = 0;
-        }
-    }
+    selectRGB(pixels, 'G');
 
     handler.savePixels(pixels, outputPath);
 }
@@ -86,13 +99,7 @@ function blueConverter() {
     let pixels = handler.getPixels();
 
     //Aqui tu codigo
-    for (let i = 0; i < pixels.length; i++) {
-        for (let j = 0; j < pixels[i].length; j++) {
-            pixels[i][j][0] = 0;
-            pixels[i][j][1] = 0;
-            //pixels[i][j][2] = 0;
-        }
-    }
+    selectRGB(pixels, 'B');
 
     handler.savePixels(pixels, outputPath);
 }
@@ -182,13 +189,10 @@ function scaleDown() {
 
     //Quitamos filas
     for (let i = pixels.length - 1; i >= 0; i--) {
-        //for (let i = 0; i < pixels.length; i++){
         if (i % 2 === 0) {
             pixels.splice(i, 1);
-
             //Quitamos columnas
             for (let j = pixels[i].length - 1; j >= 0; j--) {
-                //for (let j = 0; j < pixels[i].length; j++){
                 if (j % 2 === 0) {
                     pixels[i].splice(j, 1);
                 }
@@ -300,7 +304,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imágenes: 9
  */
-let optionN = 9;
+let optionN = 3;
 
 switch (optionN) {
     case 1:
