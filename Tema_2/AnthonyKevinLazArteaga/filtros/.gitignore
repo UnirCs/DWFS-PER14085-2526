@@ -1,0 +1,6 @@
+input/*
+node_modules/*
+output/*
+ImageHandler.js
+package-lock.json
+package.json
