@@ -1,0 +1,132 @@
+:root {
+    --primary-font: 'Lato', Arial, sans-serif;
+    --sidebar-bg: #2c3e50;
+    --main-bg: #ffffff;
+    --container-bg: #f4f4f7;
+    --accent-color: #3498db;
+    --text-light: #ecf0f1;
+    --text-dark: #333333;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--container-bg);
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+}
+
+.cv-container {
+    max-width: 900px;
+    background-color: var(--main-bg);
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    overflow: hidden;
+}
+
+.sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--text-light);
+    flex: 0 0 300px;
+    padding: 30px;
+}
+
+.sidebar .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-color);
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.sidebar h3 {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+.sidebar p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact i {
+    width: 20px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.main-content header {
+    margin-bottom: 30px;
+}
+
+.main-content h1 {
+    margin: 0;
+    color: var(--sidebar-bg);
+    font-size: 42px;
+}
+
+.main-content h2 {
+    margin: 5px 0;
+    font-size: 22px;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+.main-content h3 {
+    color: var(--sidebar-bg);
+    border-bottom: 2px solid var(--container-bg);
+    padding-bottom: 8px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.main-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.experience .job {
+    margin-bottom: 20px;
+}
+
+.experience h4 {
+    margin: 0 0 5px 0;
+    color: var(--accent-color);
+    font-size: 18px;
+}
+
+.experience p {
+    margin: 0 0 8px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.experience ul {
+    margin-top: 10px;
+}

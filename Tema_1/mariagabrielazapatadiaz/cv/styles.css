@@ -63,7 +63,7 @@
 }
 
 .cv__photo {
-  max-width: 100%;
+  max-width: 180px;
 }
 
 .cv__info {
@@ -107,6 +107,7 @@ table {
   border-spacing: 0;
   margin: 1.5em 0 0 0;
   box-shadow: 0 2px 5px var(--color-sombra);
+  width: 100%;
 }
 
 tfoot {
@@ -150,7 +151,7 @@ td ul li {
 
 /* Para pantallas pequeñas */
 @media (max-width: 768px) {
-  .cv__intro-left img {
+  .cv__photo {
     display: none;
   }
   .cv__intro-right {
