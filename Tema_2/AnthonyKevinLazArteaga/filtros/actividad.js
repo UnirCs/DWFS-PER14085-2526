@@ -98,9 +98,9 @@ function blueConverter() {
 }
 
 
-function getAvgArray(Array) {
+function getAvgArray(RGBList) {
     //Saco el promedio de los tres elementos de la matriz, si fuera más elementos utilizaría otro metodo como reduce por ejemplo, pero como solo son 3 creo que no hay problema
-    return (Array[0] + Array[1] + Array[2]) / Array.length;
+    return (RGBList[0] + RGBList[1] + RGBList[2]) / RGBList.length;
 }
 
 
@@ -121,13 +121,13 @@ function greyConverter() {
     for (let i = 0; i < pixels.length; i++) {
         for (let j = 0; j < pixels[i].length; j++) {
             //obtengo los la matriz de pixeles [R,G,B]
-            let Array = pixels[i][j];
+            let RGBList = pixels[i][j];
             //saco el promedio de los tres elementos de la matriz
-            let avg = getAvgArray(Array);
+            let avg = getAvgArray(RGBList);
             //utilizo el objeto referenciado para asignarle los nuevos valores a R,G,B
-            Array[0] = avg;
-            Array[1] = avg;
-            Array[2] = avg;
+            RGBList[0] = avg;
+            RGBList[1] = avg;
+            RGBList[2] = avg;
         }
     }
 
@@ -149,19 +149,19 @@ function blackAndWhiteConverter() {
     for (let i = 0; i < pixels.length; i++) {
         for (let j = 0; j < pixels[i].length; j++) {
             //obtengo los la matriz de pixeles [R,G,B]
-            let Array = pixels[i][j];
+            let RGBList = pixels[i][j];
             //saco el promedio de los tres elementos de la matriz
-            let avg = getAvgArray(Array);
+            let avg = getAvgArray(RGBList);
             if (avg < 128) {
                 //utilizo el objeto referenciado para asignarle los nuevos valores a R,G,B
-                Array[0] = 0;
-                Array[1] = 0;
-                Array[2] = 0;
+                RGBList[0] = 0;
+                RGBList[1] = 0;
+                RGBList[2] = 0;
             } else {
                 //utilizo el objeto referenciado para asignarle los nuevos valores a R,G,B
-                Array[0] = 255;
-                Array[1] = 255;
-                Array[2] = 255;
+                RGBList[0] = 255;
+                RGBList[1] = 255;
+                RGBList[2] = 255;
             }
         }
     }
