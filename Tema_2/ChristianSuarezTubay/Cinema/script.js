@@ -46,9 +46,16 @@ renderButacas();
 
 // Algoritmo suggest
 function suggest(num) {
-    if (num > columnas) return new Set();
+    let seleccion = new Set();
 
-    for (let i = filas - 1; i >= 0; i--) {
+    // Caso: si el número solicitado excede columnas
+    if (num > columnas) {
+        return seleccion;
+    }
+
+    let encontrado = false; // bandera para saber si ya hallamos un bloque
+
+    for (let i = filas - 1; i >= 0 && !encontrado; i--) {
         let fila = butacas[i];
         let consecutivos = 0;
         let idsSeleccionados = [];
@@ -57,8 +64,11 @@ function suggest(num) {
             if (!fila[j].estado) {
                 consecutivos++;
                 idsSeleccionados.push(fila[j].id);
+
                 if (consecutivos === num) {
-                    return new Set(idsSeleccionados);
+                    // Guardamos resultado
+                    idsSeleccionados.forEach(id => seleccion.add(id));
+                    encontrado = true; // marcamos que ya encontramos
                 }
             } else {
                 consecutivos = 0;
@@ -66,8 +76,10 @@ function suggest(num) {
             }
         }
     }
-    return new Set();
+
+    return seleccion;
 }
+
 
 // Manejar formulario
 document.getElementById("reservaForm").addEventListener("submit", function(e) {
