@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+aside {
+    flex: 1 1 30%;
+    background: #003366;
+    color: white;
+    padding: 30px;
+}
+aside img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+aside h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+aside p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+aside h3 {
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+    font-size: 1rem;
+}
+aside ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+aside ul li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+main {
+    flex: 1 1 70%;
+    padding: 30px;
+}
+main h2 {
+    margin-top: 20px;
+    border-bottom: 1px solid #003366;
+    padding-bottom: 5px;
+}
+.experiencia, .educacion {
+    margin-bottom: 20px;
+}
+main ul{
+    list-style: none;
+}
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+    aside, main {
+       flex: 1 1 100%;
+    }
+}

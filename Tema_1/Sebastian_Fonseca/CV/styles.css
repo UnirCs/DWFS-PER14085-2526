@@ -1,0 +1,448 @@
+/* ============================================
+   CSS RESET & BASE STYLES
+   ============================================ */
+
+/* Universal selector: resets default margins, padding, and sets box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles: sets the base typography, colors, and background gradient for the entire page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container: centers content, sets max width, and creates the white card effect */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+/* Header container: purple gradient background with white text */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+/* Profile section: flexbox layout to display photo and name side by side */
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+/* Profile photo: circular image with border and shadow effect */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile info: container for name and subtitle, aligned to the left */
+.profile-info {
+    text-align: left;
+}
+
+/* Main heading: large, bold name in the header */
+.header-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Subtitle: professional title below the name */
+.subtitle {
+    font-size: 1.3em;
+    margin-bottom: 0;
+    opacity: 0.95;
+}
+
+/* Contact info: flexbox container for email, LinkedIn, and location */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Contact info paragraphs: removes default margins */
+.contact-info p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+/* Contact links: white links with smooth hover transition */
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+/* Contact links hover: reduces opacity and adds underline on hover */
+.contact-info a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+/* Main container: adds padding around all content sections */
+main {
+    padding: 30px;
+}
+
+/* Section spacing: adds margin between each CV section */
+section {
+    margin-bottom: 40px;
+}
+
+/* Section headings: purple color with underline border for visual separation */
+section h2 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+}
+
+/* Section paragraphs: justified text alignment for better readability */
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* ============================================
+   WORK EXPERIENCE SECTION
+   ============================================ */
+
+/* Experience item: card-style container for each job position */
+.experience-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Experience item hover: slides right and adds shadow for interactive feedback */
+.experience-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+/* Experience header: flexbox layout for job title and date badge */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* Job title: bold, dark text for the position name */
+.experience-header h3 {
+    color: #333;
+    font-size: 1.3em;
+}
+
+/* Date badge: rounded pill-shaped badge with purple background */
+.date {
+    background: #667eea;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* Company name: italic, gray text for the employer */
+.company {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+/* Duration: smaller, lighter text showing employment period length */
+.duration {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* Role detail: additional information about the position */
+.role-detail {
+    color: #555;
+    font-size: 0.95em;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Experience list: removes default list styling */
+.experience-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Experience list items: custom bullet points with purple arrow */
+.experience-item ul li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Custom bullet: purple arrow as list marker */
+.experience-item ul li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ============================================
+   EDUCATION SECTION
+   ============================================ */
+
+/* Education item: similar to experience items but with darker purple accent */
+.education-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #764ba2;
+}
+
+/* Education header: flexbox layout for degree title and completion date */
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+/* Degree title: slightly smaller than job titles */
+.education-header h3 {
+    color: #333;
+    font-size: 1.2em;
+}
+
+/* Education date badge: uses darker purple to differentiate from experience */
+.education-header .date {
+    background: #764ba2;
+}
+
+/* Institution name: italic, gray text for the school/university */
+.institution {
+    color: #666;
+    font-style: italic;
+}
+
+/* ============================================
+   TECHNICAL SKILLS SECTION
+   ============================================ */
+
+/* Skills grid: responsive CSS Grid that adapts to screen size */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Skill category: card container for each group of related skills */
+.skill-category {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid #667eea;
+}
+
+/* Skill category heading: purple text with bottom border separator */
+.skill-category h3 {
+    color: #667eea;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Skill list: removes default list styling */
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Skill list items: custom checkmark bullets */
+.skill-category ul li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Custom checkmark: purple checkmark as list marker */
+.skill-category ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ============================================
+   LANGUAGES SECTION
+   ============================================ */
+
+/* Languages list: removes default list styling */
+.languages-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Language list items: globe emoji as custom bullet */
+.languages-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.05em;
+}
+
+/* Globe emoji: custom bullet point for languages */
+.languages-list li:before {
+    content: "🌐";
+    position: absolute;
+    left: 0;
+}
+
+/* ============================================
+   CERTIFICATIONS SECTION
+   ============================================ */
+
+/* Certifications list: removes default list styling */
+#certifications ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Certification list items: trophy emoji with increased line height for multi-line content */
+#certifications ul li {
+    padding: 15px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.8;
+}
+
+/* Trophy emoji: custom bullet point for certifications */
+#certifications ul li:before {
+    content: "🏆";
+    position: absolute;
+    left: 0;
+}
+
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
+
+/* Footer: dark background with centered copyright text */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET & MOBILE
+   ============================================ */
+
+/* Media query for tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header-content h1 {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .experience-header,
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date {
+        margin-top: 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Media query for mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Further reduces heading sizes for very small screens */
+    .header-content h1 {
+        font-size: 1.6em;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+}
+
