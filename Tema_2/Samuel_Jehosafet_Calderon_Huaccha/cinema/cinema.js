@@ -33,13 +33,15 @@ function suggest(asientosSolicitados) {
     return new Set();
   }
 
+  let idsSeleccionados = null; // null = no encontrado aún
+
   // Empieza desde la última fila (la más alejada de la pantalla)
-  for (let filaIdx = N - 1; filaIdx >= 0; filaIdx--) {
+  for (let filaIdx = N - 1; filaIdx >= 0 && idsSeleccionados === null; filaIdx--) {
     const fila = butacas[filaIdx];
     let libresSeguidos = 0;
     let inicioBloque = 0;
 
-    for (let col = 0; col < N; col++) {
+    for (let col = 0; col < N && idsSeleccionados === null; col++) {
       const asiento = fila[col];
 
       if (!asiento.estado) {
@@ -51,13 +53,12 @@ function suggest(asientosSolicitados) {
         }
 
         if (libresSeguidos === asientosSolicitados) {
-          const idsSeleccionados = new Set();
-
+          // Encontramos un bloque válido en esta fila
+          const seleccion = new Set();
           for (let k = inicioBloque; k < inicioBloque + asientosSolicitados; k++) {
-            idsSeleccionados.add(fila[k].id);
+            seleccion.add(fila[k].id);
           }
-
-          return idsSeleccionados;
+          idsSeleccionados = seleccion; // marcamos como encontrado
         }
       } else {
         // se corta la racha de libres
@@ -66,9 +67,10 @@ function suggest(asientosSolicitados) {
     }
   }
 
-  // Si llega aquí, no ha encontrado hueco en ninguna fila
-  return new Set();
+  // Si no encontró nada, idsSeleccionados seguirá siendo null
+  return idsSeleccionados === null ? new Set() : idsSeleccionados;
 }
+
 
 // Marcar algunas butacas ocupadas para probar
 // false = libre, true = ocupada
@@ -78,6 +80,6 @@ butacas[9][3].estado = true;
 butacas[8][4].estado = true;
 
 // Prueba rápida
-console.log("=== PRUEBA: Pedir 7 asientos ===");
-const sugeridos = suggest(7);
+console.log("=== PRUEBA: Pedir 2 asientos");
+const sugeridos = suggest(2);
 console.log(sugeridos);
