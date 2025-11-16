@@ -1,0 +1,52 @@
+ body {
+     background-color: #f8f9fa;
+ }
+
+ .pantalla {
+     background-color: #adb5bd;
+     height: 35px;
+     width: 30%;
+     margin: 30px auto;
+     border-radius: 8px;
+     text-align: center;
+     color: #212529;
+ }
+
+ .asiento {
+     width: 30px;
+     height: 30px;
+     background-color: #6c757d;
+     margin: 5px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+ .disponible {
+     width: 30px;
+     height: 30px;
+     background-color: #6c757d;
+     margin: 5px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+ .seleccionados {
+     background-color: #0d6efd;
+ }
+
+ .asiento.ocupado {
+     background-color: #dc3545;
+     cursor: not-allowed;
+ }
+
+ .asiento:hover:not(.ocupado) {
+     background-color: #0d6efd;
+ }
+
+ .leyenda .asiento {
+     margin: 0 5px;
+ }
+
+ .leyenda span {
+     margin-right: 10px;
+ }
