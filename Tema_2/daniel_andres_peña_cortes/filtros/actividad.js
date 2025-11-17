@@ -47,9 +47,8 @@ function redConverter() {
   for (let x = 0; x < ancho; x++){
     for (let y = 0; y < alto; y++){
         // cada pixel [red, green, blue]
-        red = pixels[x][y][0];
         
-        pixels[x][y][0] = red;
+        pixels[x][y][0] = pixels[x][y][0];
         pixels[x][y][1] = 0;  // set a 0
         pixels[x][y][2] = 0;
     }
@@ -72,10 +71,9 @@ function greenConverter() {
   for (let x = 0; x < ancho; x++){
     for (let y = 0; y < alto; y++){
         // cada pixel [red, green, blue]
-        green = pixels[x][y][1];
         
         pixels[x][y][0] = 0;  // set a 0
-        pixels[x][y][1] = green;
+        pixels[x][y][1] = pixels[x][y][1];
         pixels[x][y][2] = 0; // set a 0
     }
   }
@@ -98,11 +96,10 @@ function blueConverter() {
   for (let x = 0; x < ancho; x++){
     for (let y = 0; y < alto; y++){
         // cada pixel [red, green, blue]
-        blue = pixels[x][y][2];
         
         pixels[x][y][0] = 0;  // set a 0
         pixels[x][y][1] = 0;
-        pixels[x][y][2] = blue; // set a 0
+        pixels[x][y][2] = pixels[x][y][2]; // set a 0
     }
   }
 
@@ -132,7 +129,7 @@ function greyConverter() {
         let g = pixels[x][y][1];
         let b = pixels[x][y][2];
         //  promedio
-        promedio = (r + g + b) / 3
+        let promedio = (r + g + b) / 3
         // set promedio    
         pixels[x][y][0] = promedio;  // set a 0
         pixels[x][y][1] = promedio;
