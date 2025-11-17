@@ -56,7 +56,7 @@ function checkRowAvailable(row, num)
             {
                 free = false;
                 j = j + k;
-                break;
+                k = num;
             }
         }
 
