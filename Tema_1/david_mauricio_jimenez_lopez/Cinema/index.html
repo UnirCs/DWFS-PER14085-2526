@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEMA - Reserva de sillas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid bg-dark text-white min-vh-100">
+        <header class="text-center py-4">
+            <h1 class="display-4 mb-0 cine__titulo">
+                <i class="fas fa-film me-3"></i>CINEMA
+            </h1>
+            <p class="lead text-muted">Reserva de Butacas</p>
+        </header>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <div class="pantalla text-center mb-5">
+                        <div class="pantalla__contenedor">
+                            PANTALLA
+                        </div>
+                        <div class="pantalla__resplandor"></div>
+                    </div>
+
+                    <div class="seats-container mb-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="leyenda mb-4">
+                                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                                        <div class="leyenda__elemento">
+                                            <span class="asiento asiento--disponible"></span>
+                                            <span class="ms-2">Disponible</span>
+                                        </div>
+                                        <div class="leyenda__elemento">
+                                            <span class="asiento asiento--ocupado"></span>
+                                            <span class="ms-2">Ocupado</span>
+                                        </div>
+                                        <div class="leyenda__elemento">
+                                            <span class="asiento asiento--seleccionado"></span>
+                                            <span class="ms-2">Seleccionado</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sala">
+                                    <div class="sala__fila mb-3">
+                                        <span class="sala__etiqueta-fila">A</span>
+                                        <div class="sala__rejilla-asientos">
+                                            <span class="asiento asiento--disponible" data-seat="A1">1</span>
+                                            <span class="asiento asiento--disponible" data-seat="A2">2</span>
+                                            <span class="asiento asiento--ocupado" data-seat="A3">3</span>
+                                            <span class="asiento asiento--ocupado" data-seat="A4">4</span>
+                                            <span class="asiento asiento--disponible" data-seat="A5">5</span>
+                                            <span class="asiento asiento--disponible" data-seat="A6">6</span>
+                                            <span class="asiento asiento--disponible" data-seat="A7">7</span>
+                                            <span class="asiento asiento--disponible" data-seat="A8">8</span>
+                                            <span class="asiento asiento--disponible" data-seat="A9">9</span>
+                                            <span class="asiento asiento--ocupado" data-seat="A10">10</span>
+                                            <span class="asiento asiento--disponible" data-seat="A11">11</span>
+                                            <span class="asiento asiento--disponible" data-seat="A12">12</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="sala__fila mb-3">
+                                        <span class="sala__etiqueta-fila">B</span>
+                                        <div class="sala__rejilla-asientos">
+                                            <span class="asiento asiento--disponible" data-seat="B1">1</span>
+                                            <span class="asiento asiento--disponible" data-seat="B2">2</span>
+                                            <span class="asiento asiento--disponible" data-seat="B3">3</span>
+                                            <span class="asiento asiento--disponible" data-seat="B4">4</span>
+                                            <span class="asiento asiento--ocupado" data-seat="B5">5</span>
+                                            <span class="asiento asiento--ocupado" data-seat="B6">6</span>
+                                            <span class="asiento asiento--disponible" data-seat="B7">7</span>
+                                            <span class="asiento asiento--disponible" data-seat="B8">8</span>
+                                            <span class="asiento asiento--disponible" data-seat="B9">9</span>
+                                            <span class="asiento asiento--disponible" data-seat="B10">10</span>
+                                            <span class="asiento asiento--disponible" data-seat="B11">11</span>
+                                            <span class="asiento asiento--disponible" data-seat="B12">12</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="sala__fila mb-3">
+                                        <span class="sala__etiqueta-fila">C</span>
+                                        <div class="sala__rejilla-asientos">
+                                            <span class="asiento asiento--disponible" data-seat="C1">1</span>
+                                            <span class="asiento asiento--disponible" data-seat="C2">2</span>
+                                            <span class="asiento asiento--disponible" data-seat="C3">3</span>
+                                            <span class="asiento asiento--disponible" data-seat="C4">4</span>
+                                            <span class="asiento asiento--disponible" data-seat="C5">5</span>
+                                            <span class="asiento asiento--disponible" data-seat="C6">6</span>
+                                            <span class="asiento asiento--disponible" data-seat="C7">7</span>
+                                            <span class="asiento asiento--disponible" data-seat="C8">8</span>
+                                            <span class="asiento asiento--disponible" data-seat="C9">9</span>
+                                            <span class="asiento asiento--disponible" data-seat="C10">10</span>
+                                            <span class="asiento asiento--ocupado" data-seat="C11">11</span>
+                                            <span class="asiento asiento--ocupado" data-seat="C12">12</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="sala__fila mb-3">
+                                        <span class="sala__etiqueta-fila">D</span>
+                                        <div class="sala__rejilla-asientos">
+                                            <span class="asiento asiento--disponible" data-seat="D1">1</span>
+                                            <span class="asiento asiento--disponible" data-seat="D2">2</span>
+                                            <span class="asiento asiento--disponible" data-seat="D3">3</span>
+                                            <span class="asiento asiento--ocupado" data-seat="D4">4</span>
+                                            <span class="asiento asiento--ocupado" data-seat="D5">5</span>
+                                            <span class="asiento asiento--disponible" data-seat="D6">6</span>
+                                            <span class="asiento asiento--disponible" data-seat="D7">7</span>
+                                            <span class="asiento asiento--disponible" data-seat="D8">8</span>
+                                            <span class="asiento asiento--disponible" data-seat="D9">9</span>
+                                            <span class="asiento asiento--disponible" data-seat="D10">10</span>
+                                            <span class="asiento asiento--disponible" data-seat="D11">11</span>
+                                            <span class="asiento asiento--disponible" data-seat="D12">12</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="sala__fila mb-3">
+                                        <span class="sala__etiqueta-fila">E</span>
+                                        <div class="sala__rejilla-asientos">
+                                            <span class="asiento asiento--disponible" data-seat="E1">1</span>
+                                            <span class="asiento asiento--disponible" data-seat="E2">2</span>
+                                            <span class="asiento asiento--disponible" data-seat="E3">3</span>
+                                            <span class="asiento asiento--disponible" data-seat="E4">4</span>
+                                            <span class="asiento asiento--disponible" data-seat="E5">5</span>
+                                            <span class="asiento asiento--disponible" data-seat="E6">6</span>
+                                            <span class="asiento asiento--disponible" data-seat="E7">7</span>
+                                            <span class="asiento asiento--disponible" data-seat="E8">8</span>
+                                            <span class="asiento asiento--disponible" data-seat="E9">9</span>
+                                            <span class="asiento asiento--disponible" data-seat="E10">10</span>
+                                            <span class="asiento asiento--disponible" data-seat="E11">11</span>
+                                            <span class="asiento asiento--disponible" data-seat="E12">12</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="formulario bg-secondary rounded-4 p-4">
+                                <h3 class="formulario__titulo text-center mb-4">
+                                    <i class="fas fa-ticket-alt me-2"></i>Reserva tus Asientos
+                                </h3>
+                                
+                                <form id="reservacionForm">
+                                    <div class="mb-3">
+                                        <label for="numSeats" class="formulario__etiqueta">Número de Asientos:</label>
+                                        <select class="formulario__selector" id="numSeats">
+                                            <option value="1">1 Asiento</option>
+                                            <option value="2">2 Asientos</option>
+                                            <option value="3">3 Asientos</option>
+                                            <option value="4">4 Asientos</option>
+                                            <option value="5">5 Asientos</option>
+                                            <option value="6">6 Asientos</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="formulario__etiqueta">Asientos Seleccionados:</div>
+                                        <div id="selectedSeats" class="formulario__pantalla-seleccion p-2 bg-dark rounded">
+                                            <span class="text-muted">Selecciona tus asientos en el mapa</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="formulario__etiqueta">Total a Pagar:</div>
+                                        <div class="formulario__pantalla-precio">
+                                            <span id="totalPrice">$0</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" class="formulario__boton btn-lg px-5" id="confirmBtn" disabled>
+                                            <i class="fas fa-check me-2"></i>Confirmar Reserva
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="pie-pagina text-center py-4 mt-5">
+            <div class="container">
+                <h4 class="pie-pagina__titulo mb-3">
+                    <i class="fas fa-film me-2"></i>CINEMA
+                </h4>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-map-marker-alt pie-pagina__icono"></i>
+                        <p class="pie-pagina__texto mb-0 mt-2">
+                            <strong>Dirección:</strong><br>
+                            Calle falsa 123<br>
+                            
+                        </p>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-phone pie-pagina__icono"></i>
+                        <p class="pie-pagina__texto mb-0 mt-2">
+                            <strong>Teléfono:</strong><br>
+                            3208143839
+                        </p>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-envelope pie-pagina__icono"></i>
+                        <p class="pie-pagina__texto mb-0 mt-2">
+                            <strong>Email:</strong><br>
+                            cine@cine.com
+                        </p>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-clock pie-pagina__icono"></i>
+                        <p class="pie-pagina__texto mb-0 mt-2">
+                            <strong>Horarios:</strong><br>
+                            Todos los días<br>
+                            14:00 - 02:00
+                        </p>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <p class="pie-pagina__texto mb-0 text-muted">
+                    &copy; 2025 CINEMA. Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <script>
+        const PRECIO_ASIENTO = 12;
+        let asientosSeleccionados = [];
+        let maximoAsientos = 1;
+        const manejadoresClick = new Map();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const asientos = document.querySelectorAll('.asiento--disponible');
+            const selectorCantidadAsientos = document.getElementById('numSeats');
+            const pantallaAsientosSeleccionados = document.getElementById('selectedSeats');
+            const precioTotal = document.getElementById('totalPrice');
+            const botonConfirmar = document.getElementById('confirmBtn');
+
+            function manejarClickAsiento() {
+                const idAsiento = this.dataset.seat;
+                
+                if (this.classList.contains('asiento--seleccionado')) {
+                    this.classList.remove('asiento--seleccionado');
+                    this.classList.add('asiento--disponible');
+                    asientosSeleccionados = asientosSeleccionados.filter(s => s !== idAsiento);
+                } else if (asientosSeleccionados.length < maximoAsientos) {
+                    this.classList.remove('asiento--disponible');
+                    this.classList.add('asiento--seleccionado');
+                    asientosSeleccionados.push(idAsiento);
+                }
+                
+                actualizarPantalla();
+            }
+
+            selectorCantidadAsientos.addEventListener('change', function() {
+                maximoAsientos = Number.parseInt(this.value);
+                reiniciarSeleccion();
+            });
+
+            for (const asiento of asientos) {
+                manejadoresClick.set(asiento.dataset.seat, manejarClickAsiento);
+                asiento.addEventListener('click', manejarClickAsiento);
+            }
+
+            function actualizarPantalla() {
+                if (asientosSeleccionados.length === 0) {
+                    pantallaAsientosSeleccionados.innerHTML = '<span class="text-muted">Selecciona tus asientos en el mapa</span>';
+                    botonConfirmar.disabled = true;
+                } else {
+                    pantallaAsientosSeleccionados.innerHTML = asientosSeleccionados.map(asiento => 
+                        `<span class="badge bg-warning text-dark me-1">${asiento}</span>`
+                    ).join('');
+                    botonConfirmar.disabled = false;
+                }
+                
+                precioTotal.textContent = `$${asientosSeleccionados.length * PRECIO_ASIENTO}`;
+            }
+
+            function reiniciarSeleccion() {
+                asientosSeleccionados = [];
+                for (const asiento of document.querySelectorAll('.asiento--seleccionado')) {
+                    asiento.classList.remove('asiento--seleccionado');
+                    asiento.classList.add('asiento--disponible');
+                }
+                actualizarPantalla();
+            }
+
+            document.getElementById('reservacionForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (asientosSeleccionados.length === 0) {
+                    alert('Por favor selecciona al menos un asiento.');
+                    return;
+                }
+
+                const mensaje = `¿Confirmar reserva de ${asientosSeleccionados.length} asiento(s)?\n\nAsientos: ${asientosSeleccionados.join(', ')}\nTotal: $${asientosSeleccionados.length * PRECIO_ASIENTO}`;
+                
+                if (confirm(mensaje)) {
+                    for (const idAsiento of asientosSeleccionados) {
+                        const elementoAsiento = document.querySelector(`[data-seat="${idAsiento}"]`);
+                        elementoAsiento.classList.remove('asiento--seleccionado');
+                        elementoAsiento.classList.add('asiento--ocupado');
+                        const manejador = manejadoresClick.get(idAsiento);
+                        if (manejador) {
+                            elementoAsiento.removeEventListener('click', manejador);
+                            manejadoresClick.delete(idAsiento);
+                        }
+                    }
+                    
+                    alert('¡Reserva confirmada! Gracias por elegir UNIR-CINEMA.');
+                    reiniciarSeleccion();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

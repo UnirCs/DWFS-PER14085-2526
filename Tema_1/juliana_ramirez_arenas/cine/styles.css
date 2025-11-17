@@ -1,0 +1,100 @@
+body {
+  background-color: #000;
+  color:  rgb(22, 167, 169);
+  font-family: 'Arial', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.cinema-container {
+  border: 3px solid #672397;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 900px;
+  border-radius: 5px;
+}
+
+header {
+  background-color: rgba(52, 58, 64, 0.386);
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(22, 167, 169);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.screen {
+  background-color: #3d3d3d5d;
+  height: 80px;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  line-height: 80px;
+  color:  rgb(22, 167, 169);
+  font-size: 1.2rem;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.seat-label {
+  margin-right: 10px;
+  width: 60px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.seat {
+  width: 25px;
+  height: 25px;
+  border: 1px solid  #672397;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.seat:hover {
+  background-color: rgba(22, 167, 169, 0.405);
+}
+
+.seat.selected {
+  background-color:  rgb(22, 167, 169);
+}
+
+.seat.occupied {
+  background-color:  rgb(22, 167, 169);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.form-section {
+  margin-top: 2rem;
+}
+
+footer {
+  background-color: #343a404e;
+  padding: 1.5rem;
+  color: rgb(22, 167, 169);
+  border-radius: 6px;
+  margin-top: 2rem;
+}
+
+.btn-confirm {
+  background-color:  rgb(22, 167, 169);
+  border: none;
+  color: #672397;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.btn-confirm:hover {
+  background-color:  rgb(242, 244, 244);
+  color:#672397;
+}
