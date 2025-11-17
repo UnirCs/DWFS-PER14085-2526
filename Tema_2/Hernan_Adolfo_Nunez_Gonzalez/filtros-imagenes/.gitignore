@@ -3,6 +3,7 @@ input/
 output/
 node_modules/
 ImageHandler.js
+filtros.js
 index.html
 package.json
 package-lock.json
