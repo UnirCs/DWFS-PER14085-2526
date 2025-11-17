@@ -1,0 +1,66 @@
+.contenedor-cv-header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+
+        }
+        
+.perfil {
+            text-align: center;
+        }
+        
+.foto-cv {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+}
+body {
+    background-color: #fbfbfb;
+}
+h1 {
+    color: #2c3e50;
+    margin: 15px 0 5px;
+}
+
+h2 {
+    color: #7f8c8d;
+    font-weight: normal;
+    margin: 0 0 20px;
+}
+
+.contenedor-cv-seccion {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+h3 {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+li strong {
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 5px;
+}
+
+li p {
+    color: #666;
+    margin: 5px 0;
+}
