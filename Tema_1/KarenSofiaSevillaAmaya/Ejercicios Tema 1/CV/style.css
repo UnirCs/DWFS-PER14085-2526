@@ -1,0 +1,43 @@
+head{
+  font-family: "Sans",monospace; 
+}
+
+body{
+  font-family: "Sans",monospace; 
+}
+
+.Curriculum_CV {
+  color: rgb(44, 3, 127);
+  text-align: center;
+  font-size:larger ;
+  font-weight: bold;
+ }
+
+h2 {
+  font-size: medium;
+  font-weight: bold;
+  color:aliceblue;
+  background-color: rgb(44, 3, 127);
+ }
+
+.DatosPersonalesInfo{
+  display: grid;
+  grid-template-columns: auto auto;
+  font-size:small ;
+
+}
+
+.DatosPersonales__datos_titulo, .Experiencia_Experiencia_titulo{
+       font-size: small;
+       font-weight: bold;
+       
+    }
+.Resumen_Resumen, .Experiencia_Experiencia, .Educacion_Educacion,.Habilidades_Habilidades{
+   
+   display:block;
+  font-size:small
+    }
+
+
+  
+  
