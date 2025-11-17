@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset = "utf-8">
+   <title>  CINEMA  - Butacas</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="text-center mb-4">
+            <h1 class="text-warning">Multicines</h1>
+            <p class="lead">Selecciona tus asientos</p>
+        </header>
+        <section class="movie_info">
+            <div class="movie_info_title">
+                <h2>Interestelar</h2>
+                <p>Duración: 2h 49min | Género: Ciencia Ficción, Aventura</p>
+            </div>
+        </section>
+        <section class="header_seats">
+            <ul>
+                <li><span class="seat available"></span> Disponible</li>
+                <li><span class="seat selected"></span> Seleccionado</li>
+                <li><span class="seat occupied"></span> Ocupado</li>
+            </ul>
+        </section>
+        <section class="seats">
+            <div class="seats_screen">PANTALLA</div>
+            <table class="seats_table">
+                <th>
+                    <tr>
+                        <th colspan="4">-------------------</th>
+                        <th></th>
+                        <th colspan="4">-------------------</th>
+                    </tr>
+                </th>
+                <!-- Fila A -->
+                <tr>
+                    <td class="seat available">A1</td>
+                    <td class="seat available">A2</td>
+                    <td class="seat available">A3</td>
+                    <td class="seat available">A4</td>
+                    <td class="aisle"></td>
+                    <td class="seat available">A5</td>
+                    <td class="seat available">A6</td>
+                    <td class="seat available">A7</td>
+                    <td class="seat available">A8</td>
+                </tr>
+                <!-- Fila B -->
+                <tr>
+                    <td class="seat available">B1</td>
+                    <td class="seat occupied">B2</td>
+                    <td class="seat occupied">B3</td>
+                    <td class="seat occupied">B4</td>
+                    <td class="aisle"></td>
+                    <td class="seat occupied">B5</td>
+                    <td class="seat occupied">B6</td>
+                    <td class="seat occupied">B7</td>
+                    <td class="seat available">B8</td>
+                </tr>
+                <!-- Fila C -->
+                <tr> 
+                    <td class="seat available">C1</td>
+                    <td class="seat available">C2</td>
+                    <td class="seat occupied">C3</td>
+                    <td class="seat occupied">C4</td>
+                    <td class="aisle"></td>
+                    <td class="seat occupied">C5</td>
+                    <td class="seat occupied">C6</td>
+                    <td class="seat occupied">C7</td>
+                    <td class="seat available">C8</td>
+                </tr>
+                <!-- Fila D -->
+                <tr> 
+                    <td class="seat available">D1</td>
+                    <td class="seat available">D2</td>
+                    <td class="seat occupied">D3</td>
+                    <td class="seat available">D4</td>
+                    <td class="aisle"></td>
+                    <td class="seat available">D5</td>
+                    <td class="seat available">D6</td>
+                    <td class="seat occupied">D7</td>
+                    <td class="seat available">D8</td>
+                </tr>
+                <!-- Fila E -->
+                <tr> 
+                    <td class="seat available">E1</td>
+                    <td class="seat available">E2</td>
+                    <td class="seat occupied">E3</td>
+                    <td class="seat available">E4</td>
+                    <td class="seat available">E5</td>
+                    <td class="seat available">E6</td>
+                    <td class="seat occupied">E7</td>
+                    <td class="seat available">E8</td>
+                    <td class="seat available">E9</td>
+                </tr>
+            </table>
+            <table class="seats_table_vip">
+                <!-- Fila VIP -->
+                <tr> 
+                    <td class="aisle"></td>
+                    <td class="seat available">VIP1</td>
+                    <td class="seat available">VIP2</td>
+                    <td class="aisle"></td>
+                    <td class="seat occupied">VIP4</td>
+                    <td class="seat occupied">VIP5</td>
+                    <td class="aisle"></td>
+                    <td class="seat occupied">VIP7</td>
+                    <td class="seat available">VIP8</td>
+                    <td class="aisle"></td>
+                </tr>
+            </table>
+        </section>
+    </div>
+</body>
