@@ -56,8 +56,7 @@ function suggest(numAsientos) {
                 idsTemp.push(fila[j].id);
                 if (contador === numAsientos) {
                     // Hemos encontrado suficientes asientos juntos
-                    idsTemp.forEach(id => resultado.add(id));
-                    return resultado; // Devolvemos inmediatamente
+                    encontrados = idsTemp
                 }
             } else {
                 // Reiniciamos el contador si hay un asiento ocupado
@@ -66,7 +65,9 @@ function suggest(numAsientos) {
             }
         }
     }
-
+    if (encontrados) {
+        encontrados.forEach(id => resultado.add(id));
+    }
     // Si no encontramos suficientes asientos juntos, devolvemos set vacío
     return resultado;
 }
