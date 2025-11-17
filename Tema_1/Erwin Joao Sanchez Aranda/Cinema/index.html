@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Cinema UNIR">
+	<meta name="author" content="Joao Sanchez">
+	<title>Cinema UNIR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<header class="cinema">
+			<h1 class="cinema__name">UNIR - CINEMA</h1>
+			<h2 class="cinema__movie">Pelicula: SAW III</h2>
+			<p class="cinema__schedule">Funcion: 14/11/2025 - 20:00</p>
+			<p class="cinema__theater">Sede: Trujillo Mall</p>
+		</header>
+
+        <section class="screen">
+            <div class="screen__container">PANTALLA</div>
+        </section>
+
+        <section class="seats">
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">A</div>
+                <div class="col-auto seat"><input type="checkbox" id="A1"><label for="A1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A2"><label for="A2">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A3"><label for="A3">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A4"><label for="A4">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A5"><label for="A5">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A6"><label for="A6">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A7"><label for="A7">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A8"><label for="A8">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A9"><label for="A9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="A10"><label for="A10">10</label></div>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">B</div>
+                <div class="col-auto seat"><input type="checkbox" id="B1"><label for="B1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B2"><label for="B2">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B3"><label for="B3">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B4"><label for="B4">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B5" disabled><label for="B5" class="occupied">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B6" disabled><label for="B6" class="occupied">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B7"><label for="B7">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B8"><label for="B8">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B9"><label for="B9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="B10"><label for="B10">10</label></div>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">C</div>
+                <div class="col-auto seat"><input type="checkbox" id="C1"><label for="C1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C2" disabled><label for="C2" class="occupied">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C3" disabled><label for="C3" class="occupied">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C4"><label for="C4">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C5"><label for="C5">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C6"><label for="C6">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C7"><label for="C7">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C8"><label for="C8">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C9"><label for="C9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="C10"><label for="C10">10</label></div>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">D</div>
+                <div class="col-auto seat"><input type="checkbox" id="D1"><label for="D1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D2"><label for="D2">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D3"><label for="D3">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D4"><label for="D4">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D5"><label for="D5">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D6"><label for="D6">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D7"><label for="D7">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D8"><label for="D8">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D9"><label for="D9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="D10"><label for="D10">10</label></div>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">E</div>
+                <div class="col-auto seat"><input type="checkbox" id="E1"><label for="E1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E2"><label for="E2">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E3" disabled><label for="E3" class="occupied">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E4" disabled><label for="E4" class="occupied">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E5"><label for="E5">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E6" disabled><label for="E6" class="occupied">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E7" disabled><label for="E7" class="occupied">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E8"><label for="E8">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E9"><label for="E9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="E10"><label for="E10">10</label></div>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">F</div>
+                <div class="col-auto seat"><input type="checkbox" id="F1"><label for="F1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F2"><label for="F2">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F3"><label for="F3">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F4"><label for="F4">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F5"><label for="F5">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F6"><label for="F6">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F7"><label for="F7">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F8"><label for="F8">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F9"><label for="F9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="F10"><label for="F10">10</label></div>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">G</div>
+                <div class="col-auto seat"><input type="checkbox" id="G1"><label for="G1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G2"><label for="G2">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G3"><label for="G3">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G4"><label for="G4">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G5"><label for="G5">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G6"><label for="G6">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G7"><label for="G7">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G8"><label for="G8">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G9"><label for="G9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="G10"><label for="G10">10</label></div>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-2">
+                <div class="col-auto row__label">H</div>
+                <div class="col-auto seat"><input type="checkbox" id="H1"><label for="H1">1</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H2"><label for="H2">2</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H3"><label for="H3">3</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H4"><label for="H4">4</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H5"><label for="H5">5</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H6"><label for="H6">6</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H7" disabled><label for="H7" class="occupied">7</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H8" disabled><label for="H8" class="occupied">8</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H9"><label for="H9">9</label></div>
+                <div class="col-auto seat"><input type="checkbox" id="H10"><label for="H10">10</label></div>
+            </div>
+        </section>
+
+        <section class="reservation">
+                <label for="reserveSeats">Asientos seleccionados:</label>
+                <textarea id="reserveSeats" class="reservation__seats" readonly></textarea>
+                <button id="btnReserve" class="btn btn-warning mt-2 reservation__btn">Reservar</button>
+        </section>
+		
+		<footer class="footer">
+			<p class="footer__copyright">© 2025 Joao Sánchez - UNIR</p>
+            <p class="footer__address">Direccion: Av. America Oeste 1358, Trujillo</p>
+            <p class="footer__phone">Telefono: (+44) 112457</p>
+            <p class="footer__email">Email: unircinema@industries.com</p>
+		</footer>
+	</div>
+
+    <!-- Se que no se pidio javascript, pero es algo pequeño y para dar cierta mejora visual a la seleccion de asientos y reserva -->
+    <script>
+        const lstCheckBox = document.querySelectorAll('.seat input');
+        const textarea = document.querySelector('.reservation__seats');
+
+        for (const checkbox of lstCheckBox) {
+            checkbox.addEventListener('change', () => {
+                const selected = [];
+                for (const cb of lstCheckBox) {
+                    if (cb.checked) {
+                        selected.push(cb.id);
+                    }
+                }
+                textarea.value = selected.join(', ');
+            });
+        }
+
+        const btnReserve = document.querySelector('#btnReserve');
+        btnReserve.addEventListener('click', () => {
+            if (textarea.value) {
+                alert('Asientos reservados: '+ textarea.value + '\nGracias!');
+                location.reload();
+            } else {
+                alert('No has seleccionado ningún asiento.');
+            }
+        });
+    </script>
+
+</body>
+</html>
