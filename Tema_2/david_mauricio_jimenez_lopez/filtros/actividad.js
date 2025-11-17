@@ -6,9 +6,6 @@ let handler = new ImageHandler(path);
 
 /**
  * Función auxiliar para procesar una matriz de píxeles aplicando un filtro que llega como parametro principio DRY
- * @param {Array} pixels - Matriz de píxeles
- * @param {Function} filterFunction - Función que recibe un píxel y retorna el píxel modificado
- * @returns {Array} - Matriz de píxeles procesada
  */
 function procesarPixel(pixels, filterFunction) {
   for (let fila = 0; fila < pixels.length; fila++) {
@@ -17,6 +14,18 @@ function procesarPixel(pixels, filterFunction) {
     }
   }
   return pixels;
+}
+
+/**
+ * Función auxiliar para aplicar filtros de imagen siguiendo el principio DRY
+ */
+function aplicarFiltro(arhcivo_salida, filterFunction) {
+  let outputPath = `output/${arhcivo_salida}`;
+  let pixels = handler.getPixels();
+  
+  let pixels_procesados = filterFunction(pixels);
+  handler.savePixels(pixels_procesados, outputPath);
+  
 }
 
 
@@ -50,155 +59,112 @@ function ejemplo() {
 
 /**
  * Esta función debe transformar una imagen en escala de rojos.
- *
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
  */
 function redConverter() {
-  let outputPath = 'output/tucan_red.jpg';
-  let pixels = handler.getPixels();
-
-  procesarPixel(pixels, (pixel) => {
-    return [pixel[0], 0, 0]; //[255, 0, 0]]
+  aplicarFiltro('tucan_red.jpg', (pixels) => {
+    return procesarPixel(pixels, (pixel) => [pixel[0], 0, 0]);
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
  * Esta función debe transformar una imagen en escala de verdes.
- *
  * Una forma de conseguirlo es simplemente poner los canales R y B a 0 para cada pixel.
  */
 function greenConverter() {
-  let outputPath = 'output/tucan_green.jpg';
-  let pixels = handler.getPixels();
-
-  procesarPixel(pixels, (pixel) => {
-    return [0, pixel[1], 0]; //[0, 255, 0]
+  aplicarFiltro('tucan_green.jpg', (pixels) => {
+    return procesarPixel(pixels, (pixel) => [0, pixel[1], 0]);
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
  * Esta función debe transformar una imagen en escala de azules.
- *
  * Una forma de conseguirlo es simplemente poner los canales R y G a 0 para cada pixel.
  */
 function blueConverter() {
-  let outputPath = 'output/tucan_blue.jpg';
-  let pixels = handler.getPixels();
-
-  procesarPixel(pixels, (pixel) => {
-    return [0, 0, pixel[2]];//[0, 0, 255]
+  aplicarFiltro('tucan_blue.jpg', (pixels) => {
+    return procesarPixel(pixels, (pixel) => [0, 0, pixel[2]]);
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
  * Esta función debe transformar una imagen a su equivalente en escala de grises.
- *
  * Una forma de conseguirlo es calcular la media de los valores RGB de cada pixel y
  * asignarle a cada canal de RGB esa media.
- *
  * Es decir, si un pixel tiene el valor [100, 120, 200], su media es 140 y por lo tanto
  * lo debemos transformar en el pixel [140, 140, 140].
  */
 function greyConverter() {
-  let outputPath = 'output/tucan_grey.jpg';
-  let pixels = handler.getPixels();
-
-  procesarPixel(pixels, (pixel) => {
-    let media = Math.round((pixel[0] + pixel[1] + pixel[2]) / 3); // Calcular la media y redondear
-    return [media, media, media];
+  aplicarFiltro('tucan_grey.jpg', (pixels) => {
+    return procesarPixel(pixels, (pixel) => {
+      let media = Math.round((pixel[0] + pixel[1] + pixel[2]) / 3);
+      return [media, media, media];
+    });
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
  * Esta función debe transformar una imagen a su equivalente en Blanco y negro.
- *
  * Una forma de conseguirlo es calcular la media de los valores RGB de cada pixel y
  * si esta es menor que 128 transforamr el pixel en negro [0, 0, 0] o, en caso contrario,
  * transformar el pixel en blanco [255, 255, 255].
  */
 function blackAndWhiteConverter() {
-  let outputPath = 'output/tucan_black_and_white.jpg';
-  let pixels = handler.getPixels();
-
-  procesarPixel(pixels, (pixel) => {
-    let media = (pixel[0] + pixel[1] + pixel[2]) / 3; // 
-    let valor = media < 128 ? 0 : 255; 
-    return [valor, valor, valor];
+  aplicarFiltro('tucan_black_and_white.jpg', (pixels) => {
+    return procesarPixel(pixels, (pixel) => {
+      let media = (pixel[0] + pixel[1] + pixel[2]) / 3;
+      let valor = media < 128 ? 0 : 255;
+      return [valor, valor, valor];
+    });
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
  * Esta función debe reducir la imagen a la mitad.
- *
  * Una forma de conseguirlo es quitar los valores de las filas y columnas pares.
  * Otra forma es crear la imagen de nuevo unicamente con los valores de las filas y columnas pares.
  */
 function scaleDown() {
-  let outputPath = 'output/tucan_scale_down.jpg';
-  let pixels = handler.getPixels();
-
-  let nuevosPixels = [];
-  for (let fila = 0; fila < pixels.length; fila += 2) {
-    let nuevaFila = [];
-    for (let col = 0; col < pixels[fila].length; col += 2) {
-      nuevaFila.push(pixels[fila][col]);
+  aplicarFiltro('tucan_scale_down.jpg', (pixels) => {
+    let nuevosPixels = [];
+    for (let fila = 0; fila < pixels.length; fila += 2) {
+      let nuevaFila = [];
+      for (let col = 0; col < pixels[fila].length; col += 2) {
+        nuevaFila.push(pixels[fila][col]);
+      }
+      nuevosPixels.push(nuevaFila);
     }
-    nuevosPixels.push(nuevaFila);
-  }
-
-  handler.savePixels(nuevosPixels, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
+    return nuevosPixels;
+  }, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
 }
 
 /**
  * Esta función debe reducir el brillo de la imagen según el parámetro qye recibe la función.
- *
  * Una forma de conseguirlo es dividir el valor de cada pixel por el parámetro dimFactor.
  */
 function dimBrightness(dimFactor) {
-  let outputPath = 'output/tucan_dimed.jpg';
-  let pixels = handler.getPixels();
-
-  procesarPixel(pixels, (pixel) => {
-    return [
+  aplicarFiltro('tucan_dimed.jpg', (pixels) => {
+    return procesarPixel(pixels, (pixel) => [
       Math.round(pixel[0] / dimFactor),
       Math.round(pixel[1] / dimFactor),
       Math.round(pixel[2] / dimFactor)
-    ];
+    ]);
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
  * Esta función debe invertir el color de la imagen.
- *
  * Una forma de conseguirlo es asignar a cada valor RGB de cada píxel el valor 255 - valorRGB.
- *
  * Por ejemplo, si un pixel tiene valor [10, 20, 50] su nuevo valor sera [255 - 10, 255 - 20, 255 - 50] => [245, 235, 205]
  */
 function invertColors() {
-  let outputPath = 'output/tucan_inverse.jpg';
-  let pixels = handler.getPixels();
-
-  procesarPixel(pixels, (pixel) => {
-    return [
+  aplicarFiltro('tucan_inverse.jpg', (pixels) => {
+    return procesarPixel(pixels, (pixel) => [
       255 - pixel[0],
       255 - pixel[1],
       255 - pixel[2]
-    ];
+    ]);
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
