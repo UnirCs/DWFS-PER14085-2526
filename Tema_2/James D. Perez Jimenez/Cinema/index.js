@@ -27,41 +27,52 @@ let butacas = setup();
 
 // IMPLEMENTACIÓN DE LA FUNCIÓN SUGGEST
 
-function suggest(numset)
-{
+function suggest(numset) {
     const resultado = new Set();
     
     if (numset > N || numset <= 0) {
-        return resultado; 
+        return resultado;
     }
 
-    for (let fila = N - 1; fila >= 0; fila--){
-      let asientosLibres = 0;
-      let inicioBloque = 0;
-        for (let col = 0; col < N; col++)
-        {
+    let filaSeleccionada = -1;
+    let inicioSeleccionado = -1;
+
+    for (let fila = N - 1; fila >= 0; fila--) {
+        let asientosLibres = 0;
+        let inicioBloque = 0;
+
+        for (let col = 0; col < N; col++) {
+
             if (butacas[fila][col].estado === false) {
                 asientosLibres++;
 
                 if (asientosLibres === 1) {
-                    inicioBloque = col; 
+                    inicioBloque = col;
                 }
 
                 if (asientosLibres === numset) {
-                    for (let k = inicioBloque; k < inicioBloque + numset; k++) {
-                        resultado.add(butacas[fila][k].id);
+
+                    if (filaSeleccionada === -1) {
+                        filaSeleccionada = fila;
+                        inicioSeleccionado = inicioBloque;
                     }
-                    return resultado;
                 }
 
-            } 
-            else {
+            } else {
                 asientosLibres = 0;
             }
         }
     }
+
+    if (filaSeleccionada !== -1) {
+        for (let k = inicioSeleccionado; k < inicioSeleccionado + numset; k++) {
+            resultado.add(butacas[filaSeleccionada][k].id);
+        }
+    }
+
     return resultado;
 }
+
 
 // SIMULACIÓN DE ASIENTOS OCUPADOS PARA PRUEBAS
 

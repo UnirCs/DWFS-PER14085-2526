@@ -25,6 +25,14 @@
     border-radius: .8rem;
 }
 
+.c-max-width {
+    max-width: 960px;
+}
+
+.btn-maax-width {
+    max-width: 120px;
+}
+
 .promo-movie {
     min-height: clamp(180px, 30vw, 320px);
 }
