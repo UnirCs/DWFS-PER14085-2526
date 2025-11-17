@@ -1,0 +1,102 @@
+body {
+  background-color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+  color: yellow;
+}
+
+a{
+  color: gray;
+  text-decoration: none;
+}
+
+a:hover{
+  color: yellow;
+  text-decoration: none;
+}
+
+.header {
+  display: flexbox;
+  align-items: center;
+  text-align: center;
+  border: 2px solid yellow;
+}
+
+.sillas {
+  justify-content: space-between;
+  display:inline-block;
+  width: 80%;
+  align-items: center;
+  text-align: center;
+  border: 2px solid yellow;
+  color: rgb(158, 160, 35);
+  margin: 2em 10% 0px 10%;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  border: 1px solid yellow;
+  background-color: black;
+  margin: 1em;
+  display: inline-block;
+}
+
+.item:hover {
+  background-color: brown;
+}
+
+.item-selected {
+  width: 50px;
+  height: 50px;
+  border: 1px solid yellow;
+  background-color: rgb(233, 239, 101);
+  margin: 1em;
+  display: inline-block;
+}
+
+input {
+  background-color: black;
+  color: yellow;
+  width: 4em;
+  height: 2em;
+}
+
+form .submit {
+  background-color: yellowgreen;
+  color: black;
+  width: 6em;
+  height: 2em;
+  border-radius: 10px rgb(190, 190, 145);
+  border: 2px solid rgb(141, 141, 13);
+  outline: 2px solid red;
+  outline-offset: 10px; 
+  display:inline-block;
+  align-items: center;
+  text-align: center;
+  margin: 4em 40% 4em 40%;
+}
+
+.submit:hover {
+  background-color: rgb(148, 19, 19);
+  border: 2px solid rgb(13, 213, 39);
+  outline: 2px solid rgb(223, 223, 11);
+}
+
+footer {
+  height: 10em;
+  background-color: rgb(69, 69, 69);
+  color: white;
+  text-align: center;
+}
+
+footer ul {
+  list-style:none;
+  padding: 0.5em;
+}
+
+ul li{
+  margin: 1em;
+}
