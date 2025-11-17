@@ -35,23 +35,28 @@ function marcarOcupadas(occupiedIds = []) {
 
 function availableSeats(row, seats) {
     let consecutive = 0;
+    let index = -1;
+    
     for (let j = 0; j < row.length; j++) {
         if (row[j].estado) {
             consecutive = 0;
-            continue;
-        }
-
-        consecutive++;
-
-        if (consecutive === seats) {
-            let ids = [];
-            for (let k = j - seats + 1; k <= j; k++) {
-                ids.push(row[k].id);
+        } else {
+            consecutive++;
+            if (consecutive === seats) {
+                index = j - seats + 1;
             }
-            return ids;
         }
     }
-    return null;
+    
+    if (index === -1) {
+        return null;
+    }
+    
+    let ids = [];
+    for (let k = index; k < index + seats; k++) {
+        ids.push(row[k].id);
+    }
+    return ids;
 }
 
 function suggest(requestedSeats) {
@@ -63,18 +68,20 @@ function suggest(requestedSeats) {
         return new Set();
     }
 
+    let suggested = new Set();
+    let band = false;
+
     for (let i = butacas.length - 1; i >= 0; i--) {
         let ids = availableSeats(butacas[i], requestedSeats);
-        if (ids) {
-            const suggested = new Set();
+        if (ids && !band) {
             for (let id of ids) {
                 suggested.add(id);
             }
-            return suggested;
+            band = true;
         }
     }
 
-    return new Set();
+    return suggested;
 }
 
 function reservarAsientos(seatCount) {
@@ -85,9 +92,9 @@ function reservarAsientos(seatCount) {
 }
 
 
-const butacasInicialmenteOcupadas = [7, 8, 23, 24, 35, 41, 42, 43, 44, 45];
-const asientosSolicitados = 6;
-
+//Datos de prueba
+const butacasInicialmenteOcupadas = [7, 8, 11, 23, 24, 35, 41, 42, 43, 44, 45];
+const asientosSolicitados =9;
 
 
 marcarOcupadas(butacasInicialmenteOcupadas);
