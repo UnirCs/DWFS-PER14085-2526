@@ -1,0 +1,134 @@
+/* ===== HEADER ===== */
+header {
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding: 20px;
+}
+
+.display {
+  background-color: lightblue;
+  padding: 20px;
+  margin: 10px auto;
+  width: 60%;
+}
+
+/* ===== BODY ===== */
+body {
+  background-color: silver;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===== CONTENEDOR GENERAL ===== */
+main {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto auto;
+  gap: 40px 50px; /* más espacio entre filas y columnas */
+  justify-content: center;
+  align-items: start;
+  margin-top: 60px; /* separación del header */
+  padding-bottom: 60px; /* espacio inferior */
+}
+
+/* ===== ESCENARIO ===== */
+.escenario {
+  grid-column: 2; /* segunda columna */
+  grid-row: 1; /* primera fila */
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  gap: 20px;
+  background: gray;
+  width: max-content;
+  padding: 20px;
+  margin: 40px auto 0 auto; /* separa del borde superior */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.seat {
+  width: 80px;
+  height: 80px;
+  background-color: green;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.seat:hover {
+  background-color: limegreen;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px limegreen;
+}
+
+.seat.occupied {
+  background-color: silver;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: orange;
+}
+
+/* ===== LEYENDA ===== */
+.leyenda {
+  grid-column: 1;
+  grid-row: 1;
+  background: #333;
+  padding: 16px;
+  border-radius: 8px;
+  width: 180px;
+  text-align: left;
+  height: fit-content;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.leyenda h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.estado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cuadro {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.disponible { background: green; }
+.ocupado { background: silver; }
+.seleccionado { background: orange; }
+
+/* ===== RESERVA ===== */
+.reserva {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  background: palegreen;
+  color: black;
+  padding: 16px;
+  border-radius: 8px;
+  width: 220px;
+  text-align: left;
+  margin-top: 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.reserva h2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
