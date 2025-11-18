@@ -1,10 +1,28 @@
- /**
+/**
          * Configuración global de la aplicación
          */
         const PRECIO_ASIENTO = 12;
         const MAXIMO_ASIENTOS = 12;
         let asientosSeleccionados = [];
         const manejadoresClick = new Map();
+
+        /**
+         * Función de comparación para ordenar asientos alfanuméricamente
+         * @param {string} a - Primer asiento (ej: "A1", "B10")
+         * @param {string} b - Segundo asiento (ej: "A2", "B1")
+         * @returns {number} Resultado de la comparación
+         */
+        const compararAsientos = (a, b) => {
+            const letraA = a.charAt(0);
+            const numeroA = parseInt(a.slice(1), 10);
+            const letraB = b.charAt(0);
+            const numeroB = parseInt(b.slice(1), 10);
+            
+            if (letraA === letraB) {
+                return numeroA - numeroB;
+            }
+            return letraA.localeCompare(letraB);
+        };
 
         /**
          * Inicialización de la aplicación cuando el DOM está listo
@@ -54,8 +72,9 @@
                     pantallaAsientosSeleccionados.innerHTML = '<span class="text-muted">Selecciona tus asientos en el mapa</span>';
                     botonConfirmar.disabled = true;
                 } else {
-                    pantallaAsientosSeleccionados.innerHTML = asientosSeleccionados
-                        .sort() // Ordenar asientos alfabéticamente
+                    // Crear copia del array y ordenarla por separado
+                    const asientosOrdenados = [...asientosSeleccionados].sort(compararAsientos);
+                    pantallaAsientosSeleccionados.innerHTML = asientosOrdenados
                         .map(asiento => 
                             `<span class="badge bg-warning text-dark me-1">${asiento}</span>`
                         ).join('');
@@ -114,7 +133,9 @@
 
                 const cantidad = asientosSeleccionados.length;
                 const total = cantidad * PRECIO_ASIENTO;
-                const asientosOrdenados = asientosSeleccionados.sort();
+                
+                // Crear copia ordenada del array sin mutar el original
+                const asientosOrdenados = [...asientosSeleccionados].sort(compararAsientos);
                 const mensaje = `¿Confirmar reserva de ${cantidad} asiento${cantidad > 1 ? 's' : ''}?\n\nAsientos: ${asientosOrdenados.join(', ')}\nTotal: $${total}`;
                 
                 if (confirm(mensaje)) {
