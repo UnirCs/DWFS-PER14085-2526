@@ -24,7 +24,6 @@ function setup() {
 
 // MI CODIGO:
 
-
 function suggest(butacas, numAsientos) {
     let set = new Set()
     for (let i = butacas.length-1; i>=0 && butacas[i].length>=numAsientos && set.size!==numAsientos; i--){
@@ -39,7 +38,6 @@ function suggest(butacas, numAsientos) {
 }
 
 
-
 // EJECUCION DE PRUEBA:
 
 // Inicializar la matriz
@@ -49,7 +47,7 @@ console.log(butacas);
 
 // Modificar para cambiar el nuúmero de asientos de la recomendacion 
 let numAsientos = 10
-recomendacion = suggest(butacas, numAsientos)
+let recomendacion = suggest(butacas, numAsientos)
 // La ponemos por pantalla, si es vacio ponemos un mensaje
 recomendacion.size > 0 ? console.log(recomendacion) : console.log("No hay recomendaciones posibles para el numero de asientos contiguos pedidos")
 
