@@ -1,16 +1,23 @@
-const ImageHandler = require('./ImageHandler.js')
+const ImageHandler = require("./ImageHandler.js");
 
-
-let path = 'input/tucan.jpg';
+let path = "input/tucan.jpg";
 let handler = new ImageHandler(path);
 
+// El objetivo de esta función es aplique a cada pixel de la matriz la función transformCallback
+function applyPixelTransform(pixels, transformCallback) {
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j] = transformCallback(pixels[i][j]);
+    }
+  }
+  return pixels;
+}
 
 /**
  * Ejemplo de construccion de una imagen
  */
 function ejemplo() {
-
-  let outputPath = 'output/ejemplo.jpg';
+  let outputPath = "output/ejemplo.jpg";
   let pixeles = [];
   let filas = 2;
   let columnas = 2;
@@ -18,15 +25,18 @@ function ejemplo() {
     let nuevaFila = [];
     console.log("Fila: " + i);
     for (let j = 0; j < columnas; j++) {
-      console.log("Columna:" + j)
+      console.log("Columna:" + j);
       let pixel = [0, 0, 0]; // R G B -> Red Green Blue -> Rojo Verde Azul
-      if ((i + j) % 2 === 0) { // Si la suma de la fila y la columna es par....
+      if ((i + j) % 2 === 0) {
+        // Si la suma de la fila y la columna es par....
         pixel = [255, 255, 255];
       }
-      console.log("Vamos a añadir el pixel " + pixel + " a la fila " + i + " columna " + j)
+      console.log(
+        "Vamos a añadir el pixel " + pixel + " a la fila " + i + " columna " + j
+      );
       nuevaFila.push(pixel);
     }
-    console.log(nuevaFila)
+    console.log(nuevaFila);
     pixeles.push(nuevaFila);
   }
   console.log(pixeles);
@@ -39,19 +49,18 @@ function ejemplo() {
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
  */
 function redConverter() {
-  let outputPath = 'output/tucan_red.jpg';
+  let outputPath = "output/tucan_red.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][1] = 0; // Verde a 0
-      pixels[i][j][2] = 0; // Azul a 0
-    }
-  }
+  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
+    // Se recupera de cada pixel los valores de red, green y blue
+    let [red, green, blue] = pixel;
+    return [red, 0, 0];
+  });
 
   console.log("Transformación a rojo de la imagen completada");
 
-  handler.savePixels(pixels, outputPath);
+  handler.savePixels(transformedPixels, outputPath);
 }
 
 /**
@@ -60,19 +69,18 @@ function redConverter() {
  * Una forma de conseguirlo es simplemente poner los canales R y B a 0 para cada pixel.
  */
 function greenConverter() {
-  let outputPath = 'output/tucan_green.jpg';
+  let outputPath = "output/tucan_green.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 0; // Rojo
-      pixels[i][j][2] = 0; // Azul
-    }
-  }
+  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
+    // Se recupera de cada pixel los valores de red, green y blue
+    let [red, green, blue] = pixel;
+    return [0, green, 0];
+  });
 
   console.log("Transformación a verde de la imagen completada");
 
-  handler.savePixels(pixels, outputPath);
+  handler.savePixels(transformedPixels, outputPath);
 }
 
 /**
@@ -81,19 +89,18 @@ function greenConverter() {
  * Una forma de conseguirlo es simplemente poner los canales R y G a 0 para cada pixel.
  */
 function blueConverter() {
-  let outputPath = 'output/tucan_blue.jpg';
+  let outputPath = "output/tucan_blue.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 0; // Rojo
-      pixels[i][j][1] = 0; // Verde
-    }
-  }
+  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
+    // Se recupera de cada pixel los valores de red, green y blue
+    let [red, green, blue] = pixel;
+    return [0, 0, blue];
+  });
 
   console.log("Transformación a azul de la imagen completada");
 
-  handler.savePixels(pixels, outputPath);
+  handler.savePixels(transformedPixels, outputPath);
 }
 
 /**
@@ -106,24 +113,19 @@ function blueConverter() {
  * lo debemos transformar en el pixel [140, 140, 140].
  */
 function greyConverter() {
-  let outputPath = 'output/tucan_grey.jpg';
+  let outputPath = "output/tucan_grey.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let red = pixels[i][j][0];
-      let green = pixels[i][j][1];
-      let blue = pixels[i][j][2];
-      let media = Math.floor((red + green + blue) / 3);
-      pixels[i][j][0] = media; // Rojo
-      pixels[i][j][1] = media; // Verde
-      pixels[i][j][2] = media; // Azul
-    }
-  }
+  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
+    // Se recupera de cada pixel los valores de red, green y blue
+    let [red, green, blue] = pixel;
+    let media = Math.floor((red + green + blue) / 3);
+    return [media, media, media];
+  });
 
   console.log("Transformación a gris de la imagen completada");
 
-  handler.savePixels(pixels, outputPath);
+  handler.savePixels(transformedPixels, outputPath);
 }
 
 /**
@@ -134,30 +136,23 @@ function greyConverter() {
  * transformar el pixel en blanco [255, 255, 255].
  */
 function blackAndWhiteConverter() {
-  let outputPath = 'output/tucan_black_and_white.jpg';
+  let outputPath = "output/tucan_black_and_white.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let red = pixels[i][j][0];
-      let green = pixels[i][j][1];
-      let blue = pixels[i][j][2];
-      let media = Math.floor((red + green + blue) / 3);
-      if (media < 128) { // Si la media es menor que 128, el pixel es negro
-        pixels[i][j][0] = 0; // Rojo
-        pixels[i][j][1] = 0; // Verde
-        pixels[i][j][2] = 0; // Azul
-      } else {
-        pixels[i][j][0] = 255; // Rojo
-        pixels[i][j][1] = 255; // Verde
-        pixels[i][j][2] = 255; // Azul
-      }
+  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
+    // Se recupera de cada pixel los valores de red, green y blue
+    let [red, green, blue] = pixel;
+    let media = Math.floor((red + green + blue) / 3);
+    if (media < 128) {
+      return [0, 0, 0]; // Negro
+    } else {
+      return [255, 255, 255]; // Blanco
     }
-  }
+  });
 
   console.log("Transformación a blanco y negro de la imagen completada");
 
-  handler.savePixels(pixels, outputPath);
+  handler.savePixels(transformedPixels, outputPath);
 }
 
 /**
@@ -167,7 +162,7 @@ function blackAndWhiteConverter() {
  * Otra forma es crear la imagen de nuevo unicamente con los valores de las filas y columnas pares.
  */
 function scaleDown() {
-  let outputPath = 'output/tucan_scale_down.jpg';
+  let outputPath = "output/tucan_scale_down.jpg";
   let pixels = handler.getPixels();
 
   let nuevaImg = [];
@@ -181,7 +176,12 @@ function scaleDown() {
 
   console.log("Reducción de la imagen a la mitad completada");
 
-  handler.savePixels(nuevaImg, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
+  handler.savePixels(
+    nuevaImg,
+    outputPath,
+    handler.getShape()[0] / 2,
+    handler.getShape()[1] / 2
+  );
 }
 
 /**
@@ -190,26 +190,22 @@ function scaleDown() {
  * Una forma de conseguirlo es dividir el valor de cada pixel por el parámetro dimFactor.
  */
 function dimBrightness(dimFactor) {
-  let outputPath = 'output/tucan_dimed.jpg';
+  let outputPath = "output/tucan_dimed.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let red = pixels[i][j][0];
-      let green = pixels[i][j][1];
-      let blue = pixels[i][j][2];
-      let newRed = Math.floor(red / dimFactor);
-      let newGreen = Math.floor(green / dimFactor);
-      let newBlue = Math.floor(blue / dimFactor);
-      pixels[i][j][0] = newRed;
-      pixels[i][j][1] = newGreen;
-      pixels[i][j][2] = newBlue;
-    }
-  }
+  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
+    // Se recupera de cada pixel los valores de red, green y blue
+    let [red, green, blue] = pixel;
+    return [
+      Math.floor(red / dimFactor),
+      Math.floor(green / dimFactor),
+      Math.floor(blue / dimFactor),
+    ];
+  });
 
   console.log("Reducción de brillo de la imagen completada");
 
-  handler.savePixels(pixels, outputPath);
+  handler.savePixels(transformedPixels, outputPath);
 }
 
 /**
@@ -220,20 +216,21 @@ function dimBrightness(dimFactor) {
  * Por ejemplo, si un pixel tiene valor [10, 20, 50] su nuevo valor sera [255 - 10, 255 - 20, 255 - 50] => [245, 235, 205]
  */
 function invertColors() {
-  let outputPath = 'output/tucan_inverse.jpg';
+  let outputPath = "output/tucan_inverse.jpg";
   let pixels = handler.getPixels();
-
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 255 - pixels[i][j][0]; // Rojo
-      pixels[i][j][1] = 255 - pixels[i][j][1]; // Verde
-      pixels[i][j][2] = 255 - pixels[i][j][2]; // Azul
-    }
-  }
+  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
+    // Se recupera de cada pixel los valores de red, green y blue
+    let [red, green, blue] = pixel;
+    return [
+      255 - red, // Rojo invertido
+      255 - green, // Verde invertido
+      255 - blue, // Azul invertido
+    ];
+  });
 
   console.log("Inversión de colores de la imagen completada");
 
-  handler.savePixels(pixels, outputPath);
+  handler.savePixels(transformedPixels, outputPath);
 }
 
 /**
@@ -243,16 +240,17 @@ function invertColors() {
  * @param alphaSecond - Factor de fusion para la segunda imagen
  */
 function merge(alphaFirst, alphaSecond) {
-  let catHandler = new ImageHandler('input/cat.jpg');
-  let dogHandler = new ImageHandler('input/dog.jpg');
-  let outputPath = 'output/merged.jpg';
+  let catHandler = new ImageHandler("input/cat.jpg");
+  let dogHandler = new ImageHandler("input/dog.jpg");
+  let outputPath = "output/merged.jpg";
 
   let catPixels = catHandler.getPixels();
   let dogPixels = dogHandler.getPixels();
 
   let pixels = [];
 
-  for (let i = 0; i < catPixels.length; i++) { // Ambas imagenes tienen el mismo tamaño
+  for (let i = 0; i < catPixels.length; i++) {
+    // Ambas imagenes tienen el mismo tamaño
     let nuevaFila = [];
     for (let j = 0; j < catPixels[i].length; j++) {
       let catRed = catPixels[i][j][0];
@@ -275,7 +273,6 @@ function merge(alphaFirst, alphaSecond) {
 
   dogHandler.savePixels(pixels, outputPath);
 }
-
 
 /**
  * Programa de prueba
