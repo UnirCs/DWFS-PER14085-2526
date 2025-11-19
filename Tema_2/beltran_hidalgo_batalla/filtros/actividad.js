@@ -46,13 +46,14 @@ function ejemplo() {
  *
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
  */
+
+function turnRed(pixel) {
+  return [pixel[0], 0, 0];
+}
+
 function redConverter() {
   let outputPath = "output/tucan_red.jpg";
   let pixels = handler.getPixels();
-
-  function turnRed(pixel) {
-    return [pixel[0], 0, 0];
-  }
 
   recorrerPixelesEjecutarCallBack(pixels, turnRed);
 
@@ -64,13 +65,14 @@ function redConverter() {
  *
  * Una forma de conseguirlo es simplemente poner los canales R y B a 0 para cada pixel.
  */
+
+function turnGreen(pixel) {
+  return [0, pixel[1], 0];
+}
+
 function greenConverter() {
   let outputPath = "output/tucan_green.jpg";
   let pixels = handler.getPixels();
-
-  function turnGreen(pixel) {
-    return [0, pixel[1], 0];
-  }
 
   recorrerPixelesEjecutarCallBack(pixels, turnGreen);
 
@@ -82,13 +84,14 @@ function greenConverter() {
  *
  * Una forma de conseguirlo es simplemente poner los canales R y G a 0 para cada pixel.
  */
+
+function turnBlue(pixel) {
+  return [0, 0, pixel[2]];
+}
+
 function blueConverter() {
   let outputPath = "output/tucan_blue.jpg";
   let pixels = handler.getPixels();
-
-  function turnBlue(pixel) {
-    return [0, 0, pixel[2]];
-  }
 
   recorrerPixelesEjecutarCallBack(pixels, turnBlue);
 
@@ -104,14 +107,15 @@ function blueConverter() {
  * Es decir, si un pixel tiene el valor [100, 120, 200], su media es 140 y por lo tanto
  * lo debemos transformar en el pixel [140, 140, 140].
  */
+
+function turnGrey(pixel) {
+  let media = pixel.reduce((a, b) => a + b) / pixel.length;
+  return [media, media, media];
+}
+
 function greyConverter() {
   let outputPath = "output/tucan_grey.jpg";
   let pixels = handler.getPixels();
-
-  function turnGrey(pixel) {
-    let media = pixel.reduce((a, b) => a + b) / pixel.length;
-    return [media, media, media];
-  }
 
   recorrerPixelesEjecutarCallBack(pixels, turnGrey);
 
@@ -125,18 +129,19 @@ function greyConverter() {
  * si esta es menor que 128 transforamr el pixel en negro [0, 0, 0] o, en caso contrario,
  * transformar el pixel en blanco [255, 255, 255].
  */
+
+function turnBlackWhite(pixel) {
+  let media = pixel.reduce((a, b) => a + b) / pixel.length;
+  if (media < 128) {
+    return [0, 0, 0];
+  } else {
+    return [255, 255, 255];
+  }
+}
+
 function blackAndWhiteConverter() {
   let outputPath = "output/tucan_black_and_white.jpg";
   let pixels = handler.getPixels();
-
-  function turnBlackWhite(pixel) {
-    let media = pixel.reduce((a, b) => a + b) / pixel.length;
-    if (media < 128) {
-      return [0, 0, 0];
-    } else {
-      return [255, 255, 255];
-    }
-  }
 
   recorrerPixelesEjecutarCallBack(pixels, turnBlackWhite);
 
@@ -178,13 +183,14 @@ function scaleDown() {
  *
  * Una forma de conseguirlo es dividir el valor de cada pixel por el parámetro dimFactor.
  */
+
+function dimBright(pixel) {
+  return [pixel[0] / 2, pixel[1] / 2, pixel[2] / 2];
+}
+
 function dimBrightness(dimFactor) {
   let outputPath = "output/tucan_dimed.jpg";
   let pixels = handler.getPixels();
-
-  function dimBright(pixel) {
-    return [pixel[0] / 2, pixel[1] / 2, pixel[2] / 2];
-  }
 
   recorrerPixelesEjecutarCallBack(pixels, dimBright);
 
@@ -198,13 +204,14 @@ function dimBrightness(dimFactor) {
  *
  * Por ejemplo, si un pixel tiene valor [10, 20, 50] su nuevo valor sera [255 - 10, 255 - 20, 255 - 50] => [245, 235, 205]
  */
+
+function invertPixel(pixel) {
+  return [255 - pixel[0], 255 - pixel[1], 255 - pixel[2]];
+}
+
 function invertColors() {
   let outputPath = "output/tucan_inverse.jpg";
   let pixels = handler.getPixels();
-
-  function invertPixel(pixel) {
-    return [255 - pixel[0], 255 - pixel[1], 255 - pixel[2]];
-  }
 
   recorrerPixelesEjecutarCallBack(pixels, invertPixel);
 
