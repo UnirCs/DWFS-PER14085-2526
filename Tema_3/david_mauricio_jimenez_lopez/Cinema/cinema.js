@@ -44,19 +44,11 @@ function suggest(numero_butacas) {
     return resultado_butacas;
 }
 
-/**
- * Función para marcar aleatoriamente 3 butacas como ocupadas
- */
-function marcarButacasAleatorias() {
-    for (let i = 0; i < 3; i++) {
-        const filaAleatoria = Math.floor(Math.random() * N);
-        const columnaAleatoria = Math.floor(Math.random() * N);
-        butacas[filaAleatoria][columnaAleatoria].estado = true;
-    }
-}
-
 // Inicializar la matriz
 let butacas = setup();
 
 // Marcar 3 butacas aleatoriamente
-marcarButacasAleatorias();
+
+butacas[6][3].estado = true;
+butacas[6][8].estado = true;
+butacas[7][3].estado = true;
