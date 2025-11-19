@@ -146,11 +146,11 @@ function scaleDown() {
   let pixels = handler.getPixels();
 
   for (let i = pixels.length; i > 0; i--) {
-    if (i % 2 == 0) {
+    if (i % 2 === 0) {
       pixels.splice(i, 1);
     } else {
       for (let j = pixels[i].length; j > 0; j--) {
-        if (j % 2 == 0) {
+        if (j % 2 === 0) {
           pixels[i].splice(j, 1);
         }
       }
