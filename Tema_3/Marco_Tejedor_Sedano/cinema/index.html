@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Cine UNIR</title>
+</head>
+<body>
+    <h1 class="unir-text unir-header" id="title1">UNIR - CINEMA</h1>
+    <div class="pantalla"></div>
+
+    <table class="butacas-cine unir-text">
+        <tbody>
+            <tr>
+                <th class="encabezado-butacas">Fila 1</th>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Fila 2</th>
+                <td class="coloreado"></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Fila 3</th>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Fila 4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Fila 5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="coloreado"></td>
+                <td class="coloreado"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <form class="formulario-reserva unir-text">
+        <label for="num-butacas">Indica el número de butacas que quieres reservar</label><br>
+        <input onInput="suggest(8)" type="number" name="num-butacas" id="num-butacas"><br>
+        <input type="submit" value="Reservar"><br>
+    </form>
+
+    <footer>
+        <p>Cine UNIR</p>
+        <ul style="list-style: none" ;>
+            <li>Direccion: Calle de los aprobados, 123, Madrid</li>
+            <li>Teléfono: 600 555 555</li>
+            <li>Email: cine.marcotejedor@noexi.ste</li>
+        </ul>
+    </footer>
+    <script src="cinema.js"></script>
+</body>
+
+</html>
