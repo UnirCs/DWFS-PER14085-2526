@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CINEMA - German Godoy</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="cinema__header">
+    <div class="display">
+      <h1 class="header__title">PANTALLA</h1>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="layout">
+    <!-- Fila superior: escenario + leyenda -->
+    <div class="fila-superior">
+      <!-- Escenario con asientos -->
+      <div class="escenario">
+        <div class="seat">A1</div>
+        <div class="seat">A2</div>
+        <div class="seat">A3</div>
+        <div class="seat">A4</div>
+        <div class="seat">A5</div>
+        <div class="seat">A6</div>
+        <div class="seat">A7</div>
+        <div class="seat">A8</div>
+
+        <div class="seat">B1</div>
+        <div class="seat">B2</div>
+        <div class="seat">B3</div>
+        <div class="seat">B4</div>
+        <div class="seat">B5</div>
+        <div class="seat">B6</div>
+        <div class="seat">B7</div>
+        <div class="seat">B8</div>
+
+        <div class="seat">C1</div>
+        <div class="seat">C2</div>
+        <div class="seat">C3</div>
+        <div class="seat">C4</div>
+        <div class="seat">C5</div>
+        <div class="seat">C6</div>
+        <div class="seat">C7</div>
+        <div class="seat">C8</div>
+
+        <div class="seat">D1</div>
+        <div class="seat">D2</div>
+        <div class="seat">D3</div>
+        <div class="seat">D4</div>
+        <div class="seat">D5</div>
+        <div class="seat selected">D6</div>
+        <div class="seat">D7</div>
+        <div class="seat occupied">D8</div>
+      </div>
+
+      <!-- Leyenda -->
+      <div class="leyenda">
+        <h2>Estados de las Sillas</h2>
+        <div class="estado">
+          <div class="cuadro disponible"></div> <span>Disponible</span>
+        </div>
+        <div class="estado">
+          <div class="cuadro ocupado"></div> <span>Ocupada</span>
+        </div>
+        <div class="estado">
+          <div class="cuadro seleccionado"></div> <span>Seleccionada</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caja de reserva debajo del escenario -->
+    <div class="reserva">
+      <h2>Indica cuántos asientos quieres reservar:</h2>
+      <input type="number" min="1" max="10" placeholder="Cantidad" />
+    </div>
+  </div>
+
+</body>
+</html>
