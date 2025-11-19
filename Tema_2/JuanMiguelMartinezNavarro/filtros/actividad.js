@@ -1,0 +1,311 @@
+const ImageHandler = require('./ImageHandler.js')
+
+
+let path = 'input/tucan.jpg';
+let handler = new ImageHandler(path);
+
+
+/**
+ * Ejemplo de construccion de una imagen
+ */
+function ejemplo() {
+
+  let outputPath = 'output/ejemplo.jpg';
+  let pixeles = [];
+  let filas = 2;
+  let columnas = 2;
+  for (let i = 0; i < filas; i++) {
+    let nuevaFila = [];
+    console.log("Fila: " + i);
+    for (let j = 0; j < columnas; j++) {
+      console.log("Columna:" + j)
+      let pixel = [0, 0, 0]; // R G B -> Red Green Blue -> Rojo Verde Azul
+      if ((i + j) % 2 === 0) { // Si la suma de la fila y la columna es par....
+        pixel = [255, 255, 255];
+      }
+      console.log("Vamos a añadir el pixel " + pixel + " a la fila " + i + " columna " + j)
+      nuevaFila.push(pixel);
+    }
+    console.log(nuevaFila)
+    pixeles.push(nuevaFila);
+  }
+  console.log(pixeles);
+  handler.savePixels(pixeles, outputPath, filas, columnas);
+}
+
+/**
+ * Esta función debe transformar una imagen en escala de rojos.
+ *
+ * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
+ */
+function redConverter() {
+  let outputPath = 'output/tucan_red.jpg';
+  let pixels = handler.getPixels();
+
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j][1] = 0; // Verde a 0
+      pixels[i][j][2] = 0; // Azul a 0
+    }
+  }
+
+  console.log("Transformación a rojo de la imagen completada");
+
+  handler.savePixels(pixels, outputPath);
+}
+
+/**
+ * Esta función debe transformar una imagen en escala de verdes.
+ *
+ * Una forma de conseguirlo es simplemente poner los canales R y B a 0 para cada pixel.
+ */
+function greenConverter() {
+  let outputPath = 'output/tucan_green.jpg';
+  let pixels = handler.getPixels();
+
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j][0] = 0; // Rojo
+      pixels[i][j][2] = 0; // Azul
+    }
+  }
+
+  console.log("Transformación a verde de la imagen completada");
+
+  handler.savePixels(pixels, outputPath);
+}
+
+/**
+ * Esta función debe transformar una imagen en escala de azules.
+ *
+ * Una forma de conseguirlo es simplemente poner los canales R y G a 0 para cada pixel.
+ */
+function blueConverter() {
+  let outputPath = 'output/tucan_blue.jpg';
+  let pixels = handler.getPixels();
+
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j][0] = 0; // Rojo
+      pixels[i][j][1] = 0; // Verde
+    }
+  }
+
+  console.log("Transformación a azul de la imagen completada");
+
+  handler.savePixels(pixels, outputPath);
+}
+
+/**
+ * Esta función debe transformar una imagen a su equivalente en escala de grises.
+ *
+ * Una forma de conseguirlo es calcular la media de los valores RGB de cada pixel y
+ * asignarle a cada canal de RGB esa media.
+ *
+ * Es decir, si un pixel tiene el valor [100, 120, 200], su media es 140 y por lo tanto
+ * lo debemos transformar en el pixel [140, 140, 140].
+ */
+function greyConverter() {
+  let outputPath = 'output/tucan_grey.jpg';
+  let pixels = handler.getPixels();
+
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      let red = pixels[i][j][0];
+      let green = pixels[i][j][1];
+      let blue = pixels[i][j][2];
+      let media = Math.floor((red + green + blue) / 3);
+      pixels[i][j][0] = media; // Rojo
+      pixels[i][j][1] = media; // Verde
+      pixels[i][j][2] = media; // Azul
+    }
+  }
+
+  console.log("Transformación a gris de la imagen completada");
+
+  handler.savePixels(pixels, outputPath);
+}
+
+/**
+ * Esta función debe transformar una imagen a su equivalente en Blanco y negro.
+ *
+ * Una forma de conseguirlo es calcular la media de los valores RGB de cada pixel y
+ * si esta es menor que 128 transforamr el pixel en negro [0, 0, 0] o, en caso contrario,
+ * transformar el pixel en blanco [255, 255, 255].
+ */
+function blackAndWhiteConverter() {
+  let outputPath = 'output/tucan_black_and_white.jpg';
+  let pixels = handler.getPixels();
+
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      let red = pixels[i][j][0];
+      let green = pixels[i][j][1];
+      let blue = pixels[i][j][2];
+      let media = Math.floor((red + green + blue) / 3);
+      if (media < 128) { // Si la media es menor que 128, el pixel es negro
+        pixels[i][j][0] = 0; // Rojo
+        pixels[i][j][1] = 0; // Verde
+        pixels[i][j][2] = 0; // Azul
+      } else {
+        pixels[i][j][0] = 255; // Rojo
+        pixels[i][j][1] = 255; // Verde
+        pixels[i][j][2] = 255; // Azul
+      }
+    }
+  }
+
+  console.log("Transformación a blanco y negro de la imagen completada");
+
+  handler.savePixels(pixels, outputPath);
+}
+
+/**
+ * Esta función debe reducir la imagen a la mitad.
+ *
+ * Una forma de conseguirlo es quitar los valores de las filas y columnas pares.
+ * Otra forma es crear la imagen de nuevo unicamente con los valores de las filas y columnas pares.
+ */
+function scaleDown() {
+  let outputPath = 'output/tucan_scale_down.jpg';
+  let pixels = handler.getPixels();
+
+  let nuevaImg = [];
+  for (let i = 0; i < pixels.length; i += 2) {
+    let nuevaFila = [];
+    for (let j = 0; j < pixels[i].length; j += 2) {
+      nuevaFila.push(pixels[i][j]);
+    }
+    nuevaImg.push(nuevaFila);
+  }
+
+  console.log("Reducción de la imagen a la mitad completada");
+
+  handler.savePixels(nuevaImg, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
+}
+
+/**
+ * Esta función debe reducir el brillo de la imagen según el parámetro qye recibe la función.
+ *
+ * Una forma de conseguirlo es dividir el valor de cada pixel por el parámetro dimFactor.
+ */
+function dimBrightness(dimFactor) {
+  let outputPath = 'output/tucan_dimed.jpg';
+  let pixels = handler.getPixels();
+
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      let red = pixels[i][j][0];
+      let green = pixels[i][j][1];
+      let blue = pixels[i][j][2];
+      let newRed = Math.floor(red / dimFactor);
+      let newGreen = Math.floor(green / dimFactor);
+      let newBlue = Math.floor(blue / dimFactor);
+      pixels[i][j][0] = newRed;
+      pixels[i][j][1] = newGreen;
+      pixels[i][j][2] = newBlue;
+    }
+  }
+
+  console.log("Reducción de brillo de la imagen completada");
+
+  handler.savePixels(pixels, outputPath);
+}
+
+/**
+ * Esta función debe invertir el color de la imagen.
+ *
+ * Una forma de conseguirlo es asignar a cada valor RGB de cada píxel el valor 255 - valorRGB.
+ *
+ * Por ejemplo, si un pixel tiene valor [10, 20, 50] su nuevo valor sera [255 - 10, 255 - 20, 255 - 50] => [245, 235, 205]
+ */
+function invertColors() {
+  let outputPath = 'output/tucan_inverse.jpg';
+  let pixels = handler.getPixels();
+
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j][0] = 255 - pixels[i][j][0]; // Rojo
+      pixels[i][j][1] = 255 - pixels[i][j][1]; // Verde
+      pixels[i][j][2] = 255 - pixels[i][j][2]; // Azul
+    }
+  }
+
+  console.log("Inversión de colores de la imagen completada");
+
+  handler.savePixels(pixels, outputPath);
+}
+
+/**
+ * merge - Junta dos imagenes con cierto factor de fusion
+ * Una forma de conseguirlo es sumar el valor de cada canal de cada píxel de cada imagen, habiéndolo multiplicado antes por el factor de fusión correspondiente.
+ * @param alphaFirst - Factor de fusion para la primera imagen
+ * @param alphaSecond - Factor de fusion para la segunda imagen
+ */
+function merge(alphaFirst, alphaSecond) {
+  let catHandler = new ImageHandler('input/cat.jpg');
+  let dogHandler = new ImageHandler('input/dog.jpg');
+  let outputPath = 'output/merged.jpg';
+
+  let catPixels = catHandler.getPixels();
+  let dogPixels = dogHandler.getPixels();
+
+  let pixels = [];
+
+  for (let i = 0; i < catPixels.length; i++) { // Ambas imagenes tienen el mismo tamaño
+    let nuevaFila = [];
+    for (let j = 0; j < catPixels[i].length; j++) {
+      let catRed = catPixels[i][j][0];
+      let catGreen = catPixels[i][j][1];
+      let catBlue = catPixels[i][j][2];
+      let dogRed = dogPixels[i][j][0];
+      let dogGreen = dogPixels[i][j][1];
+      let dogBlue = dogPixels[i][j][2];
+
+      // Formula: newRed = dogRed * alphaFirst + catRed * alphaSecond
+      let newRed = Math.floor(dogRed * alphaFirst + catRed * alphaSecond);
+      let newGreen = Math.floor(dogGreen * alphaFirst + catGreen * alphaSecond);
+      let newBlue = Math.floor(dogBlue * alphaFirst + catBlue * alphaSecond);
+      nuevaFila.push([newRed, newGreen, newBlue]);
+    }
+    pixels.push(nuevaFila);
+  }
+
+  console.log("Fusión de las imágenes completada");
+
+  dogHandler.savePixels(pixels, outputPath);
+}
+
+
+/**
+ * Programa de prueba
+ * NO DEBES MODIFICAR ESTAS LÍNEAS DE CÓDIGO
+ *
+ * Ejecuta el archivo actividad.js tal como se indica en el archivo Readme.md
+ * En la carpeta output/ apareceran los resultados para cada uno de los casos
+ *
+ *     Ejecutar ejemplo: 0
+ *     Conversor a rojos: 1
+ *     Conversor a verdes: 2
+ *     Conversor a azules: 3
+ *     Conversor a grises: 4
+ *     Conversor blanco y negro: 5
+ *     Redimensionar: 6
+ *     Reducir brillo: 7
+ *     Negativo: 8
+ *     Fusion de imagenes: 9
+ */
+let optionN = 9;
+
+switch (optionN) {
+  case 1: redConverter(); break;
+  case 2: greenConverter(); break;
+  case 3: blueConverter(); break;
+  case 4: greyConverter(); break;
+  case 5: blackAndWhiteConverter(); break;
+  case 6: scaleDown(); break;
+  case 7: dimBrightness(2); break;
+  case 8: invertColors(); break;
+  case 9: merge(0.3, 0.7); break;
+  default: ejemplo();
+}
