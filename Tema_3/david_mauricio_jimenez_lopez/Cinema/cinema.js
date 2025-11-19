@@ -39,18 +39,24 @@ function suggest(numero_butacas) {
                 resultado_butacas = new Set(butacas_concecutivas.map(butaca => butaca.id));
             }
         }
-    }    
-   
+    } 
     console.log('El set a devolver:', resultado_butacas);
     return resultado_butacas;
 }
 
+/**
+ * Función para marcar aleatoriamente 3 butacas como ocupadas
+ */
+function marcarButacasAleatorias() {
+    for (let i = 0; i < 3; i++) {
+        const filaAleatoria = Math.floor(Math.random() * N);
+        const columnaAleatoria = Math.floor(Math.random() * N);
+        butacas[filaAleatoria][columnaAleatoria].estado = true;
+    }
+}
+
 // Inicializar la matriz
 let butacas = setup();
-// Imprimir la matriz
-console.log(butacas);
 
-// ALgunas butacas ya ocupadas
-butacas[9][0].estado = true;
-butacas[9][1].estado = true;
-butacas[8][5].estado = true;
+// Marcar 3 butacas aleatoriamente
+marcarButacasAleatorias();
