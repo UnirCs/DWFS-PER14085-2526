@@ -6,30 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>UNIR-CINEMA — Reserva de butacas</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <style>
-        .seat {
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            user-select: none;
-            transition: transform .12s ease, box-shadow .12s ease;
-        }
-
-        .seat:hover {
-            transform: translateY(-4px);
-        }
-
-        .seat.occupied {
-            cursor: not-allowed;
-            transform: none;
-            opacity: .52;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
@@ -133,19 +110,6 @@
                     <label class="text-sm text-gray-600">Número de asientos a reservar</label>
                     <input id="seatCount" type="number" min="1" max="10" value="1"
                         class="w-full border rounded px-3 py-2" />
-
-                    <div>
-                        <label class="text-sm text-gray-600">Butacas seleccionadas</label>
-                        <div id="selectedList" class="mt-2 min-h-[44px] border rounded p-2 text-sm text-gray-700">—
-                            ninguna
-                            —</div>
-                    </div>
-
-                    <div class="flex items-center justify-between text-sm text-gray-600">
-                        <div>Disponibles: <span id="availableCount" class="font-medium">—</span></div>
-                        <div>Seleccionadas: <span id="chosenCount" class="font-medium">0</span></div>
-                    </div>
-
                     <button id="confirmBtn" type="button"
                         class="mt-2 bg-indigo-600 text-white rounded px-4 py-2 hover:bg-indigo-700 disabled:opacity-50"
                         disabled>Confirmar reserva</button>
