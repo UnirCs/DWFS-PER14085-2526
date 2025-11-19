@@ -1,0 +1,27 @@
+* {
+    font-family: "Rye", serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+div {
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 2rem;
+}
+
+button {
+    font-size: 4rem;
+}
+
+p {
+    padding: 2rem;
+}
