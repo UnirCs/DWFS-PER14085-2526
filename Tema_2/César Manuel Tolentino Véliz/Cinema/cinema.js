@@ -15,8 +15,7 @@ function setup() {
             });
         }
         butacas.push(fila);
-    }
-    return butacas;
+    }  return butacas;
 }
 
 // Función para sugerir asientos
