@@ -26,38 +26,42 @@ function setup() {
 
 function suggest(butacas, numButacas) {
     const N = butacas.length;
-
     if (numButacas > N) return new Set();
 
     const butacasSugeridas = new Set();
-    let butacasEncontradas = false;
 
-    for (let i = N - 1; i >= 0 && !butacasEncontradas; i--) {       
-        for (let j = 0; j <= N - numButacas && !butacasEncontradas; j++) {   
-            let libres = true;  
-            for (let k = 0; k < numButacas && libres; k++) {   
-                if (butacas[i][j + k].estado) {
-                    libres = false;
-                }
+    // Función auxiliar para verificar si un bloque está libre
+    function bloqueLibre(fila, inicio, cantidad) {
+        for (let k = 0; k < cantidad; k++) {
+            if (butacas[fila][inicio + k].estado) return false;
+        }
+        return true;
+    }
+
+    for (let fila = N - 1; fila >= 0; fila--) {
+        const limite = N - numButacas;
+
+        for (let inicio = 0; inicio <= limite; inicio++) {
+
+            if (!bloqueLibre(fila, inicio, numButacas)) continue;
+
+            // Agregar IDs del bloque encontrado
+            for (let k = 0; k < numButacas; k++) {
+                butacasSugeridas.add(butacas[fila][inicio + k].id);
             }
-            if (libres) { 
-                for (let k = 0; k < numButacas; k++) {
-                    butacasSugeridas.add(butacas[i][j + k].id);
-                }
-                butacasEncontradas = true;
-            }
+
+            console.log("Asientos sugeridos: ", butacasSugeridas);
+            return butacasSugeridas; // ya encontramos el bloque
         }
     }
 
-    console.log("Asientos sugeridos: ", butacasSugeridas);
-
-    return butacasSugeridas;
+    return butacasSugeridas; // si no encuentra nada
 }
 
 function onInputSuggest() {
     let butacas = setup();
-    let cantidad = parseInt(document.getElementById("sillas").value);
-    let sugerencias = suggest(butacas, cantidad);
+    let cantidad = Number.parseInt(document.getElementById("sillas").value);
+    suggest(butacas, cantidad);
     }
 
 let butacas = setup();
