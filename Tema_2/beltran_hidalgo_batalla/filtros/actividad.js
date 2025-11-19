@@ -3,6 +3,14 @@ const ImageHandler = require("./ImageHandler.js");
 let path = "input/tucan.jpg";
 let handler = new ImageHandler(path);
 
+function recorrerPixelesEjecutarCallBack(pixels, callback) {
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j] = callback(pixels[i][j]);
+    }
+  }
+}
+
 /**
  * Ejemplo de construccion de una imagen
  */
@@ -42,11 +50,11 @@ function redConverter() {
   let outputPath = "output/tucan_red.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j] = [pixels[i][j][0], 0, 0];
-    }
+  function turnRed(pixel) {
+    return [pixel[0], 0, 0];
   }
+
+  recorrerPixelesEjecutarCallBack(pixels, turnRed);
 
   handler.savePixels(pixels, outputPath);
 }
@@ -60,11 +68,11 @@ function greenConverter() {
   let outputPath = "output/tucan_green.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j] = [0, pixels[i][j][1], 0];
-    }
+  function turnGreen(pixel) {
+    return [0, pixel[1], 0];
   }
+
+  recorrerPixelesEjecutarCallBack(pixels, turnGreen);
 
   handler.savePixels(pixels, outputPath);
 }
@@ -78,11 +86,11 @@ function blueConverter() {
   let outputPath = "output/tucan_blue.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j] = [0, 0, pixels[i][j][2]];
-    }
+  function turnBlue(pixel) {
+    return [0, 0, pixel[2]];
   }
+
+  recorrerPixelesEjecutarCallBack(pixels, turnBlue);
 
   handler.savePixels(pixels, outputPath);
 }
@@ -100,12 +108,12 @@ function greyConverter() {
   let outputPath = "output/tucan_grey.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let media = pixels[i][j].reduce((a, b) => a + b) / pixels[i][j].length;
-      pixels[i][j] = [media, media, media];
-    }
+  function turnGrey(pixel) {
+    let media = pixel.reduce((a, b) => a + b) / pixel.length;
+    return [media, media, media];
   }
+
+  recorrerPixelesEjecutarCallBack(pixels, turnGrey);
 
   handler.savePixels(pixels, outputPath);
 }
@@ -121,16 +129,16 @@ function blackAndWhiteConverter() {
   let outputPath = "output/tucan_black_and_white.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let media = pixels[i][j].reduce((a, b) => a + b) / pixels[i][j].length;
-      if (media < 128) {
-        pixels[i][j] = [0, 0, 0];
-      } else {
-        pixels[i][j] = [255, 255, 255];
-      }
+  function turnBlackWhite(pixel) {
+    let media = pixel.reduce((a, b) => a + b) / pixel.length;
+    if (media < 128) {
+      return [0, 0, 0];
+    } else {
+      return [255, 255, 255];
     }
   }
+
+  recorrerPixelesEjecutarCallBack(pixels, turnBlackWhite);
 
   handler.savePixels(pixels, outputPath);
 }
@@ -174,15 +182,11 @@ function dimBrightness(dimFactor) {
   let outputPath = "output/tucan_dimed.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j] = [
-        pixels[i][j][0] / 2,
-        pixels[i][j][1] / 2,
-        pixels[i][j][2] / 2,
-      ];
-    }
+  function dimBright(pixel) {
+    return [pixel[0] / 2, pixel[1] / 2, pixel[2] / 2];
   }
+
+  recorrerPixelesEjecutarCallBack(pixels, dimBright);
 
   handler.savePixels(pixels, outputPath);
 }
@@ -198,15 +202,11 @@ function invertColors() {
   let outputPath = "output/tucan_inverse.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j] = [
-        255 - pixels[i][j][0],
-        255 - pixels[i][j][1],
-        255 - pixels[i][j][2],
-      ];
-    }
+  function invertPixel(pixel) {
+    return [255 - pixel[0], 255 - pixel[1], 255 - pixel[2]];
   }
+
+  recorrerPixelesEjecutarCallBack(pixels, invertPixel);
 
   handler.savePixels(pixels, outputPath);
 }
