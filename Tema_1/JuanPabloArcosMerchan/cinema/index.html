@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIR-CINEMA - Selección de sillas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <header class="text-center py-4 bg-primary text-white">
+        <h1 class="display-4">UNIR-CINEMA</h1>
+        <p class="lead">Selección de sillas para: Jujutsu kaisen: ejecución (07:00 pm)</p>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+
+            <div class="col-lg-8">
+                <div class="screen bg-light mb-5 p-3 rounded shadow-lg text-center mx-auto">
+                    <h2 class="text-dark fs-5 mb-0">PANTALLA</h2>
+                </div>
+
+                <div class="seating-chart text-center">
+
+                    <div class="legend mb-4 d-flex justify-content-center gap-4">
+                        <div class="legend-item d-flex align-items-center">
+                            <div class="seat available me-2"></div>
+                            Disponible
+                        </div>
+                        <div class="legend-item d-flex align-items-center">
+                            <div class="seat occupied me-2"></div>
+                            Ocupado
+                        </div>
+                        <div class="legend-item d-flex align-items-center">
+                            <div class="seat selected me-2"></div>
+                            Seleccionado
+                        </div>
+                    </div>
+
+                    <div class="seats-area">
+                        <div class="row-seats d-flex justify-content-center align-items-center mb-2" data-row="A">
+                            <span class="row-label me-3 fw-bold">A</span>
+                            <div class="seat available" data-col="1">1</div>
+                            <div class="seat available" data-col="2">2</div>
+                            <div class="seat occupied" data-col="3">3</div>
+                            <div class="seat occupied" data-col="4">4</div>
+                            <div class="seat available" data-col="5">5</div>
+                            <div class="seat available" data-col="6">6</div>
+                            <div class="seat available" data-col="7">7</div>
+                            <div class="seat available" data-col="8">8</div>
+                            <div class="seat occupied" data-col="9">9</div>
+                            <div class="seat available" data-col="10">10</div>
+                        </div>
+
+                        <div class="row-seats d-flex justify-content-center align-items-center mb-2" data-row="B">
+                            <span class="row-label me-3 fw-bold">B</span>
+                            <div class="seat available" data-col="1">1</div>
+                            <div class="seat available" data-col="2">2</div>
+                            <div class="seat available" data-col="3">3</div>
+                            <div class="seat available" data-col="4">4</div>
+                            <div class="seat available" data-col="5">5</div>
+                            <div class="seat occupied" data-col="6">6</div>
+                            <div class="seat occupied" data-col="7">7</div>
+                            <div class="seat available" data-col="8">8</div>
+                            <div class="seat available" data-col="9">9</div>
+                            <div class="seat available" data-col="10">10</div>
+                        </div>
+
+                        <div class="row-seats d-flex justify-content-center align-items-center mb-2" data-row="C">
+                            <span class="row-label me-3 fw-bold">C</span>
+                            <div class="seat available" data-col="1">1</div>
+                            <div class="seat available" data-col="2">2</div>
+                            <div class="seat available" data-col="3">3</div>
+                            <div class="seat available" data-col="4">4</div>
+                            <div class="seat selected" data-col="5">5</div>
+                            <div class="seat selected" data-col="6">6</div>
+                            <div class="seat available" data-col="7">7</div>
+                            <div class="seat available" data-col="8">8</div>
+                            <div class="seat available" data-col="9">9</div>
+                            <div class="seat available" data-col="10">10</div>
+                        </div>
+
+                        <div class="row-seats d-flex justify-content-center align-items-center mb-2" data-row="D">
+                            <span class="row-label me-3 fw-bold">D</span>
+                            <div class="seat available" data-col="1">1</div>
+                            <div class="seat available" data-col="2">2</div>
+                            <div class="seat available" data-col="3">3</div>
+                            <div class="seat available" data-col="4">4</div>
+                            <div class="seat available" data-col="5">5</div>
+                            <div class="seat available" data-col="6">6</div>
+                            <div class="seat available" data-col="7">7</div>
+                            <div class="seat available" data-col="8">8</div>
+                            <div class="seat available" data-col="9">9</div>
+                            <div class="seat available" data-col="10">10</div>
+                        </div>
+
+                        <div class="row-seats d-flex justify-content-center align-items-center mb-2" data-row="E">
+                            <span class="row-label me-3 fw-bold">E</span>
+                            <div class="seat occupied" data-col="1">1</div>
+                            <div class="seat occupied" data-col="2">2</div>
+                            <div class="seat available" data-col="3">3</div>
+                            <div class="seat available" data-col="4">4</div>
+                            <div class="seat available" data-col="5">5</div>
+                            <div class="seat available" data-col="6">6</div>
+                            <div class="seat available" data-col="7">7</div>
+                            <div class="seat available" data-col="8">8</div>
+                            <div class="seat available" data-col="9">9</div>
+                            <div class="seat available" data-col="10">10</div>
+                        </div>
+
+                        <div class="row-seats d-flex justify-content-center align-items-center mb-2" data-row="F">
+                            <span class="row-label me-3 fw-bold">F</span>
+                            <div class="seat available" data-col="1">1</div>
+                            <div class="seat available" data-col="2">2</div>
+                            <div class="seat available" data-col="3">3</div>
+                            <div class="seat available" data-col="4">4</div>
+                            <div class="seat available" data-col="5">5</div>
+                            <div class="seat available" data-col="6">6</div>
+                            <div class="seat available" data-col="7">7</div>
+                            <div class="seat available" data-col="8">8</div>
+                            <div class="seat available" data-col="9">9</div>
+                            <div class="seat available" data-col="10">10</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-5 mt-lg-0">
+                <div class="card bg-secondary text-white p-4 shadow-lg">
+                    <h3 class="mb-4 text-center">Resumen de la reserva</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="num-seats" class="form-label fs-5">Número de asientos:</label>
+                            <select id="num-seats" class="form-select form-select-lg" aria-label="Número de asientos">
+                                <option value="1" selected>1 Asiento</option>
+                                <option value="2">2 Asientos</option>
+                                <option value="3">3 Asientos</option>
+                                <option value="4">4 Asientos</option>
+                                <option value="5">5 Asientos</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4 p-3 border rounded">
+                            <p class="mb-1">Asientos Seleccionados:</p>
+                            <p id="selected-seats-display" class="fw-bold text-warning">C-3, C-4</p>
+                            <p class="mb-1">Total a pagar:</p>
+                            <p class="fs-4 fw-bold text-success">$30,000.00</p>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning w-100 btn-lg text-dark fw-bold">
+                            <i class="bi bi-cart-fill"></i> Confirmar Reserva
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-center text-white py-3 mt-5 border-top border-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="mb-1 fw-bold">© UNIR-CINEMA</p>
+                    <p class="mb-1">
+                        <i class="bi bi-geo-alt-fill"></i> Dirección: Calle 9S 3 55
+                    </p>
+                    <p class="mb-1">
+                        <i class="bi bi-telephone-fill"></i> Teléfono: +57 301 483 61 61
+                    </p>
+                    <p class="mb-0">
+                        <i class="bi bi-envelope-fill"></i> Correo Electrónico: <a href="mailto:juanparmer@gmail.com.co"
+                            class="text-info text-decoration-none">juanparmer@gmail.com.co</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

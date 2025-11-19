@@ -1,0 +1,209 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #343a40;
+    --background-color: #f8f9fa;
+    --text-color: #495057;
+    --sidebar-bg: #e9ecef;
+    --font-heading: 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.cv-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    grid-template-columns: 280px 1fr;
+}
+
+.profile-header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 25px;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.profile-info h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.profile-info .job-title {
+    font-size: 1.1em;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.contact-sidebar {
+    grid-area: sidebar;
+    background-color: var(--sidebar-bg);
+    padding: 30px 20px;
+    border-bottom-left-radius: 10px;
+}
+
+.contact-sidebar h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.contact-sidebar h2:first-child {
+    margin-top: 0;
+}
+
+.contact-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+.contact-sidebar li {
+    margin-bottom: 8px;
+}
+
+.contact-sidebar a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.contact-sidebar a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.skills-list li {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--sidebar-bg);
+}
+
+.main-content h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+}
+
+.summary-section p {
+    font-size: 1.05em;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.job-entry {
+    margin-bottom: 20px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.job-entry h3 {
+    color: var(--secondary-color);
+    font-size: 1.25em;
+    margin: 0;
+}
+
+.job-entry .company {
+    color: #6c757d;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.job-entry .dates {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.job-description {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main";
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+
+    .profile-info h1 {
+        font-size: 2em;
+    }
+
+    .contact-sidebar {
+        border-bottom-left-radius: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
