@@ -57,32 +57,42 @@ function setup() {
 
 let butacas = setup();
 
-function sugerirButacas(butacas, cantidad) {
+function suggest(butacas, cantidad) {
   const filas = butacas.length;
   const columnas = butacas[0].length;
-  if (cantidad > columnas) return new Set();
+  let butacasresultado = new Set();
 
-  for (let i = filas - 1; i >= 0; i--) {
+  if (cantidad > columnas) return butacasresultado;
+
+  let i = filas - 1;
+  while (i >= 0 && butacasresultado.size == 0) {
     let fila = butacas[i];
     let libres = 0;
     let inicio = 0;
 
-    for (let j = 0; j < columnas; j++) {
+    let j = 0;
+    while (j < columnas && butacasresultado.size == 0) {
       if (!fila[j].estado) {
         libres++;
         if (libres === cantidad) {
-          let r = new Set();
-          for (let k = inicio; k < inicio + cantidad; k++) r.add(fila[k].id);
-          return r;
+          for (let k = inicio; k < inicio + cantidad; k++) {
+            butacasresultado.add(fila[k].id);
+          }
         }
       } else {
         libres = 0;
         inicio = j + 1;
       }
+
+      j++;
     }
+
+    i--;
   }
-  return new Set();
+
+  return butacasresultado;
 }
+
 
 function pintaSala() {
   const map = document.getElementById("asiento-map");
@@ -109,7 +119,7 @@ const form = document.getElementById("asiento-form");
 form.addEventListener("submit", e => {
   e.preventDefault();
   const n = parseInt(document.getElementById("numasientos").value);
-  const res = sugerirButacas(butacas, n);
+  const res = suggest (butacas, n);
 
   document.querySelectorAll('.asiento').forEach(a => a.classList.remove('selected'));
 
