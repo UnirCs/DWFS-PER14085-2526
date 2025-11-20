@@ -49,7 +49,6 @@ function redConverter() {
   let pixels = handler.getPixels();
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    // Se recupera de cada pixel los valores de red, green y blue
     let [red, ,] = pixel;
     return [red, 0, 0];
   });
@@ -69,7 +68,6 @@ function greenConverter() {
   let pixels = handler.getPixels();
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    // Se recupera de cada pixel los valores de red, green y blue
     let [, green] = pixel;
     return [0, green, 0];
   });
@@ -89,7 +87,6 @@ function blueConverter() {
   let pixels = handler.getPixels();
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    // Se recupera de cada pixel los valores de red, green y blue
     let [, , blue] = pixel;
     return [0, 0, blue];
   });
@@ -113,7 +110,6 @@ function greyConverter() {
   let pixels = handler.getPixels();
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    // Se recupera de cada pixel los valores de red, green y blue
     let [red, green, blue] = pixel;
     let media = Math.floor((red + green + blue) / 3);
     return [media, media, media];
@@ -136,7 +132,6 @@ function blackAndWhiteConverter() {
   let pixels = handler.getPixels();
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    // Se recupera de cada pixel los valores de red, green y blue
     let [red, green, blue] = pixel;
     let media = Math.floor((red + green + blue) / 3);
     if (media < 128) {
@@ -190,7 +185,6 @@ function dimBrightness(dimFactor) {
   let pixels = handler.getPixels();
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    // Se recupera de cada pixel los valores de red, green y blue
     let [red, green, blue] = pixel;
     return [
       Math.floor(red / dimFactor),
@@ -215,7 +209,6 @@ function invertColors() {
   let outputPath = "output/tucan_inverse.jpg";
   let pixels = handler.getPixels();
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    // Se recupera de cada pixel los valores de red, green y blue
     let [red, green, blue] = pixel;
     return [
       255 - red, // Rojo invertido
