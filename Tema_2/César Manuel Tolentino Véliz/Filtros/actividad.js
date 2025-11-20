@@ -29,12 +29,13 @@ function ejemplo() {
 /**
  * Función auxiliar para aplicar filtros de color
  */
-function applyColorFilter(pixels, colorMask) {
-  return pixels.map(row => 
+
+function applyColorFilter(pixels, colorMask){
+  return pixels.map(row =>
     row.map(pixel => [
-      pixel[0] * colorMask[0],
-      pixel[1] * colorMask[1], 
-      pixel[2] * colorMask[2]
+      Math.round(pixel[0] * colorMask[0]),
+      Math.round(pixel[1] * colorMask[1]),
+      Math.round(pixel[2] * colorMask[2])
     ])
   );
 }
@@ -123,17 +124,29 @@ function scaleDown() {
 /**
  * Reduce el brillo de la imagen
  */
-function dimBrightness(dimFactor) {
-  let outputPath = 'output/tucan_dimed.jpg';
+function adjustBrightness(factor, operation = 'dim'){
+  let outputPath =`output/tucan_${operation === 'dim' ? 'dimed' : 'brightened'}.jpg
+`;
   let pixels = handler.getPixels();
-  const dimPixels = pixels.map(row =>
-    row.map(pixel => [
-      Math.round(pixel[0] / dimFactor),
-      Math.round(pixel[1] / dimFactor),
-      Math.round(pixel[2] / dimFactor)
-    ])
+
+  const adjustedPixels = pixels.map(row =>
+    row.map(pixel => {
+      if(operation === 'dim'){
+        return[
+          Math.round(pixel[0] / factor),
+          Math.round(pixel[1] / factor),
+          Math.round(pixel[2] / factor)
+        ];
+      }else{
+        return[
+          Math.min(255, Math.round(pixel[0] * factor)),
+          Math.min(255, Math.round(pixel[1] * factor)),
+          Math.min(255, Math.round(pixel[2] * factor)),
+        ];
+      }
+    })
   );
-  handler.savePixels(dimPixels, outputPath);
+  handler.savePixels(adjustedPixels, outputPath);
 }
 
 /**
@@ -159,7 +172,6 @@ function merge(alphaFirst, alphaSecond) {
   let catHandler = new ImageHandler('input/cat.jpg');
   let dogHandler = new ImageHandler('input/dog.jpg');
   let outputPath = 'output/merged.jpg';
-
   let catPixels = catHandler.getPixels();
   let dogPixels = dogHandler.getPixels();
 
