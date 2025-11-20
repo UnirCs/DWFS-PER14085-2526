@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unir Cinema</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <form action="" method="post" class="container-fluid">
+      <div class="text-center">
+        <h1>UNIR-CINEMA</h1>
+      </div>
+      <div>
+        <div class="text-center">
+          <hr
+            class="border border-primary border-3 opacity-75 w-75 position-relative mx-auto"
+          />
+          <h2>PANTALLA</h2>
+        </div>
+        <div class="text-center">Sala Normal</div>
+        <div class="container text-center" name="butacas" id="butacas"></div>
+        <div
+          class="input-group position-relative mx-auto align-items-center text-center col-xl-4 col-sm-9 p-3 row"
+        >
+          <label class="col-xl-4">Seleccione el numero de asientos: </label>
+          <input class="col-xl-2" id="numeroButacasSeleccionadas" />
+        </div>
+        <div class="text-center" id="reserva"></div>
+        <div
+          class="position-relative mx-auto align-items-center text-center w-25 p-3 row"
+        >
+          <button
+            type="button"
+            onclick="Reservar()"
+            class="btn btn-primary mt-3"
+          >
+            Reservar
+          </button>
+        </div>
+      </div>
+    </form>
+    <script type="text/javascript">
+      // Definir el tamaño de la matriz de butacas
+      const N = 10; // Número de filas y columnas
+
+      // Función para inicializar la matriz de butacas
+      function setup() {
+        let idContador = 1; // Iniciar el contador de IDs en 1 (los humanos no empezamos a contar desde 0)
+        let butacas = [];
+        let butacasimagen = document.getElementById("butacas");
+
+        for (let i = 0; i < N; i++) {
+          // Nueva fila
+          let fila = [];
+          let filaButaca = '<div class="row p-2" name="' + i + '">';
+          for (let j = 0; j < N; j++) {
+            let valor = Math.floor(Math.random() * 100) + 1;
+            let estado = false;
+            if (valor % 2 == 0) {
+              estado = true;
+            }
+            // Nuevo asiento
+            filaButaca +=
+              '<div class="col" estado="' +
+              estado +
+              '" name="' +
+              idContador +
+              '" id="' +
+              idContador +
+              '">' +
+              idContador +
+              "</div>";
+            fila.push({
+              id: idContador++,
+              estado: estado, // Estado inicial libre
+            });
+          }
+          filaButaca += "</div>";
+          butacasimagen.innerHTML += filaButaca;
+          butacas.push(fila);
+        }
+        return butacas;
+      }
+
+      let seleccionadas = [];
+      // Inicializar la matriz
+      let butacas = setup();
+      
+      // Imprimir la matriz
+      console.log(butacas);
+
+      function Reservar() {
+        if (seleccionadas.length != 0) {
+          for (let i = 0; i < seleccionadas.length; i++) {
+            document.getElementById(seleccionadas[i]).className = document
+              .getElementById(seleccionadas[i])
+              .className.replace(" pendiente", "");
+          }
+        }
+        let numeroButacasSeleccionadas = document.getElementById(
+          "numeroButacasSeleccionadas"
+        ).value;
+        console.log(numeroButacasSeleccionadas);
+        seleccionadas = suggest(numeroButacasSeleccionadas);
+        let mensaje = "Las butacas seleccionadas son : ";
+        for (let i = 0; i < seleccionadas.length; i++) {
+          mensaje += seleccionadas[i] + " ";
+          document.getElementById(seleccionadas[i]).className += " pendiente";
+        }
+        document.getElementById("reserva").innerHTML = mensaje;
+        console.log(mensaje);
+      }
+
+      function suggest(numeroButacasSeleccionadas) {
+        seleccionadas = [];
+        if (numeroButacasSeleccionadas > N) {
+          return seleccionadas;
+        }
+
+        for (let i = 0; i < N; i++) {
+          let contador = 0;
+          let auxSeleccionadas = [];
+          for (
+            let j = 0;
+            j < N && contador != numeroButacasSeleccionadas;
+            j++
+          ) {
+            if (butacas[i][j].estado === false) {
+              contador++;
+              auxSeleccionadas.push(butacas[i][j].id);
+            } else {
+              contador = 0;
+              auxSeleccionadas = [];
+            }
+          }
+          if (contador === parseInt(numeroButacasSeleccionadas)) {
+            seleccionadas = auxSeleccionadas;
+          }
+        }
+        return seleccionadas;
+      }
+    </script>
+  </body>
+  <footer>
+    <address
+      class="position-relative mx-auto align-items-center text-center col-xl-4 col-sm-8"
+    >
+      Cine UNIR-CINEMA
+      <br />
+      Avenida de la Paz , 137, Logroño
+      <br />
+      Teléfono: 941 123 456
+      <br />
+      cinefullstack@unircinema.com
+    </address>
+  </footer>
+</html>
