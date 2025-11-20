@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Chistes Chuck Norris</title>
+    <meta charset="UTF-8" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      integrity="sha384-LkHktCFpS+fBoOMK5nyyLPSepq0+mMDcyFbRwtjdRhniESKQr2zHISLMBizGu6zt"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="flex flex-col items-center">
+    <button
+      id="boton-generar-chiste"
+      class="px-8 py-4 bg-blue-500 hover:bg-blue-800 text-white rounded-lg flex items-center gap-2 m-10 hover:cursor-pointer"
+    >
+      Generar Chiste
+    </button>
+    <label class="font-bold">Chiste:</label>
+    <p id="chiste" class="border w-100 min-h-30 p-2">
+      <i>Pulsa en generar chiste para generar el primer chiste.</i>
+    </p>
+  </body>
+  <script src="chuck.js"></script>
+</html>
