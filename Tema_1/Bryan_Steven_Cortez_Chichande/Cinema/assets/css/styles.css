@@ -127,6 +127,11 @@
             pointer-events: none;
         }
 
+        .cinema__seat--suggested {
+            outline: 2px solid #A41D22;
+            box-shadow: 0 0 0 2px #A41D22;
+        }
+
         .cinema__legend {
             margin-top: 12px;
             display: flex;
