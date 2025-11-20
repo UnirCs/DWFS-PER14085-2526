@@ -5,12 +5,8 @@ let handler = new ImageHandler(path);
 
 // El objetivo de esta función es aplique a cada pixel de la matriz la función transformCallback
 function applyPixelTransform(pixels, transformCallback) {
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j] = transformCallback(pixels[i][j]);
-    }
-  }
-  return pixels;
+  // Uso doble map porque para no hacer un bucle anidado y que sea más legible
+  return pixels.map((fila) => fila.map((pixel) => transformCallback(pixel)));
 }
 
 /**
@@ -54,7 +50,7 @@ function redConverter() {
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
     // Se recupera de cada pixel los valores de red, green y blue
-    let [red, green, blue] = pixel;
+    let [red, ,] = pixel;
     return [red, 0, 0];
   });
 
@@ -74,7 +70,7 @@ function greenConverter() {
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
     // Se recupera de cada pixel los valores de red, green y blue
-    let [red, green, blue] = pixel;
+    let [, green] = pixel;
     return [0, green, 0];
   });
 
@@ -94,7 +90,7 @@ function blueConverter() {
 
   let transformedPixels = applyPixelTransform(pixels, (pixel) => {
     // Se recupera de cada pixel los valores de red, green y blue
-    let [red, green, blue] = pixel;
+    let [, , blue] = pixel;
     return [0, 0, blue];
   });
 
