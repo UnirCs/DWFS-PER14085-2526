@@ -182,18 +182,19 @@ function scaleDown() {
 function dimBrightness(dimFactor) {
   let outputPath = 'output/tucan_dimed.jpg';
   let pixels = handler.getPixels();
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let [r, g, b] = pixels[i][j];
-      r = Math.floor(r / dimFactor);
-      g = Math.floor(g / dimFactor);
-      b = Math.floor(b / dimFactor);
-      pixels[i][j] = [r, g, b];
+  let i = 0;
+
+  for (const [i, row] of pixels.entries()) {
+    for (const [j, pixel] of row.entries()) {
+      const [r, g, b] = pixel;
+
+      row[j] = [
+        Math.floor(r / dimFactor),
+        Math.floor(g / dimFactor),
+        Math.floor(b / dimFactor)
+      ];
     }
   }
-
-
-  //Aqui tu codigo
 
   handler.savePixels(pixels, outputPath);
 }
@@ -208,17 +209,17 @@ function dimBrightness(dimFactor) {
 function invertColors() {
   let outputPath = 'output/tucan_inverse.jpg';
   let pixels = handler.getPixels();
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let [r, g, b] = pixels[i][j];
-      r = 255 - r;
-      g = 255 - g;
-      b = 255 - b;
-      pixels[i][j] = [r, g, b];
-    } 
-  }
+  for (const [i, row] of pixels.entries()) {
+    for (const [j, pixel] of row.entries()) {
+      const [r, g, b] = pixel;
 
-  //Aqui tu codigo
+      row[j] = [
+        255 - r,
+        255 - g,
+        255 - b
+      ];
+    }
+  }
 
   handler.savePixels(pixels, outputPath);
 }
