@@ -42,12 +42,13 @@ function redConverter() {
   let outputPath = 'output/tucan_red.jpg';
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let [r, g, b] = pixels[i][j];
-      pixels[i][j] = [r, 0, 0];
-    } 
+  for (const row of pixels) {
+    for (let i = 0; i < row.length; i++) {
+      const [r, g, b] = row[i];
+     row[i] = [r, 0, 0];
+   }
   }
+
   //Aqui tu codigo
 
   handler.savePixels(pixels, outputPath);
@@ -62,11 +63,11 @@ function greenConverter() {
   let outputPath = 'output/tucan_green.jpg';
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let [r, g, b] = pixels[i][j];
-      pixels[i][j] = [0, g, 0];
-    } 
+  for (const row of pixels) {
+    for (let j = 0; j < row.length; j++) {
+     const [r, g, b] = row[j];
+      row[j] = [0, g, 0];
+    }
   }
 
   //Aqui tu codigo
@@ -83,12 +84,12 @@ function blueConverter() {
   let outputPath = 'output/tucan_blue.jpg';
   let pixels = handler.getPixels();
 
-    for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let [r, g, b] = pixels[i][j];
-      pixels[i][j] = [0, 0, b];
-    } 
+  for (const row of pixels) {
+    for (let j = 0; j < row.length; j++) {
+    const [r, g, b] = row[j];
+    row[j] = [0, 0, b];
   }
+}
 
   //Aqui tu codigo
 
@@ -108,13 +109,13 @@ function greyConverter() {
   let outputPath = 'output/tucan_grey.jpg';
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let [r, g, b] = pixels[i][j];
-      let avg = Math.floor((r + g + b) / 3);
-      pixels[i][j] = [avg, avg, avg];
-    } 
+  for (const row of pixels) {
+  for (let j = 0; j < row.length; j++) {
+    const [r, g, b] = row[j];
+    const avg = Math.floor((r + g + b) / 3);
+    row[j] = [avg, avg, avg];
   }
+}
 
   //Aqui tu codigo
 
@@ -132,18 +133,16 @@ function blackAndWhiteConverter() {
   let outputPath = 'output/tucan_black_and_white.jpg';
   let pixels = handler.getPixels();
   
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let [r, g, b] = pixels[i][j];
-      let avg = Math.floor((r + g + b) / 3);
-      
+for (const row of pixels) {
+  for (let j = 0; j < row.length; j++) {
+    const [r, g, b] = row[j];
+    const avg = Math.floor((r + g + b) / 3);
 
-      if (avg < 128) {
-        pixels[i][j] = [0, 0, 0];
-      }
-      else {
-        pixels[i][j] = [255, 255, 255];
-      }
+    if (avg < 128) {
+      row[j] = [0, 0, 0];
+    } else {
+      row[j] = [255, 255, 255];
+    }
   }
 }
 
