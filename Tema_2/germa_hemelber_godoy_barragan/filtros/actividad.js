@@ -43,7 +43,7 @@ function redConverter() {
 
   for (const row of pixels) {
     for (let i = 0; i < row.length; i++) {
-      const [r] = row[i];   // Solo extraemos lo necesario
+      const [r] = row[i];   
       row[i] = [r, 0, 0];
     }
   }
@@ -63,7 +63,7 @@ function greenConverter() {
 
   for (const row of pixels) {
     for (let j = 0; j < row.length; j++) {
-      const [, g] = row[j];   // solo usamos g
+      const [, g] = row[j];   
       row[j] = [0, g, 0];
     }
   }
@@ -82,7 +82,7 @@ function blueConverter() {
 
   for (const row of pixels) {
     for (let j = 0; j < row.length; j++) {
-      const [, , b] = row[j];   // solo extraemos b
+      const [, , b] = row[j];   
       row[j] = [0, 0, b];
     }
   }
@@ -192,6 +192,7 @@ function dimBrightness(dimFactor) {
 
   handler.savePixels(pixels, outputPath);
 }
+
 
 
 /**
