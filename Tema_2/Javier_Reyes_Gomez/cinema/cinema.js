@@ -1,18 +1,22 @@
 const N = 10;
 
+function randomSeeded(seed) {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 function setup() {
   let id = 1;
   let butacas = [];
   for (let i = 0; i < N; i++) {
     let fila = [];
     for (let j = 0; j < N; j++) {
-      fila.push({ id: id++, estado: Math.random() < 0.25 }); //Ponemos algunas butacas como no disponibles para facilitar pruebas
+      fila.push({ id: id++, estado: randomSeeded(id) < 0.25 }); //Ponemos algunas butacas como no disponibles para facilitar pruebas
     }
     butacas.push(fila);
   }
   return butacas;
 }
-
 
 function suggest(butacas, cantidad) {
   const filas = butacas.length;
@@ -51,5 +55,29 @@ function suggest(butacas, cantidad) {
 }
 
 let butacas = setup();
+
 let resultado = suggest(butacas, 4);
+
+let filapos = 1;
+for (let fila of butacas) {
+  let filaLabel = String(filapos).padStart(2, "0");
+
+  let filaStr = fila.map(b => {
+      let char = "";
+
+      if (resultado.has(b.id)) {
+        char = "*";        // sugerida
+      } else if (b.estado) {
+        char = "X";        // ocupada
+      } else {
+        char = "O";        // libre
+      }
+
+      return char;
+    }).join(" ");
+
+  console.log(filaLabel + " " + filaStr);
+  filapos++;
+}
+
 console.log("Butacas sugeridas: ", resultado);
