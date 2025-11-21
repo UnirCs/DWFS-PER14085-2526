@@ -41,18 +41,16 @@ function ejemplo() {
 function redConverter() {
   let outputPath = 'output/tucan_red.jpg';
   let pixels = handler.getPixels();
+
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        
-        pixels[x][y][0] = pixels[x][y][0]
-        pixels[x][y][1] = 0;  // set a 0
-        pixels[x][y][2] = 0;
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j][1] = 0;
+      pixels[i][j][2] = 0;
     }
   }
+
+
   handler.savePixels(pixels, outputPath);
 }
 
@@ -66,15 +64,10 @@ function greenConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        
-        pixels[x][y][0] = 0;  // set a 0
-        pixels[x][y][1] = pixels[x][y][1];
-        pixels[x][y][2] = 0; // set a 0
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j][0] = 0;
+      pixels[i][j][2] = 0;
     }
   }
 
@@ -91,18 +84,12 @@ function blueConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        
-        pixels[x][y][0] = 0;  // set a 0
-        pixels[x][y][1] = 0;
-        pixels[x][y][2] = pixels[x][y][2]; // set a 0
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixels[i][j][0] = 0;
+      pixels[i][j][1] = 0;
     }
   }
-
   handler.savePixels(pixels, outputPath);
 }
 
@@ -118,25 +105,17 @@ function blueConverter() {
 function greyConverter() {
   let outputPath = 'output/tucan_grey.jpg';
   let pixels = handler.getPixels();
-
+  
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        let r = pixels[x][y][0];
-        let g = pixels[x][y][1];
-        let b = pixels[x][y][2];
-        //  promedio
-        let promedio = (r + g + b) / 3
-        // set promedio    
-        pixels[x][y][0] = promedio;  // set a 0
-        pixels[x][y][1] = promedio;
-        pixels[x][y][2] = promedio; // set a 0
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      let media = 0;
+      media = Math.floor((pixels[i][j][0] + pixels[i][j][1] + pixels[i][j][2]) / 3)
+      pixels[i][j][0] = media
+      pixels[i][j][1] = media
+      pixels[i][j][2] = media
     }
   }
-
   handler.savePixels(pixels, outputPath);
 }
 
@@ -152,25 +131,21 @@ function blackAndWhiteConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        let r = pixels[x][y][0];
-        let g = pixels[x][y][1];
-        let b = pixels[x][y][2];
-        //  promedio
-        promedio = (r + g + b) / 3
-        // condicional
-        let valor = (promedio < 128) ? 0: 255;
-        pixels[x][y][0] = valor;
-        pixels[x][y][1] = valor;
-        pixels[x][y][2] = valor;
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      let media = 0;
+      media = Math.floor((pixels[i][j][0] + pixels[i][j][1] + pixels[i][j][2]) / 3)
+      if (media >= 128) {
+        pixels[i][j][0] = 255
+        pixels[i][j][1] = 255
+        pixels[i][j][2] = 255
+      } else if (media < 128) {
+        pixels[i][j][0] = 0
+        pixels[i][j][1] = 0
+        pixels[i][j][2] = 0
+      }
     }
   }
-
-
   handler.savePixels(pixels, outputPath);
 }
 
@@ -185,20 +160,21 @@ function scaleDown() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  let nuevoPixels = [];
-
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x += 2){
-    let nuevaRow = []
-    for (let y = 0; y < alto; y += 2){
-        nuevaRow.push(pixels[x][y]);
-
+  for (let i = pixels.length; i > 0 ; i--) {
+    // Elininamos toda la fila si es par
+    if (i % 2 === 0) {
+      pixels.splice(i-1, 1)
+    } else {
+    // Eliminamos cada elemento de columna par de la fila impar
+      for (let j = pixels[i-1].length; j > 0; j--) {
+        if (j % 2 !== 0) {
+          pixels[i-1].splice(j-1, 1);
+        }
+      }
     }
-    nuevoPixels.push(nuevaRow);
   }
-
-  handler.savePixels(nuevoPixels, outputPath, ancho / 2, alto / 2);
+  
+  handler.savePixels(pixels, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
 }
 
 /**
@@ -211,18 +187,13 @@ function dimBrightness(dimFactor) {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        // condicional
-        pixels[x][y][0] = pixels[x][y][0] / dimFactor;
-        pixels[x][y][1] = pixels[x][y][1] / dimFactor;
-        pixels[x][y][2] = pixels[x][y][2] / dimFactor;
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+        pixels[i][j][0] = pixels[i][j][0] / dimFactor
+        pixels[i][j][1] = pixels[i][j][1] / dimFactor
+        pixels[i][j][2] = pixels[i][j][2] / dimFactor
     }
   }
-
   handler.savePixels(pixels, outputPath);
 }
 
@@ -238,18 +209,13 @@ function invertColors() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  const [ancho, alto] = handler.getShape();
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        
-        pixels[x][y][0] = 255 - pixels[x][y][0];
-        pixels[x][y][1] = 255 - pixels[x][y][1];
-        pixels[x][y][2] = 255 - pixels[x][y][2];
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+        pixels[i][j][0] = 255 - pixels[i][j][0]
+        pixels[i][j][1] = 255 - pixels[i][j][1]
+        pixels[i][j][2] = 255 - pixels[i][j][2]
     }
   }
-
   handler.savePixels(pixels, outputPath);
 }
 
@@ -268,30 +234,21 @@ function merge(alphaFirst, alphaSecond) {
   let dogPixels = dogHandler.getPixels();
 
   let pixels = [];
-  let row = [];
-
 
   //Aqui tu codigo
-  const [ancho, alto] = catHandler.getShape();
-  console.log(ancho);
-  console.log(alto);
-  // recorrer el array pixels 
-  for (let x = 0; x < ancho; x++){
-    for (let y = 0; y < alto; y++){
-        // cada pixel [red, green, blue]
-        let cat_pixel = catPixels[x][y];
-        let dog_pixel = dogPixels[x][y];
-        // mecla cada canal 
-        let r = (cat_pixel[0] * alphaFirst) + (dog_pixel[0] * alphaSecond);
-        let g = (cat_pixel[1] * alphaFirst) + (dog_pixel[1] * alphaSecond);
-        let b = (cat_pixel[2] * alphaFirst) + (dog_pixel[2] * alphaSecond);
-        // no sobre pase el 255
-        row.push([Math.min(255, r), Math.min(255, g), Math.min(255, b)]);
-
+  for (let i = 0; i < catPixels.length; i++) {
+    let fila = []
+    for (let j = 0; j < catPixels[i].length; j++) {
+        let pixel = [0, 0, 0]
+        /* He usado como primera imagen dog.jpg para que salga como en el ejemplo, 
+        aunque por como estan llamadas las variables podrian ser al reves */
+        pixel[0] = (dogPixels[i][j][0] * alphaFirst) + (catPixels[i][j][0] * alphaSecond)
+        pixel[1] = (dogPixels[i][j][1] * alphaFirst) + (catPixels[i][j][1] * alphaSecond)
+        pixel[2] = (dogPixels[i][j][2] * alphaFirst) + (catPixels[i][j][2] * alphaSecond)
+        fila.push(pixel)
     }
-    pixels.push(row);
+    pixels.push(fila)
   }
-
   dogHandler.savePixels(pixels, outputPath);
 }
 
@@ -314,7 +271,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imagenes: 9
  */
-let optionN = 9;
+let optionN = 0;
 
 switch (optionN) {
   case 1: redConverter(); break;
