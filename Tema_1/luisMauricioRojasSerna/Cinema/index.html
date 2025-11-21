@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIR-CINEMA - Reserva de butacas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page">
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">UNIR-CINEMA</h1>
+            <p class="page-header__subtitle">Reserva de butacas</p>
+        </div>
+    </header>
+
+
+    <main class="cinema">
+        <div class="container cinema__content">
+            <section class="cinema-hall">
+                <h2 class="cinema-hall__title">Sala 1</h2>
+                <div class="cinema-hall__screen">Pantalla</div>
+                <div class="cinema-hall__legend">
+                    <div class="cinema-hall__legend-item">
+                        <span class="seat seat--available"></span>
+                        <span class="cinema-hall__legend-text">Disponible</span>
+                    </div>
+                    <div class="cinema-hall__legend-item">
+                        <span class="seat seat--occupied"></span>
+                        <span class="cinema-hall__legend-text">Ocupada</span>
+                    </div>
+                </div>
+
+
+                <div class="seat-map">
+
+                    <div class="seat-map__row">
+                        <span class="seat-map__label">A</span>
+                        <span class="seat seat--available">1</span>
+                        <span class="seat seat--available">2</span>
+                        <span class="seat seat--occupied">3</span>
+                        <span class="seat seat--available">4</span>
+                        <span class="seat seat--available">5</span>
+                        <span class="seat seat--occupied">6</span>
+                    </div>
+
+
+                    <div class="seat-map__row">
+                        <span class="seat-map__label">B</span>
+                        <span class="seat seat--available">1</span>
+                        <span class="seat seat--occupied">2</span>
+                        <span class="seat seat--available">3</span>
+                        <span class="seat seat--available">4</span>
+                        <span class="seat seat--available">5</span>
+                        <span class="seat seat--occupied">6</span>
+                    </div>
+
+
+                    <div class="seat-map__row">
+                        <span class="seat-map__label">C</span>
+                        <span class="seat seat--available">1</span>
+                        <span class="seat seat--available">2</span>
+                        <span class="seat seat--available">3</span>
+                        <span class="seat seat--occupied">4</span>
+                        <span class="seat seat--available">5</span>
+                        <span class="seat seat--available">6</span>
+                    </div>
+
+
+                    <div class="seat-map__row">
+                        <span class="seat-map__label">D</span>
+                        <span class="seat seat--occupied">1</span>
+                        <span class="seat seat--available">2</span>
+                        <span class="seat seat--available">3</span>
+                        <span class="seat seat--available">4</span>
+                        <span class="seat seat--occupied">5</span>
+                        <span class="seat seat--available">6</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cinema__panel">
+                <form class="booking-form">
+                    <h2 class="booking-form__title">Reserva tu butaca</h2>
+
+                    <div class="booking-form__group">
+                        <label for="showtime" class="booking-form__label">Horario</label>
+                        <select id="showtime" class="booking-form__select form-select">
+                            <option value="">Selecciona un horario</option>
+                            <option>16:00</option>
+                            <option>18:30</option>
+                            <option>21:00</option>
+                        </select>
+                    </div>
+
+                    <div class="booking-form__group">
+                        <label for="numSeats" class="booking-form__label">Número de asientos</label>
+                        <input id="numSeats" type="number" min="1" max="10" class="booking-form__input form-control"
+                            placeholder="Ej: 2">
+                    </div>
+
+                    <div class="booking-form__group">
+                        <label for="name" class="booking-form__label">Nombre del cliente</label>
+                        <input id="name" type="text" class="booking-form__input form-control" placeholder="Tu nombre">
+                    </div>
+
+                    <button type="submit" class="booking-form__button btn btn-primary w-100">
+                        Confirmar reserva
+                    </button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
