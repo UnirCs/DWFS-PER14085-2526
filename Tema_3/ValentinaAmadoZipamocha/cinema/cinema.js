@@ -1,4 +1,3 @@
-
 // Definir el tamaño de la matriz de butacas
 const N = 10; // Número de filas y columnas
 
@@ -19,9 +18,6 @@ function setup() {
         }
         butacas.push(fila);
     }
-
-    console.log("Butacas inicializadas: ", butacas);
-
     return butacas;
 }
 
@@ -55,13 +51,11 @@ function suggest(butacas, numButacas) {
     return butacasSugeridas;
 }
 
-
 function onInputSuggest() {
     let butacas = setup();
     let cantidad = Number.parseInt(document.getElementById("sillas").value);
     suggest(butacas, cantidad);
     }
-
 
 
 
