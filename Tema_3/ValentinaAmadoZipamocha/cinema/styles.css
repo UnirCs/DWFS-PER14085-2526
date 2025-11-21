@@ -1,0 +1,226 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #738fb4;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.header h1 {
+    margin: 0;
+    flex: 1;
+    font-size: 2.5em;
+}
+
+.header img {
+    margin-left: 10px;
+}
+
+#peliculas ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+#peliculas li {
+   display: flex;
+   flex-direction: column;
+   max-width: 300px;
+    padding: 15px;
+    border: 1px solid #273759;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #738fb4;
+    cursor: pointer;
+    align-content: baseline;
+}
+
+#peliculas li:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #4290be;
+}
+
+#peliculas img {
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#peliculas h2 {
+    font-size: 1.7em;
+    margin: 40px 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: #273759;
+}
+
+#peliculas h3 {
+    font-size: 1.3em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #273759;
+}
+
+#peliculas p {
+    font-size: 1em;
+    color: #273759;
+    text-align: justify;
+}
+
+#silleteria h2 {
+    font-size: 1.2em;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#silleteria sub {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7em;
+    color: #333;
+    margin-left: 20px;
+}
+
+#silleteria label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    margin-right: 15px;
+    margin-left: 20px;
+}
+
+#silleteria form button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #4290be;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.pantalla {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: azure;
+    margin: 35px 0;
+    background-color: #273759;
+    text-align: center;
+    font-size: 1.2em;
+    height: 100px;
+    line-height: 100px;
+}
+
+#silleteria table {
+    width: auto; 
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+.contenedor-sala {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.sala {
+    border-collapse: collapse;
+    margin: 0 auto 30px;
+    background-color: #fff;
+}
+
+.sala td {
+    width: 70px;
+    height: 55px;
+    border: 1px solid #273759;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1em;
+}
+
+td.no {
+    font-weight: bold;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.asiento.disponible { background: #f5f5f5; cursor: pointer; }
+.asiento.disponible:hover { background: #e6ffe6; }
+
+.asiento.ocupado {
+    background: #ff4444;
+    color: white;
+    cursor: not-allowed;
+}
+
+.asiento.seleccionado {
+    background: #4CAF50;
+    color: white;
+}
+
+.leyenda {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.contenedor-leyenda {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.leyenda div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.leyenda .key {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.leyenda .key.disponible { background: #f5f5f5; }
+.leyenda .key.seleccionado { background: #4CAF50; }
+.leyenda .key.ocupado { background: #ff4444; }
+
+.footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #738fb4;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 40px;
+}
