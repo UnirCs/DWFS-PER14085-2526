@@ -1,5 +1,4 @@
 
-const ImageHandler = require('./ImageHandler.js');
 
 let path = 'input/tucan.jpg';
 let handler = new ImageHandler(path);
