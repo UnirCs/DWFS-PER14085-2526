@@ -1,0 +1,29 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    font-size: 30px;
+}
+.btn {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #0a2342;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #1e3860;
+    cursor: pointer;
+}
+
+.message {
+    color: #0a2342;
+    font-weight: bold;
+}
+
+.container  {
+    text-align: center;
+    background-color: #72a6df;
+    border-radius: 10px;
+    padding: 20px;
+}
