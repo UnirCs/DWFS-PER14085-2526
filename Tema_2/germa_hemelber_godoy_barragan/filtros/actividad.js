@@ -43,15 +43,14 @@ function redConverter() {
 
   for (const row of pixels) {
     for (let i = 0; i < row.length; i++) {
-      const [r, g, b] = row[i];
-     row[i] = [r, 0, 0];
-   }
+      const [r] = row[i];   // Solo extraemos lo necesario
+      row[i] = [r, 0, 0];
+    }
   }
-
-  //Aqui tu codigo
 
   handler.savePixels(pixels, outputPath);
 }
+
 
 /**
  * Esta función debe transformar una imagen en escala de verdes.
@@ -64,12 +63,10 @@ function greenConverter() {
 
   for (const row of pixels) {
     for (let j = 0; j < row.length; j++) {
-     const [r, g, b] = row[j];
+      const [, g] = row[j];   // solo usamos g
       row[j] = [0, g, 0];
     }
   }
-
-  //Aqui tu codigo
 
   handler.savePixels(pixels, outputPath);
 }
@@ -85,12 +82,10 @@ function blueConverter() {
 
   for (const row of pixels) {
     for (let j = 0; j < row.length; j++) {
-    const [r, g, b] = row[j];
-    row[j] = [0, 0, b];
+      const [, , b] = row[j];   // solo extraemos b
+      row[j] = [0, 0, b];
+    }
   }
-}
-
-  //Aqui tu codigo
 
   handler.savePixels(pixels, outputPath);
 }
@@ -182,7 +177,6 @@ function scaleDown() {
 function dimBrightness(dimFactor) {
   let outputPath = 'output/tucan_dimed.jpg';
   let pixels = handler.getPixels();
-  let i = 0;
 
   for (const [i, row] of pixels.entries()) {
     for (const [j, pixel] of row.entries()) {
@@ -199,6 +193,7 @@ function dimBrightness(dimFactor) {
   handler.savePixels(pixels, outputPath);
 }
 
+
 /**
  * Esta función debe invertir el color de la imagen.
  *
@@ -209,6 +204,7 @@ function dimBrightness(dimFactor) {
 function invertColors() {
   let outputPath = 'output/tucan_inverse.jpg';
   let pixels = handler.getPixels();
+
   for (const [i, row] of pixels.entries()) {
     for (const [j, pixel] of row.entries()) {
       const [r, g, b] = pixel;
@@ -223,6 +219,7 @@ function invertColors() {
 
   handler.savePixels(pixels, outputPath);
 }
+
 
 /**
  * merge - Junta dos imagenes con cierto factor de fusion
