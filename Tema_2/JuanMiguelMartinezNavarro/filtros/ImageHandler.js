@@ -31,10 +31,7 @@ class ImageHandler {
       getPixels(src, function (err, result) {
         ret = { err: err, result: result };
       });
-      // NOSONAR: ret se modifica asíncronamente en el callback de getPixels
-      // deasync.runLoopOnce() permite que el event loop procese el callback
       while (ret == null) {
-        // NOSONAR
         deasync.runLoopOnce();
       }
       if (ret.err) {
