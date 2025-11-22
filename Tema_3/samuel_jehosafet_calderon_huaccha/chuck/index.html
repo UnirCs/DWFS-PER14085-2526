@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chuck Norris API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex flex-col items-center justify-center min-h-screen p-2">
+        <h1 class="text-5xl font-bold mb-8 text-gray-800">Los Chistes de Chuck Norris</h1>
+
+        <div class="relative">
+            <img id="img2" src="./riete.webp" alt="Chuck riendo"
+                class="rounded-full object-cover shadow-xl border-4 border-orange-500 " height="200" width="200" />
+        </div>
+
+        <div class="flex justify-center mt-8">
+            <button id="btn-search"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow-lg transition-all active:scale-95"
+                onclick="search()">
+                Dame un chiste!
+            </button>
+        </div>
+
+        <p id="chiste-text" class="mt-8 text-xl text-center text-orange-400 max-w-lg font-medium italic min-h-[3rem]">
+        </p>
+    </div>
+
+    <script>
+        function search() {
+
+            const pTag = document.getElementById('chiste-text');
+            const btn = document.getElementById('btn-search');
+            pTag.innerText = "Consultando a Chuck...";
+            btn.disabled = true;
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            fetch('https://api.chucknorris.io/jokes/random')
+                .then(response => response.json())
+                .then(data => {
+                    pTag.innerText = `"${data.value}"`;
+                   
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    pTag.innerText = "Chuck Norris no quizo contarte nada";
+                }).finally(() => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                });
+        }
+    </script>
+</body>
+
+</html>
