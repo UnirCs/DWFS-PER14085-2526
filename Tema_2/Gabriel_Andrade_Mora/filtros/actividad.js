@@ -222,22 +222,19 @@ function merge(alphaFirst, alphaSecond) {
 
   let catPixels = catHandler.getPixels();
   let dogPixels = dogHandler.getPixels();
-  let pixels = [];
 
-  for (let i = 0; i < catPixels.length; i++) {
-    let nuevaFila = [];
-    for (let j = 0; j < catPixels[i].length; j++) {
-      let nuevoPixel = [
-        catPixels[i][j][0] * alphaFirst + dogPixels[i][j][0] * alphaSecond,
-        catPixels[i][j][1] * alphaFirst + dogPixels[i][j][1] * alphaSecond,
-        catPixels[i][j][2] * alphaFirst + dogPixels[i][j][2] * alphaSecond,
+  const mergedPixels = catPixels.map((row, i) =>
+    row.map((catPixel, j) => {
+      const dogPixel = dogPixels[i][j];
+      return [
+        catPixel[0] * alphaFirst + dogPixel[0] * alphaSecond,
+        catPixel[1] * alphaFirst + dogPixel[1] * alphaSecond,
+        catPixel[2] * alphaFirst + dogPixel[2] * alphaSecond,
       ];
-      nuevaFila.push(nuevoPixel);
-    }
-    pixels.push(nuevaFila);
-  }
+    })
+  );
 
-  dogHandler.savePixels(pixels, outputPath);
+  dogHandler.savePixels(mergedPixels, outputPath);
 }
 
 /**
