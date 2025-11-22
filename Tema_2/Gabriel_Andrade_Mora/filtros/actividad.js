@@ -67,28 +67,24 @@ function applyToAllChannels(pixels, operation) {
  * Ejemplo de construccion de una imagen
  */
 function ejemplo() {
-  let outputPath = "output/ejemplo.jpg";
-  let pixeles = [];
-  let filas = 2;
-  let columnas = 2;
-  for (let i = 0; i < filas; i++) {
-    let nuevaFila = [];
+  const outputPath = "output/ejemplo.jpg";
+  const filas = 2;
+  const columnas = 2;
+
+  const pixeles = Array.from({ length: filas }, (_, i) => {
     console.log("Fila: " + i);
-    for (let j = 0; j < columnas; j++) {
+    const nuevaFila = Array.from({ length: columnas }, (_, j) => {
       console.log("Columna:" + j);
-      let pixel = [0, 0, 0]; // R G B -> Red Green Blue -> Rojo Verde Azul
-      if ((i + j) % 2 === 0) {
-        // Si la suma de la fila y la columna es par....
-        pixel = [255, 255, 255];
-      }
+      const pixel = (i + j) % 2 === 0 ? [255, 255, 255] : [0, 0, 0];
       console.log(
         "Vamos a añadir el pixel " + pixel + " a la fila " + i + " columna " + j
       );
-      nuevaFila.push(pixel);
-    }
+      return pixel;
+    });
     console.log(nuevaFila);
-    pixeles.push(nuevaFila);
-  }
+    return nuevaFila;
+  });
+
   console.log(pixeles);
   handler.savePixels(pixeles, outputPath, filas, columnas);
 }
@@ -169,17 +165,10 @@ function blackAndWhiteConverter() {
 function scaleDown() {
   applyTransformation(
     "output/tucan_scale_down.jpg",
-    (pixels) => {
-      let nuevosPixels = [];
-      for (let i = 0; i < pixels.length; i += 2) {
-        let nuevaFila = [];
-        for (let j = 0; j < pixels[i].length; j += 2) {
-          nuevaFila.push(pixels[i][j]);
-        }
-        nuevosPixels.push(nuevaFila);
-      }
-      return nuevosPixels;
-    },
+    (pixels) =>
+      pixels
+        .filter((_, i) => i % 2 === 0)
+        .map((row) => row.filter((_, j) => j % 2 === 0)),
     handler.getShape()[0] / 2,
     handler.getShape()[1] / 2
   );
