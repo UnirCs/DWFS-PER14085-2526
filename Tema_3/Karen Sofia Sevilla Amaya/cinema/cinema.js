@@ -23,8 +23,6 @@ function setup() {
 
 // Inicializar la matriz
 let butacas = setup();
-// Imprimir la matriz
-//console.log(butacas);
 
 
 function suggest(cantidad_reserva ){
@@ -34,6 +32,7 @@ function suggest(cantidad_reserva ){
     let butacas_copia=[];
     let cantidad_asientos = Math.pow(butacas.length,2);
     let reservados_string="";
+    let coma="";
     
    if ( cantidad_asientos < cantidad_reserva){
      console.log("Cantidad para reserva supera cantidad_disponible");
@@ -41,17 +40,16 @@ function suggest(cantidad_reserva ){
    };
     
    butacas_copia = butacas; 
-   for (i = butacas.length-1; i>0-1  && acomodado!=0; i--){
+   for (let i = butacas.length-1; i>0-1  && acomodado!=0; i--){
          let asiento_reservado = [];
-         let coma=",";
-                
-        for (j = butacas.length-1; j>0-1 && acomodado!=0; j--){
+                        
+        for (let j = butacas.length-1; j>0-1 && acomodado!=0; j--){
                 acomodado = acomodado-1;
                 let asiento = butacas[i][j];
                 asiento_reservado.push({id: asiento.id, estado:  "true"}); 
                 butacas_copia[i][j]= {id: asiento.id, estado:  "true"};
                 if (reservados_string ==""){ 
-                    coma="";
+                    coma;
                 } else{coma =", ";}
 
                 reservados_string = reservados_string + coma + String(asiento.id);
@@ -71,12 +69,4 @@ function suggest(cantidad_reserva ){
      return reservados;
    
     }
-   
-//Ejecuta el código
-//suggest(3);
-//console.log("Asientos Reservados Función suggest:")
-//console.log(suggest(15));
-
-//console.log("Visualización general asientos reservados:")
-//console.log(butacas);
-
+ 
