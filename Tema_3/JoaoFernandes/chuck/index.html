@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Dame un chiste</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		<div class="card">
+			<button id="jokeBtn">Dame un chiste</button>
+			<p id="joke" aria-live="polite"></p>
+		</div>
+
+		<script>
+			(function setupJokeButton(){
+				const url = 'https://api.chucknorris.io/jokes/random';
+				const btn = document.getElementById('jokeBtn');
+				const p = document.getElementById('joke');
+
+				async function fetchAndShowJoke(){
+					try{
+						const res = await fetch(url);
+						if (!res.ok) throw new Error('HTTP ' + res.status);
+						const json = await res.json();
+						p.textContent = json.value;
+					} catch (err){
+						p.textContent = 'No se pudo obtener el chiste. Intente de nuevo.';
+						console.error('Error fetching joke:', err);
+					}
+				}
+				btn.onclick = fetchAndShowJoke;
+			})();
+		</script>
+	</body>
+</html>
+
