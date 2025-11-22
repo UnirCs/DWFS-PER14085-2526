@@ -1,0 +1,10 @@
+.botonunir{
+  background-color: #009ee2;
+  color:#fff;
+  font-size: 14px;
+  font-weight:bold;
+  padding:10px 20px;
+}
+.botonunir:hover {
+  background-color: #003a5d;
+}
