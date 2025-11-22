@@ -267,14 +267,33 @@ function merge(alphaFirst, alphaSecond) {
 let optionN = 9;
 
 switch (optionN) {
-  case 1: redConverter(); break;
-  case 2: greenConverter(); break;
-  case 3: blueConverter(); break;
-  case 4: greyConverter(); break;
-  case 5: blackAndWhiteConverter(); break;
-  case 6: scaleDown(); break;
-  case 7: dimBrightness(2); break;
-  case 8: invertColors(); break;
-  case 9: merge(0.3, 0.7); break;
-  default: ejemplo();
+  case 1:
+    redConverter();
+    break;
+  case 2:
+    greenConverter();
+    break;
+  case 3:
+    blueConverter();
+    break;
+  case 4:
+    greyConverter();
+    break;
+  case 5:
+    blackAndWhiteConverter();
+    break;
+  case 6:
+    scaleDown();
+    break;
+  case 7:
+    dimBrightness(2);
+    break;
+  case 8:
+    invertColors();
+    break;
+  case 9:
+    merge(0.3, 0.7);
+    break;
+  default:
+    ejemplo();
 }
