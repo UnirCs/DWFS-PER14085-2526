@@ -40,16 +40,16 @@ function suggest(seats) {
         together = 0;
         suggested = new Set();
         for (let column = 0; column < columns && !found; column++){
-            if (!butacas[row][column].estado) { // está libre el asiento
+            if (butacas[row][column].estado) { // si el asiento esta ocupado
+                together = 0;
+                suggested = new Set();
+            }
+            else { // si el asiento esta libre
                 together ++;
                 suggested.add(butacas[row][column].id);
                 if (together === seats) {
                     found = true;
                 }
-            }
-            else {
-                together = 0;
-                suggested = new Set();
             }
         }
     }
