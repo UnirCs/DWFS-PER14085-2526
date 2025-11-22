@@ -4,6 +4,19 @@ let path = "input/tucan.jpg";
 let handler = new ImageHandler(path);
 
 /**
+ * Funcion auxiliar para procesar cada pixel de una imagen
+ * @param {Array} pixels - Matriz de pixeles
+ * @param {Function} pixelProcessor - Funcion que procesa cada pixel (i, j, pixel)
+ */
+function processPixels(pixels, pixelProcessor) {
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      pixelProcessor(i, j, pixels[i][j]);
+    }
+  }
+}
+
+/**
  * Ejemplo de construccion de una imagen
  */
 function ejemplo() {
@@ -42,12 +55,10 @@ function redConverter() {
   let outputPath = "output/tucan_red.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][1] = 0; // verde 0
-      pixels[i][j][2] = 0; // azul 0
-    }
-  }
+  processPixels(pixels, (i, j, pixel) => {
+    pixel[1] = 0; // verde 0
+    pixel[2] = 0; // azul 0
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -61,12 +72,10 @@ function greenConverter() {
   let outputPath = "output/tucan_green.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 0; // rojo 0
-      pixels[i][j][2] = 0; // azul 0
-    }
-  }
+  processPixels(pixels, (i, j, pixel) => {
+    pixel[0] = 0; // rojo 0
+    pixel[2] = 0; // azul 0
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -80,12 +89,10 @@ function blueConverter() {
   let outputPath = "output/tucan_blue.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 0; // rojo 0
-      pixels[i][j][1] = 0; // verde 0
-    }
-  }
+  processPixels(pixels, (i, j, pixel) => {
+    pixel[0] = 0; // rojo 0
+    pixel[1] = 0; // verde 0
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -103,17 +110,12 @@ function greyConverter() {
   let outputPath = "output/tucan_grey.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let r = pixels[i][j][0];
-      let g = pixels[i][j][1];
-      let b = pixels[i][j][2];
-      let promedio = (r + g + b) / 3; //promedio
-      pixels[i][j][0] = promedio; // rojo
-      pixels[i][j][1] = promedio; // verde
-      pixels[i][j][2] = promedio; // azul
-    }
-  }
+  processPixels(pixels, (i, j, pixel) => {
+    let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
+    pixel[0] = promedio; // rojo
+    pixel[1] = promedio; // verde
+    pixel[2] = promedio; // azul
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -129,23 +131,13 @@ function blackAndWhiteConverter() {
   let outputPath = "output/tucan_black_and_white.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (j = 0; j < pixels[i].length; j++) {
-      let r = pixels[i][j][0];
-      let g = pixels[i][j][1];
-      let b = pixels[i][j][2];
-      let promedio = (r + g + b) / 3; // promedio
-      if (promedio < 128) {
-        pixels[i][j][0] = 0;
-        pixels[i][j][1] = 0;
-        pixels[i][j][2] = 0;
-      } else {
-        pixels[i][j][0] = 255;
-        pixels[i][j][1] = 255;
-        pixels[i][j][2] = 255;
-      }
-    }
-  }
+  processPixels(pixels, (i, j, pixel) => {
+    let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
+    let newValue = promedio < 128 ? 0 : 255;
+    pixel[0] = newValue;
+    pixel[1] = newValue;
+    pixel[2] = newValue;
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -187,13 +179,11 @@ function dimBrightness(dimFactor) {
   let outputPath = "output/tucan_dimed.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = pixels[i][j][0] / dimFactor; // r / dimFactor
-      pixels[i][j][1] = pixels[i][j][1] / dimFactor; // g / dimFactor
-      pixels[i][j][2] = pixels[i][j][2] / dimFactor; // b / dimFactor
-    }
-  }
+  processPixels(pixels, (i, j, pixel) => {
+    pixel[0] = pixel[0] / dimFactor; // r / dimFactor
+    pixel[1] = pixel[1] / dimFactor; // g / dimFactor
+    pixel[2] = pixel[2] / dimFactor; // b / dimFactor
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -209,13 +199,11 @@ function invertColors() {
   let outputPath = "output/tucan_inverse.jpg";
   let pixels = handler.getPixels();
 
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 255 - pixels[i][j][0]; // r
-      pixels[i][j][1] = 255 - pixels[i][j][1]; // g
-      pixels[i][j][2] = 255 - pixels[i][j][2]; // b
-    }
-  }
+  processPixels(pixels, (i, j, pixel) => {
+    pixel[0] = 255 - pixel[0]; // r
+    pixel[1] = 255 - pixel[1]; // g
+    pixel[2] = 255 - pixel[2]; // b
+  });
 
   handler.savePixels(pixels, outputPath);
 }
