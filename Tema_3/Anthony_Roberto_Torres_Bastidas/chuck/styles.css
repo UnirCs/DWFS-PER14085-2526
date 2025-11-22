@@ -1,0 +1,65 @@
+body {
+    background: linear-gradient(135deg, #999eba 0%, #4042e4 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 900px;
+}
+
+header h1 {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+header .lead {
+    color: #323131;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#btnGetJoke {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgb(64, 66, 228);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#btnGetJoke:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 20px rgb(63, 122, 220);
+}
+
+#btnGetJoke:active {
+    transform: scale(0.98);
+}
+
+.joke-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.joke-text {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 500;
+}
