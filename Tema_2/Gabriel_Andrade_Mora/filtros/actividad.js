@@ -17,6 +17,31 @@ function processPixels(pixels, pixelProcessor) {
 }
 
 /**
+ * Funcion auxiliar para aplicar transformaciones a imagenes
+ * @param {string} outputPath - Ruta donde guardar la imagen
+ * @param {Function} transformation - Funcion que transforma los pixeles
+ * @param {number} height - Altura opcional para redimensionar
+ * @param {number} width - Ancho opcional para redimensionar
+ */
+function applyTransformation(outputPath, transformation, height, width) {
+  let pixels = handler.getPixels();
+  pixels = transformation(pixels);
+  handler.savePixels(pixels, outputPath, height, width);
+}
+
+/**
+ * Establece canales RGB especificos a 0
+ * @param {Array} pixels - Matriz de pixeles
+ * @param {Array} channelsToZero - Indices de canales a poner en 0
+ */
+function setChannelsToZero(pixels, channelsToZero) {
+  processPixels(pixels, (i, j, pixel) => {
+    channelsToZero.forEach((channel) => (pixel[channel] = 0));
+  });
+  return pixels;
+}
+
+/**
  * Ejemplo de construccion de una imagen
  */
 function ejemplo() {
@@ -52,15 +77,9 @@ function ejemplo() {
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
  */
 function redConverter() {
-  let outputPath = "output/tucan_red.jpg";
-  let pixels = handler.getPixels();
-
-  processPixels(pixels, (i, j, pixel) => {
-    pixel[1] = 0; // verde 0
-    pixel[2] = 0; // azul 0
-  });
-
-  handler.savePixels(pixels, outputPath);
+  applyTransformation("output/tucan_red.jpg", (pixels) =>
+    setChannelsToZero(pixels, [1, 2])
+  );
 }
 
 /**
@@ -69,15 +88,9 @@ function redConverter() {
  * Una forma de conseguirlo es simplemente poner los canales R y B a 0 para cada pixel.
  */
 function greenConverter() {
-  let outputPath = "output/tucan_green.jpg";
-  let pixels = handler.getPixels();
-
-  processPixels(pixels, (i, j, pixel) => {
-    pixel[0] = 0; // rojo 0
-    pixel[2] = 0; // azul 0
-  });
-
-  handler.savePixels(pixels, outputPath);
+  applyTransformation("output/tucan_green.jpg", (pixels) =>
+    setChannelsToZero(pixels, [0, 2])
+  );
 }
 
 /**
@@ -86,15 +99,9 @@ function greenConverter() {
  * Una forma de conseguirlo es simplemente poner los canales R y G a 0 para cada pixel.
  */
 function blueConverter() {
-  let outputPath = "output/tucan_blue.jpg";
-  let pixels = handler.getPixels();
-
-  processPixels(pixels, (i, j, pixel) => {
-    pixel[0] = 0; // rojo 0
-    pixel[1] = 0; // verde 0
-  });
-
-  handler.savePixels(pixels, outputPath);
+  applyTransformation("output/tucan_blue.jpg", (pixels) =>
+    setChannelsToZero(pixels, [0, 1])
+  );
 }
 
 /**
@@ -107,17 +114,13 @@ function blueConverter() {
  * lo debemos transformar en el pixel [140, 140, 140].
  */
 function greyConverter() {
-  let outputPath = "output/tucan_grey.jpg";
-  let pixels = handler.getPixels();
-
-  processPixels(pixels, (i, j, pixel) => {
-    let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
-    pixel[0] = promedio; // rojo
-    pixel[1] = promedio; // verde
-    pixel[2] = promedio; // azul
+  applyTransformation("output/tucan_grey.jpg", (pixels) => {
+    processPixels(pixels, (i, j, pixel) => {
+      let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
+      pixel[0] = pixel[1] = pixel[2] = promedio;
+    });
+    return pixels;
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
@@ -128,18 +131,14 @@ function greyConverter() {
  * transformar el pixel en blanco [255, 255, 255].
  */
 function blackAndWhiteConverter() {
-  let outputPath = "output/tucan_black_and_white.jpg";
-  let pixels = handler.getPixels();
-
-  processPixels(pixels, (i, j, pixel) => {
-    let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
-    let newValue = promedio < 128 ? 0 : 255;
-    pixel[0] = newValue;
-    pixel[1] = newValue;
-    pixel[2] = newValue;
+  applyTransformation("output/tucan_black_and_white.jpg", (pixels) => {
+    processPixels(pixels, (i, j, pixel) => {
+      let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
+      let newValue = promedio < 128 ? 0 : 255;
+      pixel[0] = pixel[1] = pixel[2] = newValue;
+    });
+    return pixels;
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
@@ -149,22 +148,19 @@ function blackAndWhiteConverter() {
  * Otra forma es crear la imagen de nuevo unicamente con los valores de las filas y columnas pares.
  */
 function scaleDown() {
-  let outputPath = "output/tucan_scale_down.jpg";
-  let pixels = handler.getPixels();
-
-  let nuevosPixels = []; // matriz pixeles reducidos
-  for (let i = 0; i < pixels.length; i += 2) {
-    let nuevaFila = []; // nueva fila reducida
-    for (let j = 0; j < pixels[i].length; j += 2) {
-      nuevaFila.push(pixels[i][j]); // agrega pixel a la nueva fila
-    }
-    nuevosPixels.push(nuevaFila); // agrega la nueva fila a la matriz de pixeles reducidos
-  }
-  pixels = nuevosPixels; // actualiza pixels con la version reducida
-
-  handler.savePixels(
-    pixels,
-    outputPath,
+  applyTransformation(
+    "output/tucan_scale_down.jpg",
+    (pixels) => {
+      let nuevosPixels = [];
+      for (let i = 0; i < pixels.length; i += 2) {
+        let nuevaFila = [];
+        for (let j = 0; j < pixels[i].length; j += 2) {
+          nuevaFila.push(pixels[i][j]);
+        }
+        nuevosPixels.push(nuevaFila);
+      }
+      return nuevosPixels;
+    },
     handler.getShape()[0] / 2,
     handler.getShape()[1] / 2
   );
@@ -176,16 +172,14 @@ function scaleDown() {
  * Una forma de conseguirlo es dividir el valor de cada pixel por el parámetro dimFactor.
  */
 function dimBrightness(dimFactor) {
-  let outputPath = "output/tucan_dimed.jpg";
-  let pixels = handler.getPixels();
-
-  processPixels(pixels, (i, j, pixel) => {
-    pixel[0] = pixel[0] / dimFactor; // r / dimFactor
-    pixel[1] = pixel[1] / dimFactor; // g / dimFactor
-    pixel[2] = pixel[2] / dimFactor; // b / dimFactor
+  applyTransformation("output/tucan_dimed.jpg", (pixels) => {
+    processPixels(pixels, (i, j, pixel) => {
+      pixel[0] /= dimFactor;
+      pixel[1] /= dimFactor;
+      pixel[2] /= dimFactor;
+    });
+    return pixels;
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
@@ -196,16 +190,14 @@ function dimBrightness(dimFactor) {
  * Por ejemplo, si un pixel tiene valor [10, 20, 50] su nuevo valor sera [255 - 10, 255 - 20, 255 - 50] => [245, 235, 205]
  */
 function invertColors() {
-  let outputPath = "output/tucan_inverse.jpg";
-  let pixels = handler.getPixels();
-
-  processPixels(pixels, (i, j, pixel) => {
-    pixel[0] = 255 - pixel[0]; // r
-    pixel[1] = 255 - pixel[1]; // g
-    pixel[2] = 255 - pixel[2]; // b
+  applyTransformation("output/tucan_inverse.jpg", (pixels) => {
+    processPixels(pixels, (i, j, pixel) => {
+      pixel[0] = 255 - pixel[0];
+      pixel[1] = 255 - pixel[1];
+      pixel[2] = 255 - pixel[2];
+    });
+    return pixels;
   });
-
-  handler.savePixels(pixels, outputPath);
 }
 
 /**
@@ -221,29 +213,18 @@ function merge(alphaFirst, alphaSecond) {
 
   let catPixels = catHandler.getPixels();
   let dogPixels = dogHandler.getPixels();
-
   let pixels = [];
 
   for (let i = 0; i < catPixels.length; i++) {
     let nuevaFila = [];
     for (let j = 0; j < catPixels[i].length; j++) {
-      //valores RGB gato
-      let catR = catPixels[i][j][0];
-      let catG = catPixels[i][j][1];
-      let catB = catPixels[i][j][2];
-      //valores RGB perro
-      let dogR = dogPixels[i][j][0];
-      let dogG = dogPixels[i][j][1];
-      let dogB = dogPixels[i][j][2];
-      //nuevo valor RGB
-      let nuevoR = catR * alphaFirst + dogR * alphaSecond;
-      let nuevoG = catG * alphaFirst + dogG * alphaSecond;
-      let nuevoB = catB * alphaFirst + dogB * alphaSecond;
-      //nuevo pixel
-      let nuevoPixel = [nuevoR, nuevoG, nuevoB];
+      let nuevoPixel = [
+        catPixels[i][j][0] * alphaFirst + dogPixels[i][j][0] * alphaSecond,
+        catPixels[i][j][1] * alphaFirst + dogPixels[i][j][1] * alphaSecond,
+        catPixels[i][j][2] * alphaFirst + dogPixels[i][j][2] * alphaSecond,
+      ];
       nuevaFila.push(nuevoPixel);
     }
-    //añade fila a pixels
     pixels.push(nuevaFila);
   }
 
