@@ -1,0 +1,12 @@
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+div{
+    gap: 10px;
+}
+button{
+    min-width: 150px;
+}
