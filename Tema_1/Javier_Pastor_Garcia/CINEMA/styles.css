@@ -1,0 +1,134 @@
+
+html, body {
+  height: 100%;
+}
+
+body{
+  margin:0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: white;
+  color: black;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Parte Superior */
+.cine{
+  margin: 20px auto;
+  padding: auto;
+}
+
+h1{
+  margin: 0;
+  font-size: 40px;
+}
+
+.subtitulo{
+  margin: 0 0 20px 0;
+  font-size: 16px;
+}
+
+/* Simulamos la pantalla */
+.pantalla{
+  margin: 10px auto 20px;
+  background: #000;
+  color: #fff;
+  padding: 60px 0;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Toda la zona de asientos */
+.sala{
+  height: 500px;
+  width: 900px;
+  margin: auto;
+  padding: 80px 0 20px;
+  display: grid;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.num {
+  font-size: 12px;
+}
+
+.butacas {
+  display: grid;
+  grid-template-columns: repeat(30, 20px);
+  justify-content: center;
+  gap: 5px;
+}
+
+.asiento {
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  background: #C0C0C0;
+  border: 1px solid #C0C0C0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* con esto pretendo simular los pasillos */
+.hueco {
+  width: 20px;
+  aspect-ratio: 1 / 1;
+}
+
+.asiento:hover {
+  background: #808080;
+}
+
+/* Formulario */
+.reserva {
+  height: 50px;
+  width: 600px;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 20px;
+}
+.reserva input[type="text"]{
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 0;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.reserva input[type="submit"] {
+  background-color: #C0C0C0;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+}
+.reserva input[type="submit"]:hover {
+  background-color: #808080;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding: 0px 0;
+}
+
+  
