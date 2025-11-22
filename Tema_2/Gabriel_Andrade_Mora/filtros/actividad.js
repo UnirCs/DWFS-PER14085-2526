@@ -42,6 +42,28 @@ function setChannelsToZero(pixels, channelsToZero) {
 }
 
 /**
+ * Calcula el promedio RGB de un pixel
+ * @param {Array} pixel - Array [R, G, B]
+ */
+function getPixelAverage(pixel) {
+  return (pixel[0] + pixel[1] + pixel[2]) / 3;
+}
+
+/**
+ * Aplica una operación a todos los canales de un pixel
+ * @param {Array} pixels - Matriz de pixeles
+ * @param {Function} operation - Función que recibe el valor actual del canal
+ */
+function applyToAllChannels(pixels, operation) {
+  processPixels(pixels, (i, j, pixel) => {
+    pixel[0] = operation(pixel[0]);
+    pixel[1] = operation(pixel[1]);
+    pixel[2] = operation(pixel[2]);
+  });
+  return pixels;
+}
+
+/**
  * Ejemplo de construccion de una imagen
  */
 function ejemplo() {
@@ -116,8 +138,7 @@ function blueConverter() {
 function greyConverter() {
   applyTransformation("output/tucan_grey.jpg", (pixels) => {
     processPixels(pixels, (i, j, pixel) => {
-      let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
-      pixel[0] = pixel[1] = pixel[2] = promedio;
+      pixel[0] = pixel[1] = pixel[2] = getPixelAverage(pixel);
     });
     return pixels;
   });
@@ -133,9 +154,7 @@ function greyConverter() {
 function blackAndWhiteConverter() {
   applyTransformation("output/tucan_black_and_white.jpg", (pixels) => {
     processPixels(pixels, (i, j, pixel) => {
-      let promedio = (pixel[0] + pixel[1] + pixel[2]) / 3;
-      let newValue = promedio < 128 ? 0 : 255;
-      pixel[0] = pixel[1] = pixel[2] = newValue;
+      pixel[0] = pixel[1] = pixel[2] = getPixelAverage(pixel) < 128 ? 0 : 255;
     });
     return pixels;
   });
@@ -172,14 +191,9 @@ function scaleDown() {
  * Una forma de conseguirlo es dividir el valor de cada pixel por el parámetro dimFactor.
  */
 function dimBrightness(dimFactor) {
-  applyTransformation("output/tucan_dimed.jpg", (pixels) => {
-    processPixels(pixels, (i, j, pixel) => {
-      pixel[0] /= dimFactor;
-      pixel[1] /= dimFactor;
-      pixel[2] /= dimFactor;
-    });
-    return pixels;
-  });
+  applyTransformation("output/tucan_dimed.jpg", (pixels) =>
+    applyToAllChannels(pixels, (value) => value / dimFactor)
+  );
 }
 
 /**
@@ -190,14 +204,9 @@ function dimBrightness(dimFactor) {
  * Por ejemplo, si un pixel tiene valor [10, 20, 50] su nuevo valor sera [255 - 10, 255 - 20, 255 - 50] => [245, 235, 205]
  */
 function invertColors() {
-  applyTransformation("output/tucan_inverse.jpg", (pixels) => {
-    processPixels(pixels, (i, j, pixel) => {
-      pixel[0] = 255 - pixel[0];
-      pixel[1] = 255 - pixel[1];
-      pixel[2] = 255 - pixel[2];
-    });
-    return pixels;
-  });
+  applyTransformation("output/tucan_inverse.jpg", (pixels) =>
+    applyToAllChannels(pixels, (value) => 255 - value)
+  );
 }
 
 /**
