@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuck Norris Jokes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Generador de chistes de Chuck Norris</h1>
+
+<!-- Botón que dispara el evento -->
+<button onclick="darJoke()">Dame un chiste!</button>
+
+<!-- Párrafo donde se mostrará el chiste -->
+<p id="joke">Aquí aparecerá tu chiste...</p>
+
+<!-- Script dentro del mismo archivo -->
+<script>
+    function darJoke() {
+        // Llamada a la API de chistes
+        fetch("https://api.chucknorris.io/jokes/random")
+            .then(response => response.json()) // Convertimos la respuesta a JSON
+            .then(data => {
+                // Actualizamos el contenido del párrafo dinámicamente
+                document.getElementById("joke").innerHTML = data.value;
+            })
+            .catch(error => {
+                document.getElementById("joke").innerHTML = "Error al obtener el chiste";
+                console.error("Error:", error);
+            });
+    }
+</script>
+</body>
+</html>
