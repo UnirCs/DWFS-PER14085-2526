@@ -10,6 +10,7 @@ function setup() {
         let fila = [];
         for (let j = 0; j < N; j++) {
             // Generar Libre - Reservado aleatoriamente
+            // NOSONAR - Math.random() es suficiente para generación de estados no críticos
             let estadoAleatorio = Math.random() < 0.3;
             fila.push({ 
                 id: idContador++, 
