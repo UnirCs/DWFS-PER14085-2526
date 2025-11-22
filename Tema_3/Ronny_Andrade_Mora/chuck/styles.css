@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d1117;
+  color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 50%;
+  min-width: 320px;
+  background-color: #161b22;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #ffffff;
+  border-bottom: 2px solid #eab308;
+  padding-bottom: 12px;
+}
+
+button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  background-color: #eab308;
+  color: #000;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+#txtChiste {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-style: italic;
+  min-height: 60px;
+  color: #eab308;
+  transition: color 0.3s ease;
+}
+
+#txtChiste.loading {
+  color: #8b949e;
+  font-style: normal;
+}
+
+#txtChiste.error {
+  color: #ff7b72;
+  font-style: normal;
+}
