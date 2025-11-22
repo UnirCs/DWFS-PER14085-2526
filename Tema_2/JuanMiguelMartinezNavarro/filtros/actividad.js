@@ -10,6 +10,17 @@ function applyPixelTransform(pixels, transformCallback) {
 }
 
 /**
+ * Función helper para aplicar transformación y guardar imagen
+ * Elimina código duplicado en las funciones de conversión
+ */
+function processAndSaveImage(outputPath, transformCallback, message) {
+  let pixels = handler.getPixels();
+  let transformedPixels = applyPixelTransform(pixels, transformCallback);
+  console.log(message);
+  handler.savePixels(transformedPixels, outputPath);
+}
+
+/**
  * Ejemplo de construccion de una imagen
  */
 function ejemplo() {
@@ -45,17 +56,14 @@ function ejemplo() {
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
  */
 function redConverter() {
-  let outputPath = "output/tucan_red.jpg";
-  let pixels = handler.getPixels();
-
-  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    let [red, ,] = pixel;
-    return [red, 0, 0];
-  });
-
-  console.log("Transformación a rojo de la imagen completada");
-
-  handler.savePixels(transformedPixels, outputPath);
+  processAndSaveImage(
+    "output/tucan_red.jpg",
+    (pixel) => {
+      let [red] = pixel;
+      return [red, 0, 0];
+    },
+    "Transformación a rojo de la imagen completada"
+  );
 }
 
 /**
@@ -64,17 +72,14 @@ function redConverter() {
  * Una forma de conseguirlo es simplemente poner los canales R y B a 0 para cada pixel.
  */
 function greenConverter() {
-  let outputPath = "output/tucan_green.jpg";
-  let pixels = handler.getPixels();
-
-  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    let [, green] = pixel;
-    return [0, green, 0];
-  });
-
-  console.log("Transformación a verde de la imagen completada");
-
-  handler.savePixels(transformedPixels, outputPath);
+  processAndSaveImage(
+    "output/tucan_green.jpg",
+    (pixel) => {
+      let [, green] = pixel;
+      return [0, green, 0];
+    },
+    "Transformación a verde de la imagen completada"
+  );
 }
 
 /**
@@ -83,17 +88,14 @@ function greenConverter() {
  * Una forma de conseguirlo es simplemente poner los canales R y G a 0 para cada pixel.
  */
 function blueConverter() {
-  let outputPath = "output/tucan_blue.jpg";
-  let pixels = handler.getPixels();
-
-  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    let [, , blue] = pixel;
-    return [0, 0, blue];
-  });
-
-  console.log("Transformación a azul de la imagen completada");
-
-  handler.savePixels(transformedPixels, outputPath);
+  processAndSaveImage(
+    "output/tucan_blue.jpg",
+    (pixel) => {
+      let [, , blue] = pixel;
+      return [0, 0, blue];
+    },
+    "Transformación a azul de la imagen completada"
+  );
 }
 
 /**
@@ -106,18 +108,15 @@ function blueConverter() {
  * lo debemos transformar en el pixel [140, 140, 140].
  */
 function greyConverter() {
-  let outputPath = "output/tucan_grey.jpg";
-  let pixels = handler.getPixels();
-
-  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    let [red, green, blue] = pixel;
-    let media = Math.floor((red + green + blue) / 3);
-    return [media, media, media];
-  });
-
-  console.log("Transformación a gris de la imagen completada");
-
-  handler.savePixels(transformedPixels, outputPath);
+  processAndSaveImage(
+    "output/tucan_grey.jpg",
+    (pixel) => {
+      let [red, green, blue] = pixel;
+      let media = Math.floor((red + green + blue) / 3);
+      return [media, media, media];
+    },
+    "Transformación a gris de la imagen completada"
+  );
 }
 
 /**
@@ -128,22 +127,15 @@ function greyConverter() {
  * transformar el pixel en blanco [255, 255, 255].
  */
 function blackAndWhiteConverter() {
-  let outputPath = "output/tucan_black_and_white.jpg";
-  let pixels = handler.getPixels();
-
-  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    let [red, green, blue] = pixel;
-    let media = Math.floor((red + green + blue) / 3);
-    if (media < 128) {
-      return [0, 0, 0]; // Negro
-    } else {
-      return [255, 255, 255]; // Blanco
-    }
-  });
-
-  console.log("Transformación a blanco y negro de la imagen completada");
-
-  handler.savePixels(transformedPixels, outputPath);
+  processAndSaveImage(
+    "output/tucan_black_and_white.jpg",
+    (pixel) => {
+      let [red, green, blue] = pixel;
+      let media = Math.floor((red + green + blue) / 3);
+      return media < 128 ? [0, 0, 0] : [255, 255, 255];
+    },
+    "Transformación a blanco y negro de la imagen completada"
+  );
 }
 
 /**
@@ -181,21 +173,18 @@ function scaleDown() {
  * Una forma de conseguirlo es dividir el valor de cada pixel por el parámetro dimFactor.
  */
 function dimBrightness(dimFactor) {
-  let outputPath = "output/tucan_dimed.jpg";
-  let pixels = handler.getPixels();
-
-  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    let [red, green, blue] = pixel;
-    return [
-      Math.floor(red / dimFactor),
-      Math.floor(green / dimFactor),
-      Math.floor(blue / dimFactor),
-    ];
-  });
-
-  console.log("Reducción de brillo de la imagen completada");
-
-  handler.savePixels(transformedPixels, outputPath);
+  processAndSaveImage(
+    "output/tucan_dimed.jpg",
+    (pixel) => {
+      let [red, green, blue] = pixel;
+      return [
+        Math.floor(red / dimFactor),
+        Math.floor(green / dimFactor),
+        Math.floor(blue / dimFactor),
+      ];
+    },
+    "Reducción de brillo de la imagen completada"
+  );
 }
 
 /**
@@ -206,20 +195,14 @@ function dimBrightness(dimFactor) {
  * Por ejemplo, si un pixel tiene valor [10, 20, 50] su nuevo valor sera [255 - 10, 255 - 20, 255 - 50] => [245, 235, 205]
  */
 function invertColors() {
-  let outputPath = "output/tucan_inverse.jpg";
-  let pixels = handler.getPixels();
-  let transformedPixels = applyPixelTransform(pixels, (pixel) => {
-    let [red, green, blue] = pixel;
-    return [
-      255 - red, // Rojo invertido
-      255 - green, // Verde invertido
-      255 - blue, // Azul invertido
-    ];
-  });
-
-  console.log("Inversión de colores de la imagen completada");
-
-  handler.savePixels(transformedPixels, outputPath);
+  processAndSaveImage(
+    "output/tucan_inverse.jpg",
+    (pixel) => {
+      let [red, green, blue] = pixel;
+      return [255 - red, 255 - green, 255 - blue];
+    },
+    "Inversión de colores de la imagen completada"
+  );
 }
 
 /**
