@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document metadata and configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Reservation - CineMagic - Tarea 3.2</title>
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main container: wraps all content -->
+    <div class="container">
+        <!-- Header section: cinema name and branding -->
+        <header>
+            <h1>🎬 CineMagic</h1>
+            <p class="subtitle">Your perfect cinematic experience</p>
+        </header>
+
+        <!-- Main content area -->
+        <main>
+            <!-- Movie information section: displays selected movie details -->
+            <section class="movie-info">
+                <h2>Selected Movie</h2>
+                <div class="movie-details">
+                    <div class="movie-title">
+                        <h3>Harry Potter and the Goblet of Fire</h3>
+                        <p class="location">📍 Location: CineMagic Downtown</p>
+                        <p class="showtime">🕐 Showtime: 8:30 PM</p>
+                    </div>
+                    <div class="movie-specs">
+                        <div class="spec-item">
+                            <strong>Duration:</strong>
+                            <span>2h 35m</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Director:</strong>
+                            <span>Mike Newell</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Genre:</strong>
+                            <span>Adventure, Family</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Actors:</strong>
+                            <span>Daniel Radcliffe, Emma Watson, Rupert Grint</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seat selection section: interactive seat map -->
+            <section class="seat-selection">
+                <h2>Select Your Seats</h2>
+                
+                <!-- Screen indicator: visual representation of the cinema screen -->
+                <div class="screen">
+                    <p>SCREEN</p>
+                </div>
+
+                <!-- Seat map: grid layout of all available seats -->
+                <div class="seat-map">
+                    <!-- Row labels and seats: each row has a letter identifier -->
+                    <!-- Row A -->
+                    <div class="row-label">A</div>
+                    <div class="seats-row">
+                        <input type="checkbox" id="A1" class="seat-checkbox">
+                        <label for="A1" class="seat available">1</label>
+                        <input type="checkbox" id="A2" class="seat-checkbox">
+                        <label for="A2" class="seat available">2</label>
+                        <input type="checkbox" id="A3" class="seat-checkbox">
+                        <label for="A3" class="seat reserved">3</label>
+                        <input type="checkbox" id="A4" class="seat-checkbox">
+                        <label for="A4" class="seat reserved">4</label>
+                        <input type="checkbox" id="A5" class="seat-checkbox">
+                        <label for="A5" class="seat available">5</label>
+                        <input type="checkbox" id="A6" class="seat-checkbox">
+                        <label for="A6" class="seat available">6</label>
+                        <input type="checkbox" id="A7" class="seat-checkbox">
+                        <label for="A7" class="seat available">7</label>
+                        <input type="checkbox" id="A8" class="seat-checkbox">
+                        <label for="A8" class="seat reserved">8</label>
+                    </div>
+
+                    <!-- Row B -->
+                    <div class="row-label">B</div>
+                    <div class="seats-row">
+                        <input type="checkbox" id="B1" class="seat-checkbox">
+                        <label for="B1" class="seat available">1</label>
+                        <input type="checkbox" id="B2" class="seat-checkbox">
+                        <label for="B2" class="seat available">2</label>
+                        <input type="checkbox" id="B3" class="seat-checkbox">
+                        <label for="B3" class="seat available">3</label>
+                        <input type="checkbox" id="B4" class="seat-checkbox">
+                        <label for="B4" class="seat reserved">4</label>
+                        <input type="checkbox" id="B5" class="seat-checkbox">
+                        <label for="B5" class="seat reserved">5</label>
+                        <input type="checkbox" id="B6" class="seat-checkbox">
+                        <label for="B6" class="seat available">6</label>
+                        <input type="checkbox" id="B7" class="seat-checkbox">
+                        <label for="B7" class="seat available">7</label>
+                        <input type="checkbox" id="B8" class="seat-checkbox">
+                        <label for="B8" class="seat available">8</label>
+                    </div>
+
+                    <!-- Row C -->
+                    <div class="row-label">C</div>
+                    <div class="seats-row">
+                        <input type="checkbox" id="C1" class="seat-checkbox">
+                        <label for="C1" class="seat available">1</label>
+                        <input type="checkbox" id="C2" class="seat-checkbox">
+                        <label for="C2" class="seat available">2</label>
+                        <input type="checkbox" id="C3" class="seat-checkbox">
+                        <label for="C3" class="seat available">3</label>
+                        <input type="checkbox" id="C4" class="seat-checkbox">
+                        <label for="C4" class="seat available">4</label>
+                        <input type="checkbox" id="C5" class="seat-checkbox">
+                        <label for="C5" class="seat available">5</label>
+                        <input type="checkbox" id="C6" class="seat-checkbox">
+                        <label for="C6" class="seat reserved">6</label>
+                        <input type="checkbox" id="C7" class="seat-checkbox">
+                        <label for="C7" class="seat available">7</label>
+                        <input type="checkbox" id="C8" class="seat-checkbox">
+                        <label for="C8" class="seat available">8</label>
+                    </div>
+
+                    <!-- Row D -->
+                    <div class="row-label">D</div>
+                    <div class="seats-row">
+                        <input type="checkbox" id="D1" class="seat-checkbox">
+                        <label for="D1" class="seat reserved">1</label>
+                        <input type="checkbox" id="D2" class="seat-checkbox">
+                        <label for="D2" class="seat reserved">2</label>
+                        <input type="checkbox" id="D3" class="seat-checkbox">
+                        <label for="D3" class="seat available">3</label>
+                        <input type="checkbox" id="D4" class="seat-checkbox">
+                        <label for="D4" class="seat available">4</label>
+                        <input type="checkbox" id="D5" class="seat-checkbox">
+                        <label for="D5" class="seat available">5</label>
+                        <input type="checkbox" id="D6" class="seat-checkbox">
+                        <label for="D6" class="seat available">6</label>
+                        <input type="checkbox" id="D7" class="seat-checkbox">
+                        <label for="D7" class="seat available">7</label>
+                        <input type="checkbox" id="D8" class="seat-checkbox">
+                        <label for="D8" class="seat available">8</label>
+                    </div>
+
+                    <!-- Row E -->
+                    <div class="row-label">E</div>
+                    <div class="seats-row">
+                        <input type="checkbox" id="E1" class="seat-checkbox">
+                        <label for="E1" class="seat available">1</label>
+                        <input type="checkbox" id="E2" class="seat-checkbox">
+                        <label for="E2" class="seat available">2</label>
+                        <input type="checkbox" id="E3" class="seat-checkbox">
+                        <label for="E3" class="seat available">3</label>
+                        <input type="checkbox" id="E4" class="seat-checkbox">
+                        <label for="E4" class="seat available">4</label>
+                        <input type="checkbox" id="E5" class="seat-checkbox">
+                        <label for="E5" class="seat available">5</label>
+                        <input type="checkbox" id="E6" class="seat-checkbox">
+                        <label for="E6" class="seat available">6</label>
+                        <input type="checkbox" id="E7" class="seat-checkbox">
+                        <label for="E7" class="seat reserved">7</label>
+                        <input type="checkbox" id="E8" class="seat-checkbox">
+                        <label for="E8" class="seat reserved">8</label>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-bottom:20px;">
+                    <label for="seatInput" style="color:#667eea; font-weight:bold;">Butacas a reservar:</label>
+                    <input
+                            type="number"
+                            id="seatInput"
+                            min="1"
+                            max="10"
+                            oninput="handleInputChange(event)"
+                    >
+                </div>
+
+                <!-- Legend: explains seat status colors -->
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-seat available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat reserved"></div>
+                        <span>Reserved</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat selected"></div>
+                        <span>Selected</span>
+                    </div>
+                </div>
+
+                <!-- Next button: triggers payment confirmation modal -->
+                <div class="button-container">
+                    <label for="modal-trigger" class="btn-next">Next</label>
+                </div>
+            </section>
+        </main>
+
+        <!-- Hidden checkbox: controls modal visibility (CSS-only technique) -->
+        <input type="checkbox" id="modal-trigger" class="modal-checkbox">
+
+        <!-- Modal overlay: payment confirmation dialog (hidden by default) -->
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <h3>Confirm Reservation</h3>
+                <p>Do you want to proceed with ticket payment?</p>
+                <label for="modal-trigger" class="btn-ok">OK</label>
+            </div>
+        </div>
+    </div>
+    <script src="cinema.js"></script>
+</body>
+</html>
+
