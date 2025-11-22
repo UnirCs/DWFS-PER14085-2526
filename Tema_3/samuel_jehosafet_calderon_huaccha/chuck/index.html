@@ -43,13 +43,15 @@
                 .then(response => response.json())
                 .then(data => {
                     pTag.innerText = `"${data.value}"`;
-                    btn.disabled = false;
-                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                   
                 })
                 .catch(error => {
                     console.error('Error:', error);
                     pTag.innerText = "Chuck Norris no quizo contarte nada";
-                })
+                }).finally(() => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                });
         }
     </script>
 </body>
