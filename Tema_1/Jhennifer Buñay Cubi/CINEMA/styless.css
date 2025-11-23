@@ -37,14 +37,14 @@
 
 /* Estado disponible */
 .disponible {
-    background-color: #28a745; /* verde */
-    color: white;
+    background-color: #186329; /* verde */
+    color: #FFFFFF;
 }
 
 /* Estado ocupado */
 .ocupado {
-    background-color: #dc3545; /* rojo */
-    color: white;
+    background-color: #A91E2C; /* rojo */
+    color: #FFFFFF;
     cursor: not-allowed;
 }
 
