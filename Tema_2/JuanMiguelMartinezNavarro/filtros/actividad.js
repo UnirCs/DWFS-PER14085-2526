@@ -154,14 +154,10 @@ function scaleDown() {
   let outputPath = "output/tucan_scale_down.jpg";
   let pixels = handler.getPixels();
 
-  let nuevaImg = [];
-  for (let i = 0; i < pixels.length; i += 2) {
-    let nuevaFila = [];
-    for (let j = 0; j < pixels[i].length; j += 2) {
-      nuevaFila.push(pixels[i][j]);
-    }
-    nuevaImg.push(nuevaFila);
-  }
+  // Filtro las filas pares y luego las columnas pares
+  let nuevaImg = pixels
+    .filter((_, i) => i % 2 === 0)
+    .map((fila) => fila.filter((_, j) => j % 2 === 0));
 
   console.log("Reducción de la imagen a la mitad completada");
 
@@ -226,23 +222,12 @@ function merge(alphaFirst, alphaSecond) {
   let dogPixels = dogHandler.getPixels();
 
   let pixels = [];
-
   for (let i = 0; i < catPixels.length; i++) {
-    // Ambas imagenes tienen el mismo tamaño
     let nuevaFila = [];
     for (let j = 0; j < catPixels[i].length; j++) {
-      let catRed = catPixels[i][j][0];
-      let catGreen = catPixels[i][j][1];
-      let catBlue = catPixels[i][j][2];
-      let dogRed = dogPixels[i][j][0];
-      let dogGreen = dogPixels[i][j][1];
-      let dogBlue = dogPixels[i][j][2];
-
-      // Formula: newRed = dogRed * alphaFirst + catRed * alphaSecond
-      let newRed = Math.floor(dogRed * alphaFirst + catRed * alphaSecond);
-      let newGreen = Math.floor(dogGreen * alphaFirst + catGreen * alphaSecond);
-      let newBlue = Math.floor(dogBlue * alphaFirst + catBlue * alphaSecond);
-      nuevaFila.push([newRed, newGreen, newBlue]);
+      nuevaFila.push(
+        mergePixels(catPixels[i][j], dogPixels[i][j], alphaFirst, alphaSecond)
+      );
     }
     pixels.push(nuevaFila);
   }
