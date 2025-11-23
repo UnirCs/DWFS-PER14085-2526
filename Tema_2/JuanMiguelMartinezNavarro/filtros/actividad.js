@@ -3,27 +3,10 @@ const ImageHandler = require("./ImageHandler.js");
 let path = "input/tucan.jpg";
 let handler = new ImageHandler(path);
 
-// El objetivo de esta función es aplique a cada pixel de la matriz la función transformCallback
-function applyPixelTransform(pixels, transformCallback) {
-  // Uso doble map porque para no hacer un bucle anidado y que sea más legible
-  return pixels.map((fila) => fila.map((pixel) => transformCallback(pixel)));
-}
-
-function processAndSaveImage(outputPath, transformCallback, message) {
+function processAndSaveImage(outputPath, transformCallback) {
   let pixels = handler.getPixels();
-  let transformedPixels = applyPixelTransform(pixels, transformCallback);
-  console.log(message);
+  let transformedPixels = pixels.map((fila) => fila.map((pixel) => transformCallback(pixel)));
   handler.savePixels(transformedPixels, outputPath);
-}
-
-function mergePixels(pixel1, pixel2, alpha1, alpha2) {
-  let [r1, g1, b1] = pixel1;
-  let [r2, g2, b2] = pixel2;
-  return [
-    Math.floor(r2 * alpha1 + r1 * alpha2),
-    Math.floor(g2 * alpha1 + g1 * alpha2),
-    Math.floor(b2 * alpha1 + b1 * alpha2),
-  ];
 }
 
 /**
@@ -65,10 +48,8 @@ function redConverter() {
   processAndSaveImage(
     "output/tucan_red.jpg",
     (pixel) => {
-      let [red] = pixel;
-      return [red, 0, 0];
+      return [pixel[0], 0, 0];
     },
-    "Transformación a rojo de la imagen completada"
   );
 }
 
@@ -81,10 +62,8 @@ function greenConverter() {
   processAndSaveImage(
     "output/tucan_green.jpg",
     (pixel) => {
-      let [, green] = pixel;
-      return [0, green, 0];
-    },
-    "Transformación a verde de la imagen completada"
+      return [0, pixel[1], 0];
+    }
   );
 }
 
@@ -97,10 +76,8 @@ function blueConverter() {
   processAndSaveImage(
     "output/tucan_blue.jpg",
     (pixel) => {
-      let [, , blue] = pixel;
-      return [0, 0, blue];
-    },
-    "Transformación a azul de la imagen completada"
+      return [0, 0, pixel[2]];
+    }
   );
 }
 
@@ -117,11 +94,9 @@ function greyConverter() {
   processAndSaveImage(
     "output/tucan_grey.jpg",
     (pixel) => {
-      let [red, green, blue] = pixel;
-      let media = Math.floor((red + green + blue) / 3);
+      let media = Math.floor((pixel[0] + pixel[1] + pixel[2]) / 3);
       return [media, media, media];
-    },
-    "Transformación a gris de la imagen completada"
+    }
   );
 }
 
@@ -136,11 +111,9 @@ function blackAndWhiteConverter() {
   processAndSaveImage(
     "output/tucan_black_and_white.jpg",
     (pixel) => {
-      let [red, green, blue] = pixel;
-      let media = Math.floor((red + green + blue) / 3);
+      let media = Math.floor((pixel[0] + pixel[1] + pixel[2]) / 3);
       return media < 128 ? [0, 0, 0] : [255, 255, 255];
-    },
-    "Transformación a blanco y negro de la imagen completada"
+    }
   );
 }
 
@@ -178,14 +151,12 @@ function dimBrightness(dimFactor) {
   processAndSaveImage(
     "output/tucan_dimed.jpg",
     (pixel) => {
-      let [red, green, blue] = pixel;
       return [
-        Math.floor(red / dimFactor),
-        Math.floor(green / dimFactor),
-        Math.floor(blue / dimFactor),
+        Math.floor(pixel[0] / dimFactor),
+        Math.floor(pixel[1] / dimFactor),
+        Math.floor(pixel[2] / dimFactor),
       ];
-    },
-    "Reducción de brillo de la imagen completada"
+    }
   );
 }
 
@@ -200,10 +171,8 @@ function invertColors() {
   processAndSaveImage(
     "output/tucan_inverse.jpg",
     (pixel) => {
-      let [red, green, blue] = pixel;
-      return [255 - red, 255 - green, 255 - blue];
-    },
-    "Inversión de colores de la imagen completada"
+      return [255 - pixel[0], 255 - pixel[1], 255 - pixel[2]];
+    }
   );
 }
 
@@ -223,12 +192,11 @@ function merge(alphaFirst, alphaSecond) {
 
   let pixels = catPixels.map((fila, i) =>
     fila.map((catPixel, j) =>
-      mergePixels(catPixel, dogPixels[i][j], alphaFirst, alphaSecond)
+      Math.floor(catPixel[0] * alphaFirst + dogPixels[i][j][0] * alphaSecond),
+      Math.floor(catPixel[1] * alphaFirst + dogPixels[i][j][1] * alphaSecond),
+      Math.floor(catPixel[2] * alphaFirst + dogPixels[i][j][2] * alphaSecond)
     )
-  );
-
-  console.log("Fusión de las imágenes completada");
-
+  );  
   dogHandler.savePixels(pixels, outputPath);
 }
 
