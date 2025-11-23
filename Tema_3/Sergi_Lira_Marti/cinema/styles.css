@@ -1,0 +1,114 @@
+body{
+    background-color: #0e1637;
+}
+
+h1{
+    display: flex;
+    margin-top: 5%;
+    justify-self: center;
+}
+
+.selector_title{
+    color: white;
+}
+
+.selector_input{
+    display: flex;
+    justify-self: center;
+}
+
+.selector_btn{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #4343c5;
+    color: white;
+    border: #4343c5;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 120px;
+    min-height: 30px;
+}
+
+.selector_btn:hover{
+    background-color: #323293;
+}
+
+.sits-view{
+    width: 65vw;
+    height: 60vh;
+    justify-self: center;
+    background-color: #162057;
+    align-self: center ;
+    margin-top: 3%;
+    padding: 20px;
+}
+
+.screen{
+    width: 50%;
+    height: 15%;
+    justify-self: center;
+    background-color: black;
+    display: grid;
+}
+
+.screen_text{
+    color: white;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+}
+
+.grid-butacas{
+    width: 450px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    margin-top: 5%;
+    background-color: none;
+    justify-self: center;
+}
+
+.butaca{
+    background-color: darkred;
+    margin: 5%;
+    cursor: pointer;
+}
+
+.ocupada{
+    background-color: grey;
+    cursor: default;
+}
+
+.seleccionada{
+    background-color: blue;
+}
+
+.legend-panel {
+    display: grid;
+    width: 50%;
+    justify-self: center;
+}
+
+.box-legend{
+    height: 20px;
+    width: 20px;
+    display: flex;
+    margin: 3%;
+}
+
+.libre{
+    background-color: darkred;
+}
+
+.legend-row{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+h3{
+    color: white;
+}

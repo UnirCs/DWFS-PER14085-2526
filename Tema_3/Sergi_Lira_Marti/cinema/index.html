@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Cine UNIR</title>
+</head>
+<body>
+    <h1 class="selector_title">ELIGE TUS ASIENTOS</h1>
+    <input id="selector_input" class="selector_input" type="number" placeholder="Número de asientos">
+    <button class="selector_btn">Confirmar reserva</button>
+    <div class="sits-view">
+        <div class="screen">
+            <h2 class="screen_text">PANTALLA</h2>
+        </div>
+        <div class="grid-butacas"></div>
+        <div class="legend-panel">
+            <h3>Leyenda</h3>
+            <div class="legend-row">
+                <div class="box-legend libre"></div><span>Libre</span>
+                <div class="box-legend ocupada"></div><span>Ocupada</span>
+                <div class="box-legend seleccionada"></div><span>Seleccionada</span>
+            </div>
+        </div>
+    </div>
+    <script src="cinema.js"></script>
+</body>
+</html>
