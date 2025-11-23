@@ -30,7 +30,7 @@ function suggest(numSeats) {
 
     let adj_empty = [];
 
-    numSeats = parseInt(numSeats);
+    numSeats = Number.parseInt(numSeats, 10);
 
     if (numSeats < 1 || numSeats > N) {
         console.log("El número de asientos solicitado excede el máximo de fila o es menor que 1");
