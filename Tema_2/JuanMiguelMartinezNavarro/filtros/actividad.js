@@ -221,16 +221,11 @@ function merge(alphaFirst, alphaSecond) {
   let catPixels = catHandler.getPixels();
   let dogPixels = dogHandler.getPixels();
 
-  let pixels = [];
-  for (let i = 0; i < catPixels.length; i++) {
-    let nuevaFila = [];
-    for (let j = 0; j < catPixels[i].length; j++) {
-      nuevaFila.push(
-        mergePixels(catPixels[i][j], dogPixels[i][j], alphaFirst, alphaSecond)
-      );
-    }
-    pixels.push(nuevaFila);
-  }
+  let pixels = catPixels.map((fila, i) =>
+    fila.map((catPixel, j) =>
+      mergePixels(catPixel, dogPixels[i][j], alphaFirst, alphaSecond)
+    )
+  );
 
   console.log("Fusión de las imágenes completada");
 
