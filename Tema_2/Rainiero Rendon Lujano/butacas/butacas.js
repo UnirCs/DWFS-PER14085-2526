@@ -39,7 +39,7 @@ function suggest(NumeroAsientos) {
     if (NumeroAsientos > N) {
         return resultado;
     }
-
+ let bloqueEncontrado = false; // Variable de control agregada
    
     for (let i = N - 1; i >= 0; i--) {
         let fila = butacas[i];
@@ -50,9 +50,14 @@ function suggest(NumeroAsientos) {
             if (!fila[j].estado) {
                 consecutivos++;
                 AsientoTemp.push(fila[j].id);
-                if (consecutivos === NumeroAsientos) {
-                    AsientoTemp.forEach(id => resultado.add(id));
-                    return resultado;
+                if (consecutivos === NumeroAsientos && bloqueEncontrado===false) {
+                    AsientoTemp.forEach(id => {
+                        let asiento = fila.find(a => a.id===id);
+                        if (asiento) asiento.estado=true; /* cambio el estado a ocupado*/
+                        resultado.add(id);
+                   })
+                 bloqueEncontrado =true;
+             
                 }
             } else {
                 consecutivos = 0;
