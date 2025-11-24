@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chistes Chuck Norris</title>
+    <style>
+        body {
+            background-color: #263a93;
+
+        }
+        .element{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .boton-chiste{
+            color: white;
+            background-color: #162057;
+            cursor: pointer;
+            border-radius: 5px;
+            border-color: #162057;
+            font-size: 18px;
+            min-height: 35px;
+            min-width: 150px;
+            margin: 10%;
+        }
+        .boton-chiste:hover{
+            background-color: #13143a;
+        }
+        .chiste_texto{
+            color: white;
+            font-size: 20px;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div class="element">
+        <button class="boton-chiste" id="boton-chiste" onclick="dame_un_chiste()">Dame un chiste</button>
+    </div>
+    <div class="element">
+        <span class="chiste_texto" id="chiste_texto"></span>
+    </div>
+    <script>
+        async function dame_un_chiste() {
+            let url = "https://api.chucknorris.io/jokes/random";
+            let fetchResponse = await fetch(url);
+            let json = await fetchResponse.json();
+            let frase = json.value;
+            document.getElementById("chiste_texto").innerText = frase;
+        }
+    </script>
+</body>
+</html>
