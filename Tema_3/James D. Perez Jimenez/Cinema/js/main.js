@@ -59,7 +59,7 @@ function render(){
 function clampDesired(){
   let v = Number.parseInt(qtyEl.value, 10);
   if(Number.isNaN(v) || v < 1) v = 1;
-  if(v > COLS) v = COLS; // max igual al número de columnas
+  if(v > COLS) v = COLS;
   qtyEl.value = v;
   return v;
 }
@@ -131,7 +131,10 @@ function suggest(numset) {
 
     for (let col = 1; col <= COLS; col++) {
       const key = `${fila}-${col}`;
-      if (!occupied.has(key)) {
+
+      if (occupied.has(key)) {
+        asientosLibres = 0;
+      } else {
         asientosLibres++;
 
         if (asientosLibres === 1) {
@@ -142,8 +145,6 @@ function suggest(numset) {
           filaSeleccionada = fila;
           inicioSeleccionado = inicioBloque;
         }
-      } else {
-        asientosLibres = 0;
       }
     }
   }
@@ -171,70 +172,68 @@ function clearSelectedUI() {
 
 confirmEl.addEventListener('click', ()=>{
   const max = clampDesired();
+  if (selected.size === max) {
+    const ordered = Array.from(selected)
+      .sort((a,b)=>{
+        const [ra,ca] = a.split('-').map(Number);
+        const [rb,cb] = b.split('-').map(Number);
+        return ra===rb ? ca - cb : ra - rb;
+      })
+      .map(k=>{
+        const [r,c] = k.split('-').map(Number);
+        return formatSeat(r,c);
+      });
 
-  if (selected.size !== max) {
-    const sugeridos = suggest(max);
+    if (ordered.length === 0) return;
 
-    if (!sugeridos.size) {
-      statusEl.textContent = `No hay un bloque disponible de ${max} asientos juntos.`;
-      statusEl.className = "text-danger small";
-      return;
-    }
+    alert(`Has reservado:\n\n${ordered.join(', ')}`);
 
-    clearSelectedUI();
-
-    sugeridos.forEach(key => {
-      selected.add(key);
+    for (const key of Array.from(selected)) {
+      occupied.add(key); 
       const btn = document.querySelector(`.seat[data-key="${key}"]`);
       if (btn) {
-        btn.classList.remove('btn-outline-secondary');
-        btn.classList.add('btn-primary');
-        btn.setAttribute('aria-pressed','true');
+        btn.classList.remove('btn-primary','btn-outline-secondary');
+        btn.classList.add('btn-secondary');
+        btn.disabled = true;              
+        btn.setAttribute('aria-pressed','false');
       }
-    });
+    }
 
+    selected.clear();
     updateStatus();
-
-    const lista = Array.from(sugeridos).map(k=>{
-      const [r,c] = k.split('-').map(Number);
-      return formatSeat(r,c);
-    }).join(', ');
-
-    statusEl.textContent = `Te sugerimos los asientos: ${lista}`;
-    statusEl.className = "text-success small";
-
+    statusEl.className = "text-secondary small";
     return;
   }
 
-  const ordered = Array.from(selected)
-    .sort((a,b)=>{
-      const [ra,ca] = a.split('-').map(Number);
-      const [rb,cb] = b.split('-').map(Number);
-      return ra===rb ? ca - cb : ra - rb;
-    })
-    .map(k=>{
-      const [r,c] = k.split('-').map(Number);
-      return formatSeat(r,c);
-    });
+  const sugeridos = suggest(max);
 
-  if(!ordered.length) return;
-
-  alert(`Has reservado:\n\n${ordered.join(', ')}`);
-
-  for (const key of Array.from(selected)) {
-    occupied.add(key); 
-    const btn = document.querySelector(`.seat[data-key="${key}"]`);
-    if (btn) {
-      btn.classList.remove('btn-primary','btn-outline-secondary');
-      btn.classList.add('btn-secondary');
-      btn.disabled = true;              
-      btn.setAttribute('aria-pressed','false');
-    }
+  if (sugeridos.size === 0) {
+    statusEl.textContent = `No hay un bloque disponible de ${max} asientos juntos.`;
+    statusEl.className = "text-danger small";
+    return;
   }
 
-  selected.clear();
+  clearSelectedUI();
+
+  sugeridos.forEach(key => {
+    selected.add(key);
+    const btn = document.querySelector(`.seat[data-key="${key}"]`);
+    if (btn) {
+      btn.classList.remove('btn-outline-secondary');
+      btn.classList.add('btn-primary');
+      btn.setAttribute('aria-pressed','true');
+    }
+  });
+
   updateStatus();
-  statusEl.className = "text-secondary small";
+
+  const lista = Array.from(sugeridos).map(k=>{
+    const [r,c] = k.split('-').map(Number);
+    return formatSeat(r,c);
+  }).join(', ');
+
+  statusEl.textContent = `Te sugerimos los asientos: ${lista}`;
+  statusEl.className = "text-success small";
 });
 
 render();
