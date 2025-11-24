@@ -116,46 +116,54 @@ qtyEl.addEventListener('input', ()=>{
 });
 
 function suggest(numset) {
-  const resultado = new Set();
-  
-  if (numset > COLS || numset <= 0) {
-    return resultado;
-  }
+  if (numset > COLS || numset <= 0) return new Set();
 
-  let filaSeleccionada = -1;
-  let inicioSeleccionado = -1;
+  const fila = buscarFilaConBloque(numset);
+  if (!fila) return new Set();
 
+  return construirBloque(fila.fila, fila.inicio, numset);
+}
+
+function buscarFilaConBloque(numset) {
   for (let fila = ROWS; fila >= 1; fila--) {
-    let asientosLibres = 0;
-    let inicioBloque = 0;
+    const inicio = buscarBloqueEnFila(fila, numset);
+    if (inicio !== -1) {
+      return { fila, inicio };
+    }
+  }
+  return null;
+}
 
-    for (let col = 1; col <= COLS; col++) {
-      const key = `${fila}-${col}`;
+function buscarBloqueEnFila(fila, numset) {
+  let libres = 0;
+  let inicio = 1;
 
-      if (occupied.has(key)) {
-        asientosLibres = 0;
-      } else {
-        asientosLibres++;
+  for (let col = 1; col <= COLS; col++) {
+    const key = `${fila}-${col}`;
 
-        if (asientosLibres === 1) {
-          inicioBloque = col;
-        }
+    if (occupied.has(key)) {
+      libres = 0;
+      continue;
+    }
 
-        if (asientosLibres === numset && filaSeleccionada === -1) {
-          filaSeleccionada = fila;
-          inicioSeleccionado = inicioBloque;
-        }
-      }
+    if (libres === 0) inicio = col;
+
+    libres++;
+
+    if (libres === numset) {
+      return inicio;
     }
   }
 
-  if (filaSeleccionada !== -1) {
-    for (let c = inicioSeleccionado; c < inicioSeleccionado + numset; c++) {
-      resultado.add(`${filaSeleccionada}-${c}`);
-    }
-  }
+  return -1;
+}
 
-  return resultado;
+function construirBloque(fila, inicio, numset) {
+  const r = new Set();
+  for (let c = inicio; c < inicio + numset; c++) {
+    r.add(`${fila}-${c}`);
+  }
+  return r;
 }
 
 function clearSelectedUI() {
