@@ -1,0 +1,49 @@
+.main-display {
+  display: flex;
+  width: 800px;
+  border: 2pt solid black;
+  border-radius: 20px;
+  margin: 50px auto;
+}
+
+.main-display h1 {
+  font-size: 180%;
+}
+
+.main-display__left-side {
+  flex-basis: 30%;
+  padding: 30px;
+  background-color: rgb(190, 190, 230);
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+.main-display__right-side {
+  flex-basis: 70%;
+  padding: 30px;
+}
+
+.left-side__picture,
+.picture__picture {
+  width: 150px;
+  height: 220px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.picture__picture {
+  border: 3px solid rgb(75, 75, 219);
+}
+
+.right-side__name {
+  font-size: 350%;
+}
+
+.education__item,
+.professional-experience__item {
+  margin-bottom: 5%;
+}
+
+.main-display__left-side > div {
+  margin-bottom: 20%;
+}
