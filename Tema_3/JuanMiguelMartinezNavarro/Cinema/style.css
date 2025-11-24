@@ -1,0 +1,226 @@
+:root {
+  --background-color: #f4f4f4;
+  --decoration-color: rgb(91, 188, 168);
+  --text-color: #333;
+  --seat-available: #4caf50;
+  --seat-occupied: #f44336;
+  --seat-selected: #2196f3;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 4rem;
+}
+
+header {
+  display: flex;
+  background-color: var(--decoration-color);
+  height: 4rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.screen-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.screen {
+  background-color: #333;
+  color: white;
+  padding: 1rem 4rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 60%;
+}
+
+.seats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.seats-table {
+  border-collapse: separate;
+  border-spacing: 0.5rem;
+}
+
+.seats-table th {
+  width: 2rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 0;
+}
+
+.seats-table td {
+  padding: 0;
+  text-align: center;
+}
+
+.seat {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+}
+
+.seat.available {
+  background-color: var(--seat-available);
+  color: white;
+}
+
+.seat.occupied {
+  background-color: var(--seat-occupied);
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: var(--seat-selected);
+  color: white;
+}
+
+.states {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.item-state {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item-state .seat {
+  cursor: default;
+  width: 2rem;
+  height: 2rem;
+}
+
+.item-state .seat:hover {
+  transform: none;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #333;
+}
+
+.reservation-form label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  align-self: start;
+}
+
+.form-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.reservation-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--decoration-color);
+  border-radius: 0.3rem;
+  width: 75px;
+  text-align: center;
+}
+
+.reservation-form button {
+  padding: 0.8rem 2rem;
+  background-color: var(--decoration-color);
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reservation-form button:hover {
+  background-color: rgb(70, 150, 135);
+}
+
+footer {
+  background-color: var(--decoration-color);
+  color: black;
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer-content p {
+  margin: 0.2rem 0;
+}
+
+.footer-content-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
