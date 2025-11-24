@@ -1,10 +1,7 @@
 //------------------------------------------------------------------------------------------------------------------------
-// Implementación de un algoritmo de selección de butacas de cine
+// Implementación refactorizada del algoritmo de selección de butacas
 // Developer: James D. Perez Jimenez
-// Fecha: 2024-06-15
 //------------------------------------------------------------------------------------------------------------------------
-
-//  CÓDIGOS DE APOYO PARA LA IMPLEMENTACIÓN DE LA SOLUCIÓN
 
 const N = 10; 
 function setup() {
@@ -25,48 +22,38 @@ function setup() {
 
 let butacas = setup();
 
-// IMPLEMENTACIÓN DE LA FUNCIÓN SUGGEST
+function buscarBloqueLibre(fila, numset) {
+    let libres = 0;
+    let inicio = 0;
 
-function suggest(numset) {
-    const resultado = new Set();
-    
-    if (numset > N || numset <= 0) {
-        return resultado;
-    }
+    for (let col = 0; col < N; col++) {
+        const libre = !butacas[fila][col].estado;
 
-    let filaSeleccionada = -1;
-    let inicioSeleccionado = -1;
-
-    for (let fila = N - 1; fila >= 0; fila--) {
-        let asientosLibres = 0;
-        let inicioBloque = 0;
-
-        for (let col = 0; col < N; col++) {
-
-            if (butacas[fila][col].estado === false) {
-                asientosLibres++;
-
-                if (asientosLibres === 1) {
-                    inicioBloque = col;
-                }
-
-                if (asientosLibres === numset) {
-
-                    if (filaSeleccionada === -1) {
-                        filaSeleccionada = fila;
-                        inicioSeleccionado = inicioBloque;
-                    }
-                }
-
-            } else {
-                asientosLibres = 0;
-            }
+        if (libre) {
+            libres++;
+            if (libres === 1) inicio = col;
+            if (libres === numset) return inicio;
+        } else {
+            libres = 0;
         }
     }
 
-    if (filaSeleccionada !== -1) {
-        for (let k = inicioSeleccionado; k < inicioSeleccionado + numset; k++) {
-            resultado.add(butacas[filaSeleccionada][k].id);
+    return -1;
+}
+
+function suggest(numset) {
+    const resultado = new Set();
+
+    if (numset > N || numset <= 0) return resultado;
+
+    for (let fila = N - 1; fila >= 0; fila--) {
+        const inicioBloque = buscarBloqueLibre(fila, numset);
+
+        if (inicioBloque !== -1) {
+            for (let k = inicioBloque; k < inicioBloque + numset; k++) {
+                resultado.add(butacas[fila][k].id);
+            }
+            break; // ya encontramos la mejor fila
         }
     }
 
@@ -74,20 +61,17 @@ function suggest(numset) {
 }
 
 
-// SIMULACIÓN DE ASIENTOS OCUPADOS PARA PRUEBAS
-
+//---------------------------------------------
+// SIMULACIÓN DE ASIENTOS OCUPADOS
+//---------------------------------------------
 butacas[9][0].estado = true;
 butacas[9][1].estado = true;
 butacas[1][1].estado = true;
 
 
-// PRUEBAS DE LA FUNCIÓN SUGGEST
-
-// // Prueba 1: Solicitar 4 asientos juntos
+//---------------------------------------------
+// PRUEBAS
+//---------------------------------------------
 console.log("Sugerencia para 4 asientos:", suggest(4));
-
-// // Prueba 2: Solicitar 11 asientos juntos (excede el tamaño máximo)
 console.log("Sugerencia para 11 asientos:", suggest(11));
-
-// // Prueba 3: Solicitar 2 asientos juntos
 console.log("Sugerencia para 2 asientos:", suggest(2));
