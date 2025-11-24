@@ -1,0 +1,20 @@
+{
+  "name": "dwfs-per14085-2526",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juanduenasemsitech/DWFS-PER14085-2526.git"
+  },
+  "private": true,
+  "dependencies": {
+    "deasync": "^0.1.31",
+    "get-pixels": "^3.3.3",
+    "ndarray": "^1.0.19",
+    "save-pixels": "^2.3.6"
+  }
+}
