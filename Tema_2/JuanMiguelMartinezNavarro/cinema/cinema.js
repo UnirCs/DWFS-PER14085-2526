@@ -26,18 +26,18 @@ let butacas = setup();
 
 
 const suggest = (reserva) => {
-    if (reserva > N) return new Set();
-    // Recorre las filas de la matriz de butacas desde la última fila hasta la primera
-    for (let i = N - 1; i >= 0; i--) {
-        // Filtra los asientos libres de la fila
-        let libres = butacas[i].filter(asiento => asiento.estado === false);
-        // Si hay suficientes asientos libres, devuelve un Set con los IDs de los asientos libres
-        if (libres.length >= reserva) {
-            // Uso slice para solo rellenar los que se quieren reservar de los libres y map para obtener los IDs
-            return new Set(libres.slice(0, reserva).map(asiento => asiento.id));
+    let sugerencia = new Set();
+    if (reserva <= N) {
+        let filaEncontrada = false;
+        for (let i = N - 1; i >= 0 && !filaEncontrada; i--) {
+            let libres = butacas[i].filter(asiento => asiento.estado === false);
+            if (libres.length >= reserva) {
+                sugerencia = new Set(libres.slice(0, reserva).map(asiento => asiento.id));
+                filaEncontrada = true;
+            }
         }
     }
-    return new Set();
+    return sugerencia;
 }
 
 
