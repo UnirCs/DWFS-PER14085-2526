@@ -1,0 +1,126 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: white;
+    padding: 5px;
+}
+
+.titles{
+    font-size: 35px;
+    padding-left: 2%;
+}
+
+.sub_titular {
+    font-size: 18px;
+    margin-bottom: 10%;
+    padding-left: 2%;
+    color: grey;
+}
+
+.header_info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: #ADD8E6;
+  border: 3px solid grey;
+}
+
+.contact_section__sub_titular {
+    text-align: right;
+    padding-right: 5%;
+    font-style: italic;
+}
+
+.experience_section--job {
+    background-color: #ADD8E6;
+    border: 3px solid grey;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.company_name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.job_duration, .job_location {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.job_details {
+    border-left: 3px solid #ccc;
+    padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.position_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.position_dates {
+    font-size: 14px;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.position_description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.job-responsabilities {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #555;
+}
+
+.job-skills {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0066AA;
+    margin-top: 15px;
+}
+
+
+.education_info {
+    margin-top: 30px;
+    padding-left: 2%;
+}
+
+.education_info__university {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.education_info__year {
+    font-size: 16px;
+    font-style: italic;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.education_section {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: #ADD8E6;
+  border: 3px solid grey;
+}
