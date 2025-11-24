@@ -33,6 +33,10 @@
     max-width: 120px;
 }
 
+.seat:hover {
+    transform: scale(1.1);
+}
+
 .promo-movie {
     min-height: clamp(180px, 30vw, 320px);
 }
