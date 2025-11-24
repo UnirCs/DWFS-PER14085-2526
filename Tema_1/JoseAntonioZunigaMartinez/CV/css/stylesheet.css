@@ -1,0 +1,45 @@
+#encabezado {
+  background-color: #007BFF; 
+  color: white;              
+  padding: 20px;             
+  text-align: center;        
+  border-radius: 8px;        
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+  margin: 20px;
+}
+
+header img {
+  display: block;            
+  margin: 0 auto;            
+  width: 150px;              
+  border-radius: 8px;        
+}
+
+section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+section:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+}
+
+section h2 {
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+li.cv_contacto, li.cv_experiencia {
+  list-style: none;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
