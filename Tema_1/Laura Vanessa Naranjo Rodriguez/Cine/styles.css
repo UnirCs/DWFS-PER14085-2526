@@ -1,0 +1,152 @@
+body {
+	background-color: black;
+}
+
+.cuadro {
+	border-style: double;
+	margin: 3px;
+	border-color: indianred;
+	width: 900px;
+	height: 800px;
+}
+
+.contenedor {
+	justify-content: center;
+	display: flex;
+	height: auto;
+
+}
+
+.titulo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(251, 147, 147, 0.325);
+	border-style: dotted;
+	border-color: rgba(251, 147, 147, 0.325);
+	width: 895px;
+	height: 110px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+h1 {
+	font-family: Broadway;
+	color: white;
+	margin: 0;
+
+}
+
+.pantalla {
+	border-style: solid;
+	background-color: rgba(255, 255, 255, 0.938);
+	border-color: #fb939353;
+	width: 870px;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+
+
+}
+
+.asiento {
+	border: 2px solid indianred;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	display: grid;
+	border-radius: 4px;
+	justify-content: center;
+
+
+}
+
+.Letra {
+	color: white;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.fila {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+}
+
+h5,
+.formulario {
+	justify-content: center;
+	display: flex;
+	height: auto;
+	width: auto;
+	font-family: Verdana;
+	color: white;
+	text-align: center;
+}
+
+.boton {
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.informacion {
+	color: white;
+	font-family: Verdana;
+	justify-content: center;
+	text-align: center;
+	display: flex;
+	background-color: #fb939353;
+	margin-left: auto;
+	margin-right: auto;
+	width: 895px;
+	height: 110px;
+	font-size: small;
+}
+
+.imagen-izquierda1{
+	position: absolute;
+	left: 40px;
+	top:2%;
+	width: 200px;
+
+}
+
+.imagen-izquierda2{
+	position: absolute;
+	left: 40px;
+	top:38%;
+	width: 200px;
+}
+
+.imagen-izquierda3{
+	position: absolute;
+	left: 40px;
+	top: 74%;
+	width: 200px;
+}
+
+.imagen-derecha1{
+	position: absolute;
+	right: 70px;
+	top:8%;
+	width: 150px;
+
+}
+
+.imagen-derecha2{
+	position: absolute;
+	right: 70px;
+	top:39%;
+	width: 150px;
+}
+
+.imagen-derecha3{
+	position: absolute;
+	right: 70px;
+	top: 70%;
+	width: 150px;
+}
