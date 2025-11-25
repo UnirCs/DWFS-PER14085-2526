@@ -21,26 +21,34 @@ function setup() {
 
 // Función para sugerir asientos
 function suggest(numAsientos) {
+    let resultado = new Set();
+    let encontrado = false;
+
     if (numAsientos > N || numAsientos <= 0) {
-        return new Set();
+        return resultado;
     }
 
-    for (let i = butacas.length - 1; i >= 0; i--) {
+    for (let i = butacas.length - 1; i >= 0 && !encontrado; i--) {
         const fila = butacas[i];
         let asientosConsecutivos = [];
-        
-        for (let j = 0; j < fila.length; j++) {
+
+        for (let j = 0; j < fila.length && !encontrado; j++) {
+
             if (!fila[j].estado) {
                 asientosConsecutivos.push(fila[j].id);
+
                 if (asientosConsecutivos.length === numAsientos) {
-                    return new Set(asientosConsecutivos);
+                    resultado = new Set(asientosConsecutivos);
+                    encontrado = true; 
                 }
+
             } else {
                 asientosConsecutivos = [];
             }
         }
     }
-    return new Set();
+
+    return resultado; 
 }
 
 // Función auxiliar para mostrar el estado de las butacas
