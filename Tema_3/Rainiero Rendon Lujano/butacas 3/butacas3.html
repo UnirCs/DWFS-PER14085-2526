@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Cine</title>
+    <link rel="stylesheet" href="butacas3.css">
+</head>
+<body>
+    <header>
+        <h1>Sala de Cine</h1>
+    </header>
+
+    <main>
+        <label for="numButacas">Número de butacas a reservar:</label>
+        <input type="number" id="numButacas" min="1" max="10" oninput="probarSuggest()">
+
+        <div id="sala" class="sala"></div>
+    </main>
+
+    <footer>
+        <p> Cine</p>
+    </footer>
+
+    <script src="butacas.js"></script>
+
+    <script>
+        const salaDiv = document.getElementById('sala');
+
+   
+        function dibujarSala() {
+            salaDiv.innerHTML = ''; // Limpiar la sala desde cero
+            for (let i = 0; i < butacas.length; i++) {
+                const filaDiv = document.createElement('div');
+                filaDiv.className = 'fila';
+                for (let j = 0; j < butacas[i].length; j++) {
+                    const asiento = butacas[i][j];
+                    const asientoDiv = document.createElement('div');
+                    asientoDiv.className = 'asiento';
+                    if (asiento.estado) asientoDiv.classList.add('ocupado');
+                    asientoDiv.id = `asiento-${asiento.id}`;
+                    filaDiv.appendChild(asientoDiv);
+                }
+                salaDiv.appendChild(filaDiv);
+            }
+        }
+
+        dibujarSala();
+
+        function probarSuggest() {
+            const input = document.getElementById('numButacas');
+            const numero = parseInt(input.value);
+            if (!isNaN(numero) && numero > 0) {
+                const resultado = suggest(numero);
+                console.log("Resultado del Set:", resultado);
+
+                
+                resultado.forEach(id => {
+                    const asientoDiv = document.getElementById(`asiento-${id}`);
+                    if (asientoDiv) asientoDiv.classList.add('ocupado');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
