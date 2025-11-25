@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.unir-text {
+    font-family: monospace; /* Fuente. Mas Info https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
+}
+
+.unir-header {
+    text-align: center;
+    border: 2px solid #000000;
+    background: #0098CD;
+    color: #FFF;
+}
+
+.pantalla {
+    width: 80%;
+    height: 200px;
+    background: #2a2a2a;
+    margin: 0 auto;
+}
+
+.butacas-cine {
+    color: #DB8100;
+    margin: 0 auto;
+    border-spacing: 5px;
+}
+
+    .butacas-cine td {
+        border: 1px solid #DB8100;
+        width: 30px;
+        height: 30px;
+    }
+
+    .butacas-cine .coloreado {
+        background-color: #DB8100;
+    }
+
+.formulario-reserva {
+    text-align: center;
+}
+
+    .formulario-reserva label {
+        color: #FFFFFF;
+        margin: 10px auto;
+    }
+
+    .formulario-reserva input[type="submit"] {
+        background-color: #DB8100;
+        color: #FFFFFF;
+        margin: 10px auto;
+    }
+
+footer {
+    background-color: #0098CD;
+    padding: 5px 0;
+    text-align: center;
+}

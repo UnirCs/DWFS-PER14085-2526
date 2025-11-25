@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UNIR-CINEMA — Reserva de butacas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
+    <header class="max-w-5xl mx-auto p-6">
+        <h1 class="text-3xl font-bold">UNIR-CINEMA — Reserva de butacas</h1>
+        <p class="text-sm text-gray-600 mt-1">Elige tus butacas y confirma tu reserva</p>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+            <section class="bg-white p-6 rounded-2xl shadow lg:col-span-2">
+                <div class="flex flex-col items-center">
+                    <div class="w-full max-w-2xl">
+                        <div class="bg-gray-900 text-white text-center rounded-t-2xl py-3 mb-6">PANTALLA</div>
+                        <div class="bg-gray-50 p-6 rounded-b-2xl">
+                            <div id="seating" class="space-y-4 flex flex-col items-center">
+                                <div class="flex items-center gap-4">
+                                    <div class="font-mono">Fila 1</div>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <div class="seat bg-green-500 text-white">1</div>
+                                        <div class="seat bg-green-500 text-white">2</div>
+                                        <div class="seat bg-gray-500 text-white occupied">3</div>
+                                        <div class="seat bg-gray-500 text-white occupied">4</div>
+                                        <div class="seat bg-green-500 text-white">5</div>
+                                        <div class="seat bg-green-500 text-white">6</div>
+                                        <div class="seat bg-green-500 text-white">7</div>
+                                        <div class="seat bg-green-500 text-white">8</div>
+                                        <div class="seat bg-green-500 text-white">9</div>
+                                        <div class="seat bg-green-500 text-white">10</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="font-mono">Fila 2</div>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <div class="seat bg-green-500 text-white">1</div>
+                                        <div class="seat bg-green-500 text-white">2</div>
+                                        <div class="seat bg-green-500 text-white">3</div>
+                                        <div class="seat bg-green-500 text-white">4</div>
+                                        <div class="seat bg-green-500 text-white">5</div>
+                                        <div class="seat bg-gray-500 text-white occupied">6</div>
+                                        <div class="seat bg-green-500 text-white">7</div>
+                                        <div class="seat bg-green-500 text-white">8</div>
+                                        <div class="seat bg-green-500 text-white">9</div>
+                                        <div class="seat bg-green-500 text-white">10</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="font-mono">Fila 3</div>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <div class="seat bg-gray-500 text-white occupied">1</div>
+                                        <div class="seat bg-green-500 text-white">2</div>
+                                        <div class="seat bg-green-500 text-white">3</div>
+                                        <div class="seat bg-green-500 text-white">4</div>
+                                        <div class="seat bg-green-500 text-white">5</div>
+                                        <div class="seat bg-green-500 text-white">6</div>
+                                        <div class="seat bg-green-500 text-white">7</div>
+                                        <div class="seat bg-green-500 text-white">8</div>
+                                        <div class="seat bg-green-500 text-white">9</div>
+                                        <div class="seat bg-green-500 text-white">10</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="font-mono">Fila 4</div>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <div class="seat bg-gray-500 text-white occupied">1</div>
+                                        <div class="seat bg-green-500 text-white">2</div>
+                                        <div class="seat bg-green-500 text-white">3</div>
+                                        <div class="seat bg-green-500 text-white">4</div>
+                                        <div class="seat bg-green-500 text-white">5</div>
+                                        <div class="seat bg-green-500 text-white">6</div>
+                                        <div class="seat bg-green-500 text-white">7</div>
+                                        <div class="seat bg-green-500 text-white">8</div>
+                                        <div class="seat bg-green-500 text-white">9</div>
+                                        <div class="seat bg-green-500 text-white">10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-3 gap-3 w-full max-w-md text-sm">
+                        <div class="flex items-center gap-2"><span class="w-4 h-4 rounded bg-green-500 block"></span>
+                            Disponible</div>
+                        <div class="flex items-center gap-2"><span class="w-4 h-4 rounded bg-yellow-400 block"></span>
+                            Seleccionada</div>
+                        <div class="flex items-center gap-2"><span class="w-4 h-4 rounded bg-gray-500 block"></span>
+                            Ocupada
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <aside class="bg-white p-6 rounded-2xl shadow flex flex-col gap-4">
+                <h2 class="text-xl font-semibold">Tu reserva</h2>
+
+                <form id="bookingForm" class="flex flex-col gap-4">
+                    <label class="text-sm text-gray-600">Número de asientos a reservar</label>
+                    <input id="seatCount" type="number" min="1" max="10" value="1"
+                        class="w-full border rounded px-3 py-2" />
+                    <button id="confirmBtn" type="button"
+                        class="mt-2 bg-indigo-600 text-white rounded px-4 py-2 hover:bg-indigo-700 disabled:opacity-50"
+                        disabled>Confirmar reserva</button>
+                </form>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white mt-8">
+        <div class="max-w-5xl mx-auto p-6 flex flex-col md:flex-row justify-between gap-4 items-start">
+            <div>
+                <h3 class="text-lg font-semibold">UNIR-CINEMA</h3>
+                <p class="text-sm">Cine independiente</p>
+            </div>
+            <div class="text-sm">
+                <p>Dirección: Av. Universidad 123, Quito, Ecuador</p>
+                <p>Teléfono: +593 2 123 4567</p>
+                <p>Email: contacto@unir-cinema.ec</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
