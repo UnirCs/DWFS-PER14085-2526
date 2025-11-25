@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon">
+    <title>Chuck</title>
+
+    <script>
+        async function getJoke() {
+            const url = "https://api.chucknorris.io/jokes/random";
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`Error HTTP. Estado: ${response.status}`);
+            }
+
+            const { value: joke, icon_url: icon } = await response.json();
+
+            if (!joke || !icon) {
+                throw new Error('Error de API!');
+            }
+
+            document.querySelector("link[rel~='icon']").href = icon;
+            document.getElementById('joke').innerHTML = `${joke}`;
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="getJoke()">¡Dame un chiste!</button>
+        <p id="joke"></p>
+    </div>
+</body>
+</html>
