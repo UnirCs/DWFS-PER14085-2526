@@ -6,10 +6,10 @@ function setup() {
     let idContador = 1; // Iniciar el contador de IDs en 1 (los humanos no empezamos a contar desde 0)
     let butacas = [];
 
-    for (let i = 0; i < N; i++) {
+    for (let i of Array(N).keys()) {
         // Nueva fila
         let fila = [];
-        for (let j = 0; j < N; j++) {
+        for (let j of Array(N).keys()) {
             // Nuevo asiento
             fila.push({
                 id: idContador++,
@@ -36,9 +36,10 @@ function setup() {
 const suggest = (butacas, reservations) => {
     if (reservations > N) return new Set();
 
-    for (let i = butacas.length - 1; i >= 0; i--) {
-        for (let j = 0; j <= N - reservations; j++) {
-            const asientos = butacas[i].slice(j, j + reservations);
+    for (let fila of [...butacas].reverse()) {
+    
+        for (let j of Array(N - reservations + 1).keys()) {
+            const asientos = fila.slice(j, j + reservations);
             if (asientos.every(a => !a.estado)) {
                 return new Set(asientos.map(a => a.id));
             }
