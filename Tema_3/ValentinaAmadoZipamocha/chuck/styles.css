@@ -1,0 +1,80 @@
+.headerText {
+    font-size: 24px;
+    color: rgb(130, 63, 15);
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: orange;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.headerText sub {
+    display: block;
+    font-size: 16px;
+    color: rgb(130, 63, 15);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+body {
+    background-color: #FFDAB9;
+}
+
+.jokeSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    justify-content: flex-start;
+    border: 4px solid orange;
+}
+
+.chuckImage {
+    width: 380px;
+    height: auto;
+    border-radius: 8px;
+    flex: 0 0 auto;
+}
+
+.jokeContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.jokeSection h2 {
+    color: #FFDAB9;
+    margin: 0;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(130, 63, 15);
+    padding: 15px;
+}
+
+#newJokeButton {
+    padding: 10px 20px;
+    background-color: orange;
+    color: rgb(130, 63, 15);
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 250px;
+    align-self: center;
+}
+
+#newJokeButton:hover {
+    background-color: rgb(252, 198, 98);
+}
+
+.jokeDisplay {
+    font-size: 18px;
+    color: rgb(130, 63, 15);
+    background-color: #FFF8DC;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
