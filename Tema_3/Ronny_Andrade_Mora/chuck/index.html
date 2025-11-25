@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aplicación web para obtener chistes aleatorios de Chuck Norris usando Fetch API."
+    />
+    <title>Chistes de Chuck Norris</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Chistes de Chuck Norris</h1>
+
+      <button id="btnChiste" type="button">Dame un chiste</button>
+
+      <p id="txtChiste" aria-live="polite"></p>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        "use strict";
+        const API_URL = "https://api.chucknorris.io/jokes/random";
+        const BTN_ID = "btnChiste";
+        const TXT_ID = "txtChiste";
+
+        const boton = document.getElementById(BTN_ID);
+        const parrafo = document.getElementById(TXT_ID);
+
+        if (boton && parrafo) {
+          boton.addEventListener("click", () => {
+            parrafo.textContent = "Consultando a Chuck...";
+            parrafo.classList.add("loading");
+            parrafo.classList.remove("error");
+
+            fetch(API_URL)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`Error de red: ${response.status}`);
+                }
+                return response.json();
+              })
+              .then((data) => {
+                parrafo.textContent = `"${data.value}"`;
+                parrafo.classList.remove("loading");
+              })
+              .catch((error) => {
+                console.error("Fallo en la petición:", error);
+                parrafo.textContent = "Ocurrió un error al llamar a Chuck.";
+                parrafo.classList.add("error");
+              });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
