@@ -1,0 +1,100 @@
+body {
+  background-color: black; 
+  font-family: Arial, sans-serif;
+}
+
+main{
+    border-color: rgba(187, 187, 9, 0.822);
+    border-width: 2px;
+    border-style: solid;
+}
+
+.seccion {
+  background-color: #757575; 
+  color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.seccion-2 {
+  background-color: #2c2b2b; 
+  color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  height: 200px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion-3 {
+  background-color: black; 
+  color: #ffffff;
+  padding: 20px;
+  margin: 20px;  
+}
+
+
+.sala {
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 8px; 
+  margin-bottom: 20px;
+}
+
+.sala th {
+  color: #fff;
+  text-align: left;
+  padding-right: 10px;
+}
+
+.sala td {
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  border: 2px solid #fbff00;
+  border-radius: 2px;
+}
+
+td:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgb(0, 183, 255);
+}
+
+.asiento.resevado {
+  background-color: #ffeb3b;
+}
+
+.reserva {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;     
+  justify-content: center; 
+  gap: 15px;               
+  color: yellow;
+  margin: 0 auto;          
+  max-width: 300px;        
+  text-align: center;      
+}
+
+input[type="number"] {
+  padding: 8px;
+  width: 60px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #ffeb3b;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
