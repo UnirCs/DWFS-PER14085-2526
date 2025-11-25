@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIR-CINEMA | Reserva Premium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar / Header -->
+    <header class="navbar navbar-dark bg-dark border-bottom border-secondary py-4">
+        <div class="container justify-content-center text-center">
+            <div>
+                <h1 class="h2 text-uppercase mb-0 fw-light tracking-widest text-light">
+                    Unir<span class="text-gold fw-bold">-Cinema</span>
+                </h1>
+                <small class="text-secondary text-uppercase tracking-widest" style="font-size: 0.7rem;">Experiencia Premium</small>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow-1 d-flex flex-column align-items-center justify-content-center py-5">
+        <div class="container">
+            <form action="#" method="POST"> <!-- Formulario envuelve todo -->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 text-center">
+                        
+                        <!-- Leyenda -->
+                        <div class="d-inline-flex gap-4 mb-5 p-3 rounded-pill bg-dark border border-secondary shadow-sm">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="legend-box" style="background-color: var(--seat-available);"></div> 
+                                <small class="text-muted">Disponible</small>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="legend-box bg-gold"></div> 
+                                <small class="text-muted">Seleccionado</small>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="legend-box" style="background-color: var(--seat-occupied); border: 1px solid #555;"></div> 
+                                <small class="text-muted">Ocupado</small>
+                            </div>
+                        </div>
+
+                        <!-- Pantalla -->
+                        <div class="screen-container w-75 mx-auto">
+                            <div class="screen"></div>
+                            <div class="screen-glow mx-auto"></div>
+                            <p class="text-muted mt-3 tracking-widest" style="font-size: 0.75rem;">PANTALLA</p>
+                        </div>
+
+                        <!-- Grid de Asientos con Checkboxes -->
+                        <div class="mb-5 d-flex flex-column align-items-center" id="cinema-container">
+                            
+                            <!-- Fila 1 -->
+                            <div class="d-flex justify-content-center align-items-center mb-2 w-100">
+                                <div class="row-label text-end me-3">F1</div>
+                                
+                                <input type="checkbox" id="f1s1" class="seat-checkbox"><label for="f1s1" class="seat"></label>
+                                <input type="checkbox" id="f1s2" class="seat-checkbox"><label for="f1s2" class="seat"></label>
+                                <input type="checkbox" id="f1s3" class="seat-checkbox"><label for="f1s3" class="seat"></label>
+                                <input type="checkbox" id="f1s4" class="seat-checkbox"><label for="f1s4" class="seat"></label>
+                                <input type="checkbox" id="f1s5" class="seat-checkbox"><label for="f1s5" class="seat"></label>
+								<div class="seat-occupied"></div>
+                                <div class="seat-occupied"></div>
+								<div class="seat-occupied"></div>
+								<div class="seat-occupied"></div>                               
+                                <input type="checkbox" id="f1s10" class="seat-checkbox"><label for="f1s10" class="seat"></label>
+                                <input type="checkbox" id="f1s11" class="seat-checkbox"><label for="f1s11" class="seat"></label>
+                                <input type="checkbox" id="f1s12" class="seat-checkbox"><label for="f1s12" class="seat"></label>
+                                <input type="checkbox" id="f1s13" class="seat-checkbox"><label for="f1s8" class="seat"></label>
+                                <input type="checkbox" id="f1s14" class="seat-checkbox"><label for="f1s9" class="seat"></label>
+                            </div>
+
+                            <!-- Fila 2 -->
+                            <div class="d-flex justify-content-center align-items-center mb-2 w-100">
+                                <div class="row-label text-end me-3">F2</div>
+								<input type="checkbox" id="f2s1" class="seat-checkbox"><label for="f2s4" class="seat"></label>
+                                <div class="seat-occupied"></div>
+                                <div class="seat-occupied"></div>
+								<div class="seat-occupied"></div>
+								<div class="seat-occupied"></div>
+                                <input type="checkbox" id="f2s6" class="seat-checkbox"><label for="f2s6" class="seat"></label>
+                                <input type="checkbox" id="f2s7" class="seat-checkbox"><label for="f2s7" class="seat"></label>
+                                <input type="checkbox" id="f2s8" class="seat-checkbox"><label for="f2s8" class="seat"></label>
+                                <input type="checkbox" id="f2s9" class="seat-checkbox"><label for="f2s9" class="seat"></label>
+                                <input type="checkbox" id="f2s10" class="seat-checkbox"><label for="f2s10" class="seat"></label>
+                                <input type="checkbox" id="f2s11" class="seat-checkbox"><label for="f2s11" class="seat"></label>
+                                <input type="checkbox" id="f2s12" class="seat-checkbox"><label for="f2s12" class="seat"></label>
+								<input type="checkbox" id="f2s13" class="seat-checkbox"><label for="f2s5" class="seat"></label>
+
+                            </div>
+
+                            <!-- Fila 3 -->
+                            <div class="d-flex justify-content-center align-items-center mb-2 w-100">
+                                <div class="row-label text-end me-3">F3</div>
+                                <input type="checkbox" id="f3s1" class="seat-checkbox"><label for="f3s1" class="seat"></label>
+                                <div class="seat-occupied"></div>
+                                <div class="seat-occupied"></div>
+                                <input type="checkbox" id="f3s4" class="seat-checkbox"><label for="f3s4" class="seat"></label>
+                                <input type="checkbox" id="f3s5" class="seat-checkbox"><label for="f3s5" class="seat"></label>
+                                <input type="checkbox" id="f3s6" class="seat-checkbox"><label for="f3s6" class="seat"></label>
+                                <input type="checkbox" id="f3s7" class="seat-checkbox"><label for="f3s7" class="seat"></label>
+                                <input type="checkbox" id="f3s8" class="seat-checkbox"><label for="f3s8" class="seat"></label>
+                                <input type="checkbox" id="f3s9" class="seat-checkbox"><label for="f3s9" class="seat"></label>
+                                <input type="checkbox" id="f3s10" class="seat-checkbox"><label for="f3s10" class="seat"></label>
+                                <input type="checkbox" id="f3s11" class="seat-checkbox"><label for="f3s11" class="seat"></label>
+                                <input type="checkbox" id="f3s12" class="seat-checkbox"><label for="f3s12" class="seat"></label>
+                            </div>
+
+                            <!-- Fila 4 -->
+                            <div class="d-flex justify-content-center align-items-center mb-2 w-100">
+                                <div class="row-label text-end me-3">F4</div>
+                                <input type="checkbox" id="f4s1" class="seat-checkbox"><label for="f4s1" class="seat"></label>
+                                <input type="checkbox" id="f4s2" class="seat-checkbox"><label for="f4s2" class="seat"></label>
+                                <div class="seat-occupied"></div>
+                                <div class="seat-occupied"></div>
+                                <input type="checkbox" id="f4s5" class="seat-checkbox"><label for="f4s5" class="seat"></label>
+                                <input type="checkbox" id="f4s6" class="seat-checkbox"><label for="f4s6" class="seat"></label>
+                                <input type="checkbox" id="f4s7" class="seat-checkbox"><label for="f4s7" class="seat"></label>
+                                <input type="checkbox" id="f4s8" class="seat-checkbox"><label for="f4s8" class="seat"></label>
+                                <input type="checkbox" id="f4s9" class="seat-checkbox"><label for="f4s9" class="seat"></label>
+                                <input type="checkbox" id="f4s10" class="seat-checkbox"><label for="f4s10" class="seat"></label>
+                                <input type="checkbox" id="f4s11" class="seat-checkbox"><label for="f4s11" class="seat"></label>
+                                <input type="checkbox" id="f4s12" class="seat-checkbox"><label for="f4s12" class="seat"></label>
+                                <input type="checkbox" id="f4s13" class="seat-checkbox"><label for="f4s13" class="seat"></label>
+                            </div>
+
+                            <!-- Fila 5 -->
+                            <div class="d-flex justify-content-center align-items-center mb-2 w-100">
+                                <div class="row-label text-end me-3">F5</div>
+                                <input type="checkbox" id="f5s1" class="seat-checkbox"><label for="f5s1" class="seat"></label>
+                                <input type="checkbox" id="f5s2" class="seat-checkbox"><label for="f5s2" class="seat"></label>
+                                <div class="seat occupied"></div>
+                                <div class="seat occupied"></div>
+                                <input type="checkbox" id="f5s5" class="seat-checkbox"><label for="f5s5" class="seat"></label>
+                                <input type="checkbox" id="f5s6" class="seat-checkbox"><label for="f5s6" class="seat"></label>
+                                <input type="checkbox" id="f5s7" class="seat-checkbox"><label for="f5s7" class="seat"></label>
+                                <input type="checkbox" id="f5s8" class="seat-checkbox"><label for="f5s8" class="seat"></label>
+                                <input type="checkbox" id="f5s9" class="seat-checkbox"><label for="f5s9" class="seat"></label>
+                                <input type="checkbox" id="f5s10" class="seat-checkbox"><label for="f5s10" class="seat"></label>
+                                <input type="checkbox" id="f5s11" class="seat-checkbox"><label for="f5s11" class="seat"></label>
+                                <input type="checkbox" id="f5s12" class="seat-checkbox"><label for="f5s12" class="seat"></label>
+                                <input type="checkbox" id="f5s13" class="seat-checkbox"><label for="f5s13" class="seat"></label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Panel de Confirmación (Estático ahora) -->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="card card-custom shadow-lg">
+                            <div class="card-body p-4 text-center">
+                                <h5 class="card-title text-gold mb-4 fw-light border-bottom border-secondary pb-3">Detalles de Reserva</h5>
+                                
+                                <p class="text-secondary small">Selecciona tus butacas arriba</p>
+                                
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <span class="text-secondary">Precio por entrada:</span>
+                                    <span class="text-gold h5 fw-light mb-0">$19.000</span>
+                                </div>
+
+                                <button type="submit" class="btn btn-gold w-100 py-3 rounded-1 shadow transition-all">
+                                    CONFIRMAR RESERVA
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-secondary py-5 mt-auto border-top border-dark">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <h5 class="text-white fw-bold text-uppercase tracking-widest mb-2">UNIR-CINEMA</h5>
+                    <p class="mb-0 small">Calle Avenida de la Paz, 137. Logroño</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-1 small"><span class="text-muted">Tel:</span> 941 209 743</p>
+                    <p class="mb-0 small"><span class="text-muted">Email:</span> cinefullstack@unircinema.com</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <small class="text-muted" style="font-size: 0.7rem;">&copy; 2024 Unir-Cinema. Todos los derechos reservados.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
