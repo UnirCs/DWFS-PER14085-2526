@@ -109,62 +109,100 @@ body {
 
 .user_session--header{
     color: white;
-}
-
-.container {
-    width: 90%;
-    max-width: 600px;
+    text-align: center;
 }
 
 .user_session{
     font-family: 'Arial', sans-serif;
     width: 90%;
     max-width: 1000px;
-    position: absolute;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-family: "Helvetica", Arial, sans-serif;
 }
 
 h3 {
-    color: dodgerblue; /* Título en amarillo */
+    color: dodgerblue;
     text-align: center;
 }
 
 form {
-    background-color: #444; /* Fondo ligeramente más claro para el formulario */
+    background-color: #444;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.input-field {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 .input-field label {
-    color: black; /* Etiqueta de texto claro */
+    color: #BDBDBD;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.input-field input {
+    flex-grow: 1;
+    width: 250px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
 }
 
 .input-field input[type=text],
 .input-field input[type=password],
 .input-field input[type=email] {
-    color: black; /* Color de texto de entrada */
-    border-bottom: 1px solid #ffd700; /* Borde amarillo para los inputs */
+    color: black;
+    border-bottom: 1px solid dodgerblue;
 }
 
 .input-field input[type=text]:focus,
 .input-field input[type=password]:focus,
 .input-field input[type=email]:focus {
-    border-bottom: 1px solid #ffd700; /* Borde amarillo en foco */
-    box-shadow: 0 1px 0 0 #ffd700; /* Sombra amarilla en foco */
+    border-bottom: 1px solid dodgerblue;
+    box-shadow: 0 1px 0 0 dodgerblue;
+}
+
+
+.input-field .error {
+    flex-basis: 100%;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: red;
 }
 
 .btn {
-    background-color: #ffd700; /* Botón en amarillo */
-    color: #333; /* Texto del botón en oscuro */
+    background-color: dodgerblue;
+    color: #333;
 }
 
 .btn:hover {
-    background-color: #ccac00; /* Color del botón al pasar el mouse */
+    background-color: #ccac00;
 }
 
-/* Mensajes de error */
 p {
-    color: #ff4444; /* Rojo para errores */
+    color: #ff4444;
     font-size: 0.8rem;
     margin-top: 5px;
 }
@@ -174,5 +212,8 @@ p {
 }
 
 .submit-button{
-    margin-top: 10px;
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
