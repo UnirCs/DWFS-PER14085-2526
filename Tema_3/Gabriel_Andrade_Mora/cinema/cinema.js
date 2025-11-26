@@ -13,18 +13,20 @@ function setup() {
 }
 
 function suggest(numAsientos) {
-  numAsientos = Number(numAsientos); //convierte a numero
+  numAsientos = parseInt(numAsientos); //convertir a numero
+  const resultado = new Set(); //set para guardar ids sugeridos
+  let encontrado = false; //bandera para indicar si se encontraron asientos
   //validacion de numero de asientos
   if (numAsientos > N) {
     console.log("Resultado vacio: numero de asientos excede el maximo");
-    return new Set(); //retorna set vacio
+    return resultado; //retorna set vacio
   }
   //recorre filas desde mas lejana hasta la primera
-  for (let i = N - 1; i >= 0; i--) {
+  for (let i = N - 1; i >= 0 && !encontrado; i--) {
     let consecutivos = 0; //contador de asientos consecutivos
     let inicio = -1; //indice de inicio
     //recorre columnas butacas
-    for (let j = 0; j < N; j++) {
+    for (let j = 0; j < N && !encontrado; j++) {
       if (!butacas[i][j].estado) {
         //si la butaca esta libre
         if (consecutivos === 0) {
@@ -33,12 +35,10 @@ function suggest(numAsientos) {
         consecutivos++; //incrementa contador
         //si tenemos todos los consecutivos
         if (consecutivos === numAsientos) {
-          let resultado = new Set(); //crea set resultado
           for (let k = inicio; k < inicio + numAsientos; k++) {
             resultado.add(butacas[i][k].id); //agrega ids al set
           }
-          console.log("Resultado:", resultado);
-          return resultado; //devuelve el set con los ids
+          encontrado = true; //marca que se encontraron asientos
         }
       } else {
         //si la butaca esta ocupada
@@ -47,8 +47,8 @@ function suggest(numAsientos) {
       }
     }
   }
-  console.log("Resultado vacio: no se encontraron asientos consecutivos");
-  return new Set(); //si no se encuentran asientos retorna set vacio
+  console.log("Resultado:", resultado);
+  return resultado; //devuelve el set con los ids
 }
 
 let butacas = setup(); //inicializa la matriz de butacas
