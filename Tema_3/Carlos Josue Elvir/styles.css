@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.chistes {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.chistes__titulo {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.acciones-chistes {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.chistes__boton {
+    background: #3498db;
+    border: none;
+    padding: 12px 18px;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.chistes__boton:hover {
+    background: #2980b9;
+}
+
+.acciones-chistes__parrafo {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
