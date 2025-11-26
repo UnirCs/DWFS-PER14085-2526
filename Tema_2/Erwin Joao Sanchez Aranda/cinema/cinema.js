@@ -34,11 +34,13 @@ function butacasOccupiedByDefault(butacasToModify){
 }
 
 function reserveButacas(butacasToReserve, numberButacasToReserve){
-    for (let i = rowSize - 1; i >=0; i--) {
+    let butacasReadyToReserve = [];
+    let flagToContinue = true;
+    for (let i = rowSize - 1; i >=0 && flagToContinue; i--) {
         let groupButacas = 0;
         let butacasTogether = [];
 
-        for (let j = 0; j < columnSize; j++) {
+        for (let j = 0; j < columnSize && flagToContinue; j++) {
             if (!butacasTogether[groupButacas]) {
                 butacasTogether[groupButacas] = [];
             }
@@ -46,19 +48,19 @@ function reserveButacas(butacasToReserve, numberButacasToReserve){
             if (!butacasToReserve[i][j].estado) {
                 butacasTogether[groupButacas].push({id: butacasToReserve[i][j].id, estado: butacasToReserve[i][j].estado});
                 if (butacasTogether[groupButacas].length===numberButacasToReserve) {
-                    break;
+                    flagToContinue = false;
                 }
             }
             else {
                 groupButacas+=1;
             }
         }
-        let butacasReadyToReserve = butacasTogether.filter( group => group.length >= numberButacasToReserve)
+        butacasReadyToReserve = butacasTogether.filter( group => group.length >= numberButacasToReserve)
         if (butacasReadyToReserve.length > 0) {
-            return butacasReadyToReserve;
+            flagToContinue = false;
         }
     }
-    return [];
+    return butacasReadyToReserve;
 }
 
 function suggest(numberButacasToReserve) {
@@ -115,7 +117,7 @@ function printButacas(butacasToPrint) {
 const rowSize = 10; // Número de filas
 const columnSize = 8; // Número de columnas
 const numToReserveFirstClient = 1 // Número de Butacas deseadas del primer cliente
-const numToReserveSecondClient = 4 // Número de Butacas deseadas del segundo cliente
+const numToReserveSecondClient = 5 // Número de Butacas deseadas del segundo cliente
 
 console.log("\n========== BUTACAS VACIAS ==========");
 let initialButacas = setup();
