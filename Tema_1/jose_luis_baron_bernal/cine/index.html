@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIR-CINEMA - Selección de Butacas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-4 title">UNIR-CINEMA</h1>
+
+    <div class="screen mb-5">
+        <span>Pantalla</span>
+    </div>
+
+    <div class="seats-container mx-auto mb-5">
+
+        <div class="row g-3 justify-content-center seat-row">
+            <div class="col-auto seat">A1</div>
+            <div class="col-auto seat occupied">A2</div>
+            <div class="col-auto seat">A3</div>
+            <div class="col-auto seat">A4</div>
+            <div class="col-auto seat">A5</div>
+            <div class="col-auto seat occupied">A6</div>
+            <div class="col-auto seat">A7</div>
+            <div class="col-auto seat">A8</div>
+            <div class="col-auto seat">A9</div>
+            <div class="col-auto seat occupied">A10</div>
+        </div>
+
+        <div class="row g-3 justify-content-center seat-row">
+            <div class="col-auto seat">B1</div>
+            <div class="col-auto seat">B2</div>
+            <div class="col-auto seat occupied">B3</div>
+            <div class="col-auto seat">B4</div>
+            <div class="col-auto seat">B5</div>
+            <div class="col-auto seat">B6</div>
+            <div class="col-auto seat">B7</div>
+            <div class="col-auto seat occupied">B8</div>
+            <div class="col-auto seat">B9</div>
+            <div class="col-auto seat">B10</div>
+        </div>
+
+        <div class="row g-3 justify-content-center seat-row">
+            <div class="col-auto seat occupied">C1</div>
+            <div class="col-auto seat">C2</div>
+            <div class="col-auto seat">C3</div>
+            <div class="col-auto seat">C4</div>
+            <div class="col-auto seat occupied">C5</div>
+            <div class="col-auto seat">C6</div>
+            <div class="col-auto seat">C7</div>
+            <div class="col-auto seat">C8</div>
+            <div class="col-auto seat">C9</div>
+            <div class="col-auto seat occupied">C10</div>
+        </div>
+
+        <div class="row g-3 justify-content-center seat-row">
+            <div class="col-auto seat">D1</div>
+            <div class="col-auto seat occupied">D2</div>
+            <div class="col-auto seat">D3</div>
+            <div class="col-auto seat occupied">D4</div>
+            <div class="col-auto seat">D5</div>
+            <div class="col-auto seat">D6</div>
+            <div class="col-auto seat">D7</div>
+            <div class="col-auto seat occupied">D8</div>
+            <div class="col-auto seat">D9</div>
+            <div class="col-auto seat">D10</div>
+        </div>
+
+        <div class="row g-3 justify-content-center seat-row">
+            <div class="col-auto seat">E1</div>
+            <div class="col-auto seat">E2</div>
+            <div class="col-auto seat">E3</div>
+            <div class="col-auto seat occupied">E4</div>
+            <div class="col-auto seat">E5</div>
+            <div class="col-auto seat">E6</div>
+            <div class="col-auto seat occupied">E7</div>
+            <div class="col-auto seat">E8</div>
+            <div class="col-auto seat">E9</div>
+            <div class="col-auto seat">E10</div>
+        </div>
+
+        <div class="row g-3 justify-content-center seat-row">
+            <div class="col-auto seat occupied">F1</div>
+            <div class="col-auto seat">F2</div>
+            <div class="col-auto seat">F3</div>
+            <div class="col-auto seat">F4</div>
+            <div class="col-auto seat occupied">F5</div>
+            <div class="col-auto seat">F6</div>
+            <div class="col-auto seat">F7</div>
+            <div class="col-auto seat">F8</div>
+            <div class="col-auto seat occupied">F9</div>
+            <div class="col-auto seat">F10</div>
+        </div>
+
+    </div>
+
+    <div class="glass-card p-4 mb-5 mx-auto" style="max-width: 440px;">
+
+        <form>
+            <label class="form-label text-light">Seleccione la cantidad de butacas</label>
+            <select class="form-select mb-3">
+                <option>1 asiento</option>
+                <option>2 asientos</option>
+                <option>3 asientos</option>
+                <option>4 asientos</option>
+                <option>5 asientos</option>
+            </select>
+
+            <button class="btn btn-primary w-100 reserve-btn" data-bs-toggle="modal" data-bs-target="#confirmModal">Confirmar Reserva</button>
+        </form>
+
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="confirmModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass-modal p-4">
+            <h3 class="text-center mb-3">Reserva Confirmada</h3>
+            <p class="text-center">Sus asientos han sido reservados exitosamente.</p>
+            <button class="btn btn-primary w-100 mt-3" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+    </div>
+</div>
+
+<footer class="footer text-center py-4">
+    <h4 class="footer-title">UNIR-CINEMA</h4>
+    <p>Dirección: Av. Central 123 · Bogotá, Colombia</p>
+    <p>Teléfono: +57 310 555 9988</p>
+    <p>Email: contacto@unircinema.com</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
