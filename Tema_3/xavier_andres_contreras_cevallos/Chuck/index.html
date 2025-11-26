@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Chistes de Chuck Norris - Xavier Andres Contreras Cevallos</title>
+  </head>
+  <body class="contents">
+    <header class="contents__header">
+      <h1 class="header__title">Chistes de Chuck Norris</h1>
+    </header>
+    <main class="contents__main">
+      <section class="main__section">
+        <button type="button" id="boton-chiste" class="section__button">Dame un chiste!</button>
+        <p id="mostrar-chiste" class="section__paragraph"></p>
+      </section>
+    </main>
+    <script>
+        const botonChiste = document.getElementById('boton-chiste');
+        const mostrarChiste = document.getElementById('mostrar-chiste');
+
+        const getRandomJoke = async () => {
+            try {
+                const response = await fetch('https://api.chucknorris.io/jokes/random');
+                const data = await response.json();
+                return data.value;
+            } catch (error) {
+                console.error('Error fetching joke:', error);
+                return '¡No se pudo obtener un chiste en este momento!';
+            }
+        }
+
+        botonChiste.addEventListener('click', async () => {
+            const chiste = await getRandomJoke();
+            mostrarChiste.innerHTML = chiste;
+        });
+    </script>
+  </body>
+</html>

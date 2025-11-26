@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chuck Norris jokes generator</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1 class="titulo-chuck unir-text">Haz click en el boton "Chuck" para generar un chiste</h1>
+    <button class="boton-chuck unir-text" onclick="generateChuckJoke()">Dame un chiste</button>
+    <p class="unir-text" id="parrafoChiste">
+
+    </p>
+    <script>
+        async function generateChuckJoke() {
+          let url = "https://api.chucknorris.io/jokes/random";
+          let fetchResponse = await fetch(url);
+          let json = await fetchResponse.json();
+          document.getElementById("parrafoChiste").innerHTML = json.value;
+        };
+    </script>
+</body>
+</html>
+
+
+
