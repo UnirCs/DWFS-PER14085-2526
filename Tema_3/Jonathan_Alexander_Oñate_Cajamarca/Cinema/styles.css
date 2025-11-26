@@ -1,0 +1,32 @@
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+.title{
+    align-items: center;    
+}
+.section{    
+    gap: 5px;
+    height: 25px;
+}
+.asiento{
+    border: gray 1px solid;
+    background: gray;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.asiento:hover {
+  background-color: rgb(46, 244, 142);
+}
+.asientoOcupado{
+    border: rgb(18, 130, 242) 1px solid;
+    background: rgb(18, 130, 242);
+    width: 20px;
+    height: 20px;
+}
+.parrafo{
+    min-width: 80px;
+}

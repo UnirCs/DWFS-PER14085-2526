@@ -1,0 +1,18 @@
+.chuck{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20%;
+}
+
+body {
+    background-color: #1a1a1a;
+}
+
+.chuck__message{
+    color: white;
+    display: none;
+}
+

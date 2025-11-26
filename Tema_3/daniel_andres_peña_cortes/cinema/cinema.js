@@ -1,32 +1,3 @@
-// Definir el tamaño de la matriz de butacas
-const N = 10; // Número de filas y columnas
-
-// Función para inicializar la matriz de butacas
-function setup() {
-    let idContador = 1; // Iniciar el contador de IDs en 1 (los humanos no empezamos a contar desde 0)
-    let butacas = [];
-
-    for (let i = 0; i < N; i++) {
-        // Nueva fila
-        let fila = [];
-        for (let j = 0; j < N; j++) {
-            // Nuevo asiento
-            fila.push({
-                id: idContador++,
-                estado: false // Estado inicial libre
-            });
-        }
-        butacas.push(fila);
-    }
-    return butacas;
-}
-
-// Inicializar la matriz
-let butacas = setup();
-// Imprimir la matriz
-console.log(butacas);
-
-// matriz de asientos: 5x5
 // Cada asiento tiene un id único y estado (false = libre, true = ocupado)
 const sala = [
   [{id:1, estado:false},{id:2, estado:false},{id:3, estado:true},{id:4, estado:false},{id:5, estado:false}],
@@ -36,8 +7,46 @@ const sala = [
   [{id:21, estado:false},{id:22, estado:false},{id:23, estado:false},{id:24, estado:false},{id:25, estado:false}]
 ];
 
+// Funtion render tabla in html
+function renderTabla() {
+    const tabla = document.getElementById("sala");   
+    tabla.innerHTML = "";
+    console.log(sala);
+    sala.forEach((fila,index) => {
+    const tr = document.createElement("tr");
+
+    fila.forEach(asiento => {
+      const label = document.createElement("td");
+        label.textContent = "Fila " + (index + 1);
+        label.style.fontWeight = "bold";
+        label.style.padding = "10px";
+        label.style.border = "1px solid black";
+        label.style.background = "#ddd";
+        tr.appendChild(label);
+
+      const td = document.createElement("td");
+      td.textContent = asiento.id;
+      td.style.padding = "10px";
+      td.style.border = "1px solid black";
+      td.style.textAlign = "center";
+
+      if (asiento.estado) {
+        td.style.background = "red";
+        td.style.color = "white";
+      } else {
+        td.style.background = "lightgreen";
+      }
+
+      tr.appendChild(td);
+    });
+
+    tabla.appendChild(tr);
+  });
+}
+
 // Función suggest
-function suggest(numAsientos) {
+function suggest() {
+    let numAsientos = document.getElementById("myinput").value; 
     const resultado = new Set();
     const numFilas = sala.length;
     
@@ -68,12 +77,10 @@ function suggest(numAsientos) {
     if (encontrados) {
         encontrados.forEach(id => resultado.add(id));
     }
+    console.log(resultado);
     // Si no encontramos suficientes asientos juntos, devolvemos set vacío
-    return resultado;
+    document.getElementById("result").innerHTML = resultado;
+
 }
 
-// Ejemplo de uso
-console.log(suggest(3)); // Devuelve un Set con 3 ids consecutivos libres
-console.log(suggest(6)); // Devuelve Set vacío, ya que ninguna fila tiene 6 asientos
-
-
+renderTabla();  // muestro la tabla
