@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIR-CINEMA - Selección de sillas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <header class="text-center py-4 bg-primary text-white">
+        <h1 class="display-4">UNIR-CINEMA</h1>
+        <p class="lead">Selección de sillas para: Jujutsu kaisen: ejecución (07:00 pm)</p>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+
+            <div class="col-lg-8">
+                <div class="screen bg-light mb-5 p-3 rounded shadow-lg text-center mx-auto">
+                    <h2 class="text-dark fs-5 mb-0">PANTALLA</h2>
+                </div>
+
+                <div class="seating-chart text-center">
+
+                    <div class="legend mb-4 d-flex justify-content-center gap-4">
+                        <div class="legend-item d-flex align-items-center">
+                            <div class="seat available me-2"></div>
+                            Disponible
+                        </div>
+                        <div class="legend-item d-flex align-items-center">
+                            <div class="seat occupied me-2"></div>
+                            Ocupado
+                        </div>
+                        <div class="legend-item d-flex align-items-center">
+                            <div class="seat selected me-2"></div>
+                            Sugerido
+                        </div>
+                    </div>
+
+                    <!-- CAMBIO: El contenedor está vacío y tiene un ID -->
+                    <div class="seats-area" id="seats-container">
+                        <!-- Las sillas serán generadas por JavaScript -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-5 mt-lg-0">
+                <div class="card bg-secondary text-white p-4 shadow-lg">
+                    <h3 class="mb-4 text-center">Resumen de la reserva</h3>
+                    <div id="booking-form">
+                        <div class="mb-4">
+                            <label for="num-seats" class="form-label fs-5">Número de asientos:</label>
+                            <select id="num-seats" class="form-select form-select-lg" aria-label="Número de asientos">
+                                <option value="1" selected>1 Asiento</option>
+                                <option value="2">2 Asientos</option>
+                                <option value="3">3 Asientos</option>
+                                <option value="4">4 Asientos</option>
+                                <option value="5">5 Asientos</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4 p-3 border rounded">
+                            <p class="mb-1">Asientos Sugeridos:</p>
+                            <p id="selected-seats-display" class="fw-bold text-warning">-</p>
+                        </div>
+
+                        <button id="btn-suggest" class="btn btn-warning w-100 btn-lg text-dark fw-bold">
+                            <i class="bi bi-search"></i> Sugerir Reserva
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-center text-white py-3 mt-5 border-top border-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="mb-1 fw-bold">© UNIR-CINEMA</p>
+                    <p class="mb-1">
+                        <i class="bi bi-geo-alt-fill"></i> Dirección: Calle 9S 3 55
+                    </p>
+                    <p class="mb-1">
+                        <i class="bi bi-telephone-fill"></i> Teléfono: +57 301 483 61 61
+                    </p>
+                    <p class="mb-0">
+                        <i class="bi bi-envelope-fill"></i> Correo Electrónico: <a href="mailto:juanparmer@gmail.com.co"
+                            class="text-info text-decoration-none">juanparmer@gmail.com.co</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Importar el Script -->
+    <script src="cinema.js"></script>
+</body>
+
+</html>
