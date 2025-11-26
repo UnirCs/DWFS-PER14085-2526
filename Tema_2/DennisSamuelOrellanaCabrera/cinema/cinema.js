@@ -5,7 +5,7 @@ function getRowName(index) {
     return String.fromCharCode(65 + index);
 }
 
-// Inicializa la matriz de butacas con IDs y estados
+// Inicializa la matriz de butacas
 function setup() {
     let idContador = 1; 
     let nuevaMatriz = [];
@@ -15,13 +15,13 @@ function setup() {
         for (let j = 0; j < N; j++) {
             fila.push({
                 id: idContador++,
-                estado: false // false = libre, true = ocupado
+                estado: false // false = libre
             });
         }
         nuevaMatriz.push(fila);
     }
 
-    // Ocupar algunos asientos para la prueba (Fila 0, Fila 4, Fila 8)
+    // Configuración de butacas ocupadas para prueba
     nuevaMatriz[0][3].estado = true; 
     nuevaMatriz[4][5].estado = true; 
     nuevaMatriz[8][3].estado = true;
@@ -32,50 +32,70 @@ function setup() {
     return nuevaMatriz;
 }
 
-function suggest(numAsientos) {
-    // 1. Caso límite: Si se pide más que el tamaño de una fila, devuelve Set vacío.
-    if (numAsientos > N) {
-        return new Set();
-    }
+/**
+ * FUNCIÓN AUXILIAR: Busca asientos contiguos en una fila sin usar break.
+ */
+function findContiguousSeatsInRow(fila, numAsientos) {
+    let asientosContiguosLibres = 0;
+    let idInicioSecuencia = -1; 
+    let idsEncontrados = new Set();
+    let found = false; // Flag para controlar la salida del bucle
 
-    let asientosSugeridos = new Set();
-    
-    // 2. Recorrido Inverso: Iterar filas de N-1 (más lejana) a 0 (más cercana).
-    for (let i = N - 1; i >= 0; i--) {
-        const fila = butacas[i];
-        let asientosContiguosLibres = 0;
-        let idInicioSecuencia = -1; 
+    // El bucle se detiene si se encuentra la secuencia (found = true)
+    for (let j = 0; j < N && !found; j++) { 
+        const asiento = fila[j];
 
-        // 3. Recorrido de Asientos: Buscar la secuencia contigua.
-        for (let j = 0; j < N; j++) {
-            const asiento = fila[j];
-
-            if (asiento.estado === false) { // Asiento Libre
-                if (asientosContiguosLibres === 0) {
-                    idInicioSecuencia = asiento.id; // Inicia nueva secuencia
-                }
-                asientosContiguosLibres++;
-
-                // Si se encontró la cantidad requerida
-                if (asientosContiguosLibres === numAsientos) {
-                    // Seleccionar los IDs
-                    for (let k = 0; k < numAsientos; k++) {
-                        asientosSugeridos.add(idInicioSecuencia + k);
-                    }
-                    
-                    // Devolver inmediatamente: hemos encontrado la mejor opción (más lejana).
-                    return asientosSugeridos;
-                }
-            } else { // Asiento Ocupado
-                // Rompe la secuencia contigua, reinicia el contador.
-                asientosContiguosLibres = 0;
-                idInicioSecuencia = -1;
+        if (asiento.estado === false) { 
+            if (asientosContiguosLibres === 0) {
+                idInicioSecuencia = asiento.id; 
             }
+            asientosContiguosLibres++;
+
+            if (asientosContiguosLibres === numAsientos) {
+                // Secuencia encontrada: recopila IDs y activa la bandera
+                for (let k = 0; k < numAsientos; k++) {
+                    idsEncontrados.add(idInicioSecuencia + k);
+                }
+                found = true; 
+            }
+        } else { 
+            // Rompe la secuencia
+            asientosContiguosLibres = 0;
+            idInicioSecuencia = -1;
+        }
+    }
+    return idsEncontrados;
+}
+
+
+function suggest(numAsientos) {
+    // 1. Validación de entrada
+    if (numAsientos > N || numAsientos <= 0 || isNaN(numAsientos)) {
+        const result = new Set();
+        console.log("Resultado de suggest (Límite/Inválido):", result);
+        return result;
+    }
+    
+    let asientosFinales = new Set(); 
+    let foundSeats = false; // Flag para controlar la salida del bucle de filas
+    
+    // 2. Recorrido Inverso: Buscar la fila más lejana primero.
+    // El bucle se detiene si se encuentra un resultado (foundSeats = true)
+    for (let i = N - 1; i >= 0 && !foundSeats; i--) {
+        const fila = butacas[i];
+        
+        // 3. Delegar la búsqueda
+        const asientosSugeridos = findContiguousSeatsInRow(fila, numAsientos);
+        
+        if (asientosSugeridos.size > 0) { 
+            asientosFinales = asientosSugeridos; 
+            foundSeats = true; // Activa la bandera para detener el bucle
         }
     }
 
-    // 4. Si ningún asiento contiguo fue encontrado en ninguna fila.
-    return new Set();
+    // 4. Se devuelve el resultado final (único punto de retorno)
+    console.log("Resultado de suggest:", asientosFinales);
+    return asientosFinales;
 }
 
 function dibujarSala() {
@@ -107,7 +127,7 @@ function dibujarSala() {
 }
 
 function ejecutarSugerencia() {
-    // 1. Limpiar selecciones anteriores
+    // Limpiar selecciones anteriores
     document.querySelectorAll('.seat.selected').forEach(seat => {
         seat.classList.remove('selected');
         seat.classList.add('available');
@@ -119,17 +139,17 @@ function ejecutarSugerencia() {
 
     if (isNaN(numAsientos) || numAsientos <= 0 || numAsientos > N) {
         mensajeResultado.className = 'alert alert-danger mt-3';
-        mensajeResultado.textContent = `🚫 Error: Introduce un número válido (1 a ${N}).`;
+        mensajeResultado.textContent = `Error: Introduce un número válido (1 a ${N}).`;
         return;
     }
 
-    // 2. Ejecutar el algoritmo
+    // Ejecutar el algoritmo
     const idsSugeridos = suggest(numAsientos);
 
-    // 3. Actualizar la interfaz
+    // Actualizar la interfaz
     if (idsSugeridos.size > 0) {
         mensajeResultado.className = 'alert alert-success mt-3';
-        mensajeResultado.textContent = `✅ Asientos sugeridos: ${Array.from(idsSugeridos).join(', ')}.`;
+        mensajeResultado.textContent = `Asientos sugeridos: ${Array.from(idsSugeridos).join(', ')}.`;
         
         // Colorear los asientos
         idsSugeridos.forEach(id => {
@@ -141,7 +161,7 @@ function ejecutarSugerencia() {
         });
     } else {
         mensajeResultado.className = 'alert alert-warning mt-3';
-        mensajeResultado.textContent = `❌ No se encontraron ${numAsientos} asientos contiguos disponibles.`;
+        mensajeResultado.textContent = `No se encontraron ${numAsientos} asientos contiguos disponibles.`;
     }
 }
 
