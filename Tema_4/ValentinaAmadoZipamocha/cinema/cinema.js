@@ -7,10 +7,10 @@ function asignarIDsDOM() {
     const asientos = document.querySelectorAll(".asiento");
     let id = 1;
 
-    asientos.forEach(asiento => {
+    for (const asiento of asientos) {
         asiento.dataset.id = id;  
         id++;
-    });
+    }
 }
 
 
@@ -37,16 +37,16 @@ function setup() {
 
     // Considerar las butacas ocupadas que en el HTML tienen la clase 'ocupado'
     const asientosDOM = document.querySelectorAll('.asiento');
-    asientosDOM.forEach(el => {
+    for (const el of asientosDOM) {
         const id = Number(el.dataset.id);
-        if (!isNaN(id) && el.classList.contains('ocupado')) {
+        if (!Number.isNaN(id) && el.classList.contains('ocupado')) {
             const row = Math.floor((id - 1) / N);
             const col = (id - 1) % N;
-            if (butacas[row] && butacas[row][col]) {
+            if (butacas[row]?.[col]) {
                 butacas[row][col].estado = true;
             }
         }
-    });
+    }
 
     return butacas;
 }
@@ -94,15 +94,15 @@ function onInputSuggest() {
 
 function limpiarSugerencias() {
     const asientos = document.querySelectorAll(".asiento.seleccionado");
-    asientos.forEach(asiento => {
+    for (const asiento of asientos) {
         asiento.classList.remove("seleccionado");
-    });
+    }
 }
 
 function mostrarSugerencias(sugerencias) {
-    sugerencias.forEach(id => {
+    for (const id of sugerencias) {
         const asiento = document.querySelector(`.asiento[data-id='${id}']`);
         asiento.classList.add("seleccionado");
-    }); 
+    } 
 }
 
