@@ -27,12 +27,13 @@ function suggest(nSeats) {
         return result;
     }
 
-    for (let i = N - 1; i >= 0; i--) {
+    let found = false;
+    for (let i = N - 1; i >= 0 && !found; i--) {
         const fila = butacas[i];
         let consecutivos = 0;
         let idsPosibles = [];
 
-        for (let j = 0; j < N; j++) {
+        for (let j = 0; j < N && !found; j++) {
             if (!fila[j].estado) {
                 consecutivos++;
                 idsPosibles.push(fila[j].id);
@@ -44,7 +45,7 @@ function suggest(nSeats) {
             if (consecutivos === nSeats) {
                 idsPosibles.forEach(id => result.add(id));
                 console.log(result);
-                return result;
+                found = true;
             }
         }
     }
