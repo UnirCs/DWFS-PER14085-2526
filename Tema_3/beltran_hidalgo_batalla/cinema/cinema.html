@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Cinema Page</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="cinema.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    integrity="sha384-LkHktCFpS+fBoOMK5nyyLPSepq0+mMDcyFbRwtjdRhniESKQr2zHISLMBizGu6zt"
+    crossorigin="anonymous"></script>
+</head>
+
+<body class="flex flex-col items-center justify-center h-auto">
+  <div class="main-page bg-gray-400 place-content-center flex flex-col items-center w-4/5 h-min mt w-250">
+    <header class="main-page__title mb-4 text-center bg-gray-600 w-full p-5">
+      <h1 class="text-4xl font-bold">🎬 UNIR-CINEMA</h1>
+      <p class="text-gray-900">Selecciona tus asientos</p>
+    </header>
+    <main class="main-page__seat-selector container text-center font-sans">
+      <div class="seat-selector__screen flex justify-center m-4">
+        <img class="w-[80%] h-40 rounded-lg rounded-b-[30%] justify-center shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
+          alt="Pantalla del cine que indica la posición de referencia con los asientos. Muestra un frame de Dragon Ball"
+          src="https://sm.ign.com/t/ign_es/guide/h/how-to-wat/how-to-watch-dragon-ball-in-order-series-sagas-and-movies_4wtm.1280.jpg" />
+      </div>
+      <div class="seat-selector__seats p-6">
+        <div class="grid grid-cols-7 gap-4">
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="0"
+            data-columna="0">A1</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="0"
+            data-columna="1">A2</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="0"
+            data-columna="2">A3</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="0"
+            data-columna="3">A4</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="0"
+            data-columna="4">A5</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="0"
+            data-columna="5">A6</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="0"
+            data-columna="6">A7</button>
+        </div>
+        <div class="grid grid-cols-7 gap-4">
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="1"
+            data-columna="0">B1</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="1"
+            data-columna="1">B2</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="1"
+            data-columna="2">B3</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="1"
+            data-columna="3">B4</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="1"
+            data-columna="4">B5</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="1"
+            data-columna="5">B6</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="1"
+            data-columna="6">B7</button>
+        </div>
+        <div class="grid grid-cols-7 gap-4">
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="2"
+            data-columna="0">C1</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="2"
+            data-columna="1">C2</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="2"
+            data-columna="2">C3</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="2"
+            data-columna="3">C4</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="2"
+            data-columna="4">C5</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="2"
+            data-columna="5">C6</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="2"
+            data-columna="6">C7</button>
+        </div>
+        <div class="grid grid-cols-7 gap-4">
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="3"
+            data-columna="0">D1</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="3"
+            data-columna="1">D2</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="3"
+            data-columna="2">D3</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="3"
+            data-columna="3">D4</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="3"
+            data-columna="4">D5</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="3"
+            data-columna="5">D6</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="3"
+            data-columna="6">D7</button>
+        </div>
+        <div class="grid grid-cols-7 gap-4">
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="4"
+            data-columna="0">E1</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="4"
+            data-columna="1">E2</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="4"
+            data-columna="2">E3</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="4"
+            data-columna="3">E4</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="4"
+            data-columna="4">E5</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="4"
+            data-columna="5">E6</button>
+          <button class="seats__seat bg-green-600 hover:bg-green-500 rounded-lg transition m-1 p-1" data-fila="4"
+            data-columna="6">E7</button>
+        </div>
+      </div>
+      <div class w-100>*Marca los asientos que están ocupados para evitar que la herramienta sugiera esos asientos</div>
+      <div class="seat-selector__confirmar bg-gray-500 p-6">
+        <input class="bg-white w-10 h-10 text-xl p-2" id="input-asientos"></input>
+        <p class="text-red-400 text-center">
+          Seleccione los asientos que quiere reservar
+        </p>
+        <button id="button-confirrmar-seleccion"
+          class="bg-yellow-300 hover:bg-yellow-600 rounded-lg transition m-2 p-3">
+          Buscar Asientos
+        </button>
+      </div>
+    </main>
+    <footer class="main-page__footer bg-gray-500 text-center w-full p-4 text-xs border-t">
+      Cine UNIR-CINEMA
+      <br />
+      Dirección: Calle Avenida de la Paz, 137, Logroño
+      <br />
+      Teléfono: 941209743
+      <br />
+      Email: cinefullstack@unir.com
+    </footer>
+  </div>
+  <script>
+    const seats = document.querySelectorAll(".seats__seat");
+
+    seats.forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("seats__seat--selected");
+      });
+    });
+  </script>
+  <script src="cinema.js"></script>
+</body>
+
+</html>

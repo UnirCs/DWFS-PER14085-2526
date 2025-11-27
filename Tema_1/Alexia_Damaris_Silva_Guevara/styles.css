@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+header h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #d1e7ff;
+}
+
+main {
+    display: flex;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contacto {
+    flex: 1;
+    min-width: 250px;
+    background-color: #e9ecef;
+    padding: 30px 20px;
+}
+
+.contacto h3 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.contacto ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.contacto ul li {
+    padding: 8px 0;
+    font-size: 0.95em;
+}
+
+.habilidades-lista {
+    margin-bottom: 0 !important;
+}
+
+.habilidades-lista li {
+    display: inline-block;
+    background-color: #495057;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    border-radius: 20px;
+    font-size: 0.85em;
+}
+
+.contenido-principal {
+    flex: 2;
+    padding: 30px;
+}
+
+.seccion {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.seccion h3 {
+    font-size: 1.8em;
+    color: #343a40;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.item h4 {
+    font-size: 1.2em;
+    color: #212529;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+.item .fecha {
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.item ul {
+    margin-left: 25px;
+    list-style: square;
+    font-size: 0.95em;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: #e9ecef;
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .contacto {
+        order: -1;
+        padding: 20px;
+    }
+}
