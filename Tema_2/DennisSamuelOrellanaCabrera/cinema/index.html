@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selección de Butacas - Cine</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+
+  <div class="container text-center mt-5">
+    <h2 class="mb-4 text-white">Selección de Butacas - Algoritmo</h2>
+
+    <div class="screen">PANTALLA</div>
+
+    <div id="sala-container" class="mb-4">
+        </div>
+
+    <div class="alert alert-info mt-3" role="alert" id="mensaje-resultado">
+        Introduce el número de asientos deseado y pulsa "Buscar".
+    </div>
+
+    <div class="row justify-content-center mt-4 mb-4">
+        <div class="col-6 col-md-3">
+            <input type="number" id="num-asientos" class="form-control text-center" placeholder="Nº de asientos" min="1" max="10" value="3">
+        </div>
+        <div class="col-6 col-md-3">
+            <button class="btn btn-warning text-dark fw-bold w-100" onclick="ejecutarSugerencia()">Buscar Asientos</button>
+        </div>
+    </div>
+
+    <div class="mt-4">
+      <button class="btn btn-danger text-dark fw-bold" onclick="resetSala()">Reiniciar Asientos</button>
+    </div>
+
+    <div class="legend mt-4">
+      <div class="legend-item">
+        <span class="legend-color legend-available"></span> Disponible
+      </div>
+      <div class="legend-item">
+        <span class="legend-color legend-selected"></span> Sugerida
+      </div>
+      <div class="legend-item">
+        <span class="legend-color legend-occupied"></span> Ocupada
+      </div>
+    </div>
+  </div>
+
+  <script src="cinema.js"></script>
+</body>
+</html>
