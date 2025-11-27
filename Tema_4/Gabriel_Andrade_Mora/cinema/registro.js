@@ -106,7 +106,6 @@ document.getElementById("userForm").addEventListener("submit", (event) => {
   let errorMessages = document.querySelectorAll("form p");
   if (errorMessages.length === 0) {
     // No hay errores, se puede procesar el formulario
-    //alert('Formulario enviado con éxito!');
     window.location.replace("butacas.html"); // redirige a la pagina de butacas
   } else {
     // Hay errores, se informa al usuario

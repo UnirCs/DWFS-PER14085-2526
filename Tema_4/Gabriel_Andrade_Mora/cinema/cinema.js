@@ -18,7 +18,6 @@ function suggest(numAsientos) {
   let encontrado = false; //bandera para indicar si se encontraron asientos
   //validacion de numero de asientos
   if (numAsientos > N) {
-    //console.log("Resultado vacio: numero de asientos excede el maximo");
     return resultado; //retorna set vacio
   }
   //recorre filas desde mas lejana hasta la primera
@@ -47,7 +46,6 @@ function suggest(numAsientos) {
       }
     }
   }
-  //console.log("Resultado:", resultado);
   return resultado; //devuelve el set con los ids
 }
 
@@ -91,7 +89,6 @@ function renderizarButacas() {
       const boton = document.createElement("button");
       // id butaca
       boton.id = "butaca-" + butacas[i][j].id;
-      //boton.textContent = j + 1;
       boton.classList.add(
         "bg-green-500",
         "hover:bg-green-600",
