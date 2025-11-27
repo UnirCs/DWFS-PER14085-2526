@@ -24,18 +24,25 @@ function setup() {
 function buscarEnFila(fila, numAsientos) {
     let consecutivos = 0;
     let inicio = -1;
+    let resultado = null;
+    let encontrado = false;
+    let j = 0;
 
-    for (let j = 0; j < fila.length; j++) {
+    while (j < fila.length && !encontrado) {
         if (!fila[j].estado) {
             if (consecutivos === 0) inicio = j;
-            if (++consecutivos === numAsientos) {
-                return new Set(fila.slice(inicio, inicio + numAsientos).map(b => b.id));
+            consecutivos++;
+            if (consecutivos === numAsientos) {
+                resultado = new Set(fila.slice(inicio, inicio + numAsientos).map(b => b.id));
+                encontrado = true;
             }
         } else {
             consecutivos = 0;
         }
+        j++;
     }
-    return null;
+    
+    return resultado;
 }
 
 /**
@@ -44,14 +51,24 @@ function buscarEnFila(fila, numAsientos) {
  * @returns {Set} Set con los IDs de asientos sugeridos o Set vacío
  */
 function suggest(numAsientos) {
-    if (numAsientos > N || numAsientos <= 0) return new Set();
-
-    for (let i = N - 1; i >= 0; i--) {
-        const resultado = buscarEnFila(butacas[i], numAsientos);
-        if (resultado) return resultado;
+    if (numAsientos > N || numAsientos <= 0) {
+        return new Set();
     }
 
-    return new Set();
+    let resultado = new Set();
+    let encontrado = false;
+    let i = N - 1;
+
+    while (i >= 0 && !encontrado) {
+        const asientosFila = buscarEnFila(butacas[i], numAsientos);
+        if (asientosFila) {
+            resultado = asientosFila;
+            encontrado = true;
+        }
+        i--;
+    }
+
+    return resultado;
 }
 
 /**
@@ -63,9 +80,10 @@ function ocuparAsientos(asientosAOcupar) {
         if (columna !== undefined) {
             butacas[fila][columna].estado = true;
         } else if (inicio !== undefined && fin !== undefined) {
-            for (let j = inicio; j <= fin; j++) {
+            const rango = Array.from({ length: fin - inicio + 1 }, (_, idx) => inicio + idx);
+            rango.forEach(j => {
                 butacas[fila][j].estado = true;
-            }
+            });
         }
     });
 }
@@ -125,9 +143,9 @@ ocuparAsientos([
 ejecutarPrueba("Prueba 4: Ocupar varias filas y buscar en fila anterior", 4);
 
 // Prueba 5: Sin espacio suficiente
-for (let i = 0; i < N; i++) {
+Array.from({ length: N }, (_, i) => i).forEach(i => {
     ocuparAsientos([{ fila: i, inicio: 0, fin: N - 3 }]);
-}
+});
 ejecutarPrueba("Prueba 5: No hay espacio suficiente en ninguna fila", 3);
 
 // Mostrar estado final de la sala
