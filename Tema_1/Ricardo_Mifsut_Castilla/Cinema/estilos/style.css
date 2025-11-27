@@ -3,6 +3,7 @@
 body{
     color: white;
     text-align: center;
+    background-color: black;
 }
 
 
@@ -37,9 +38,6 @@ td.ocupado, th.ocupado{
 }
 
 
-body{
-    background-color: black;
-}
 
 .header, .footer{
     background-color: blue;
