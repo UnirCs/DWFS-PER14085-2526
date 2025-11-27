@@ -34,19 +34,20 @@ function setup() {
 }
 
 const suggest = (butacas, reservations) => {
-    if (reservations > N) return new Set();
+    let resultado = new Set();
 
-    for (let fila of [...butacas].reverse()) {
-    
-        for (let j of Array(N - reservations + 1).keys()) {
-            const asientos = fila.slice(j, j + reservations);
-            if (asientos.every(a => !a.estado)) {
-                return new Set(asientos.map(a => a.id));
+    if (reservations <= N) {
+        for (let fila of [...butacas].reverse()) {
+            for (let j of new Array(N - reservations + 1).keys()) {
+                const asientos = fila.slice(j, j + reservations);
+                if (asientos.every(a => !a.estado) && resultado.size === 0) {
+                    resultado = new Set(asientos.map(a => a.id));
+                }
             }
         }
     }
 
-    return new Set();
+    return resultado;
 }
 
 
