@@ -1,0 +1,108 @@
+
+html,body{
+  margin: 0;
+  padding: 0;
+  background: #F0F2F3;
+  color: #333333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  }
+
+/*ENCABEZADO*/
+.encabezado{
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 16px 20px;
+  background: #00A1D1;
+  color: white;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.encabezado_foto{
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;                
+}
+
+.encabezado_interior{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.encabezado_texto h1{
+  margin: 0;
+  font-size: 40px;
+}
+
+.encabezado_texto p{
+  margin: 0;
+  max-width: 760px;
+}
+
+/*CUERPO*/
+.cuerpo{
+  background: white;
+  padding: 20px 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.disposicion{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  padding: 0 10px 20px;
+}
+
+.lado_izquierdo{
+  border-right: 3px solid #F0F2F3;
+  padding-right: 30px;
+}
+
+.lado_derecho{
+  padding: 0 10px 20px;
+}
+
+.bloques{
+  margin-bottom: 30px;
+}
+
+.bloques h2{
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.listas{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.subbloques header{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px
+}
+
+.subbloques h3{
+  margin: 0;
+  font-size: 16px
+}
+
+.subbloques div{
+  font-size: 14px
+}
+
+
+
+
+
