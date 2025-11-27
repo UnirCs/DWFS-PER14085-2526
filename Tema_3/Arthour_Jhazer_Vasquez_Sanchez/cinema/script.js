@@ -10,19 +10,47 @@ let asientosSugeridos = new Set();
  */
 function setup() {
     let idContador = 1;
-    butacas = [];
-
-    for (let i = 0; i < N; i++) {
-        let fila = [];
-        for (let j = 0; j < N; j++) {
-            fila.push({
-                id: idContador++,
-                estado: false // false = libre, true = ocupado
-            });
-        }
-        butacas.push(fila);
-    }
+    butacas = Array.from({ length: N }, () =>
+        Array.from({ length: N }, () => ({
+            id: idContador++,
+            estado: false // false = libre, true = ocupado
+        }))
+    );
     return butacas;
+}
+
+/**
+ * Busca asientos consecutivos en una fila específica
+ * @param {Array} fila - Fila de butacas
+ * @param {number} numAsientos - Número de asientos consecutivos
+ * @param {number} filaIndex - Índice de la fila
+ * @returns {Set|null} Set con IDs o null
+ */
+function buscarEnFila(fila, numAsientos, filaIndex) {
+    let consecutivos = 0;
+    let inicio = -1;
+    let resultado = null;
+    let encontrado = false;
+    let j = 0;
+
+    while (j < N && !encontrado) {
+        if (!fila[j].estado) {
+            if (consecutivos === 0) inicio = j;
+            consecutivos++;
+            if (consecutivos === numAsientos) {
+                resultado = new Set(
+                    fila.slice(inicio, inicio + numAsientos).map(b => b.id)
+                );
+                console.log(`✅ Asientos sugeridos (Fila ${filaIndex + 1}):`, Array.from(resultado));
+                encontrado = true;
+            }
+        } else {
+            consecutivos = 0;
+        }
+        j++;
+    }
+
+    return resultado;
 }
 
 /**
@@ -36,29 +64,25 @@ function suggest(numAsientos) {
         return new Set();
     }
 
-    // Buscar desde la última fila hacia adelante
-    for (let i = N - 1; i >= 0; i--) {
-        let consecutivos = 0;
-        let inicio = -1;
+    let resultado = new Set();
+    let encontrado = false;
+    let i = N - 1;
 
-        for (let j = 0; j < N; j++) {
-            if (!butacas[i][j].estado) {
-                if (consecutivos === 0) inicio = j;
-                if (++consecutivos === numAsientos) {
-                    const sugeridos = new Set(
-                        butacas[i].slice(inicio, inicio + numAsientos).map(b => b.id)
-                    );
-                    console.log(`✅ Asientos sugeridos (Fila ${i + 1}):`, Array.from(sugeridos));
-                    return sugeridos;
-                }
-            } else {
-                consecutivos = 0;
-            }
+    // Buscar desde la última fila hacia adelante
+    while (i >= 0 && !encontrado) {
+        const asientosFila = buscarEnFila(butacas[i], numAsientos, i);
+        if (asientosFila) {
+            resultado = asientosFila;
+            encontrado = true;
         }
+        i--;
     }
 
-    console.log('❌ No hay asientos consecutivos disponibles');
-    return new Set();
+    if (!encontrado) {
+        console.log('❌ No hay asientos consecutivos disponibles');
+    }
+
+    return resultado;
 }
 
 /**
