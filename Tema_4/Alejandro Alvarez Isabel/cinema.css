@@ -1,0 +1,219 @@
+body {
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px 0;
+    min-height: 100vh;
+}
+
+.screen {
+    width: 80%;
+    max-width: 400px;
+    height: 20px;
+    text-align: center;
+    margin: 30px auto 40px auto;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.screen__title {
+    font-size: 22px;
+    margin: 0;
+    color: #333;
+    letter-spacing: 3px;
+}
+
+.seats-container {
+    padding: 20px;
+}
+
+.seats-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    table-layout: fixed;
+    margin: 0 auto;
+}
+
+.seats-table tr {
+    height: 0;
+}
+
+.seats-table td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    padding: 0;
+}
+
+.seats__aisle {
+    width: 25px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    cursor: default !important;
+    pointer-events: none;
+    border: none;
+    font-size: 0;
+}
+
+.seats__available {
+    background-color: #2196F3;
+}
+
+
+.seats__available:hover {
+    background-color: #9e9e9e;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.seats__reserved {
+    background-color: red;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.seats__reserved:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.seats__selected {
+    background-color: #FFC107;
+}
+
+.seats__selected:hover {
+    background-color: #FFD700;
+}
+
+.info__text{
+    color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+.user_session--header{
+    color: white;
+    text-align: center;
+}
+
+.user_session{
+    font-family: 'Arial', sans-serif;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+h3 {
+    color: dodgerblue;
+    text-align: center;
+}
+
+form {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.input-field {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.input-field label {
+    color: #BDBDBD;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.input-field input {
+    flex-grow: 1;
+    width: 250px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+.input-field input[type=text],
+.input-field input[type=password],
+.input-field input[type=email] {
+    color: black;
+    border-bottom: 1px solid dodgerblue;
+}
+
+.input-field input[type=text]:focus,
+.input-field input[type=password]:focus,
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid dodgerblue;
+    box-shadow: 0 1px 0 0 dodgerblue;
+}
+
+
+.input-field .error {
+    flex-basis: 100%;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: red;
+}
+
+.btn {
+    background-color: dodgerblue;
+    color: #333;
+}
+
+.btn:hover {
+    background-color: #ccac00;
+}
+
+p {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.error {
+    color: red;
+}
+
+.submit-button{
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
