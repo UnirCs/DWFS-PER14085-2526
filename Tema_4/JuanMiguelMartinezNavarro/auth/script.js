@@ -16,8 +16,6 @@ const validateEmail = (email) => {
     let errorMessage = "";
     if (email.length <= 0) {
         errorMessage = "Email is required";
-    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-        errorMessage = "Invalid email format";
     }
     return errorMessage;
 };
