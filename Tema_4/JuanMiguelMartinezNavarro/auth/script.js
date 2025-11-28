@@ -29,7 +29,7 @@ const validatePassword = (password) => {
     errorMessage = "Password must be at least 8 characters long";
   } else if (!/\d/.test(password)) {
     errorMessage = "Password must contain at least one number";
-  } else if (!/[!@#$%^&*(),.?":{}|<>[\]\\\/;'`~_\-+=]/.test(password)) {
+  } else if (!/(?=.*[@$!%*?&])/.test(password)) {
     errorMessage = "Password must contain at least one symbol";
   } else if (!/[A-Z]/.test(password)) {
     errorMessage = "Password must contain at least one uppercase letter";
