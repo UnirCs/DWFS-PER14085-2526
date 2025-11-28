@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Create an account</h1>
+    </header>
+    <main>
+        <div class="card">
+            <form id="create-account-form">
+                <div class="input-group">
+                    <input type="text" id="fullname" name="fullname" placeholder=" ">
+                    <label for="fullname">Full Name</label>
+                    <span id="fullname-error-message" class="error-message"></span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder=" ">
+                    <label for="username">Username</label>
+                    <span id="username-error-message" class="error-message"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder=" ">
+                    <label for="email">Email</label>
+                    <span id="email-error-message" class="error-message"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder=" ">
+                    <label for="password">Password</label>
+                    <span id="password-error-message" class="error-message"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder=" ">
+                    <label for="confirm-password">Confirm Password</label>
+                    <span id="confirm-password-error-message" class="error-message"></span>
+                </div>
+                <button type="submit">Create account</button>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
