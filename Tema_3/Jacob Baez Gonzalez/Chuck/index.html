@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHISTES-CHUCK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>CHISTES CHUCK</h1>
+    </div>
+<form>
+    <div class="chiste">
+      <button type="button" id="btn-chiste" onclick="getChiste()">Dame un chiste!</button>
+      <p id="chiste">Listo para un chiste?</p>
+      <script>
+        async function getChiste() {
+            document.getElementById("chiste").textContent = "Chuck Norris está cargando...";
+
+            const url = "https://api.chucknorris.io/jokes/random";
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                document.getElementById("chiste").textContent = result.value;
+            } catch (error) {
+                console.error(error.message);
+            }
+
+        }
+      </script>
+
+
+    </div>
+  </form>
+
+  <div class="footer">
+    <p><strong>Chistes Chuck</strong></p>
+    <p>Desarrollo WEB Full Stack</p>
+    <p>Ejercicio Tema 3</p>
+  </div>
+
+</body>
+
+</html>
