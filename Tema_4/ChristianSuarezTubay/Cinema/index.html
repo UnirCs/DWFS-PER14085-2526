@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sala de cine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Reserva de butacas</h1>
+
+<label for="seats">Número de butacas a reservar:</label>
+<input type="number" id="seats" oninput="handleInput()" />
+
+<div id="cinema"></div>
+
+<!-- Botón para ir al resumen -->
+<div style="margin-top:20px;">
+    <button onclick="window.location.href='reserva.html'">Ver mi reserva</button>
+</div>
+
+<script src="cinema.js"></script>
+</body>
+</html>

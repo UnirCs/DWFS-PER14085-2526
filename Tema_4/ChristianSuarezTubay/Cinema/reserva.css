@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffbe6;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    color: #444;
+}
+
+#resumen {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #222;
+}

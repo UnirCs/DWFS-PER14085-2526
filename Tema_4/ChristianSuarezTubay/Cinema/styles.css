@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+}
+
+#cinema {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.seat {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    border-radius: 4px;
+}
+
+.free {
+    background-color: #8bc34a;
+}
+
+.occupied {
+    background-color: #f44336;
+}
