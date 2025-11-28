@@ -53,9 +53,9 @@ const resetInputError = (inputId) => {
   const errorMessage = document.getElementById(inputId + "-error-message");
   const label = document.querySelector(`label[for="${inputId}"]`);
 
-  input.style.borderColor = "";
+  input.classList.remove("input-error");
   if (label) {
-    label.style.color = "";
+    label.classList.remove("label-error");
   }
   if (errorMessage) {
     errorMessage.textContent = "";
@@ -107,32 +107,31 @@ document
     
     if (name_msg !== "") {
       document.getElementById("fullname-error-message").textContent = name_msg;
-      document.getElementById("fullname").style.borderColor = "red";
-      document.querySelector('label[for="fullname"]').style.color = "red";
+      document.getElementById("fullname").classList.add("input-error");
+      document.querySelector('label[for="fullname"]').classList.add("label-error");
     }
     if (username_msg !== "") {
       document.getElementById("username-error-message").textContent =
         username_msg;
-      document.getElementById("username").style.borderColor = "red";
-      document.querySelector('label[for="username"]').style.color = "red";
+      document.getElementById("username").classList.add("input-error");
+      document.querySelector('label[for="username"]').classList.add("label-error");
     }
     if (email_msg !== "") {
       document.getElementById("email-error-message").textContent = email_msg;
-      document.getElementById("email").style.borderColor = "red";
-      document.querySelector('label[for="email"]').style.color = "red";
+      document.getElementById("email").classList.add("input-error");
+      document.querySelector('label[for="email"]').classList.add("label-error");
     }
     if (password_msg !== "") {
       document.getElementById("password-error-message").textContent =
         password_msg;
-      document.getElementById("password").style.borderColor = "red";
-      document.querySelector('label[for="password"]').style.color = "red";
+      document.getElementById("password").classList.add("input-error");
+      document.querySelector('label[for="password"]').classList.add("label-error");
     }
     if (confirm_password_msg !== "") {
       document.getElementById("confirm-password-error-message").textContent =
         confirm_password_msg;
-      document.getElementById("confirm-password").style.borderColor = "red";
-      document.querySelector('label[for="confirm-password"]').style.color =
-        "red";
+      document.getElementById("confirm-password").classList.add("input-error");
+      document.querySelector('label[for="confirm-password"]').classList.add("label-error");
     }
 
     if (name_msg === "" && username_msg === "" && email_msg === "" && password_msg === "" && confirm_password_msg === "") {
