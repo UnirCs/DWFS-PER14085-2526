@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - CineMagic - Tarea 4</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Signup</h1>
+
+        <form id="registerForm">
+            <div class="field">
+                <label>Full Name</label>
+                <input type="text" id="name">
+                <small class="error-msg" id="error-name"></small>
+            </div>
+
+            <div class="field">
+                <label>User Name</label>
+                <input type="text" id="username">
+                <small class="error-msg" id="error-username"></small>
+            </div>
+
+            <div class="field">
+                <label>Email</label>
+                <input type="email" id="email">
+                <small class="error-msg" id="error-email"></small>
+            </div>
+
+            <div class="field">
+                <label>Password</label>
+                <input type="password" id="password">
+                <small class="error-msg" id="error-password"></small>
+            </div>
+
+            <div class="field">
+                <label>Confirm Password</label>
+                <input type="password" id="password2">
+                <small class="error-msg" id="error-password2"></small>
+            </div>
+
+            <button type="submit" id="submitButton" disabled>Sign up</button>
+        </form>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>
