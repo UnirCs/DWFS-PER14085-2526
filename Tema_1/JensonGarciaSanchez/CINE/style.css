@@ -1,0 +1,90 @@
+body {
+    background-color: #000;
+}
+
+header {
+    color: aliceblue;
+    background-color: darkslategray;
+    text-align: center;
+    height: 150px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.asiento {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 4px ;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 1px solid yellow;
+}
+
+.asiento:hover {
+  transform: scale(1.1);
+  background-color: yellow;
+}
+
+.asientos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.cuadricula {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: yellow;
+}
+
+.fila .span {
+    font-size: 20px;
+}
+
+.formulario {
+    text-align: center;
+    color: yellow;
+    font-size: 20px;
+}
+
+.reserva {
+    height: 600px;
+    padding-top: 200px;
+}
+
+.boton-confirmar {
+    color: black;
+    background-color: yellow;
+    font-size: 20px
+}
+
+.caja {
+    width: 200px;
+    height: 40px;
+}
+
+.caja-input {
+    margin-bottom: 10px;
+}
+
+footer {
+    color: aliceblue;
+    background-color: darkslategray;
+    text-align: center;
+    height: 200px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+
