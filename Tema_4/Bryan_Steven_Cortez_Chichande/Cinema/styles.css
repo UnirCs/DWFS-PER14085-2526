@@ -1,0 +1,224 @@
+body {
+    font-family: "Nexa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.cinema {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cinema__header {
+    background-color: #3464B0;
+    color: #FFFFFF;
+    padding: 16px 0;
+}
+
+.cinema__header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.cinema__title {
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    font-size: 1.4rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.cinema__subtitle {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.cinema__logo {
+    font-size: 1.8rem;
+}
+
+.cinema__main {
+    flex: 1;
+    padding: 24px 0;
+}
+
+.cinema__screen-wrapper {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.cinema__screen-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+}
+
+.cinema__screen {
+    display: inline-block;
+    padding: 8px 40px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    text-transform: uppercase;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.cinema__layout {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cinema__seating-area {
+    margin-bottom: 24px;
+}
+
+.cinema__seats {
+    display: grid;
+    row-gap: 10px;
+}
+
+.cinema__row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.cinema__row-label {
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    width: 32px;
+    text-align: center;
+}
+
+.cinema__row-seats {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 6px;
+}
+
+.cinema__seat {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #3464B0;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.cinema__seat--occupied {
+    background-color: #A41D22;
+    border-color: #A41D22;
+    color: #FFFFFF;
+}
+
+.cinema__seat--example {
+    width: 32px;
+}
+
+.cinema__seat-number {
+    pointer-events: none;
+}
+
+.cinema__seat--suggested {
+    outline: 2px solid #A41D22;
+    box-shadow: 0 0 0 2px #A41D22;
+}
+
+.cinema__legend {
+    margin-top: 12px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+}
+
+.cinema__legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cinema__form {
+    border: 1px solid #3464B0;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.cinema__form-title {
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.cinema__form-label {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.cinema__form-note {
+    font-size: 0.8rem;
+}
+
+.cinema__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #3464B0;
+    border-color: #3464B0;
+    color: #FFFFFF;
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.cinema__button:hover,
+.cinema__button:focus {
+    background-color: #A41D22;
+    border-color: #A41D22;
+    color: #FFFFFF;
+}
+
+.cinema__footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 12px 0;
+    font-size: 0.85rem;
+}
+
+.cinema__footer-title {
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    margin: 0 0 4px 0;
+}
+
+.cinema__footer-info {
+    margin: 0;
+}
+
+.cinema__footer-icon {
+    width: 18px;
+    display: inline-block;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .cinema__header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cinema__title {
+        font-size: 1.1rem;
+    }
+
+    .cinema__screen {
+        padding-inline: 24px;
+    }
+}
