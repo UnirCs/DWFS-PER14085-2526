@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Unir Cinema</title>
+    <link rel="stylesheet" href="cinema.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous" />
+</head>
+
+<body>
+    <form action="" method="post" class="container-fluid">
+        <div class="text-center">
+            <h1>UNIR-CINEMA</h1>
+        </div>
+        <div>
+            <div class="text-center">
+                <hr class="border border-primary border-3 opacity-75 w-75 position-relative mx-auto" />
+                <h2>PANTALLA</h2>
+            </div>
+            <div class="text-center">Sala Normal</div>
+            <div class="container text-center" name="butacas" id="butacas"></div>
+            <div class="input-group position-relative mx-auto align-items-center text-center col-xl-4 col-sm-9 p-3 row">
+                <label for="numeroButacasSeleccionadas" class="col-xl-4">Seleccione el numero de asientos: </label>
+                <input type="number" value="0" class="col-xl-2" max="10" min="0" name="numeroButacasSeleccionadas" id="numeroButacasSeleccionadas" />
+            </div>
+            <div class="position-relative mx-auto align-items-center text-center w-25 p-3 row">
+                <button type="button"
+                        class="btn btn-primary mt-3">
+                    Reservar
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="bg-black text-white">
+        <address class="position-relative mx-auto align-items-center text-center col-xl-4 col-sm-8" lang="es">
+            Cine UNIR-CINEMA
+            <br />
+            Avenida de la Paz , 137, Logroño
+            <br />
+            Teléfono: 941 123 456
+            <br />
+            cinefullstack@unircinema.com
+        </address>
+    </div>
+    <script type="text/javascript" src="cinema.js"></script>
+</body>
+</html>
+

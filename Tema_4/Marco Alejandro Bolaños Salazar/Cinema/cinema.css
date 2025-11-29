@@ -1,0 +1,24 @@
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font: 110%/1.5 "Fira Sans", Helvetica, sans-serif;
+}
+
+footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+div[estado="true"] {
+  background-color: steelblue;
+}
+
+.pendiente {
+  background-color: green;
+}
+
