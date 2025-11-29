@@ -163,6 +163,7 @@ function blackAndWhiteConverter() {
  * Una forma de conseguirlo es quitar los valores de las filas y columnas pares.
  * Otra forma es crear la imagen de nuevo unicamente con los valores de las filas y columnas pares.
  */
+
 function scaleDown() {
   let outputPath = 'output/tucan_scale_down.jpg';
   let pixels = handler.getPixels();
@@ -189,8 +190,9 @@ function scaleDown() {
     rowIndex++;
   }
 
-  handler.savePixels(pixels, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
+  handler.savePixels(newPixels, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
 }
+
 
 /**
  * Esta función debe reducir el brillo de la imagen según el parámetro que recibe la función.
@@ -302,7 +304,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imagenes: 9
  */
-let optionN = 9;
+let optionN = 6;
 
 switch (optionN) {
   case 1: redConverter(); break;
