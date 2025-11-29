@@ -33,7 +33,8 @@ function setup() {
     return butacas;
 }
 
-const suggest = (butacas, reservations) => {
+const suggest = (reservations) => {
+    const butacas = setup();
     let resultado = new Set();
 
     if (reservations <= N) {
@@ -47,8 +48,8 @@ const suggest = (butacas, reservations) => {
         }
     }
 
-    return resultado;
+    console.log(resultado);
 }
 
 
-console.log(suggest(setup(), 10));
+suggest(10);
