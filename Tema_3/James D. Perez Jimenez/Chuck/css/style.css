@@ -1,0 +1,66 @@
+/* =======================================================
+   = GLOBAL VARIABLES
+   ======================================================= 
+*/
+:root {
+    --bs-primary: #1E40AF;
+    --bs-primary-rgb: 30, 64, 175;
+    --bs-body-bg: #F8FAFC;
+    --bs-body-color: #1E293B;
+    --bs-border-color: #E2E8F0;
+}
+
+/* =======================================================
+   = LAYOUT STRUCTURE
+   ======================================================= 
+*/
+
+.bg-panel {
+    background: #E2E8F0;
+}
+
+.bg-screen {
+    background: linear-gradient(180deg, #CBD5E1 0%, #94A3B8 100%);
+    border-radius: .8rem;
+}
+
+.c-max-width {
+    max-width: 960px;
+}
+
+.btn-maax-width {
+    max-width: 120px;
+}
+
+#GenerateJoke {
+    width: 200px;
+}
+
+
+.promo-movie {
+    min-height: clamp(180px, 30vw, 320px);
+}
+
+.promo-img {
+    max-width: clamp(160px, 28vw, 360px);
+    height: auto;
+}
+
+.text-decoration-footer p a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.animate__animated {
+    --animate-duration: 1.5s;
+}
+
+.promo-title {
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: .2px;
+    color: #0f172a;
+    font-size: clamp(1.1rem, 2.6vw, 2rem);
+}
+
+
