@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+}
+
+h3 {
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+form {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.input-field label {
+    color: #f1f1f1;
+}
+
+.input-field input[type=text],
+.input-field input[type=password],
+.input-field input[type=email] {
+    color: #f1f1f1;
+    border-bottom: 1px solid #ffd700;
+}
+
+.input-field input[type=text]:focus,
+.input-field input[type=password]:focus,
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid #ffd700;
+    box-shadow: 0 1px 0 0 #ffd700;
+}
+
+.input-field input[type=text]:focus + label,
+.input-field input[type=password]:focus + label,
+.input-field input[type=email]:focus + label {
+    color: #ffd700;
+}
+
+.btn {
+    background-color: #ffd700;
+    color: #333;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #ccac00;
+}
+
+.error {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
