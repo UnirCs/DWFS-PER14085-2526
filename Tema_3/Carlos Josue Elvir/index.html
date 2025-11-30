@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="chistes">
+        <h1 class="chistes__titulo">Chistes</h1>
+    </div>
+    <div class="acciones-chistes">
+        <button class="acciones-chistes__boton" id="btnObtenerChiste" onclick="obtenerChiste()">Obtener un chiste!</button>
+        <p id="pChiste" class="acciones-chistes__parrafo"></p>
+    </div>
+
+
+    <script>
+        async function obtenerChiste() {
+            const btnObtenerChiste = document.getElementById('btnObtenerChiste');
+            const pChiste = document.getElementById('pChiste');
+
+            try {
+                const respuesta = await fetch('https://api.chucknorris.io/jokes/random');
+                if (!respuesta.ok) {
+                    throw new Error('Error en la solicitud');
+                }
+                const datos = await respuesta.json();
+                pChiste.textContent = datos.value;
+            } catch (error) {
+                pChiste.textContent = 'No se pudo obtener un chiste en este momento.';
+                console.error(error);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

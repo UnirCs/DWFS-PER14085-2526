@@ -1,0 +1,97 @@
+
+body{
+    background-color: black;
+}
+html{
+    font-family: Arial, sans-serif;
+}
+.cinema{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px;
+    border: 2px solid #F9D849;
+    padding: 24px;
+    background-color: black;
+}
+.cinema__header{
+    display: flex;
+    background-color: #353A3F;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__tittle{
+    color: white;
+}
+.cinema__screen{
+    background-color: #333333;
+    height: 250px;
+}
+.cinema__seats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cinema-seats__row{
+    display: flex;
+    gap: 8px;
+    align-items: end;
+    
+}
+.cinema-seats-row__label{
+    color: #F4C143;
+    font-weight: bold;
+    font-size: 12px;  
+}
+.cinema-seats-row__seats, .cinema-seats-row__seats--occupied{
+    border: 1px solid #F9D849;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.cinema-seats-row__seats--occupied{
+    background-color: #F9D849;
+    cursor: not-allowed;
+}
+.cinema-seats-row__seats:hover{
+    background-color: #F9D849;
+}
+.cinema__form{
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   align-items: center;
+}
+.form__label{
+    color: #F9D849;
+    font-size: 12px;
+}
+.form__input{
+    border-radius: 5px;
+    width: 65px;
+    height: 25px;
+}
+.form__btn{
+    background-color: #F4C143;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.form__btn:hover{
+    background-color:beige;
+}
+.cinema__footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #353A3F;
+    font-size: 12px;
+}
+
+.footer__text{
+    color: white;
+}
