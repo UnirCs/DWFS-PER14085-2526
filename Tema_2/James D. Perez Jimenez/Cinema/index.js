@@ -1,5 +1,4 @@
 //------------------------------------------------------------------------------------------------------------------------
-// Implementación refactorizada del algoritmo de selección de butacas
 // Developer: James D. Perez Jimenez
 //------------------------------------------------------------------------------------------------------------------------
 
@@ -43,35 +42,39 @@ function buscarBloqueLibre(fila, numset) {
 
 function suggest(numset) {
     const resultado = new Set();
+    let found = false; 
 
-    if (numset > N || numset <= 0) return resultado;
+    if (numset > N || numset <= 0) {
+        return resultado;
+    }
+    for (let fila = N - 1; fila >= 0 && !found; fila--) {
 
-    for (let fila = N - 1; fila >= 0; fila--) {
         const inicioBloque = buscarBloqueLibre(fila, numset);
 
         if (inicioBloque !== -1) {
+
             for (let k = inicioBloque; k < inicioBloque + numset; k++) {
                 resultado.add(butacas[fila][k].id);
             }
-            break; // ya encontramos la mejor fila
+            found = true;
         }
     }
-
     return resultado;
+    
 }
 
 
-//---------------------------------------------
+
+
 // SIMULACIÓN DE ASIENTOS OCUPADOS
-//---------------------------------------------
+
 butacas[9][0].estado = true;
 butacas[9][1].estado = true;
 butacas[1][1].estado = true;
 
 
-//---------------------------------------------
 // PRUEBAS
-//---------------------------------------------
+
 console.log("Sugerencia para 4 asientos:", suggest(4));
 console.log("Sugerencia para 11 asientos:", suggest(11));
 console.log("Sugerencia para 2 asientos:", suggest(2));
