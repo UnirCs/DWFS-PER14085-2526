@@ -1,0 +1,187 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Asientos de Cine</title>
+    <link rel="stylesheet" href="cinema.css">
+</head>
+<body>
+
+<div class="user_session view" id="user">
+    <h1 class="user_session--header">CINES A.ALVAREZ</h1>
+
+    <div class="container">
+        <h3>Registro de Usuario</h3>
+        <form id="userForm">
+            <div class="input-field">
+                <label for="fullName">Nombre y apellidos</label>
+                <input id="fullName" type="text" name="fullName" class="validate" required>
+            </div>
+
+            <div class="input-field">
+                <label for="username">Nombre de usuario</label>
+                <input id="username" type="text" name="username" class="validate" required>
+            </div>
+
+            <div class="input-field">
+                <label for="password">Contraseña</label>
+                <input id="password" type="password" name="password" class="validate" required>
+            </div>
+
+            <div class="input-field">
+                <label for="confirmPassword">Confirmar contraseña</label>
+                <input id="confirmPassword" type="password" name="confirmPassword" class="validate" required>
+            </div>
+
+            <div class="input-field">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" class="validate" required>
+            </div>
+
+            <button class="submit-button" type="submit" >Continuar con la reserva</button>
+        </form>
+    </div>
+</div>
+
+<div class="cinema view hidden" id="cinema">
+    <div class="screen">
+        <h1 class="screen__title">Screen</h1>
+    </div>
+
+    <div class="seats-container">
+        <table class="seats-table">
+            <tr>
+                <td class="seats__available" id="1A">1A</td>
+                <td class="seats__available" id="1B">1B</td>
+                <td class="seats__available" id="1C">1C</td>
+                <td class="seats__available" id="1D">1D</td>
+                <td class="seats__available" id="1E">1E</td>
+                <td class="seats__available" id="1F">1F</td>
+                <td class="seats__available" id="1G">1G</td>
+                <td class="seats__available" id="1H">1H</td>
+                <td class="seats__available" id="1I">1I</td>
+                <td class="seats__available" id="1J">1J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="2A">2A</td>
+                <td class="seats__available" id="2B">2B</td>
+                <td class="seats__available" id="2C">2C</td>
+                <td class="seats__available" id="2D">2D</td>
+                <td class="seats__available" id="2E">2E</td>
+                <td class="seats__available" id="2F">2F</td>
+                <td class="seats__available" id="2G">2G</td>
+                <td class="seats__available" id="2H">2H</td>
+                <td class="seats__available" id="2I">2I</td>
+                <td class="seats__available" id="2J">2J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="3A">3A</td>
+                <td class="seats__available" id="3B">3B</td>
+                <td class="seats__available" id="3C">3C</td>
+                <td class="seats__available" id="3D">3D</td>
+                <td class="seats__available" id="3E">3E</td>
+                <td class="seats__available" id="3F">3F</td>
+                <td class="seats__available" id="3G">3G</td>
+                <td class="seats__available" id="3H">3H</td>
+                <td class="seats__available" id="3I">3I</td>
+                <td class="seats__available" id="3J">3J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="4A">4A</td>
+                <td class="seats__available" id="4B">4B</td>
+                <td class="seats__available" id="4C">4C</td>
+                <td class="seats__available" id="4D">4D</td>
+                <td class="seats__available" id="4E">4E</td>
+                <td class="seats__available" id="4F">4F</td>
+                <td class="seats__available" id="4G">4G</td>
+                <td class="seats__available" id="4H">4H</td>
+                <td class="seats__available" id="4I">4I</td>
+                <td class="seats__available" id="4J">4J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="5A">5A</td>
+                <td class="seats__available" id="5B">5B</td>
+                <td class="seats__available" id="5C">5C</td>
+                <td class="seats__available" id="5D">5D</td>
+                <td class="seats__available" id="5E">5E</td>
+                <td class="seats__available" id="5F">5F</td>
+                <td class="seats__available" id="5G">5G</td>
+                <td class="seats__available" id="5H">5H</td>
+                <td class="seats__available" id="5I">5I</td>
+                <td class="seats__available" id="5J">5J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="6A">6A</td>
+                <td class="seats__available" id="6B">6B</td>
+                <td class="seats__available" id="6C">6C</td>
+                <td class="seats__available" id="6D">6D</td>
+                <td class="seats__available" id="6E">6E</td>
+                <td class="seats__available" id="6F">6F</td>
+                <td class="seats__available" id="6G">6G</td>
+                <td class="seats__available" id="6H">6H</td>
+                <td class="seats__available" id="6I">6I</td>
+                <td class="seats__available" id="6J">6J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="7A">7A</td>
+                <td class="seats__available" id="7B">7B</td>
+                <td class="seats__available" id="7C">7C</td>
+                <td class="seats__available" id="7D">7D</td>
+                <td class="seats__available" id="7E">7E</td>
+                <td class="seats__available" id="7F">7F</td>
+                <td class="seats__available" id="7G">7G</td>
+                <td class="seats__available" id="7H">7H</td>
+                <td class="seats__available" id="7I">7I</td>
+                <td class="seats__available" id="7J">7J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="8A">8A</td>
+                <td class="seats__available" id="8B">8B</td>
+                <td class="seats__available" id="8C">8C</td>
+                <td class="seats__available" id="8D">8D</td>
+                <td class="seats__available" id="8E">8E</td>
+                <td class="seats__available" id="8F">8F</td>
+                <td class="seats__available" id="8G">8G</td>
+                <td class="seats__available" id="8H">8H</td>
+                <td class="seats__available" id="8I">8I</td>
+                <td class="seats__available" id="8J">8J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="9A">9A</td>
+                <td class="seats__available" id="9B">9B</td>
+                <td class="seats__available" id="9C">9C</td>
+                <td class="seats__available" id="9D">9D</td>
+                <td class="seats__available" id="9E">9E</td>
+                <td class="seats__available" id="9F">9F</td>
+                <td class="seats__available" id="9G">9G</td>
+                <td class="seats__available" id="9H">9H</td>
+                <td class="seats__available" id="9I">9I</td>
+                <td class="seats__available" id="9J">9J</td>
+            </tr>
+            <tr>
+                <td class="seats__available" id="10A">10A</td>
+                <td class="seats__available" id="10B">10B</td>
+                <td class="seats__available" id="10C">10C</td>
+                <td class="seats__available" id="10D">10D</td>
+                <td class="seats__available" id="10E">10E</td>
+                <td class="seats__available" id="10F">10F</td>
+                <td class="seats__available" id="10G">10G</td>
+                <td class="seats__available" id="10H">10H</td>
+                <td class="seats__available" id="10I">10I</td>
+                <td class="seats__available" id="10J">10J</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info">
+        <label for="input-seats" class="info__text"> ¿Cuantos asientos desea reservar? </label>
+        <input id="input-seats" class="info__number" type="number" min="1">
+        <button class="info__button" type="submit" onclick="bookSeats(document.getElementById('input-seats').value)">Reservar</button>
+    </div>
+</div>
+
+<script src="cinema.js"></script>
+
+</body>
+</html>

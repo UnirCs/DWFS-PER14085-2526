@@ -20,6 +20,11 @@ let ticketPrice = parseFloat(movieSelect.value);
 //     const username = urlParams.get('user');
 //     if(!username) window.location.href = 'index.html';
 // };
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('user');
+    if(!username) window.location.href = 'index.html';
+};
 
 const assignSeatIds = () => {
     const rowElements = document.querySelectorAll('.row-seats');
