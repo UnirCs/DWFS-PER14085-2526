@@ -1,0 +1,167 @@
+body {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+}
+
+.main-container {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+}
+
+.screen {
+    background: linear-gradient(45deg, #333, #444);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.cinema-container {
+    padding: 20px;
+}
+
+.seats-row {
+    margin-bottom: 8px;
+}
+
+.row-label {
+    color: #888;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seats-group {
+    display: flex;
+    gap: 5px;
+    padding-left: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.seat {
+    flex: 1;
+    min-width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid #007bff;
+    background: transparent;
+    color: #007bff;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+}
+
+.seat-disabled {
+    flex: 1;
+    min-width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    background-color: #6c757d;
+    color: #fff;
+    border: 2px solid #495057;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,123,255,0.3);
+}
+
+.seat-suggested {
+    transform: scale(1.1);
+    background-color: #0056b3;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,123,255,0.3);
+}
+
+h1 {
+    color: #007bff;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+}
+.footer {
+    background: #444;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+.footer p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+.purchase-section {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.purchase-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.purchase-form .form-label {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.purchase-form .input-group {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.purchase-form .form-control {
+    border: none;
+    padding: 10px 15px;
+    background: #fff;
+}
+
+.purchase-form .btn-primary {
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.purchase-form .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,123,255,0.3);
+    transition: all 0.3s ease;
+}

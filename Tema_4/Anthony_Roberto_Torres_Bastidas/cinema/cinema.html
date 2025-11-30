@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Cinema UNIR - Anthony Torres</title>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container main-container">
+    <h1 class="text-center mb-4">UNIR Cinema</h1>
+    <div class="row mb-5">
+        <div class="col">
+            <div class="screen">PANTALLA</div>
+        </div>
+    </div>
+    <div class="cinema-container">
+        <div id="rows" class="cinema-container">
+        </div>
+        <div id="container-purchase" class="purchase-section">
+            <form class="purchase-form">
+                <div class="mb-3">
+                    <label for="ticketCount" class="form-label">¿Cuántos
+                        boletos deseas comprar?</label>
+                    <div class="input-group">
+                        <input type="number"
+                               class="form-control"
+                               id="ticketCount"
+                               min="1"
+                               max="10"
+                               placeholder="Ingresa la cantidad">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-cart-plus"></i> Confirmar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row mb-7">
+        <div class="col">
+            <div class="footer">
+                <p>
+                    <strong>Cinema Unir</strong><br>
+                    <i class="bi bi-geo-alt"></i> Dirección: Avenida
+                    siempre viva<br>
+                    <i class="bi bi-telephone"></i> Teléfono: <a
+                        href="tel:123-456-789">123-456-789</a><br>
+                    <i class="bi bi-envelope"></i> Email: <a
+                        href="mailto:homero@sprinfield.com">homero@sprinfield.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="cinema.js"></script>
+</body>
+</html>
