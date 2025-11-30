@@ -5,10 +5,118 @@ let selectedSeats = new Set();
 document.addEventListener('DOMContentLoaded', () => {
     butacas = setup();
     renderSeats(N);
+    hiddenCinema();
+    document.getElementById('seatCount').addEventListener('input', ({ target }) => { suggest(target.value) });
 
-    document.getElementById('seatCount').addEventListener('input', ({ target }) => {suggest(target.value)});
+    document.getElementById('fullName').addEventListener('input', ({ target }) => { validateInput('fullName', target.value) });
+    document.getElementById('user').addEventListener('input', ({ target }) => { validateInput('user', target.value) });
+    document.getElementById('password').addEventListener('input', ({ target }) => { validateInput('password', target.value) });
+    document.getElementById('confirmPassword').addEventListener('input', ({ target }) => { validateInput('confirmPassword', target.value) });
+    document.getElementById('email').addEventListener('input', ({ target }) => { validateInput('email', target.value) });
+
+    
+    document.getElementById('userForm').addEventListener('submit', (e) => { submitForm(e) });
+
+
+
 
 });
+
+const submitForm = (event) => {
+
+    event.preventDefault();
+    const form = document.getElementById('userForm');
+    const formData = new FormData(form);
+
+    const data = Object.fromEntries(formData.entries());
+    validateInput('fullName', data.fullName);
+    validateInput('user', data.user);
+    validateInput('password', data.password);
+    validateInput('confirmPassword', data.confirmPassword);
+    validateInput('email', data.email);
+
+    const hasError = document.querySelectorAll('.error-message').length > 0;
+
+    if (!hasError) {
+        document.getElementById('content-cinema').style.display = 'block';
+        document.getElementById('conten-form').style.display = 'none';
+
+    }
+}
+
+const validateInput = (id, value) => {
+    const error = validators[id](value)
+    showFieldError(id, error)
+
+}
+
+const showFieldError = (id, message) => {
+    const input = document.getElementById(id);
+    const group = input.closest('.input-group');
+    let errorElement = document.getElementById(id + 'Error');
+
+    if (!message) {
+        if (errorElement) errorElement.remove();
+        input.classList.remove('input-error');
+        group.classList.remove('has-error');
+        return;
+    }
+
+    if (!errorElement) {
+        errorElement = document.createElement('p');
+        errorElement.id = id + 'Error';
+        errorElement.classList.add('error-message');
+        group.appendChild(errorElement);
+    }
+
+    errorElement.textContent = message;
+    input.classList.add('input-error');
+    group.classList.add('has-error');
+};
+
+const validators = {
+    fullName: value => {
+        if (value.trim() === '') {
+            return 'El nombre y apellidos son obligatorios.';
+        }
+        return '';
+    },
+    user: value => {
+        if (value.trim() === '') {
+            return 'El nombre de usuario es obligatorio.';
+        }
+        return '';
+    },
+    password: value => {
+        if (value.trim() === '') {
+            return 'La contraseña es obligatoria.';
+        }
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        if (!passwordRegex.test(value)) {
+            return 'La contraseña debe tener mínimo 8 caracteres y contener números y letras.';
+        }
+        return '';
+    },
+    confirmPassword: () => {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        if (password !== confirmPassword) {
+            return 'Las contraseñas no coinciden.';
+        }
+        return '';
+    },
+    email: value => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            return 'Por favor, introduce un email válido.';
+        }
+        return '';
+    }
+};
+
+const hiddenCinema = () => {
+    document.getElementById('content-cinema').style.display = 'none'
+}
 
 const setup = () => {
     let nextId = 1;
