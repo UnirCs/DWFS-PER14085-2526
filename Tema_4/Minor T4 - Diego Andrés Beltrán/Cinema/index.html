@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso - Sala de cines</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
+    <header class="max-w-5xl mx-auto text-center p-6">
+        <h1 class="text-3xl font-bold">UNIR-CINEMA</h1>
+        <p class="text-sm text-gray-600 mt-1">Gracias por reservar con nosotros. Completa el formulario de registro</p>
+    </header>
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="w-full max-w-md">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Registro de Usuario</h3>
+            <form id="userForm" class="bg-white shadow-md rounded-lg p-8 flex flex-col gap-4">
+                <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-700">Nombre y apellidos</label>
+                    <input type="text" id="fullName" name="fullName"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-danger-soft">
+                </div>
+
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Nombre de usuario</label>
+                    <input type="text" id="username" name="username"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <input type="password" id="password" name="password"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar contraseña</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email"
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+
+                <button type="submit"
+                    class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center gap-2">
+                    Registrar
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </main>
+    <footer class="bg-gray-900 text-white mt-8">
+        <div class="max-w-5xl mx-auto p-6 flex flex-col md:flex-row justify-between gap-4 items-start">
+            <div>
+                <h3 class="text-lg font-semibold">UNIR-CINEMA</h3>
+                <p class="text-sm">Cine independiente</p>
+            </div>
+            <div class="text-sm">
+                <p>Dirección: Av. Universidad 123, Quito, Ecuador</p>
+                <p>Teléfono: +593 2 123 4567</p>
+                <p>Email: contacto@unir-cinema.ec</p>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>

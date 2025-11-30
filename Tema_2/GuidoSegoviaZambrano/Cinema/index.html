@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Butacas - Cine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Selección de Butacas CINE-MARK</h1>
+
+        <div class="controls">
+            <label for="seatCount">Número de asientos:</label>
+            <input type="number" id="seatCount" min="1" max="10" value="1">
+            <button id="suggestBtn">Sugerir</button>
+            <button id="resetBtn">Resetear Selección</button>
+        </div>
+
+        <div class="screen-container">
+            <div class="screen">PANTALLA</div>
+        </div>
+
+        <div id="seatGrid" class="seat-grid">
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="seat free"></div>
+                <span>Libre</span>
+            </div>
+            <div class="legend-item">
+                <div class="seat occupied"></div>
+                <span>Ocupado</span>
+            </div>
+            <div class="legend-item">
+                <div class="seat selected"></div>
+                <span>Sugerido</span>
+            </div>
+        </div>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="cinema.js"></script>
+    <script>
+        const gridContainer = document.getElementById('seatGrid');
+        const suggestBtn = document.getElementById('suggestBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const seatCountInput = document.getElementById('seatCount');
+        const messageDiv = document.getElementById('message');
+
+        let currentSuggestion = new Set();
+
+        function renderGrid() {
+            gridContainer.innerHTML = '';
+            for (let i = 0; i < butacas.length; i++) {
+                const rowDiv = document.createElement('div');
+                rowDiv.className = 'row';
+
+                for (let j = 0; j < butacas[i].length; j++) {
+                    const seatData = butacas[i][j];
+                    const seatDiv = document.createElement('div');
+
+                    let classes = `seat ${seatData.estado ? 'occupied' : 'free'}`;
+                    if (currentSuggestion.has(seatData.id) && !seatData.estado) {
+                        classes += ' selected';
+                    }
+
+                    seatDiv.className = classes;
+                    seatDiv.textContent = seatData.id;
+                    seatDiv.dataset.id = seatData.id;
+
+                    seatDiv.addEventListener('click', () => {
+                        seatData.estado = !seatData.estado;
+                        renderGrid();
+                    });
+
+                    gridContainer.appendChild(seatDiv);
+                }
+            }
+        }
+
+        function clearSelection() {
+            currentSuggestion.clear();
+            messageDiv.textContent = '';
+            renderGrid();
+        }
+
+        suggestBtn.addEventListener('click', () => {
+            const n = parseInt(seatCountInput.value);
+            if (isNaN(n) || n < 1) {
+                messageDiv.textContent = 'Por favor ingrese un número válido.';
+                return;
+            }
+
+            const suggestedIds = suggest(n);
+            currentSuggestion = suggestedIds;
+
+            if (suggestedIds.size === 0) {
+                messageDiv.textContent = 'No se encontraron asientos consecutivos disponibles.';
+            } else {
+                messageDiv.textContent = `Asientos sugeridos: ${Array.from(suggestedIds).join(', ')}`;
+            }
+            renderGrid();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            clearSelection();
+        });
+
+        renderGrid();
+    </script>
+</body>
+
+</html>
