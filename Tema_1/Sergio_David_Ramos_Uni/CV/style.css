@@ -1,0 +1,164 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.cv-container {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 35%;
+    background-color: #2c3e50;
+    /* Azul oscuro */
+    color: #ecf0f1;
+    /* Gris claro */
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.name-title h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    color: #e67e22;
+    /* Naranja */
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 10px;
+}
+
+.name-title h2 {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.sidebar h3 {
+    font-size: 1.1em;
+    border-bottom: 1px solid #7f8c8d;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #e67e22;
+}
+
+.sidebar p,
+.sidebar li {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.education-sidebar .item {
+    margin-bottom: 15px;
+}
+
+.education-sidebar h4 {
+    margin: 0;
+    font-size: 0.95em;
+    font-weight: 700;
+}
+
+.education-sidebar .dates {
+    font-size: 0.85em;
+    font-weight: 300;
+}
+
+.main-content {
+    width: 65%;
+    padding: 30px 25px;
+    box-sizing: border-box;
+}
+
+.main-content h2 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+
+.summary p {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.job-entry {
+    margin-bottom: 25px;
+}
+
+.job-title-company {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.job-entry h3 {
+    font-size: 1.1em;
+    color: #e67e22;
+    margin: 0;
+}
+
+.job-entry span {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.job-dates {
+    font-size: 0.85em;
+    color: #777;
+    margin: 0 0 10px 0;
+}
+
+.job-entry ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    font-size: 0.9em;
+    list-style: disc;
+}
+
+.job-entry li {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .sidebar,
+    .main-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .name-title h1 {
+        font-size: 1.8em;
+    }
+
+    .name-title h2 {
+        margin-bottom: 20px;
+    }
+}
