@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chistes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container d-flex">
+        <button class="btn btn-primary" onclick="generarChiste()">Dame un chiste</button>
+        <p class="mb-0" id="chisteText"></p>
+    </div>
+    <script>
+        async function generarChiste(){
+            const url = "https://api.chucknorris.io/jokes/random";
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Error http:' + response.status);
+                }
+                const result = await response.json();
+                if(result.value){
+                    document.getElementById('chisteText').innerHTML = result.value;
+                    console.log('Chiste: ' + result.value);
+                } else {
+                    throw new Error('No se recibio un chiste');
+                }                
+            } catch (error) {
+                console.error('Error en la api: ' + error.message);
+                if(error.message.includes('fetch') || error.message.includes('Error http')){
+                    document.getElementById('chisteText').innerHTML = 'Servicio no disponible temporalmente.';
+                } else {
+                    document.getElementById('chisteText').innerHTML = 'Error al obtener un chiste. Intente de nuevo.';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

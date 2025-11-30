@@ -1,0 +1,44 @@
+
+.screen {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+.seat {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+
+.available {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.occupied {
+    background-color: #dc3545;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.selected {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.seat-row {
+    text-align: center;
+    margin-bottom: 10px;
+}
