@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNIR-CINEMA</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      integrity="sha384-LkHktCFpS+fBoOMK5nyyLPSepq0+mMDcyFbRwtjdRhniESKQr2zHISLMBizGu6zt"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+    <header class="bg-gray-800 py-6 shadow-lg text-center">
+      <h1 class="text-4xl font-bold text-yellow-400 tracking-wide">
+        UNIR-CINEMA
+      </h1>
+    </header>
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <!-- pantalla cine -->
+      <section class="mb-8">
+        <div
+          class="bg-gray-300 text-gray-800 text-center py-4 rounded-lg shadow-2xl max-w-2xl mx-auto font-semibold tracking-wider"
+        >
+          PANTALLA
+        </div>
+      </section>
+      <!-- butacas cine -->
+      <section class="mb-8">
+        <table id="tablaButacas" class="mx-auto border-collapse">
+          <thead id="encabezadoButacas"></thead>
+          <tbody id="cuerpoButacas"></tbody>
+        </table>
+      </section>
+      <!-- estados butacas -->
+      <section class="mb-8 flex justify-center">
+        <div class="flex gap-6 items-center">
+          <!-- disponible -->
+          <div class="flex items-center gap-2">
+            <span
+              class="w-6 h-6 bg-green-500 border-2 border-green-700 rounded"
+            ></span>
+            <span class="text-sm">Disponible</span>
+          </div>
+          <!-- ocupado -->
+          <div class="flex items-center gap-2">
+            <span
+              class="w-6 h-6 bg-red-500 border-2 border-red-700 rounded opacity-50"
+            ></span>
+            <span class="text-sm">Ocupado</span>
+          </div>
+          <!-- seleccionado -->
+          <div class="flex items-center gap-2">
+            <span
+              class="w-6 h-6 bg-blue-500 border-2 border-blue-700 rounded"
+            ></span>
+            <span class="text-sm">Seleccionado</span>
+          </div>
+        </div>
+      </section>
+      <!-- formulario  -->
+      <section class="mb-8 flex justify-center">
+        <form
+          action=""
+          class="bg-gray-800 p-6 rounded-lg shadow-xl max-w-md w-full"
+        >
+          <label
+            for="numSeats"
+            class="block text-yellow-400 font-semibold mb-3 text-center"
+            >Indica cuantos asientos deseas reservar:</label
+          >
+          <input
+            type="number"
+            id="numSeats"
+            name="numSeats"
+            min="0"
+            max="10"
+            placeholder="Número de asientos"
+            class="w-full px-4 py-2 bg-gray-700 text-white border-2 border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 mb-4 text-center font-bold text-lg"
+          />
+          <button
+            type="submit"
+            class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 rounded-lg transition duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            Confirmar reserva
+          </button>
+        </form>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer
+      class="bg-gray-800 text-gray-300 py-8 mt-auto border-t-4 border-yellow-400 text-center"
+    >
+      <h2 class="text-2xl font-bold text-yellow-400 mb-4">Cine UNIR-CINEMA</h2>
+      <p class="text-sm mb-1">
+        Dirección: Calle Avenida de la Paz, 137. Logroño
+      </p>
+      <p class="text-sm mb-1">Teléfono: 941209743</p>
+      <p class="text-sm mb-1">Email: cinefullstack@unircinema.com</p>
+    </footer>
+    <script src="cinema.js"></script>
+  </body>
+</html>
