@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Chuck Norris - Tarea 3.1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Chuck Norris - Tarea 3.1</h1>
+
+    <button id="jokeButton">Dame un chiste</button>
+
+    <p id="showJokeText"></p>
+</div>
+
+<script>
+
+    document.getElementById("jokeButton").onclick = function () {
+        let url = 'https://api.chucknorris.io/jokes/random';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("showJokeText").innerHTML = data.value;
+            });
+    };
+
+</script>
+
+</body>
+</html>

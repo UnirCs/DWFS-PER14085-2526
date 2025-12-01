@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuck Norris Jokes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥋 Chuck Norris Jokes</h1>
+            <p class="subtitle">¿Listo para una dosis de humor legendario?</p>
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <div class="button-section">
+                    <button id="jokeButton" onclick="getJoke()">
+                        <span class="button-icon">😂</span>
+                        <span class="button-text">Dame un chiste</span>
+                    </button>
+                </div>
+
+                <div class="joke-section">
+                    <div id="jokeContainer" class="joke-container">
+                        <p id="jokeText" class="joke-text">
+                            Presiona el botón para obtener un chiste de Chuck Norris...
+                        </p>
+                    </div>
+                    <div id="loader" class="loader hidden"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by <a href="https://api.chucknorris.io/" target="_blank">Chuck Norris API</a></p>
+        </footer>
+    </div>
+</body>
+</html>
