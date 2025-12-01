@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 3 Chistes</title>
+</head>
+<body>
+    <!-- Elementos de la página, un botón que llamara a la función de buscar un chiste y un p que representa cada chiste -->
+    <button id = "boton" onclick="buscarChiste()">Dame un chiste</button>
+    <br>
+    <p id = "chiste"></p>
+    <!-- Añadir js para añadir el evento -->
+     <script>
+        const botton = document.getElementById("boton")
+        const chistes = document.getElementById("chiste")
+        
+
+        function buscarChiste(){
+            //IR a la página de chistes
+            fetch("https://api.chucknorris.io/jokes/random")
+            //Sacar el JSON
+                
+                .then(response => response.json())
+                .then(data => chistes.innerHTML += data.value + "<br>")
+        }
+        
+     </script>
+</body>
+</html>

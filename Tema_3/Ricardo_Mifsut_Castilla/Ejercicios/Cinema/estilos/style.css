@@ -1,0 +1,45 @@
+
+
+body{
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+
+h2{
+    border: solid thick white; 
+}
+
+table{
+
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+th, td{
+    border: solid thin white;
+    padding: 2vw;
+    height: 2vh;
+    background-color: green;
+}
+
+td.informacion{
+    border: none;
+    background-color: black;
+    max-width: fit-content;
+    padding: none;
+}
+
+td.ocupado, th.ocupado{
+    background-color: red;
+}
+
+
+
+.header, .footer{
+    background-color: blue;
+    border: solid thin white;
+}
