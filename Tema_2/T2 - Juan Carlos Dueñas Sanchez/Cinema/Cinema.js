@@ -56,7 +56,7 @@ let butacas = setup();
 // Imprimir la matriz
 console.log(butacas);
 
-// Ejecutar la asignación de las butacas solicitadas
+// Ejecutar la asignación de las butacas solicitadas!
 console.log('Butacas asignadas:');
 let ejecutar_asignacion= suggest (6);
 console.log(ejecutar_asignacion);
