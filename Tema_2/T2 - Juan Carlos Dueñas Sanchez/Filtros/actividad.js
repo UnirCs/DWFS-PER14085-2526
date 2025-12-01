@@ -54,11 +54,8 @@ function redConverter() {
         for (let j = 0; j < columnas; j++) {
             // Procesar cada Pixel de la imagen
             pixel = [pixels[i][j][0],0,0];
-            // console.log(pixels[i][j]);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath);
@@ -85,11 +82,8 @@ function greenConverter() {
         for (let j = 0; j < columnas; j++) {
             // Procesar cada Pixel de la imagen
             pixel = [0,pixels[i][j][1],0];
-            // console.log(pixels[i][j]);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath);
@@ -116,11 +110,8 @@ function blueConverter() {
         for (let j = 0; j < columnas; j++) {
             // Procesar cada Pixel de la imagen
             pixel = [0,0,pixels[i][j][2]];
-            // console.log(pixels[i][j]);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath);
@@ -153,11 +144,8 @@ function greyConverter() {
             // Procesar cada Pixel de la imagen
             pixel_promedio = (pixels[i][j][0]+pixels[i][j][1]+pixels[i][j][2])/3;
             pixel = [pixel_promedio,pixel_promedio,pixel_promedio];
-            // console.log(pixel_promedio);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath);
@@ -193,11 +181,8 @@ function blackAndWhiteConverter() {
             else {
                 pixel = [255,255,255];
             }
-            // console.log(pixel_promedio);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath);
@@ -225,11 +210,8 @@ function scaleDown() {
         for (let j = 0; j < columnas; j += 2) {
             // Procesar cada Pixel de la imagen
             pixel = [pixels[i][j][0],pixels[i][j][1],pixels[i][j][2]];
-            // console.log(pixels);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
@@ -256,11 +238,8 @@ function dimBrightness(dimFactor) {
         for (let j = 0; j < columnas; j++) {
             // Procesar cada Pixel de la imagen
             pixel = [pixels[i][j][0]/dimFactor,pixels[i][j][1]/dimFactor,pixels[i][j][2]/dimFactor];
-            // console.log(pixels[i][j]);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath);
@@ -289,11 +268,8 @@ function invertColors() {
         for (let j = 0; j < columnas; j++) {
             // Procesar cada Pixel de la imagen
             pixel = [255 - pixels[i][j][0],255 - pixels[i][j][1],255 - pixels[i][j][2]];
-            // console.log(pixels[i][j]);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         new_pixeles.push(nuevaFila);
     }
     handler.savePixels(new_pixeles, outputPath);
@@ -330,16 +306,12 @@ function merge(alphaFirst, alphaSecond) {
                 catPixels[i][j][1]*alphaFirst + dogPixels[i][j][1]*alphaSecond,
                 catPixels[i][j][2]*alphaFirst + dogPixels[i][j][2]*alphaSecond
             ];
-            // console.log(dogHandler[i][j]);
-            // console.log(pixel);
             nuevaFila.push(pixel);
         }
-        // console.log(nuevaFila)
         pixels.push(nuevaFila);
     }
     dogHandler.savePixels(pixels, outputPath);
 }
-
 
 /**
  * Programa de prueba
