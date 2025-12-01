@@ -38,7 +38,7 @@ function ejemplo() {
  *
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
  */
-function redConverter() {
+async function redConverter() {
     let outputPath = 'output/tucan_red.jpg';
     let pixels = handler.getPixels();
 
