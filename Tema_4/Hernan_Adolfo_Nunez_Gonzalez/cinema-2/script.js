@@ -26,11 +26,32 @@ document.querySelector(".formulario").appendChild(indicesDiv);
 let butacas = [];
 let seleccionActual = new Set();
 
-//==============================
-// ⚡ NUEVO SISTEMA DE PRESELECCIÓN
-//==============================
-let preseleccionInicial = new Set();     // ← la butaca 100
-let preseleccionSugerencia = new Set();  // ← las que vienen de /suggest
+//==============
+//⚡ PRESELECCIÓN
+//==============
+let preseleccionSugerencia = new Set();  // ← solo se usa esta
+
+
+//=====================================================
+// ⚡ FUNCIÓN: asignar clases visuales a un asiento
+//=====================================================
+function aplicarClases(asiento, butaca) {
+
+  if (butaca.estado === true) {
+    asiento.classList.add("ocupado");
+    return;
+  }
+
+  if (seleccionActual.has(butaca.id)) {
+    asiento.classList.add("seleccionado");
+    return;
+  }
+
+  if (preseleccionSugerencia.has(butaca.id)) {
+    asiento.classList.add("preseleccion");
+  }
+}
+
 
 //==============================
 // Renderizar la sala de cine:
@@ -51,21 +72,8 @@ function renderSala() {
       const asiento = document.createElement("div");
       asiento.classList.add("asiento");
 
-      // Ocupados
-      if (butaca.estado === true) asiento.classList.add("ocupado");
-
-      // Selección confirmada
-      if (seleccionActual.has(butaca.id)) asiento.classList.add("seleccionado");
-
-      // ⚡ PRESELECCIÓN INICIAL SIEMPRE ACTIVA (si no está ocupada)
-      if (preseleccionInicial.has(butaca.id) && butaca.estado === false) {
-        asiento.classList.add("preseleccion");
-      }
-
-      // ⚡ PRESELECCIÓN POR SUGERENCIA (si no está ocupada)
-      if (preseleccionSugerencia.has(butaca.id) && butaca.estado === false) {
-        asiento.classList.add("preseleccion");
-      }
+      //⚡ Menos complejidad
+      aplicarClases(asiento, butaca);
 
       asiento.textContent = butaca.id;
       asiento.dataset.id = butaca.id;
@@ -77,6 +85,7 @@ function renderSala() {
   }
 }
 
+
 //==============================
 // Cargar butacas del servidor:
 //==============================
@@ -84,9 +93,7 @@ async function cargarButacas() {
   const respuesta = await fetch("/butacas");
   butacas = await respuesta.json();
 
-  //===============================================
-  // ⚡ NUEVO — PRESELECCIÓN TRAS REGISTRO (EJ. 4)
-  //===============================================
+  //⚡ PRESELECCIÓN TRAS REGISTRO
   const flag = localStorage.getItem("preseleccionarButaca");
 
   if (flag === "1") {
@@ -94,19 +101,16 @@ async function cargarButacas() {
     const colFinal = butacas[0].length - 1;
     const idUltima = butacas[filaFinal][colFinal].id; // ID 100
 
-    // ⚡ HACER QUE LA 100 ESTÉ OCUPADA EN EL BACKEND
+    // marcar la 100 como ocupada en backend
     await fetch("/reservar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ids: [idUltima] })
     });
 
-    // ⚡ QUITARLA DE PRESELECCIÓN, YA NO ES AMARILLA
-    preseleccionInicial.clear();
-
     localStorage.removeItem("preseleccionarButaca");
 
-    // Recargar matriz ya con asiento 100 ocupado
+    // recargar después de ocuparla
     const r2 = await fetch("/butacas");
     butacas = await r2.json();
   }
@@ -114,12 +118,12 @@ async function cargarButacas() {
   renderSala();
 }
 
+
 //==============================
-// PRESELECCIÓN AUTOMÁTICA (EJERCICIO 4)
-// Al cambiar el input, se consulta /suggest
+// PRESELECCIÓN AUTOMÁTICA
 //==============================
 inputCantidad.addEventListener("input", async () => {
-  preseleccionSugerencia.clear(); // ← SOLO borro sugerencias
+  preseleccionSugerencia.clear();
 
   const cantidad = Number.parseInt(inputCantidad.value, 10);
   if (!Number.isInteger(cantidad) || cantidad < 1) {
@@ -139,10 +143,12 @@ inputCantidad.addEventListener("input", async () => {
   renderSala();
 });
 
+
 //==============================
 // Botón de confirmar reserva
 //==============================
 btnConfirmar.addEventListener("click", async () => {
+
   const cantidad = Number.parseInt(inputCantidad.value, 10);
 
   if (!Number.isInteger(cantidad) || cantidad < 1) {
@@ -168,6 +174,7 @@ btnConfirmar.addEventListener("click", async () => {
   const confirmar = confirm(`¿Deseas confirmar la reserva de ${sugeridos.join(", ")}?`);
 
   if (confirmar) {
+
     await fetch("/reservar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -176,16 +183,10 @@ btnConfirmar.addEventListener("click", async () => {
 
     await cargarButacas();
 
-    //===========================================
-    // ⚡ QUITAR DE PRESELECCIÓN LOS ASIENTOS RESERVADOS
-    //===========================================
-    for (const id of sugeridos) {
-      preseleccionSugerencia.delete(id);
-      preseleccionInicial.delete(id);
-    }
+    // limpiar preselecciones
+    preseleccionSugerencia.clear();
 
     mostrarMensaje("✅ ¡Reserva confirmada!", "success");
-
     const indices = sugeridos.map(id => obtenerIndicesDeAsiento(id));
     indicesDiv.textContent = `🪑 Índices de los asientos reservados: ${indices.join(" | ")}`;
 
@@ -193,51 +194,45 @@ btnConfirmar.addEventListener("click", async () => {
   }
 });
 
+
 //==============================
 //Mostrar mensajes dinámicos:
 //==============================
 function mostrarMensaje(texto, tipo) {
   mensajeDiv.textContent = texto;
-  switch (tipo) {
-    case "error":
-      mensajeDiv.style.color = "#d32f2f";
-      break;
-    case "warning":
-      mensajeDiv.style.color = "#f57c00";
-      break;
-    case "success":
-      mensajeDiv.style.color = "#388e3c";
-      break;
-    default:
-      mensajeDiv.style.color = "white";
-  }
+  const colores = {
+    error: "#d32f2f",
+    warning: "#f57c00",
+    success: "#388e3c"
+  };
+  mensajeDiv.style.color = colores[tipo] || "white";
 }
 
+
 //==============================
-//Obtener número de fila de un asiento:
+//Obtener número de fila:
 //==============================
 function obtenerFilaDeAsiento(idAsiento) {
   for (const [i, fila] of butacas.entries()) {
-    for (const butaca of fila) {
-      if (butaca.id === idAsiento) return i + 1;
-    }
+    if (fila.some(b => b.id === idAsiento)) return i + 1;
   }
   return null;
 }
 
+
 //==============================
-//Obtener índices [fila][columna] de un asiento:
+//Obtener índices:
 //==============================
 function obtenerIndicesDeAsiento(idAsiento) {
   for (const [i, fila] of butacas.entries()) {
-    for (const [j, butaca] of fila.entries()) {
-      if (butaca.id === idAsiento) return `[${i}][${j}]`;
-    }
+    const j = fila.findIndex(b => b.id === idAsiento);
+    if (j !== -1) return `[${i}][${j}]`;
   }
   return "";
 }
 
+
 //==============================
-//Inicialización con top-level await (ES2022):
+// Inicialización:
 //==============================
 await cargarButacas();
