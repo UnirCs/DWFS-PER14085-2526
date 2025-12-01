@@ -18,7 +18,7 @@ class ImageHandler {
         const fs = require("fs");
         let myFile = fs.createWriteStream(path);
 
-        var savePixels = require("save-pixels");
+        let savePixels = require("save-pixels");
         savePixels(this._rgbToNdArray(pixels, width, height), "png").pipe(myFile);
     }
 
@@ -27,7 +27,7 @@ class ImageHandler {
         const deasync = require('deasync');
 
         function pixelGetter(src) {
-            var ret = null;
+            let ret = null;
             getPixels(src, function (err, result) {
                 ret = {err: err, result: result}
             });
