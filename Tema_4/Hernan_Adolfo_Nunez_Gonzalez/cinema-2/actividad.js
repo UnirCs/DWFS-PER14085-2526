@@ -1,3 +1,11 @@
+/* 
+===========================================
+UNIR - Desarrollo Web - TEMA 4: DOM y Backend
+Este archivo es una versión avanzada distinta al Tema 2.
+Posee cambios de preselección, mejoras de renderizado,
+refactorización SonarQube y lógica extendida.
+===========================================
+*/
 //====== actividad.js ======
 const express = require("express");
 const path = require("node:path"); //✅ Moderno: node:path recomendado.
