@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cinema</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+<div id="cinema_main">
+    <div class="cinema_container">
+        <div id="cinema_screen">
+            <p>UNIR-CINEMA</p>
+        </div>
+    </div>
+    <div class="cinema_container">
+        <div id="cinema_floor"></div>
+    </div>
+    <div class="cinema_container">
+        <div id="cinema_form">
+            <form method="post" action="">
+                <div id="cinema_form_seats"></div>
+                <div id="cinema_form_number_seats">
+                    <h5>Indica cuantos asientos quieres reservar</h5>
+                    <input type="number" min="1" max="60" name="indic_seats" oninput="suggest(this.value)">
+                </div>
+                <div id="cinema_form_submit">
+                    <input id="cinema_submit_button" type="submit" value="Confirmar Reserva">
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <h4>Cine UNIR-CINEMA</h4>
+        <p><strong>Dirección: </strong> en algun lugar</p>
+        <p><strong>Teléfono: </strong> 1233219991</p>
+        <p><strong>Email: </strong> cinema@unir.com</p>
+    </footer>
+</div>
+</body>
+<script src="cinema.js"></script>
+</html>
