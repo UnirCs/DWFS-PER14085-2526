@@ -50,7 +50,7 @@ function suggest (cantidad_butacas_solicitadas) {
     return butacas_asignadas;
 }
 
-// Inicializar la matriz
+// Inicializar la matriz con datos aleatorios
 let butacas = setup();
 
 // Imprimir la matriz
