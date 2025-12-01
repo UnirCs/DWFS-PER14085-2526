@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNIR-CINEMA - Selección de Butacas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>UNIR-CINEMA</h1>
+    </header>
+
+    <main>
+        <div class="screen-container">
+            <div class="screen">PANTALLA</div>
+        </div>
+
+        <div class="seats-container">
+            <table class="seats-table">
+                <tr>
+                    <th>A</th>
+                    <td>
+                        <div class="seat available" data-seat="A1">1</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="A2">2</div>
+                    </td>
+                    <td>
+                        <div class="seat occupied" data-seat="A3">3</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="A4">4</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="A5">5</div>
+                    </td>
+                    <td>
+                        <div class="seat occupied" data-seat="A6">6</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="A7">7</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="A8">8</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td>
+                        <div class="seat available" data-seat="B1">1</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="B2">2</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="B3">3</div>
+                    </td>
+                    <td>
+                        <div class="seat occupied" data-seat="B4">4</div>
+                    </td>
+                    <td>
+                        <div class="seat occupied" data-seat="B5">5</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="B6">6</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="B7">7</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="B8">8</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td>
+                        <div class="seat available" data-seat="C1">1</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="C2">2</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="C3">3</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="C4">4</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="C5">5</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="C6">6</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="C7">7</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="C8">8</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td>
+                        <div class="seat occupied" data-seat="D1">1</div>
+                    </td>
+                    <td>
+                        <div class="seat occupied" data-seat="D2">2</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="D3">3</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="D4">4</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="D5">5</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="D6">6</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="D7">7</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="D8">8</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td>
+                        <div class="seat available" data-seat="E1">1</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="E2">2</div>
+                    </td>
+                    <td>
+                        <div class="seat occupied" data-seat="E3">3</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="E4">4</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="E5">5</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="E6">6</div>
+                    </td>
+                    <td>
+                        <div class="seat occupied" data-seat="E7">7</div>
+                    </td>
+                    <td>
+                        <div class="seat available" data-seat="E8">8</div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="states">
+                <div class="item-state">
+                    <div class="seat available"></div>
+                    <span>Disponible</span>
+                </div>
+                <div class="item-state">
+                    <div class="seat occupied"></div>
+                    <span>Ocupado</span>
+                </div>
+                <div class="item-state">
+                    <div class="seat selected"></div>
+                    <span>Seleccionado</span>
+                </div>
+            </div>
+        </div>
+
+        <form class="reservation-form">
+            <label for="num-seats">Número de asientos:</label>
+            <div class="form-controls">
+                <input type="number" id="num-seats" name="num-seats" min="1" max="8" value="1" oninput="showSuggestions(this.value)"/>
+                <button type="submit">Confirmar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h2>UNIR-CINEMA</h2>
+            <div class="footer-content-details">
+                <p><b>Dirección:</b> Calle del Cine, 123, 28001 Madrid</p>
+                <p><b>Teléfono:</b> +34 900 123 456</p>
+                <p><b>Email:</b> info@unir-cinema.es</p>
+            </div>
+        </div>
+    </footer>
+    <script src="cinema.js"></script>
+</body>
+
+</html>
