@@ -32,7 +32,7 @@ class ImageHandler {
                 ret = {err: err, result: result}
             });
 
-            while ((ret == null)) {
+            while ((ret === null)) {
                 deasync.runLoopOnce();
             }
             if (ret.err) {
