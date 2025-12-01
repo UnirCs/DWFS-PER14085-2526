@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIR-CINEMA - Reserva de Butacas</title>
 
-    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
@@ -14,7 +13,7 @@
             text-align: center;
         }
 
-        /* Pantalla del cine */
+
         .pantalla {
             width: 80%;
             height: 40px;
@@ -25,14 +24,12 @@
             line-height: 40px;
         }
 
-        /* Contenedor de butacas */
         .asientos-container {
             display: inline-block;
             text-align: center;
             margin-bottom: 30px;
         }
 
-        /* Estilos de las butacas */
         .asiento {
             width: 30px;
             height: 30px;
@@ -53,7 +50,6 @@
             font-weight: bold;
         }
 
-        /* Footer */
         footer {
             margin-top: 40px;
             background-color: #222;
@@ -70,12 +66,11 @@
         <h1 class="mt-4">UNIR-CINEMA</h1>
         <p class="lead">Reserva de Butacas</p>
 
-        <!-- Pantalla del cine -->
+    
         <div class="pantalla">PANTALLA</div>
-
-        <!-- Butacas -->
+ 
         <div class="asientos-container">
-            <!-- Fila 1 -->
+            
             <div class="fila">
                 <span class="fila-label">Fila 1</span>
                 <span class="asiento"></span>
@@ -85,7 +80,7 @@
                 <span class="asiento ocupado"></span>
             </div>
 
-            <!-- Fila 2 -->
+            
             <div class="fila">
                 <span class="fila-label">Fila 2</span>
                 <span class="asiento"></span>
@@ -95,7 +90,6 @@
                 <span class="asiento"></span>
             </div>
 
-            <!-- Fila 3 -->
             <div class="fila">
                 <span class="fila-label">Fila 3</span>
                 <span class="asiento ocupado"></span>
@@ -105,16 +99,14 @@
                 <span class="asiento"></span>
             </div>
         </div>
-
-        <!-- Formulario -->
         <div class="col-md-4 mx-auto">
             <div class="card shadow">
                 <div class="card-body">
-                    <h5 class="card-title">Selecciona tus Asientos</h5>
+                    <h5 class="card-title">Selecciona tus sillas </h5>
 
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Número de asientos</label>
+                            <label class="form-label">Número de sillas</label>
                             <input type="number" class="form-control" min="1" max="10" placeholder="Ej: 2">
                         </div>
 
@@ -127,11 +119,9 @@
         </div>
 
     </div>
-
-    <!-- Footer -->
     <footer>
         <p><strong>UNIR-CINEMA</strong></p>
-        <p>Dirección: Calle 123 #45-67, Bogotá</p>
+        <p>Dirección: Callecon carrera, Bucaramanga</p>
         <p>Teléfono: +57 300 123 4567</p>
         <p>Email: contacto@unircinema.com</p>
     </footer>
