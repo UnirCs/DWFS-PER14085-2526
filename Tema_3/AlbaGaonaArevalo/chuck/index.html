@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuck Jokes</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        async function getJoke() {
+
+            let url = "https://api.chucknorris.io/jokes/random";
+            let fetchResponse = await fetch(url);
+            let json = await fetchResponse.json();
+            let joke = json.value;
+            console.log("Joke: " + joke);
+            document.getElementById("joke").innerHTML = joke;
+        }
+    </script>
+
+</head>
+<body>
+<div class="chuck">
+    <h1 class="titulo">Chuck Jokes</h1>
+    <button class="btt" onclick="getJoke()">Dame un chiste &#128522;</button>
+    <p id="joke">Joke</p>
+</div>
+</body>
+</html>
+
