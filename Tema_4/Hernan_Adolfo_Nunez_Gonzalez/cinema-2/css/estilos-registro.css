@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/* ================================
+🎬 UNIR-CINEMA - ESTILO REGISTRO:
+================================ */
+
+/*CUERPO DEL SITIO WEB:*/
+body {
+    background-color: #1E1E1E;/*Color de fondo de la página.*/
+    color: #DEDEDE;/*Color del texto.*/
+    font-family: Arial, Helvetica, sans-serif;/*Fuente del texto.*/
+    text-align: center;/*Alineación del texto.*/
+    margin: 0;/*Margen del sitio web (arriba).*/
+    padding: 0;/*Borde del sitio web.*/
+}
+
+/*TITULO PRINCIPAL:*/
+.titulo {
+    font-size: 2.2rem;/*Tamaño del texto.*/
+    color: #F4C430;/*Color del texto.*/
+    margin-top: 40px;/*Margen superior.*/
+}
+
+/*TARJETA PRINCIPAL:*/
+.card {
+    background-color: #2C2C2C;/*Color de fondo de la tarjeta.*/
+    width: 360px;/*Anchura.*/
+    margin: 40px auto;/*Margen anchura superior y derecha.*/
+    padding: 30px;/*Distancia arriba.*/
+    border-radius: 10px;/*Borde redondeado.*/
+    box-shadow: 0 0 10px #000000;/*Sombredos de la tarjeta.*/
+    text-align: left;/*Alineación del texto.*/
+}
+
+/* ==== FLOAT LABEL STYLE ==== */
+/*Contenedor:*/
+.input-field {
+    position: relative;/*Posición relativa.*/
+    margin-top: 25px;/*Margen superior.*/
+}
+
+/*ETIQUETA FLOTANTE:*/
+.input-field label {
+    position: absolute;/*Posición absoluta.*/
+    top: 12px;/*Distancia superior.*/
+    left: 10px;/*Distancia izquierda.*/
+    font-size: 15px;/*Tamaño del texto.*/
+    color: #DEDEDE;/*Color del texto.*/
+    pointer-events: none;/*Desactivación de eventos con cursor.*/
+    transition: all 0.25s ease;/*Efecto de transición.*/
+    opacity: 0.6;/*Grado de opacidad.*/
+}
+
+/*INPUT:*/
+.input-field input {
+    width: 100%;/*Anchura.*/
+    padding: 12px 10px 8px;/*Distancia arriba, derecho e izquerda.*/
+    margin-top: 5px;/*Margen superior.*/
+    background: #3B3B3B;/*Color de fondo.*/
+    border: none;/*Desactivación del borde.*/
+    border-bottom: 2px solid #A5A829;/*Grosor y color del borde inferior.*/
+    color: #FFFFFF;/*Color del texto.*/
+    outline: none;/*Desactivación de linea de afuera.*/
+}
+
+/*AL HACER CLICK O CUANDO TIENE TEXTO:*/
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+    top: -8px;/*Distancia superior.*/
+    left: 6px;/*Distancia izquierda.*/
+    font-size: 12px;/*Tamaño del texto.*/
+    color: #F4C430;/*Color del texto.*/
+    opacity: 1;/*Grado de opacidad,*/
+}
+
+/*BORDE DEL INPUT AL HACER CLICK:*/
+.input-field input:focus {
+    border-bottom: 2px solid #F4C430;/*Color de borde inferior.*/
+}
+
+/*BOTÓN ESTADO NORMAL:*/
+.btn {
+    width: 100%;/*Anchura.*/
+    margin-top: 25px;/*Margen superior.*/
+    padding: 12px;/*Distancia arriba.*/
+    background-color: #F4C430;/*Color de fondo.*/
+    border: none;/*Desactivación del borde.*/
+    font-weight: bold;/*Grosor del texto.*/
+    cursor: pointer;/*Activación de cursor cuando se sobreponga.*/
+    border-radius: 4px;/*Borde redondeado.*/
+    color: #1E1E1E;/*Color del texto.*/
+    font-size: 15px;/*Tamaño del texto.*/
+}
+
+/*BOTÓN CON CURSOR SOBREPUESTO:*/
+.btn:hover {
+    background-color: #FFC400;/*Color de fondo.*/
+}
