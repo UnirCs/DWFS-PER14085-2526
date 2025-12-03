@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro Cinema UNIR</title>
+        <link rel="stylesheet" href="stylesForm.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-content">
+                <h1>BIENVENIDO A SU EXPERIENCIA FAVORITA</h1>
+                <img src="Logo.jpg" alt="Logo de UNIR-Cinema" width="150">
+            </div>
+        </header>
+        <form id="userForm" action="/submit" method="post">
+            <label for="nombre">Nombre Completo</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="email">Correo Electrónico</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="usuario">Usuario</label><br>
+            <input type="text" id="usuario" name="usuario" required><br><br>
+
+            <label for="contraseña">Contraseña</label><br>
+            <input type="password" id="contraseña" name="contraseña" required><br><br>
+
+            <input type="submit" value="Registrar">
+        </form>
+        <script src="form.js"></script>
+    </body>
+</html>

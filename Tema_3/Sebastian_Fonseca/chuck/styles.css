@@ -1,0 +1,36 @@
+body {
+    background: #fafafa;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.container {
+    text-align: center;
+    max-width: 500px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+button {
+    background-color: #008cff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #006acc;
+}
+
+#showJokeText {
+    margin-top: 25px;
+    font-size: 20px;
+    color: #333;
+}
