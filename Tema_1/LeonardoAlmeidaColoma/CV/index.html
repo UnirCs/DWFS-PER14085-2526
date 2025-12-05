@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Leonardo Almeida</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="avatar" aria-hidden="true"></div>
+      <img src="/Tema_1/LeonardoAlmeidaColoma/CV/img/logo-wolverine-vector_990473-5552.avif" 
+            alt="Foto de Leonardo Almeida" class="avatar-img" />
+      <div class="title">
+        <h1 class="name">Leonardo Almeida Coloma</h1>
+        <p class="role">Ingeniero en Telecomunicaciones </p>
+        <p class="role">Desarrollador de Software · DevOps · Estudiante de Maestría en Ingeniería de Software y Sistemas Informáticos</p>
+        <p class="contact">
+          <a href="mailto:leonardo.almeidac@gmail.com">leonardo.almeidac@gmail.com</a> ·
+          <a href="https://github.com/leonardoalmeidac" target="_blank" rel="noopener">github.com/leonardoalmeidac</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="summary card" id="resumen">
+      <h2>Resumen</h2>
+      <p>
+        Ingeniero de software con experiencia en desarrollo full-stack, pipelines CI/CD y
+        automatización. Actualmente cursando Maestría en Ingeniería de Software. Interesado
+        en infraestructura como código, rendimiento y buenas prácticas de desarrollo.
+      </p>
+    </section>
+
+    <section class="two-column">
+      <article class="card experience" id="experiencia">
+        <h2>Experiencia</h2>
+
+        <div class="job">
+          <h3>DevOps Engineer — Banco Guayaquil</h3>
+          <p class="meta">Agosto 2025 — Presente</p>
+          <ul>
+            <li>Diseño y mantenimiento de pipelines CI/CD para aplicaciones móviles y backend.</li>
+            <li>Implementación de infra como código con Terraform y gestión en Azure.</li>
+            <li>Monitoreo y alertas con Prometheus / Grafana.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Desarrollador Full-Stack — Agrosoft</h3>
+          <p class="meta">Jul 2021 — Dic 2023</p>
+          <ul>
+            <li>Construcción de APIs REST y frontends responsivos.</li>
+            <li>Mejora de performance y reducción de tiempos de carga.</li>
+          </ul>
+        </div>
+      </article>
+
+      <aside class="card sidebar" id="datos">
+        <h2>Datos</h2>
+        <dl>
+          <dt>Ubicación</dt>
+          <dd>Guayaquil, Ecuador</dd>
+          <dt>Teléfono</dt>
+          <dd>+593 99999999</dd>
+          <dt>Lenguajes</dt>
+          <dd>Python · Java · JavaScript · Bash</dd>
+          <dt>Herramientas</dt>
+          <dd>Git · Docker · Kubernetes · Terraform</dd>
+        </dl>
+
+        <h3>Educación</h3>
+        <p>
+          Maestría en Ingeniería de Software — Universidad Internacional de la Rioja (En curso)
+        </p>
+
+        <h3>Habilidades</h3>
+        <ul>
+          <li>CI/CD</li>
+          <li>Infraestructura como código</li>
+          <li>Testing & TDD</li>
+          <li>Observabilidad</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="card projects" id="proyectos">
+      <h2>Proyectos</h2>
+
+      <div class="project">
+        <h3>CV Online </h3>
+        <p>CV simple creado con HTML y CSS puro, responsive y accesible.</p>
+      </div>
+
+      <div class="project">
+        <h3>Pipeline móvil</h3>
+        <p>Configuración de pipeline para iOS y Android con pruebas automatizadas.</p>
+      </div>
+    </section>
+
+    <section class="card footer-notes" aria-hidden="true">
+      <p>Disponible para consultorías y colaboraciones. Referencias bajo pedido.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Leonardo Almeida — CV Online</p>
+    </div>
+  </footer>
+
+  <script>
+    // añade el año actual automáticamente (no es obligatorio, pero es práctico)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

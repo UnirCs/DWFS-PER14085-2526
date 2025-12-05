@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document metadata and configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Reservation - CineMagic - Tarea 4</title>
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main container: wraps all content -->
+    <div class="container">
+        <!-- Header section: cinema name and branding -->
+        <header>
+            <h1>🎬 CineMagic</h1>
+            <p class="subtitle">Your perfect cinematic experience</p>
+        </header>
+
+        <!-- Main content area -->
+        <main>
+            <!-- Movie information section: displays selected movie details -->
+            <section class="movie-info">
+                <h2>Selected Movie</h2>
+                <div class="movie-details">
+                    <div class="movie-title">
+                        <h3>Harry Potter and the Goblet of Fire</h3>
+                        <p class="location">📍 Location: CineMagic Downtown</p>
+                        <p class="showtime">🕐 Showtime: 8:30 PM</p>
+                    </div>
+                    <div class="movie-specs">
+                        <div class="spec-item">
+                            <strong>Duration:</strong>
+                            <span>2h 35m</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Director:</strong>
+                            <span>Mike Newell</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Genre:</strong>
+                            <span>Adventure, Family</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Actors:</strong>
+                            <span>Daniel Radcliffe, Emma Watson, Rupert Grint</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seat selection section: interactive seat map -->
+            <section class="seat-selection">
+                <h2>Select Your Seats</h2>
+                
+                <!-- Screen indicator: visual representation of the cinema screen -->
+                <div class="screen">
+                    <p>SCREEN</p>
+                </div>
+
+                <div class="seat-map" id="seatMap"></div>
+
+                <div class="seat-input-container">
+                    <label for="seatInput">Butacas a reservar:</label>
+                    <input type="number" id="seatInput" min="1" max="7">
+                </div>
+
+                <!-- Legend: explains seat status colors -->
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-seat available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat reserved"></div>
+                        <span>Reserved</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-seat selected"></div>
+                        <span>Selected</span>
+                    </div>
+                </div>
+
+                <!-- Next button: triggers payment confirmation modal -->
+                <div class="button-container">
+                    <label for="modal-trigger" class="btn-next">Next</label>
+                </div>
+            </section>
+        </main>
+
+        <!-- Hidden checkbox: controls modal visibility (CSS-only technique) -->
+        <input type="checkbox" id="modal-trigger" class="modal-checkbox">
+
+        <!-- Modal overlay: payment confirmation dialog (hidden by default) -->
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <h3>Confirm Reservation</h3>
+                <p>Do you want to proceed with ticket payment?</p>
+                <label for="modal-trigger" class="btn-ok">OK</label>
+            </div>
+        </div>
+    </div>
+    <script src="cinema.js"></script>
+</body>
+</html>
+
