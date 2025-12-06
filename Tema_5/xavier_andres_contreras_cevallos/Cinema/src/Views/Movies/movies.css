@@ -1,0 +1,8 @@
+.movies__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-image: linear-gradient(90deg, #1695b8 0%, #010841 100%);
+}
