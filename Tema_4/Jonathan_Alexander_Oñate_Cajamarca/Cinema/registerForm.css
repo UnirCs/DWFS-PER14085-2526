@@ -1,0 +1,23 @@
+.input-field input[type=text],
+.input-field input[type=password],
+.input-field input[type=email] {
+    color: #f1f1f1; /* Color de texto de entrada */
+    border-bottom: 1px solid #ffd700; /* Borde amarillo para los inputs */
+}
+
+.input-field input[type=text]:focus,
+.input-field input[type=password]:focus,
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid #ffd700; /* Borde amarillo en foco */
+    box-shadow: 0 1px 0 0 #ffd700; /* Sombra amarilla en foco */
+}
+/* Mensajes de error */
+p {
+    color: #ff4444; /* Rojo para errores */
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.error {
+    color: red;
+}
