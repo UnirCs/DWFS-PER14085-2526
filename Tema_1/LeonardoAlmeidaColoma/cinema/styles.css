@@ -1,0 +1,50 @@
+/* Estilos personalizados para la selección de butacas */
+
+.screen {
+  background: yellowgreen;
+  color: black;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.seat {
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: default;
+  border: 2px solid transparent;
+  user-select: none;
+}
+
+/* Estados */
+.seat.available {
+  background-color: #198754; /* verde bootstrap */
+  color: white;
+}
+
+.seat.reserved {
+  background-color: #dc3545; /* rojo bootstrap */
+  color: white;
+}
+
+/* Leyenda mini */
+.seat.small {
+  width: 22px;
+  height: 22px;
+  font-size: 0;
+  border-width: 1px;
+}
+
+/* Hover (solo decorativo, no selecciona nada todavía) */
+.seat.available:hover {
+  filter: brightness(1.2);
+}
