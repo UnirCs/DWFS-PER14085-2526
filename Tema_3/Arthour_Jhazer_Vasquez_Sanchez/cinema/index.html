@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reserva de Butacas - Cinema</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Sistema de Reserva de Butacas</h1>
+            <p class="subtitle">Encuentra los mejores asientos para tu película</p>
+        </header>
+
+        <main>
+            <!-- Panel de control -->
+            <div class="panel-control">
+                <div class="input-group">
+                    <label for="numAsientos">Número de asientos a reservar:</label>
+                    <input 
+                        type="number" 
+                        id="numAsientos" 
+                        min="1" 
+                        max="10" 
+                        placeholder="Ej: 4"
+                    >
+                </div>
+
+                <div class="botones">
+                    <button id="btnOcuparAleatorios" class="btn btn-secondary">
+                        🎲 Ocupar Aleatorios
+                    </button>
+                    <button id="btnResetear" class="btn btn-outline">
+                        🔄 Resetear Sala
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pantalla de cine -->
+            <div class="pantalla-container">
+                <div class="pantalla">PANTALLA</div>
+            </div>
+
+            <!-- Sala de butacas -->
+            <div id="sala" class="sala"></div>
+
+            <!-- Leyenda -->
+            <div class="leyenda">
+                <div class="leyenda-item">
+                    <div class="butaca-ejemplo libre"></div>
+                    <span>Libre</span>
+                </div>
+                <div class="leyenda-item">
+                    <div class="butaca-ejemplo ocupada"></div>
+                    <span>Ocupada</span>
+                </div>
+                <div class="leyenda-item">
+                    <div class="butaca-ejemplo sugerida"></div>
+                    <span>Sugerida</span>
+                </div>
+            </div>
+
+            <!-- Instrucciones -->
+            <div class="instrucciones">
+                <h3>📝 Instrucciones:</h3>
+                <ul>
+                    <li>Introduce el número de asientos que deseas reservar</li>
+                    <li>El sistema sugerirá automáticamente los mejores asientos consecutivos</li>
+                    <li>Los asientos sugeridos se destacan en <strong>verde</strong></li>
+                    <li>Haz click en cualquier asiento para ocuparlo/liberarlo (modo prueba)</li>
+                    <li>Revisa la consola del navegador para ver los logs del algoritmo</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>Tema 3 - Integración HTML, CSS y JavaScript</p>
+        </footer>
+    </div>
+
+    <!-- Script al final del body para asegurar que el DOM esté cargado -->
+    <script src="script.js"></script>
+</body>
+</html>

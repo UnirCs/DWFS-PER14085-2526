@@ -1,0 +1,21 @@
+.seat {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.seat:hover {
+    transform: translateY(-4px);
+}
+
+.seat.occupied {
+    cursor: not-allowed;
+    transform: none;
+    opacity: .52;
+}
