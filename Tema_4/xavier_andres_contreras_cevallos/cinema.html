@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles-cinema.css" />
+    <title>Cinema Unir - Xavier Andres Contreras Cevallos</title>
+  </head>
+  <body>
+    <div class="cinema">
+      <header class="cinema__header">
+        <h1 class="header__title">UNIR-CINEMA</h1>
+      </header>
+      <section class="cinema__screen"></section>
+      <section class="cinema__seats" id="cinema-seats">
+      </section>
+      <form action="" method="post" class="cinema__form">
+        <label for="seat-number" class="form__label"
+          >Indica cuantos asientos quieres reservar:</label
+        >
+        <input
+          type="number"
+          name="seat-number"
+          id="seat-number"
+          class="form__input"
+        />
+        <input
+          type="submit"
+          value="Confirmar Reserva"
+          class="form__confirm-btn"
+        />
+      </form>
+      <footer class="cinema__footer">
+        <p class="footer__text">Cine UNIR-CINEMA</p>
+        <p class="footer__text">Dirección: Calle Avenida la Paz, 137. Logroño</p>
+        <p class="footer__text">Teléfono: 941209743</p>
+        <p class="footer__text">Email: cinefullstack@unircinema.com</p>
+      </footer>
+    </div>
+    <script src="cinema.js"></script>
+  </body>
+</html>
