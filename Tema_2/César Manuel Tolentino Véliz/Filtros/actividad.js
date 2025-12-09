@@ -120,7 +120,6 @@ function scaleDown() {
   }
   handler.savePixels(scaleDownPixels, outputPath);
 }
-
 /**
  * Reduce el brillo de la imagen
  */
