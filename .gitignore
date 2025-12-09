@@ -82,4 +82,7 @@ redisson.yaml
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#visual studio code
 .vscode/launch.json
+.vscode/
