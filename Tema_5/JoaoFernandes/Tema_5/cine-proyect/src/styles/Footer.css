@@ -1,0 +1,20 @@
+.footer {
+  margin-top: 32px;
+  padding: 20px;
+  background: #111;
+  color: #f4f4f4;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.footer-title {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-subtitle {
+  margin: 0;
+  color: #cfcfcf;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,115 @@
+/* styles.css - CV simple, responsive y accesible */
+
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --muted: #666b75;
+  --accent: #0b74de;
+  --radius: 12px;
+  --max-width: 980px;
+  --gap: 1rem;
+  --pad: 1.25rem;
+  --shadow: 0 6px 20px rgba(16,24,40,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; }
+body {
+  background: linear-gradient(180deg, var(--bg), #eef2f7 120%);
+  color: #111315;
+  line-height: 1.5;
+  -webkit-font-smoothing:antialiased;
+  font-size: 16px;
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
+  background: transparent;
+  margin-top: 0.5rem;
+}
+.header-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: none;
+}
+
+/* avatar placeholder */
+.avatar-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+  border: 2px solid rgba(11,116,222,0.08);
+}
+
+
+/* Title */
+.name {
+  margin: 0 0 0.15rem 0;
+  font-size: 1.65rem;
+}
+.role {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact a:hover { text-decoration: underline; }
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--gap);
+}
+
+/* Two column layout */
+.two-column{
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Experience */
+.experience h3 { margin: 0 0 0.25rem 0; font-size: 1.05rem; }
+.meta { margin: 0 0 0.5rem 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Sidebar */
+.sidebar dl { margin: 0; }
+.sidebar dt { font-weight: 700; margin-top: 0.6rem; }
+.sidebar dd { margin: 0 0 0.6rem 0; color: var(--muted); }
+
+/* Projects */
+.projects .project { margin-bottom: 0.75rem; }
+
+/* Responsive */
+@media (max-width: 880px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+  .avatar { width: 72px; height: 72px; border-radius: 10px; }
+  .name { font-size: 1.4rem; }
+}
+
+/* Small visual polish */
+h2 { margin-top: 0; margin-bottom: 0.65rem; font-size: 1.05rem; }
+ul { padding-left: 1.05rem; margin: 0.35rem 0; }
+footer.site-footer { text-align: center; color: var(--muted); padding: 1rem 0; font-size: 0.9rem; }
