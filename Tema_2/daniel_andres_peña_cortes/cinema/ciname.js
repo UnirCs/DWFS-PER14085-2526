@@ -56,7 +56,7 @@ function suggest(numAsientos) {
                 idsTemp.push(fila[j].id);
                 if (contador === numAsientos) {
                     // Hemos encontrado suficientes asientos juntos
-                    encontrados = idsTemp
+                    let encontrados = idsTemp
                 }
             } else {
                 // Reiniciamos el contador si hay un asiento ocupado

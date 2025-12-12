@@ -1,0 +1,54 @@
+/* Imagen del encabezado */
+.foto {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.pantalla {
+    width: 500px;
+    height: auto;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    padding: 50px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Fila de butacas */
+.fila {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Botones de butacas */
+.butaca {
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estado disponible */
+.disponible {
+    background-color: #186329; /* verde */
+    color: #FFFFFF;
+}
+
+/* Estado ocupado */
+.ocupado {
+    background-color: #A91E2C; /* rojo */
+    color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+/* Hover para disponibles */
+.disponible:hover {
+    background-color: #218838;
+}

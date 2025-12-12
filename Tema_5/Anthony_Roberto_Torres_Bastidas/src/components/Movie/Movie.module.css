@@ -1,0 +1,48 @@
+.card {
+    max-width: 345px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardActionArea {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.cardMedia {
+    height: 400px;
+}
+
+.cardContent {
+    flex-grow: 1;
+}
+
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.scoreText {
+    margin-left: 8px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.durationText {
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+}
+
+.sinopsisText {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
