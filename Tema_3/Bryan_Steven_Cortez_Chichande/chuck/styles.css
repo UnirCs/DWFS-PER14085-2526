@@ -1,0 +1,71 @@
+body.exercise3 {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #3464B0 0, #000000 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: "Nexa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+.exercise3__container {
+    padding: 20px;
+}
+
+.exercise3__card {
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    border: 1px solid #FFFFFF;
+    background: #111111;
+}
+
+.exercise3__header {
+    color: #FFFFFF;
+}
+
+.exercise3__title {
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+}
+
+.exercise3__subtitle {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    opacity: 0.9;
+}
+
+.exercise3__joke-box {
+    background-color: #000000;
+    border-radius: 12px;
+    border: 1px solid #3464B0;
+    padding: 14px 16px;
+    min-height: 80px;
+}
+
+.exercise3__joke {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #FFFFFF;
+}
+
+.exercise3__button {
+    background-color: #A41D22;
+    border-color: #A41D22;
+    color: #FFFFFF;
+    font-family: "Nexa Bold", "Nexa", system-ui, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    padding-block: 0.6rem;
+}
+
+.exercise3__button:hover,
+.exercise3__button:focus {
+    background-color: #3464B0;
+    border-color: #3464B0;
+    color: #FFFFFF;
+}

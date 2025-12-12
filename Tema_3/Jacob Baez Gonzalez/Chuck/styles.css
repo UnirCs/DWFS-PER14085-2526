@@ -1,0 +1,82 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff5e3a, #ff9500);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    margin: 30px 0;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+}
+
+.chiste {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+#btn-chiste {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+#btn-chiste:hover {
+    background: #e74c3c;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+#btn-chiste:active {
+    transform: translateY(2px);
+}
+
+#chiste {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 50px;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.footer p {
+    margin: 8px 0;
+}
