@@ -46,7 +46,7 @@ function MovieList() {
             synopsis: "Oskar Schindler, un hombre de enorme astucia y talento para las relaciones públicas, organiza un ambicioso plan para ganarse la simpatía de los nazis. Después de la invasión de Polonia por los alemanes, consigue, gracias a sus relaciones con los nazis, la propiedad de una fábrica de Cracovia. Allí emplea a cientos de operarios judíos, cuya explotación le hace prosperar rápidamente. Su gerente, también judío, es el verdadero director en la sombra, pues Schindler no tiene el menor conocimiento industrial.",
             duration: 195,
             genre: "Drama, Historia, Bélico",
-            rating: 9.0
+            rating: 9
         },
         {
             id: 6,

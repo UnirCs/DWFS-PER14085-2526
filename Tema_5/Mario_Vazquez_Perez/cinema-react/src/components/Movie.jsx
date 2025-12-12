@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 function Movie({ title, image, synopsis, duration, genre, rating }) {
     return (
@@ -19,5 +20,15 @@ function Movie({ title, image, synopsis, duration, genre, rating }) {
         </div>
     );
 }
+
+
+Movie.propTypes = {
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    synopsis: PropTypes.string.isRequired,
+    duration: PropTypes.number.isRequired,
+    genre: PropTypes.string.isRequired,
+    rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+};
 
 export default Movie;
