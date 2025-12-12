@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="cinema.css">
+    <meta charset="UTF-8">
+    <title>UNIR - CINEMA</title>
+</head>
+<body>
+<div class="contenedor">
+    <div class="nombre">
+        <h1>UNIR-CINEMA</h1>
+    </div>
+    
+    <div class="pantalla">
+        <h1>PANTALLA</h1>
+    </div>
+
+    <div class="sala">
+        <table class="asientos" id="asientos">
+            <tr>
+                <th colspan="14">
+                    <h2>Butacas</h2>
+                </th>
+            </tr>
+            <tbody>
+            <tr>
+                <td>Fila R</td>
+                <td colspan="6" class="reservado">Discapacitados. Sin butacas</td>
+                <td class="pasillo"></td>
+                <td colspan="6" class="reservado">Discapacitados. Sin butacas</td>
+            </tr>
+            <tr>
+                <td>Fila 1 </td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="pasillo"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+            </tr>
+            <tr>
+                <td>Fila 2 </td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="pasillo"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+            </tr>
+            <tr>
+                <td>Fila 3 </td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="pasillo"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+            </tr>
+            <tr>
+                <td>Fila 4 </td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="pasillo"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+            </tr>
+            <tr>
+                <td>Fila 5 </td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="ocupada"></td>
+                <td class="pasillo"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+                <td class="butaca"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="form" id="form">
+        <form>
+            <label for="num">Número de asientos deseados:</label><br>
+            <input type="number" id="num" name="num" min="0" value="0" step="1"><br>
+            <input type="submit" value="Confirmar">
+        </form>
+    </div>
+    <footer class="info">
+        <p>Cine UNIR-CINEMA</p>
+        <p><b>Dirección: </b><a href="https://maps.app.goo.gl/ccPfoBHs6u7Pq6Pf9" target="_blank">Calle Avenida de la Paz, 137. Logroño </a></p>
+        <p><b>Teléfono: </b>941209743</p>
+        <p><b>Email: </b> <a href="mailto:cinefullstack@unircinema.com">cinefullstack@unircinema.com</a></p>
+    </footer>
+</div>
+<script src="cinema.js"></script>
+</body>
+</html>
