@@ -36,7 +36,7 @@ function setup() {
 
 function llenarButacas(butacas) {
     // Se llenan arbitrariamente segun lo que puse en la actividad 1 y ser coherentes
-    butacasRellenas =  structuredClone(butacas);
+    const butacasRellenas =  structuredClone(butacas);
 
     const butacasOcupadas = [
         [0,0],[0,1],[0,2],[0,4],[0,5],[0,6],[0,7],[0,9],[0,10],
@@ -46,8 +46,7 @@ function llenarButacas(butacas) {
         [4,4],[4,5],[4,6],[4,10],[4,11]
     ];
     
-    for (let idx = 0; idx < butacasOcupadas.length; idx++){
-        const [r,c] = butacasOcupadas[idx];
+    for (const [r,c] of butacasOcupadas){
         butacasRellenas[r][c].estado = true;
 
         const idButaca = butacasRellenas[r][c].id;
@@ -62,7 +61,7 @@ function llenarButacas(butacas) {
 
 // Inicializacion de butacas al cargar el script
 const butacas = setup()
-butacasRellenas = llenarButacas(butacas)
+const butacasRellenas = llenarButacas(butacas)
 
 const miFormulario = document.getElementById('form-reservas');
 miFormulario.addEventListener("input", () => {
