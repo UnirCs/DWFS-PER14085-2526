@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine - Reserva de Asientos</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cine Sagitario</h1>
+            <p>Reserva tus asientos</p>
+        </header>
+
+        <div class="screen">
+            <div class="screen-label">PANTALLA</div>
+        </div>
+
+        <div class="seats-container">
+            <div class="seats-grid" id="seatsGrid">
+                <!-- Los asientos se generarán con JavaScript -->
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="seat available"></div>
+                <span>Disponible</span>
+            </div>
+            <div class="legend-item">
+                <div class="seat selected"></div>
+                <span>Seleccionado</span>
+            </div>
+            <div class="legend-item">
+                <div class="seat occupied"></div>
+                <span>Ocupado</span>
+            </div>
+        </div>
+
+        <div class="summary">
+            <div class="selected-seats">
+                <strong>Asientos seleccionados: </strong>
+                <span id="selectedSeats">Ninguno</span>
+            </div>
+            <div class="total-price">
+                <strong>Total: $</strong>
+                <span id="totalPrice">0</span>
+            </div>
+            <button class="reserve-btn" id="reserveBtn">Reservar Asientos</button>
+        </div>
+    </div>
+
+    <script src="js/cinema.js"></script>
+</body>
+</html>
