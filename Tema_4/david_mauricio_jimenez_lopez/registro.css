@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+/* aplico important porque boostrap no me permitia el cambio de tamaño de texto*/
+
+body.texto-pequeno {
+    font-size: 14px !important;
+}
+
+body.texto-pequeno * {
+    font-size: inherit !important;
+}
+
+body.texto-mediano {
+    font-size: 16px !important;
+}
+
+body.texto-mediano * {
+    font-size: inherit !important;
+}
+
+body.texto-grande {
+    font-size: 20px !important;
+}
+
+body.texto-grande * {
+    font-size: inherit !important;
+}
+
+.contenedor-registro {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+}
+
+body.modo-oscuro .contenedor-registro {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 50%, #f5f5f5 100%);
+}
+
+.controles-accesibilidad {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+body.modo-oscuro .controles-accesibilidad {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+.controles-accesibilidad__etiqueta {
+    display: block;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+body.modo-oscuro .controles-accesibilidad__etiqueta {
+    color: #333333;
+}
+
+.controles-accesibilidad__selector {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    border-radius: 8px;
+    color: #000000;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.controles-accesibilidad__selector:focus {
+    outline: none;
+    border-color: #ffc107;
+}
+
+.controles-accesibilidad__contenedor-interruptor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.controles-accesibilidad__etiqueta-interruptor {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+body.modo-oscuro .controles-accesibilidad__etiqueta-interruptor {
+    color: #333333;
+}
+
+.controles-accesibilidad__interruptor {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.controles-accesibilidad__interruptor input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.controles-accesibilidad__deslizador {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: 0.4s;
+    border-radius: 24px;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.controles-accesibilidad__deslizador:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #ffc107;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.controles-accesibilidad__interruptor input:checked+.controles-accesibilidad__deslizador {
+    background-color: rgba(255, 193, 7, 0.3);
+}
+
+.controles-accesibilidad__interruptor input:checked+.controles-accesibilidad__deslizador:before {
+    transform: translateX(26px);
+    background-color: #ff8c00;
+}
+
+.fondo-registro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.tarjeta-registro {
+    position: relative;
+    z-index: 1;
+    background: rgba(108, 117, 125, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.tarjeta-registro__encabezado {
+    margin-bottom: 2.5rem;
+}
+
+.tarjeta-registro__logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta-registro__logo i {
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+.tarjeta-registro__titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ffc107, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.tarjeta-registro__subtitulo {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.formulario-registro__etiqueta {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.formulario-registro__entrada {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    color: #000000;
+    background: #ffffff;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+.formulario-registro__entrada:focus {
+    outline: none;
+    background: white;
+    border-color: #ffc107;
+}
+
+.formulario-registro__entrada::placeholder {
+    color: #6c757d;
+}
+
+.formulario-registro__entrada.invalido {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
+.formulario-registro__entrada.valido {
+    border-color: #1e7e34;
+    background: #f0fff4;
+}
+
+.formulario-registro__contenedor-contrasena {
+    position: relative;
+}
+
+.formulario-registro__contenedor-contrasena .formulario-registro__entrada {
+    padding-right: 3rem;
+}
+
+.formulario-registro__alternar-contrasena {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.formulario-registro__alternar-contrasena:hover {
+    color: #ffc107;
+}
+
+.formulario-registro__alternar-contrasena:focus {
+    outline: none;
+}
+
+.formulario-registro__error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+    font-weight: 500;
+}
+
+.formulario-registro__error.mostrar {
+    display: block;
+}
+
+.formulario-registro__ayuda {
+    display: block;
+    color: #cccccc;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.formulario-registro__casilla-verificacion {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.formulario-registro__entrada-casilla {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: #ffc107;
+    flex-shrink: 0;
+}
+
+.formulario-registro__etiqueta-casilla {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    cursor: pointer;
+    user-select: none;
+}
+
+.formulario-registro__enlace {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.formulario-registro__enlace:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+.formulario-registro__enviar {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000000;
+    background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formulario-registro__enviar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.formulario-registro__enviar:hover {
+    background: linear-gradient(135deg, #ff8c00, #ffc107);
+}
+
+.formulario-registro__enviar:hover::before {
+    left: 100%;
+}
+
+.formulario-registro__enviar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.formulario-registro__cargador-envio {
+    display: none;
+}
+
+.formulario-registro__enviar.cargando .formulario-registro__texto-envio {
+    display: none;
+}
+
+.formulario-registro__enviar.cargando .formulario-registro__cargador-envio {
+    display: inline-block;
+}
+
+.formulario-registro__texto-pie {
+    color: #cccccc;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.pie-registro__texto {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.formulario-registro__entrada:focus+.formulario-registro__etiqueta,
+.formulario-registro__entrada:not(:placeholder-shown)+.formulario-registro__etiqueta {
+    color: #ffc107;
+}
+
+body.modo-oscuro .tarjeta-registro {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 193, 7, 0.5);
+}
+
+body.modo-oscuro .formulario-registro__etiqueta {
+    color: #333333;
+}
+
+body.modo-oscuro .formulario-registro__entrada {
+    background: #ffffff;
+    border-color: rgba(255, 193, 7, 0.4);
+    color: #000000;
+}
+
+body.modo-oscuro .formulario-registro__entrada:focus {
+    border-color: #ffc107;
+}
+
+body.modo-oscuro .formulario-registro__alternar-contrasena {
+    color: #333333;
+}
+
+body.modo-oscuro .formulario-registro__alternar-contrasena:hover {
+    color: #ffc107;
+}
+
+body.modo-oscuro .formulario-registro__ayuda {
+    color: #666666;
+}
+
+body.modo-oscuro .formulario-registro__etiqueta-casilla {
+    color: #333333;
+}
+
+body.modo-oscuro .formulario-registro__texto-pie {
+    color: #666666;
+}
+
+body.modo-oscuro .pie-registro__texto {
+    color: rgba(0, 0, 0, 0.7);
+}
