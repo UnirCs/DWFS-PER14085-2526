@@ -1,0 +1,286 @@
+﻿body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+}
+
+.cine__titulo {
+    background: linear-gradient(45deg, #ffc107, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.pantalla {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.pantalla__contenedor {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    color: #333;
+    padding: 20px 80px;
+    border-radius: 20px 20px 5px 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+    box-shadow: 
+        0 10px 30px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.pantalla__resplandor {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(255, 193, 7, 0.3) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.leyenda {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leyenda__elemento {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.sala {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 193, 7, 0.2);
+    animation: aparecerArriba 0.8s ease;
+}
+
+.sala__fila {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.sala__etiqueta-fila {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000000;
+    min-width: 30px;
+    text-align: center;
+    background: #ffc107;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.sala__rejilla-asientos {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.asiento {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px 8px 15px 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.asiento--disponible {
+    background: linear-gradient(135deg, #1e7e34, #155724);
+    color: #ffffff;
+    border-color: #1e7e34;
+}
+
+.asiento--disponible:hover {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 4px 15px rgba(40, 167, 69, 0.4),
+        0 0 20px rgba(40, 167, 69, 0.2);
+    border-color: #ffc107;
+}
+
+.asiento--ocupado {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    cursor: not-allowed;
+    border-color: #bd2130;
+    opacity: 0.7;
+}
+
+.asiento--ocupado::before {
+    content: '✕';
+    position: absolute;
+    font-size: 1rem;
+    color: white;
+}
+
+.asiento--seleccionado {
+    background: linear-gradient(135deg, #ffc107, #ff8c00);
+    color: #000;
+    border-color: #e0a800;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 
+        0 4px 15px rgba(255, 193, 7, 0.5),
+        0 0 20px rgba(255, 193, 7, 0.3);
+    animation: pulso 1.5s infinite;
+}
+
+@keyframes pulso {
+    0%, 100% {
+        box-shadow: 
+            0 4px 15px rgba(255, 193, 7, 0.5),
+            0 0 20px rgba(255, 193, 7, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 4px 20px rgba(255, 193, 7, 0.7),
+            0 0 30px rgba(255, 193, 7, 0.5);
+    }
+}
+
+.formulario {
+    background: rgba(108, 117, 125, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: aparecerArriba 1s ease;
+}
+
+.formulario__titulo {
+    color: #ffc107;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.formulario__etiqueta {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.formulario__selector {
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    color: #000000;
+}
+
+.formulario__selector:focus {
+    background-color: #ffffff;
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+    color: #000000;
+}
+
+.formulario__selector option {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.formulario__pantalla-seleccion {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.formulario__pantalla-precio {
+    background: linear-gradient(135deg, #ffc107, #ff8c00);
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.formulario__boton {
+    background: linear-gradient(135deg, #ffc107, #ff8c00);
+    border: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.formulario__boton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 193, 7, 0.5);
+    background: linear-gradient(135deg, #ff8c00, #ffc107);
+}
+
+.formulario__boton--deshabilitado {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pie-pagina {
+    background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+    border-top: 3px solid #ffc107;
+}
+
+.pie-pagina__titulo {
+    color: #ffc107;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pie-pagina__icono {
+    color: #ffc107 !important;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.pie-pagina__texto {
+    color: #cccccc;
+}
+
+.pie-pagina__texto strong {
+    color: #ffffff;
+}
+
+@keyframes aparecerArriba {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
