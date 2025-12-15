@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.pantalla {
+    color: #ffffff;
+    background-color: #000;
+    
+    height: 120px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.zona-sillas {
+    margin-top: 200px;
+    background-color: #797777;
+}
+
+.fila {
+    height: 120px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.silla {
+    height: 50px;
+    width: 50px;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto;
+    margin: 5px;
+    border-radius: 5px;
+    float: left;
+}
+
+.silla:hover {
+    color: #000;
+    background-color: #ffffff;
+}   
+
+footer {
+     position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+}

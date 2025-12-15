@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UNIR-CINEMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="pantalla">
+            <br>
+            <h1>UNIR-CINEMA</h1>
+        </div>
+    </header>
+
+    <div class="zona-sillas">
+        <div class="fila">
+            <div class="silla">A1</div>
+            <div class="silla">A2</div>
+            <div class="silla">A3</div>
+            <div class="silla">A4</div>
+            <div class="silla">A5</div>
+            <div class="silla">A6</div>
+            <div class="silla">A7</div>
+            <div class="silla">A8</div>
+            <div class="silla">A9</div>
+            <div class="silla">A10</div>
+            <div class="silla">A11</div>
+            <div class="silla">A12</div>
+            <div class="silla">A13</div>
+        </div>
+        <div class="fila">
+            <div class="silla">B1</div>
+            <div class="silla">B2</div>
+            <div class="silla">B3</div>
+            <div class="silla">B4</div>
+            <div class="silla">B5</div>
+            <div class="silla">B6</div>
+            <div class="silla">B7</div>
+            <div class="silla">B8</div>
+            <div class="silla">B9</div>
+            <div class="silla">B10</div>
+            <div class="silla">B11</div>
+            <div class="silla">B12</div>
+            <div class="silla">B13</div>
+        </div>
+        <div class="fila">
+            <div class="silla">C1</div>
+            <div class="silla">C2</div>
+            <div class="silla">C3</div>
+            <div class="silla">C4</div>
+            <div class="silla">C5</div>
+            <div class="silla">C6</div>
+            <div class="silla">C7</div>
+            <div class="silla">C8</div>
+            <div class="silla">C9</div>
+            <div class="silla">C10</div>
+            <div class="silla">C11</div>
+            <div class="silla">C12</div>
+            <div class="silla">C13</div>
+        </div>
+    </div>
+    
+    <br>
+    <label for="">Indica cuantas butacas quiere selecionar</label>
+    <input type="number" id="numeroButacas" oninput="suggest(this.value)">
+    <button id="botonConfirmar" onclick="">Confirmar reserva</button>
+
+    <footer>
+        <br>
+        Cine - UNIR-CINEMA <br>
+        Direccion Calle 5 #8-26 <br>
+        Telefono: 321 222222222 <br>
+        Correo: unir_cinema@cine.com
+    </footer>
+
+    <script src="cinema.js"></script>
+
+</body>
+</html>
