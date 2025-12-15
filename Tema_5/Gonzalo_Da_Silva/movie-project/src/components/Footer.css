@@ -1,0 +1,31 @@
+.footer {
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  padding: 2rem 0;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+  color: #bdc3c7;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-credits {
+  font-size: 0.85rem;
+  color: #95a5a6;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .footer-content p {
+    font-size: 0.8rem;
+  }
+}
