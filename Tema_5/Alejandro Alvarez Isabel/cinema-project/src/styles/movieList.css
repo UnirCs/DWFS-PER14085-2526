@@ -1,0 +1,18 @@
+.movie-list-container {
+    padding: 20px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding: 0 20px;
+}
+
+.movie-list-container h1 {
+    text-align: center;
+    border-bottom: 3px solid #EAB308;
+    padding-bottom: 10px;
+}
