@@ -1,0 +1,37 @@
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: skyblue;
+    color: darkred;
+}
+
+.signup {
+    text-align: center;
+    border: 3px dotted darkred;
+    background-color: lightgoldenrodyellow;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px;
+}
+
+.btn {
+    margin: 10px;
+    background-color: skyblue;
+    color: darkred;
+    border: 1px solid darkred;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.error {
+    border: 2px solid red;
+    background-color: #FFC5BA;
+}
