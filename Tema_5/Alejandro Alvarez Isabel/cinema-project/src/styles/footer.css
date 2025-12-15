@@ -1,0 +1,24 @@
+.footer {
+    background-color: grey;
+    color: #cccccc;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 5px solid #f5c518;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.footer-text {
+    margin: 5px 0;
+    font-size: 0.95em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.footer-text:first-child {
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 10px;
+}

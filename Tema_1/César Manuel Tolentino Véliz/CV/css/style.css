@@ -1,0 +1,146 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 3.4rem;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 3.4rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* Secciones */
+section {
+    background: white;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+   font-size: 3.4rem;
+}
+
+h3 {
+    color: #3498db;
+    margin: 15px 0 5px;
+}
+
+/* Información de contacto */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-item {
+    flex-basis: 48%;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    color: #3498db;
+    width: 20px;
+    text-align: center;
+}
+
+/* Experiencia laboral */
+.job {
+    margin-bottom: 25px;
+}
+
+.job-date {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Habilidades */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill {
+    background: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Educación */
+.education-item {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-item {
+        flex-basis: 100%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}
