@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "El Padrino",
+    "year": 1972,
+    "duration": "175 min",
+    "genre": "Drama/Crimen",
+    "rating": 9.2,
+    "synopsis": "Don Vito Corleone lidera una de las familias mafiosas de Nueva York mientras su hijo Michael se ve arrastrado al negocio familiar.",
+    "poster": "/posters/padrino.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "duration": "154 min",
+    "genre": "Crimen/Drama",
+    "rating": 8.9,
+    "synopsis": "Historias entrelazadas de asesinos a sueldo, un boxeador y una pareja de ladrones en Los Ángeles.",
+    "poster": "/posters/pulp.jpg"
+  },
+  {
+    "id": 3,
+    "title": "El Caballero Oscuro",
+    "year": 2008,
+    "duration": "152 min",
+    "genre": "Acción/Drama",
+    "rating": 9.0,
+    "synopsis": "Batman enfrenta al Joker, un criminal que busca sumir Gotham en el caos absoluto.",
+    "poster": "/posters/caballero.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Forrest Gump",
+    "year": 1994,
+    "duration": "142 min",
+    "genre": "Drama/Romance",
+    "rating": 8.8,
+    "synopsis": "La vida extraordinaria de Forrest Gump, un hombre amable que presencia momentos clave de la historia de EE. UU.",
+    "poster": "/posters/forest.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Inception",
+    "year": 2010,
+    "duration": "148 min",
+    "genre": "Ciencia Ficción",
+    "rating": 8.8,
+    "synopsis": "Un ladrón que roba secretos a través de los sueños debe implantar una idea en la mente de un heredero.",
+    "poster": "/posters/inception.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Matrix",
+    "year": 1999,
+    "duration": "136 min",
+    "genre": "Ciencia Ficción",
+    "rating": 8.7,
+    "synopsis": "Neo descubre la verdadera naturaleza de su realidad y se une a la rebelión contra las máquinas.",
+     "poster": "/posters/matrix.jpg"
+  }
+]
