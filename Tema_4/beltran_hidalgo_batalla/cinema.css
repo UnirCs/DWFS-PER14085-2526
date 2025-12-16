@@ -1,0 +1,7 @@
+.seats__seat--selected {
+  background-color: #d3ff64 !important;
+}
+
+.seats__seat--unabled {
+  background-color: #5e656b !important;
+}
