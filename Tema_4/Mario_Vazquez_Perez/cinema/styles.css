@@ -1,0 +1,244 @@
+:root {
+    --seat: 38px;
+    --gap: 10px;
+    --green: #22c55e;
+    --muted: #d4d4d4;
+    --red: #8f0202;
+    --blue: rgba(1, 197, 255, 0.76);
+    --header-bg-color: #111111;
+    --text-color: #1a1a1a;
+    --font-family-main: 'Inter', 'Helvetica Neue', sans-serif;
+    --padding-vertical: 30px;
+}
+
+* {
+    color: white;
+}
+
+html, body {
+    background-color: #212121;
+}
+
+h1 {
+    color: #F4D03F;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 2rem;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+    width: 100%;
+    padding-top: var(--padding-vertical);
+    padding-bottom: var(--padding-vertical);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+}
+
+footer {
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+    width: 100%;
+    padding-top: var(--padding-vertical);
+    padding-bottom: calc(var(--padding-vertical) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+footer > * {
+    color: #F4D03F;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.legend .seat {
+    pointer-events: none;
+}
+
+.theater { max-width: 960px; margin-inline: auto; }
+
+.theater__screen {
+    margin-top: calc(var(--padding-vertical) * 4);
+    margin-bottom: 10rem;
+}
+
+.theater__screen-banner{
+    display:block;
+    width: 100%;
+    margin-left: calc(var(--seat) - var(--gap) * 2);
+    background:#e7e5e4;
+    color:#111827;
+    font-weight:600;
+    letter-spacing:.18em;
+    padding:.6rem 1rem;
+    border-radius:.5rem;
+    transform:rotateX(-12deg);
+    box-shadow:0 18px 34px rgba(0,0,0,.08);
+}
+
+.theater__row{
+    display:flex;
+    align-items:center;
+    gap:var(--gap);
+}
+
+.theater__row-label{
+    width:24px;
+    text-align:right;
+    font-size: 1rem;
+    color: #bcbfc5;
+    user-select:none;
+}
+
+.theater__seats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:var(--gap);
+}
+
+.theater__aisle {
+    width: 24px;
+}
+
+/* Seats */
+.seat{
+    position: relative;
+    width: var(--seat);
+    height: var(--seat);
+    background: #fff;
+    border: 2.5px solid var(--green);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    transition: box-shadow .15s ease, transform .05s ease, border-color .15s ease;
+}
+.seat::after{
+    content: "";
+    position: absolute;
+    inset: 4px 4px 12px 4px;
+    border: 2.5px solid currentColor;
+    border-top: 0;
+    border-radius: 8px;
+    color: inherit;
+    pointer-events: none;
+}
+.seat:focus-visible{
+    outline: 3px solid #a7f3d0;
+    outline-offset: 2px;
+}
+
+.seat:hover{
+    box-shadow:0 0 0 4px rgb(0, 87, 25);
+}
+
+.seat--selected:hover{
+    box-shadow:0 0 0 4px rgb(99, 0, 0);
+}
+
+.seat--occupied:hover{
+    box-shadow:0 0 0 4px rgb(78, 78, 78);
+}
+
+.seat--wheelchair:hover{
+    box-shadow:0 0 0 4px rgb(119, 197, 251);
+}
+
+.seat--occupied{
+    border-color: #4e4e4e;
+    background: #717c7e;
+    opacity:.9;
+    pointer-events: none;
+}
+
+.seat--selected{
+    background:var(--red);
+    border-color:var(--red);
+    color:#fff;
+}
+
+.seat--wheelchair{
+    border-color:var(--blue);
+    color:var(--blue);
+}
+
+.seat--wheelchair::after{
+    display:none
+}
+
+.seat--wheelchair-active {
+    background-color: var(--red);
+}
+
+.seat__glyph{
+    font-size:20px;
+    line-height:1
+}
+
+.tickets__form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.tickets__form-input input {
+    width: 10rem;
+    border-radius: 5px;
+    border: none;
+    color: #000000;
+}
+
+.tickets__form-input label {
+    color: #F4D03F;
+}
+
+.tickets__form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.tickets__form-button button {
+    width: 10rem;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+@media (max-width: 700px){
+    :root{
+        --seat:32px;
+        --gap:8px;
+    }
+
+    .theater__aisle{
+        width:18px;
+    }
+}
+
+.wheelchair-space {
+    width: 75px;
+}
+
+.seat-space {
+    width: 38px;
+}
+
+.big-space {
+    width: 86px;
+}
