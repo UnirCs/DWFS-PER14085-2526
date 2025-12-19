@@ -1,0 +1,8 @@
+.logo {
+    height: 60px;
+    margin-right: 16px;
+}
+
+.title {
+    flex-grow: 1;
+}

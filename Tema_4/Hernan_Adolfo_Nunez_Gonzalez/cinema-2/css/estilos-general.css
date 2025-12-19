@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+/* ================================
+   🎬 UNIR-CINEMA - ESTILO GENERAL:
+================================ */
+
+/*CUERPO DEL SITIO WEB:*/
+body {
+  font-family: Arial, sans-serif;/*Fuente del texto.*/
+  background-color: #0B0B0B;/*Color de fondo de la página.*/
+  color: white;/*Color del texto.*/
+  margin: 0 0 0 0;/*Margen del sitio web (arriba, derecho, izquierdo, abajo).*/
+  padding: 0;/*Borde del sitio web.*/
+}
+
+/*CONTENEDOR:*/
+.container {
+  max-width: 800px;/*Máxima anchura.*/
+  margin: auto;/*Margen automático.*/
+  text-align: center;/*Alineación del texto.*/
+  padding: 20px;/*Borde del contenedor.*/
+}
+
+/*CABECERA:*/
+header h1 {
+  color: #FFD600;/*Color del texto.*/
+  text-shadow: 2px 2px 8px #000000;/*Sombra y color (arriba, derecho, izquierdo, abajo).*/
+}
+
+/*PANTALLA:*/
+.pantalla {
+  background-color: #AAAAAA;/*Color de fondo.*/
+  height: 20px;/*Altura.*/
+  margin: 20px auto;/*Margen (arriba, derecho automático).*/
+  width: 70%;/*Anchura.*/
+  border-radius: 10px;/*Nivel de borde redondeado.*/
+}
+
+/*SALA:*/
+#sala {
+  display: flex;/*Elemento flexible.*/
+  flex-direction: column;/*Tipo de dirección en columna.*/
+  gap: 10px;/*Espacio entre la sala.*/
+  align-items: center;/*Alineación del elemento.*/
+  margin-bottom: 20px;/*Margen inferior.*/
+}
+
+/*FILA:*/
+.fila {
+  display: flex;/*Elemento flexible.*/
+  align-items: center;/*Alineación del elemento.*/
+  justify-content: center;/*Alineación del elemento.*/
+  gap: 5px;/*Espacio entre cada fila.*/
+}
+
+/*NÚMERO DE FILA:*/
+.numero-fila {
+  width: 70px;/*Anchura.*/
+  text-align: right;/*Alineación del texto.*/
+  font-weight: bold;/*Grosor del texto.*/
+  color: #FFD600;/*Color del texto.*/
+}
+
+/*PROPIEDADES DEL ASIENTO:*/
+.asiento {
+  width: 30px;/*Anchura.*/
+  height: 30px;/*Altura.*/
+  border: 2px solid #FFD600;/*Grosor y color del borde.*/
+  border-radius: 6px;/*Nivel de borde redondeado.*/
+  display: flex;/*Elemento flexible.*/
+  align-items: center;/*Alineación del elemento.*/
+  justify-content: center;/*Alineación del elemento.*/
+  cursor: pointer;/*Activación de cursor cuando se sobreponga al asiento.*/
+  color: #FFD600;/*Color del texto.*/
+  transition: all 0.3s;/*Efecto de transición del elemento con velocidad.*/
+}
+
+/*EFECTO DE ASIENTO ALUMBRADO CON CURSOR SOPREPUESTO:*/
+.asiento:hover {
+  background-color: #FFD600;/*Color de fondo.*/
+  color: #000000;/*Color del texto.*/
+}
+
+/*EFECTO DE ASIENTO OCUPADO:*/
+.asiento.ocupado {
+  background-color: #444444;/*Color de fondo.*/
+  color: #D9D9D9;/*Color del texto (antes #888888, ahora cumple contraste).*/
+  cursor: not-allowed;/*Cursor deshabilitado.*/
+}
+
+/*EFECTO DE ASIENTO PRESELECCIONADO (EJERCICIO 4):*/
+.asiento.preseleccion {
+  background-color: #9CCC65; /* Verde suave visible */
+  color: #000000;
+  border-color: #9CCC65;
+}
+
+/*EFECTO DE ASIENTO SELECCIONADO:*/
+.asiento.seleccionado {
+  background-color: #FFD600;/*Color de fondo.*/
+  color: #1A1A1A;/*Color del texto (antes white, mejor contraste).*/
+  border: 2px solid #FFD600;/*Grosor y color del borde.*/
+}
+
+/*INDICES RESERVADOS:*/
+#indices-reservados {
+  background-color: #FFF8E1;/*Color de fondo.*/
+  border: 2px solid #FFCC00;/*Grosor y color del borde.*/
+  border-radius: 8px;/*Nivel de borde redondeado.*/
+  display: inline-block;/*Elemento en linea.*/
+  padding: 8px 12px;/*Borde de los indices (arriba, abajo).*/
+  margin-top: 15px;/*Margen superior.*/
+  color: #222222;/*Color del texto (ligeramente más oscuro para contraste).*/
+}
+
+/*PIE DE PAGINA:*/
+.pie-pagina {/*Clase creada para el pie de página.*/
+  margin-top: 40px;/*Margen superior.*/
+  font-size: 0.9em;/*Tamaño del texto.*/
+  color: #CCCCCC;/*Color del texto (mejor contraste con fondo oscuro).*/
+}

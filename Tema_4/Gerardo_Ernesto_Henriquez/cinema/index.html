@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINE UNIR - Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Logo_UNIR.png/640px-Logo_UNIR.png" alt="Logo UNIR" class="logo">
+            <h1>CINE UNIR</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Formulario de Registro</h2>
+            <form id="registerForm" class="register-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error-message" id="errorNombre"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                    <span class="error-message" id="errorApellidos"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="errorEmail"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                    <span class="error-message" id="errorTelefono"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" max="120" required>
+                    <span class="error-message" id="errorEdad"></span>
+                </div>
+
+                <button type="submit" id="submitBtn">Registrarse y Reservar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Cine UNIR-CINEMA</strong></p>
+            <p>Dirección: Calle Avenida de la Paz, 137. Logroño</p>
+            <p>Teléfono: 941209743</p>
+            <p>Email: cinefullstack@unircinema.com</p>
+        </div>
+    </footer>
+
+    <script src="register.js"></script>
+</body>
+</html>
