@@ -1,0 +1,27 @@
+.chuck {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00FFFF;
+    color: #800020;
+}
+
+p {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px dotted #FFD700;
+    background-color: #F5F5DC;
+    margin: 10px;
+    color: black;
+}
+
+button {
+    margin: 10px;
+}
+
+.titulo {
+    text-align: start;
+}

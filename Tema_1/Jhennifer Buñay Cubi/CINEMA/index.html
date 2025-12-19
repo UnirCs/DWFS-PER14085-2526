@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Hace que la página sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo de la pestaña del navegador -->
+    <title>UNIR-CINEMA</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styless.css">
+</head>
+
+<body class="bg-dark text-light">
+<!-- Encabezado -->
+<section>
+    <header class="text-center py-4">
+        <img class="foto" src="https://cdn.pixabay.com/photo/2022/03/01/23/29/movie-theater-7042210_1280.png" alt="Foto de cinema">
+        <h1>UNIR-CINEMA</h1>
+        <p>Reserva tus butacas fácilmente</p>
+    </header>
+</section>
+
+
+<!-- Pantalla de cine -->
+<section class="text-center mb-4">
+    <div class="pantalla">PANTALLA</div>
+</section>
+
+<!-- Selección de butacas -->
+<section class="container mb-5">
+    <h2 class="text-center mb-3">Selecciona tus asientos</h2>
+    <div class="d-flex flex-column align-items-center">
+        <!-- Fila 1 -->
+        <div class="fila">
+            <span class="me-2">Fila 1:</span>
+            <button class="butaca disponible">1</button>
+            <button class="butaca ocupado">2</button>
+            <button class="butaca ocupado">3</button>
+            <button class="butaca disponible">4</button>
+            <button class="butaca disponible">5</button>
+            <button class="butaca disponible">6</button>
+            <button class="butaca disponible">7</button>
+            <button class="butaca disponible">8</button>
+            <button class="butaca disponible">9</button>
+            <button class="butaca disponible">10</button>
+        </div>
+        <!-- Fila 2 -->
+        <div class="fila">
+            <span class="me-2">Fila 2:</span>
+            <button class="butaca disponible">1</button>
+            <button class="butaca disponible">2</button>
+            <button class="butaca disponible">3</button>
+            <button class="butaca disponible">4</button>
+            <button class="butaca disponible">5</button>
+            <button class="butaca ocupado">6</button>
+            <button class="butaca ocupado">7</button>
+            <button class="butaca ocupado">8</button>
+            <button class="butaca disponible">9</button>
+            <button class="butaca disponible">10</button>
+        </div>
+        <!-- Fila 3 -->
+        <div class="fila">
+            <span class="me-2">Fila 3:</span>
+            <button class="butaca disponible">1</button>
+            <button class="butaca disponible">2</button>
+            <button class="butaca disponible">3</button>
+            <button class="butaca disponible">4</button>
+            <button class="butaca disponible">5</button>
+            <button class="butaca disponible">6</button>
+            <button class="butaca disponible">7</button>
+            <button class="butaca ocupado">8</button>
+            <button class="butaca disponible">9</button>
+            <button class="butaca disponible">10</button>
+        </div>
+        <!-- Fila 4 -->
+        <div class="fila">
+            <span class="me-2">Fila 4:</span>
+            <button class="butaca disponible">1</button>
+            <button class="butaca disponible">2</button>
+            <button class="butaca disponible">3</button>
+            <button class="butaca disponible">4</button>
+            <button class="butaca disponible">5</button>
+            <button class="butaca disponible">6</button>
+            <button class="butaca disponible">7</button>
+            <button class="butaca ocupado">8</button>
+            <button class="butaca ocupado">9</button>
+            <button class="butaca disponible">10</button>
+        </div>
+        <!-- Fila 5 -->
+        <div class="fila">
+            <span class="me-2">Fila 5:</span>
+            <button class="butaca disponible">1</button>
+            <button class="butaca disponible">2</button>
+            <button class="butaca disponible">3</button>
+            <button class="butaca disponible">4</button>
+            <button class="butaca disponible">5</button>
+            <button class="butaca disponible">6</button>
+            <button class="butaca disponible">7</button>
+            <button class="butaca disponible">8</button>
+            <button class="butaca disponible">9</button>
+            <button class="butaca disponible">10</button>
+        </div>
+    </div>
+</section>
+
+<!-- Formulario -->
+<section class="container mb-5">
+    <form class="text-center">
+        <div class="mb-3">
+            <label for="numAsientos" class="form-label">Ingresa el número de asientos</label>
+            <input type="number" id="numAsientos" class="form-control w-25 mx-auto" min="1" max="50" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmar Reserva</button> <!-- Boton para confirmar la reserva -->
+    </form>
+</section>
+
+<!-- Pie de página -->
+<footer class="bg-secondary text-center py-1">
+    <p><strong>Cine UNIR-CINEMA</strong></p>
+    <p>Dirección: Av. 24 de Mayo y Miguel Valverde, Milagro - Ecuador</p>
+    <p>Teléfono: +593 963 578 102</p>
+    <p>Email: cine.unir@cinema.com</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

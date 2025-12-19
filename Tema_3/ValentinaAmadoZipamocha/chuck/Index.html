@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chistes de Chuck Norris</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="headerText">
+            <h1>CHISTES DE CHUCK NORRIS</h1>
+            <sub>Aquí podrás encontrar los mejores chistes de Chuck Norris</sub>
+            </div>
+        </header>
+        <main class="mainContent">
+            <section class="jokeSection">
+                <img src="chuck-norris.png" alt="Imagen de Chuck Norris" class="chuckImage">
+                <div class="jokeContent">
+                    <h2>Chiste del día</h2>
+                    <button 
+                        onclick="getNewJoke()"id="newJokeButton">Dame un chiste!
+                    </button>
+                    <div class="jokeDisplay">
+                    <p id="jokeText"><!-- Insertar el chiste --></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script>
+            function getNewJoke() {
+            fetch('https://api.chucknorris.io/jokes/random')
+            .then(response => response.json())
+            .then(data => {
+            document.getElementById('jokeText').textContent = data.value;
+                })
+        .catch(error => console.error('Error fetching joke:', error));
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+body {
+	font-family: 'Segoe UI', sans-serif;
+	background-color: #f5f8fb;
+	color: #003a5d;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+}
+
+header {
+	background-color: #009ee2;
+	color: #ffffff;
+	padding: 2rem 1rem;
+	text-align: center;
+}
+
+.header-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.foto-perfil {
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 4px solid #ffffff;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+	font-size: 1.2rem;
+	margin-top: 0.5rem;
+}
+
+.contacto a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.contacto a:hover {
+	text-decoration: underline;
+}
+
+main {
+	max-width: 900px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+h2 {
+	border-bottom: 2px solid #009ee2;
+	padding-bottom: 0.3rem;
+	margin-top: 2rem;
+	color: #003a5d;
+}
+
+h2 i {
+	color: #009ee2;
+	margin-right: 0.4rem;
+}
+
+h3.empresa {
+	color: #009ee2;
+	margin-top: 1.5rem;
+}
+
+.fecha {
+	color: #555;
+	font-size: 0.9rem;
+	margin-left: 0.4rem;
+}
+
+.label {
+	font-weight: 600;
+	color: #003a5d;
+}
+
+.tecnologias {
+	color: #007ab6;
+}
+
+.titulo {
+	font-weight: 600;
+	color: #003a5d;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul li {
+	padding: 0.4rem 0;
+}
+
+.skills ul {
+	columns: 2;
+	column-gap: 2rem;
+}
+
+footer {
+	background-color: #003a5d;
+	color: #ffffff;
+	text-align: center;
+	padding: 1rem;
+	margin-top: 3rem;
+}
+
+footer a {
+	color: #009ee2;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
