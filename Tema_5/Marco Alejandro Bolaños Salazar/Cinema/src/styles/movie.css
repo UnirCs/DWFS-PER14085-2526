@@ -1,0 +1,10 @@
+.movie {
+    margin: 2%;
+    width: 20%;
+    display: inline-block;
+}
+
+.movie--imagen {
+    width: 20%;
+    height: auto;
+}
