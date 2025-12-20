@@ -39,14 +39,20 @@ function ejemplo() {
  * Una forma de conseguirlo es simplemente poner los canales G y B a 0 para cada pixel.
  */
 function redConverter() {
-  let outputPath = 'output/tucan_red.jpg';
+  let outputPath = 'output/tucan_red.jpg'; 
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][1] = 0; // Mantener R, poner G a 0
-      pixels[i][j][2] = 0; // Mantener R, poner B a 0
+  // for (let i = 0; i < pixels.length; i++) {
+  //   for (let j = 0; j < pixels[i].length; j++) {
+  //     pixels[i][j][1] = 0; // Mantener R, poner G a 0
+  //     pixels[i][j][2] = 0; // Mantener R, poner B a 0
+  //   }
+  // }
+  for (const fila of pixels) {
+    for (const pixel of fila) {
+      pixel[1] = 0; // Mantener R, poner G a 0
+      pixel[2] = 0; // Mantener R, poner B a 0
     }
   }
 
@@ -63,10 +69,16 @@ function greenConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 0; // Mantener G, poner R a 0
-      pixels[i][j][2] = 0; // Mantener G, poner B a 0
+  // for (let i = 0; i < pixels.length; i++) {
+  //   for (let j = 0; j < pixels[i].length; j++) {
+  //     pixels[i][j][0] = 0; // Mantener G, poner R a 0
+  //     pixels[i][j][2] = 0; // Mantener G, poner B a 0
+  //   }
+  // }
+  for (const fila of pixels) {
+    for (const pixel of fila) {
+      pixel[0] = 0; // Mantener G, poner R a 0
+      pixel[2] = 0; // Mantener G, poner B a 0
     }
   }
 
@@ -83,10 +95,16 @@ function blueConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 0; // Mantener B, poner R a 0
-      pixels[i][j][1] = 0; // Mantener B, poner G a 0
+  // for (let i = 0; i < pixels.length; i++) {
+  //   for (let j = 0; j < pixels[i].length; j++) {
+  //     pixels[i][j][0] = 0; // Mantener B, poner R a 0
+  //     pixels[i][j][1] = 0; // Mantener B, poner G a 0
+  //   }
+  // }
+  for (const fila of pixels) {
+    for (const pixel of fila) {
+      pixel[0] = 0; // Mantener B, poner R a 0
+      pixel[1] = 0; // Mantener B, poner G a 0
     }
   }
 
@@ -107,13 +125,22 @@ function greyConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let auxpixels = [pixels[i][j][0],pixels[i][j][1],pixels[i][j][2]]
-      media = auxpixels.reduce((a, b) => a + b, 0) / auxpixels.length;
-      pixels[i][j][0] = media;
-      pixels[i][j][1] = media;
-      pixels[i][j][2] = media;
+  // for (let i = 0; i < pixels.length; i++) {
+  //   for (let j = 0; j < pixels[i].length; j++) {
+  //     let auxpixels = [pixels[i][j][0],pixels[i][j][1],pixels[i][j][2]]
+  //     media = auxpixels.reduce((a, b) => a + b, 0) / auxpixels.length;
+  //     pixels[i][j][0] = media;
+  //     pixels[i][j][1] = media;
+  //     pixels[i][j][2] = media;
+  //   }
+  // }
+  for (const fila of pixels) {
+    for (const pixel of fila) {
+      let auxpixels = [pixel[0],pixel[1],pixel[2]]
+      let media = auxpixels.reduce((a, b) => a + b, 0) / auxpixels.length;
+      pixel[0] = media;
+      pixel[1] = media;
+      pixel[2] = media;
     }
   }
 
@@ -132,18 +159,33 @@ function blackAndWhiteConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-    for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      let auxpixels = [pixels[i][j][0],pixels[i][j][1],pixels[i][j][2]]
-      media = auxpixels.reduce((a, b) => a + b, 0) / auxpixels.length;
+  //   for (let i = 0; i < pixels.length; i++) {
+  //   for (let j = 0; j < pixels[i].length; j++) {
+  //     let auxpixels = [pixels[i][j][0],pixels[i][j][1],pixels[i][j][2]]
+  //     media = auxpixels.reduce((a, b) => a + b, 0) / auxpixels.length;
+  //     if (media < 128) {
+  //       pixels[i][j][0] = 0;
+  //       pixels[i][j][1] = 0;
+  //       pixels[i][j][2] = 0;
+  //     } else {
+  //       pixels[i][j][0] = 255;
+  //       pixels[i][j][1] = 255;
+  //       pixels[i][j][2] = 255;
+  //     }
+  //   }
+  // }
+  for (const fila of pixels) {
+    for (const pixel of fila) {
+      let auxpixels = [pixel[0],pixel[1],pixel[2]]
+      let media = auxpixels.reduce((a, b) => a + b, 0) / auxpixels.length;
       if (media < 128) {
-        pixels[i][j][0] = 0;
-        pixels[i][j][1] = 0;
-        pixels[i][j][2] = 0;
+        pixel[0] = 0;
+        pixel[1] = 0;
+        pixel[2] = 0;
       } else {
-        pixels[i][j][0] = 255;
-        pixels[i][j][1] = 255;
-        pixels[i][j][2] = 255;
+        pixel[0] = 255;
+        pixel[1] = 255;
+        pixel[2] = 255;
       }
     }
   }
@@ -163,8 +205,8 @@ function scaleDown() {
 
   //Aqui tu codigo
   let pixelesreducido = [];
-  auxi = 0;
-  auxj = 0;
+  let auxi = 0;
+  let auxj = 0;
   for (let i = 0; i < pixels.length; i++) {
     if ((i % 2) !== 0) {
       pixelesreducido[auxi] = [];
@@ -193,11 +235,18 @@ function dimBrightness(dimFactor) {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = pixels[i][j][0]/dimFactor;
-      pixels[i][j][1] = pixels[i][j][1]/dimFactor;
-      pixels[i][j][2] = pixels[i][j][2]/dimFactor;
+  // for (let i = 0; i < pixels.length; i++) {
+  //   for (let j = 0; j < pixels[i].length; j++) {
+  //     pixels[i][j][0] = pixels[i][j][0]/dimFactor;
+  //     pixels[i][j][1] = pixels[i][j][1]/dimFactor;
+  //     pixels[i][j][2] = pixels[i][j][2]/dimFactor;
+  //   }
+  // }
+  for (const fila of pixels) {
+    for (const pixel of fila) {
+      pixel[0] = pixel[0]/dimFactor;
+      pixel[1] = pixel[1]/dimFactor;
+      pixel[2] = pixel[2]/dimFactor;
     }
   }
 
@@ -216,11 +265,18 @@ function invertColors() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for (let i = 0; i < pixels.length; i++) {
-    for (let j = 0; j < pixels[i].length; j++) {
-      pixels[i][j][0] = 255 - pixels[i][j][0];
-      pixels[i][j][1] = 255 - pixels[i][j][1];
-      pixels[i][j][2] = 255 - pixels[i][j][2];
+  // for (let i = 0; i < pixels.length; i++) {
+  //   for (let j = 0; j < pixels[i].length; j++) {
+  //     pixels[i][j][0] = 255 - pixels[i][j][0];
+  //     pixels[i][j][1] = 255 - pixels[i][j][1];
+  //     pixels[i][j][2] = 255 - pixels[i][j][2];
+  //   }
+  // }
+  for (const fila of pixels) {
+    for (const pixel of fila) {
+      pixel[0] = 255 - pixel[0];
+      pixel[1] = 255 - pixel[1];
+      pixel[2] = 255 - pixel[2];
     }
   }
 
@@ -279,7 +335,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imagenes: 9
  */
-let optionN = 9;
+let optionN = 1;
 
 switch (optionN) {
   case 1: redConverter(); break;
