@@ -1,0 +1,42 @@
+<!-- 
+===========================================
+UNIR - Desarrollo Web - TEMA 4: DOM y Backend
+Archivo exclusivo para el ejercicio del DOM.
+Este archivo NO corresponde a la versión del Tema 2.
+Incluye mejoras, correcciones de SonarQube
+y modificaciones específicas de preselección dinámica.
+===========================================
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNIR-CINEMA</title>
+  <link rel="stylesheet" href="css/estilos-general.css" />
+</head>
+<body>
+  <div class="container">
+     <header>
+       <h1>UNIR-CINEMA</h1>
+     </header>
+     <div class="pantalla">
+        &nbsp;
+     </div>
+     <div id="sala">
+        &nbsp;
+     </div>
+     <div class="formulario">
+        <p>Indica cuántos asientos quieres reservar:</p>
+        <input type="number" id="cantidad" min="1" placeholder="Ej. 3" />
+        <button id="sugerir">Confirmar Reserva</button>
+     </div>
+     <div class="pie-pagina">
+        <p><strong>Cine UNIR-CINEMA</strong></p>
+        <p>Dirección: Calle Avenida de la Paz, 137. Logroño</p>
+        <p>Teléfono: 941209743</p>
+        <p>Email: cinefullstack@unircinema.com</p>
+     </div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
