@@ -24,41 +24,36 @@ let butacas = setup();
 
 function suggest(numAsientos) {
 
-
     if (numAsientos > N) {
         return new Set();
     }
 
+    let resultado = new Set();
+    let encontrado = false;
 
-    for (let i = N - 1; i >= 0; i--) {
+    for (let i = N - 1; i >= 0 && !encontrado; i--) {
         let fila = butacas[i];
         let consecutivos = 0;
         let inicio = 0;
 
-        for (let j = 0; j < N; j++) {
-
+        for (let j = 0; j < N && !encontrado; j++) {
             if (!fila[j].estado) {
-
                 consecutivos++;
-
                 if (consecutivos === 1) inicio = j;
 
                 if (consecutivos === numAsientos) {
-
-                    let resultado = new Set();
                     for (let k = inicio; k < inicio + numAsientos; k++) {
                         resultado.add(fila[k].id);
                     }
-                    return resultado;
+                    encontrado = true;
                 }
-
             } else {
                 consecutivos = 0;
             }
         }
     }
 
-    return new Set();
+    return resultado;
 }
 
 
