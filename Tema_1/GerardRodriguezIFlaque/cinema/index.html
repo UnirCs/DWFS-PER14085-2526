@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reserva de butacas - UNIR-CINEMA</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="pantalla">
+            <h2>PANTALLA</h2>
+        </div>
+        <div class="asientos-container">
+            <div class="fila">
+                <div class="fila-label">Fila 1</div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+            </div>
+            <div class="fila">
+                <div class="fila-label">Fila 2</div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+            </div>
+            <div class="fila">
+                <div class="fila-label">Fila 3</div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div><div class="butaca ocupada"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+            </div>
+            <div class="fila">
+                <div class="fila-label">Fila 4</div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+            </div>
+            <div class="fila">
+                <div class="fila-label">Fila 5</div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+            </div>
+            <div class="fila">
+                <div class="fila-label">Fila 6</div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca"></div><div class="butaca"></div><div class="butaca"></div>
+                <div class="butaca ocupada"></div><div class="butaca ocupada"></div><div class="butaca ocupada"></div><div class="butaca ocupada"></div>
+            </div>
+        </div>
+
+        <div class="reserva">
+            <label for="numAsientos">Por favor indica cuántos asientos quieres reservar</label>
+            <br> <input type="number" id="numAsientos" class="input-asientos" min="1" max="10">
+            <br> <button class="btn-confirmar">Confirmar Reserva</button>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p><strong>Cine UNIR-CINEMA</strong></p>
+                <p>Dirección: Avenida Diagonal, 200. Barcelona</p>
+                <p>Teléfono: +34 941 209 743</p>
+                <p>Email: cinefullstack@unircinema.com</p>
+            </div>
+        </footer>
+    </body>
+</html>

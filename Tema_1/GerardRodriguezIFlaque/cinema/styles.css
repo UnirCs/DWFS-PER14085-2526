@@ -1,0 +1,104 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    color:white;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 150px;
+}
+
+.pantalla{
+    background-color: gray;
+    height: 80px;
+    width: 60%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid black;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.pantalla h2 {
+    color: black;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.asientos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.fila {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fila-label {
+    width: 60px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: yellowgreen;
+}
+
+.butaca {
+    width: 30px;
+    height: 30px;
+    border: 1px solid yellowgreen;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+.ocupada {
+    background-color: gray;
+}
+
+.reserva {
+    width: 60%;
+    margin: 40px auto;
+    text-align: center;
+    padding: 30px;
+    height: 80px;
+}
+
+.input-asientos {
+    width: 100px;
+    padding: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    margin: 15px 0;
+}
+
+.btn-confirmar {
+    background-color: yellowgreen;
+    color: black;
+    padding: 10px 20px;
+    border: sandybrown;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+footer {
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
