@@ -27,15 +27,12 @@ function suggest (cantidad_butacas_solicitadas) {
     let butacas_asignadas =[];
     let contador_butacas_asignadas = 0;
     // Recorrer las butacas
-    for (let i = 0; i < N; i++) {
-        for (let j = 0; j < N; j++) {
+    for (let i = 0; i < N && contador_butacas_asignadas !== cantidad_butacas_solicitadas; i++) {
+        for (let j = 0; j < N && contador_butacas_asignadas !== cantidad_butacas_solicitadas; j++) {
             if (butacas[i][j].estado === false ) {
                 // Primera silla vacía - inicia asignación
                 contador_butacas_asignadas ++;
                 butacas_asignadas.push(butacas[i][j].id);
-                if(contador_butacas_asignadas === cantidad_butacas_solicitadas){
-                    return butacas_asignadas;
-                }
             }
             else{
                 // Reset por silla ocupada
@@ -44,8 +41,10 @@ function suggest (cantidad_butacas_solicitadas) {
             }
         }
         // Reset por fin de fila
-        contador_butacas_asignadas=0;
-        butacas_asignadas.length = 0;
+        if(contador_butacas_asignadas !== cantidad_butacas_solicitadas){
+            contador_butacas_asignadas=0;
+            butacas_asignadas.length = 0;
+        }
     }
     return butacas_asignadas;
 }
@@ -58,5 +57,5 @@ console.log(butacas);
 
 // Ejecutar la asignación de las butacas solicitadas
 console.log('Butacas asignadas:');
-let ejecutar_asignacion= suggest (6);
+let ejecutar_asignacion= suggest (5);
 console.log(ejecutar_asignacion);

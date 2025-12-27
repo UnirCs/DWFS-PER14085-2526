@@ -331,7 +331,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imagenes: 9
  */
-let optionN = 1;
+let optionN = 2;
 
 switch (optionN) {
     case 1:
