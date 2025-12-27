@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINE UNIR - Reserva de Asientos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Logo_UNIR.png/640px-Logo_UNIR.png" alt="Logo UNIR" class="logo">
+            <h1>CINE UNIR</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="screen">PANTALLA</div>
+
+            <div class="seats-grid">
+            <div class="row">
+                <span>Fila 1</span>
+                <div class="seats-row">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <span>Fila 2</span>
+                <div class="seats-row">
+                    <div class="seat available"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <span>Fila 3</span>
+                <div class="seats-row">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <span>Fila 4</span>
+                <div class="seats-row">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <span>Fila 5</span>
+                <div class="seats-row">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+        </div>
+
+            <div class="form">
+                <p>Indica cuántos asientos quieres reservar</p>
+                <input type="number" id="seatCount" min="1" placeholder="Número de asientos">
+                <button id="confirmBtn">Confirmar Reserva</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Cine UNIR-CINEMA</strong></p>
+            <p>Dirección: Calle Avenida de la Paz, 137. Logroño</p>
+            <p>Teléfono: 941209743</p>
+            <p>Email: cinefullstack@unircinema.com</p>
+        </div>
+    </footer>
+
+    <script src="cinema.js"></script>
+</body>
+</html>
+

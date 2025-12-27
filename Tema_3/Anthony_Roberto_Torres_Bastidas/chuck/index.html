@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Dame un chiste!</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+    <header class="text-center my-5">
+        <h1 class="display-4">Chuck Norris Jokes</h1>
+        <p class="lead">Los mejores chistes de Chuck Norris</p>
+    </header>
+
+    <div class="row g-0 align-items-center justify-content-center">
+        <div class="col-12 col-md-3 text-center mb-3 mb-md-0">
+            <button id="btnGetJoke" onclick="getJoke()" type="button" class="btn btn-primary btn-lg">
+                ¡Dame un chiste!
+            </button>
+        </div>
+        <div  class="col-12 col-md-9">
+            <div class="joke-container">
+                <p id="pghJoke" class="joke-text">Haz click en el botón para obtener un chiste de Chuck Norris</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function getJoke() {
+        const url = 'https://api.chucknorris.io/jokes/random';
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                let element = document.getElementById("pghJoke");
+                element.innerText = data.value;
+            })
+            .catch(err => alert("Hubo un error" + err.value));
+    }
+</script>
+</body>
+</html>

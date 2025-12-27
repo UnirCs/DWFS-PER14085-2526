@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+main {
+    margin: 40px auto;
+}
+
+input[type="number"] {
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.sala {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.fila {
+    display: flex;
+    gap: 5px;
+}
+
+.asiento {
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50; 
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.asiento.ocupado {
+    background-color: #f44336; 
+}
+
