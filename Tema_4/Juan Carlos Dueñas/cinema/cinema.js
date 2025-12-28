@@ -59,8 +59,8 @@ function suggest (cantidad_butacas_solicitadas) {
     let butacas_asignadas =[];
     let contador = 0;
 
-    for (let i = 0; i < N && contador !== cantidad_butacas_solicitadas; i++) {
-        for (let j = 0; j < N && contador !== cantidad_butacas_solicitadas; j++) {
+    for (let i = N-1; i >= 0 && contador !== cantidad_butacas_solicitadas; i--) {
+        for (let j = N-1; j >= 0 && contador !== cantidad_butacas_solicitadas; j--) {
             if (butacas[i][j].estado === false ) {
                 contador++;
                 butacas_asignadas.push(butacas[i][j].id);

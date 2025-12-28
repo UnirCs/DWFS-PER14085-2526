@@ -27,8 +27,8 @@ function suggest (cantidad_butacas_solicitadas) {
     let butacas_asignadas =[];
     let contador_butacas_asignadas = 0;
     // Recorrer las butacas
-    for (let i = 0; i < N && contador_butacas_asignadas !== cantidad_butacas_solicitadas; i++) {
-        for (let j = 0; j < N && contador_butacas_asignadas !== cantidad_butacas_solicitadas; j++) {
+    for (let i = N-1; i >= 0 && contador_butacas_asignadas !== cantidad_butacas_solicitadas; i--) {
+        for (let j = N-1; j >= 0 && contador_butacas_asignadas !== cantidad_butacas_solicitadas; j--) {
             if (butacas[i][j].estado === false ) {
                 // Primera silla vacía - inicia asignación
                 contador_butacas_asignadas ++;
