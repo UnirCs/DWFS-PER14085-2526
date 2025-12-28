@@ -80,6 +80,7 @@ function suggest (cantidad_butacas_solicitadas) {
     return butacas_asignadas;
 }
 
+
 // Pintar la sala
 function pintarSala(){
     const contenedor = document.getElementById("contenedor_asientos");
