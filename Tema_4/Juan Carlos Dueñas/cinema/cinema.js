@@ -76,7 +76,7 @@ function suggest (cantidad_butacas_solicitadas) {
             butacas_asignadas.length = 0;
         }
     }
-    console.log("Sugerencia generada:", butacas_asignadas);
+    // console.log("Sugerencia generada:", butacas_asignadas);
     return butacas_asignadas;
 }
 
