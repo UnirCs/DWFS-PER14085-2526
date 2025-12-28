@@ -38,7 +38,6 @@ const validateFullName = () => {
     }
 };
 
-// Validar el campo de nombre de usuario.
 const validateUsername = () => {
     let username = document.getElementById('username').value;
     if (username.trim() === '') {
@@ -102,5 +101,4 @@ document.getElementById('userForm').addEventListener('submit', (event) => {
         // Hay errores, se informa al usuario
         alert('Por favor, corrija los errores antes de enviar el formulario.');
     }
-
 });
