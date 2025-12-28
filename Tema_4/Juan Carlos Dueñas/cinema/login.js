@@ -80,7 +80,6 @@ const validateEmail = () => {
     }
 };
 
-
 // Manejar el evento de envío del formulario
 document.getElementById('userForm').addEventListener('submit', (event) => {
     event.preventDefault();
