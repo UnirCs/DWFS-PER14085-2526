@@ -7,7 +7,6 @@ let butacas = setup();
 // Esperar la carga del DOM y ejecutar las acciones solicitadas
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM cargado :: Iniciando cinema.js");
-
     // Pintar la sala en la pantalla
     pintarSala();
 
