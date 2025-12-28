@@ -1,0 +1,184 @@
+/* Variables de color */
+:root {
+    --primary-blue: #2c3e50;
+    /* Azul oscuro - Fondo de la sala y texto */
+    --accent-blue: #3498db;
+    /* Azul vibrante - Seleccionado */
+    --occupied-gray: #df5121;
+    /* Gris oscuro - Ocupado */
+    --available-color: #b6b5c0;
+    /* Gris claro - Disponible */
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.cinema-layout {
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+header h1 {
+    color: var(--primary-blue);
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: var(--occupied-gray);
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.screen-area {
+    margin-bottom: 30px;
+}
+
+.screen {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 15px 0;
+    border-radius: 50% / 10%;
+    /* Forma curva para simular perspectiva */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.screen-label {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--occupied-gray);
+    font-style: italic;
+}
+
+/* Área de Asientos */
+.seating-area h3 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.seat-matrix {
+    display: grid;
+    gap: 10px 15px;
+    justify-content: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--medium-gray);
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: var(--available-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    font-weight: 700;
+    color: var(--primary-blue);
+    user-select: none;
+}
+
+.seat-row-label {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    background-color: transparent !important;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+
+.seat.selected {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    border: 1px solid var(--primary-blue);
+}
+
+.seat.occupied {
+    background-color: var(--occupied-gray);
+    cursor: not-allowed;
+    color: var(--white);
+    opacity: 0.6;
+}
+
+/* Panel de Información y Leyenda */
+.info-panel {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 0.9em;
+    color: var(--occupied-gray);
+}
+
+.legend .legend-seat {
+    width: 15px;
+    height: 15px;
+    cursor: default;
+    border: none;
+}
+
+.summary {
+    display: flex;
+    gap: 40px;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.summary span {
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.buy-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: var(--accent-blue);
+}
+
+.legend-seat.available {
+    background-color: var(--available-color);
+}
+
+.legend-seat.selected {
+    background-color: var(--accent-blue);
+}
+
+.legend-seat.occupied {
+    background-color: var(--occupied-gray);
+}
