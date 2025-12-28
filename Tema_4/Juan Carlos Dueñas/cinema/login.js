@@ -102,4 +102,5 @@ document.getElementById('userForm').addEventListener('submit', (event) => {
         // Hay errores, se informa al usuario
         alert('Por favor, corrija los errores antes de enviar el formulario.');
     }
+
 });

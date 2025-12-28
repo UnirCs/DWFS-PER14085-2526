@@ -112,4 +112,5 @@ function pintarSala(){
         // Se adiciona TODas las Sillas a la fila
         contenedor.appendChild(fila);
     }
+
 }
