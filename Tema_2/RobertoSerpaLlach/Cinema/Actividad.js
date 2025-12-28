@@ -28,17 +28,27 @@ let butacas = setup();
 //console.log(butacas);
 
 function suggest(n){
+    let resultado = new Set();
     //Si el número de asientos solicitados excede el tamaño máximo de la fila, la función debe devolver un set vacío.
-    if(n > N) return new Set();
-    //Si en ninguna fila hay suficientes asientos disponibles juntos, la función debe devolver un set vacío.
-    //se comenzará a buscar asientos juntos en la fila más lejana a la pantalla,
-    for(let i=N-1;i>=0;i--)
-        for(let j=0,c=0;j<N;j++){
-            if(!butacas[i][j].estado) c++; else c=0;
-            if(c===n)
-                return new Set(butacas[i].slice(j-n+1, j+1).map(a=>a.id));
+    if(n <= N) {
+        let encontrado = false;
+        for (let i = 0; i < N && !encontrado; i--) {
+            let c = 0;
+            for (let j = 0; j < N; j++) {
+
+                if (!butacas[i][j].estado){
+                    c++; 
+                } else {
+                    c = 0;
+                }
+                if (c === n) {
+                    resultado = new Set(butacas[i].slice(j - n + 1, j + 1).map(a => a.id));
+                    encontrado = true;
+                }
+            }
         }
-    return new Set();
+    }    
+    return resultado;
 }
 
 let ids = suggest(10);
