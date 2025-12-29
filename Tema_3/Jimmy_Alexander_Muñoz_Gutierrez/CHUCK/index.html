@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>CHUCK NORRIS</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="col-12">
+          <h1>Chistes Chuck Norris</h1>
+        </div>
+      </header>
+      <main class="container-main row">
+        <section class="col-12">
+          <img
+            id="img-chuck"
+            src="img/chucknorris_logo_coloured_small@2x.png"
+            alt="Imagen chuck norris"
+          />
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" onclick="getApi()">
+              Dame un chiste!!
+            </button>
+            <div class="card card-joke mx-auto">
+              <p id="p-joke">Carga un chiste.....</p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="row justify-content-center text-center">
+        <div class="col-12">
+          <img
+            id="img-chuck-footer"
+            src="img/chucknorris_logo_coloured_small@2x.png"
+            alt="Imagen chuck norris"
+          />
+          <p>
+            <a href="https://api.chucknorris.io/" target="_blank"
+              >Chistes chuck Norris</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
