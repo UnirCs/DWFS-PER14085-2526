@@ -1,0 +1,48 @@
+body{
+    background: #1F3A5F;
+    color: #FFFFFF;
+}
+
+header{
+    background: #1f2b3e;
+    height: 80px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.container-main{
+    background: #4d648d;
+    text-align: center;
+    padding-bottom: 20px ;
+}
+
+#img-chuck{
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+}
+
+.btn{
+    margin: 20px;
+}
+
+.card-joke{
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+footer{
+    background: #1f2b3e;
+    padding-top: 15px;
+}
+
+#img-chuck-footer{
+    height: 50px;
+    width: 80px;
+}
+
+
+
+
