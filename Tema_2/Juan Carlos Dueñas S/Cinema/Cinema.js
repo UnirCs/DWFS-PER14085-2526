@@ -5,7 +5,6 @@ const N = 10; // Número de filas y columnas
 function setup() {
     let idContador = 1; // Iniciar el contador de IDs en 1 (los humanos no empezamos a contar desde 0)
     let butacas = [];
-
     for (let i = 0; i < N; i++) {
         // Nueva fila
         let fila = [];
