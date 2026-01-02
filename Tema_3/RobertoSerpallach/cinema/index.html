@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Sillas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cine-container">
+        <h1>Selecciona tus sillas</h1>
+        <div class="pantalla">PANTALLA</div>
+        <div class="sillas">
+            <div class="fila">
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+            </div>
+            <div class="fila">
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+            </div>
+            <div class="fila">
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+            </div>
+            <div class="fila">
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+                <div class="silla"></div>
+            </div>
+        </div>
+        <input TYPE="text" onInput="suggest(8)">Butacas en consola</input>
+
+    </div>
+    <script src="cinema.js">
+        const sillas = document.querySelectorAll('.silla');
+        sillas.forEach(silla => {
+            silla.addEventListener('click', () => {
+                silla.classList.toggle('seleccionada');
+            });
+        });
+
+        document.getElementById('reiniciar').addEventListener('click', () => {
+            sillas.forEach(silla => silla.classList.remove('seleccionada'));
+        });
+    </script>
+</body>
+</html>
