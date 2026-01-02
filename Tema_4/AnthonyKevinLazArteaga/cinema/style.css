@@ -1,0 +1,79 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px
+}
+.cinema-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 8px;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    box-shadow: 0 6px 18px #ffd700;
+    height: auto;
+    overflow: visible; /* No corta nada */
+}
+/*Pantalla*/
+.screen {
+    background-color: #444;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.input-field input {
+    color: #ffffff;
+}
+
+.input-field p {
+    color: red;
+}
+
+.input-field label {
+    color: #ffffff;
+}
+
+.btn {
+    background-color: #ffd700;
+    color: #333;
+}
+
+th {
+    padding: 10px;
+}
+
+td {
+    width: 43px;
+    height: 40px;
+    border: 1px solid #ffd700;
+}
+
+.col-row{
+    width: 10%;
+    font-weight: bold;
+    border: none;
+    color: #ffd700;
+}
+
+.seats{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.selected-seat {
+    background-color: #ffd700;
+    color: #000000;
+    padding: 5px;
+    background-clip: content-box;
+}
+
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+}

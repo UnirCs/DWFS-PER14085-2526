@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Promesas en JavaScript - Chuck Norris</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <button id="btnJoke" onclick="getChuckJoke()">
+      Dame un chiste!
+    </button>
+
+    <p id="jokeParagraph">
+      Pulsa el botón para obtener un chiste de Chuck Norris.
+    </p>
+  </main>
+
+  <script>
+    const API_URL = 'https://api.chucknorris.io/jokes/random';
+    function getChuckJoke() {
+      const jokeParagraph = document.getElementById('jokeParagraph');
+      jokeParagraph.innerHTML = 'Cargando chiste...';
+      fetch(API_URL)
+        .then(function(response) {
+          if (!response.ok) {
+            throw new Error('Error en la petición: ' + response.status);
+          }
+          return response.json();
+        })
+        .then(function(data) {
+          jokeParagraph.innerHTML = data.value;
+        })
+        .catch(function(error) {
+          console.error(error);
+          jokeParagraph.innerHTML = 'Ha ocurrido un error al obtener el chiste.';
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+.cv {
+    border: 1px solid darkolivegreen;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #E2FFD4;
+}
+
+img {
+    width: 20%;
+    height: 20%;
+    border: 2px dotted yellowgreen;
+    border-radius: 15px;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid yellowgreen;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 1px;
+    margin-bottom: 10px;
+    color: darkolivegreen;
+    background-color: lightyellow;
+}
+
+.foto {
+    max-width: 100%;
+    text-align: left;
+    flex: 1;
+}
+
+.nombre {
+    width: 100%;
+    text-align: center;
+    flex: 1;
+}
+
+.contacto {
+    width: 100%;
+    text-align: right;
+    flex: 1;
+}
+
+.resumen {
+    border: 2px solid yellowgreen;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 1px lightblue;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.habilidades {
+    border: 2px solid yellowgreen;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 1px lightblue;
+    margin-bottom: 10px;
+    background-color: white;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+}
+
+caption {
+    text-align: left;
+}
+
+li::marker {
+    color: olivedrab;
+}
+
+.experiencia {
+    border: 2px solid yellowgreen;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 1px lightblue;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+h2 {
+    color: darkolivegreen;
+}
+
+h3 {
+    color: olivedrab;
+}
