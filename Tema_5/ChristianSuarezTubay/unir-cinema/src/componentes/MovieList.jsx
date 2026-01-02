@@ -1,5 +1,5 @@
 import React from "react";
-import Movie from "./movie";
+import Movie from "./Movie.jsx";
 import "../estilos/movieList.css";
 import inception from "../assets/inception.jpg";
 import interstellar from "../assets/interstellar.jpg";

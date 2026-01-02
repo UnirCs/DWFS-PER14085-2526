@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./header";
-import Footer from "./footer";
-import MovieList from "./movieList";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
+import MovieList from "./MovieList.jsx";
 
 export default function MoviesPage() {
     return (
