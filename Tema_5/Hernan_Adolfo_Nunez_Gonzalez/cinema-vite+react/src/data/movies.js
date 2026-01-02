@@ -1,5 +1,5 @@
 /**
- * ARCHIVO DE DATOS - PELÍCULAS
+ * ARCHIVO DE DATOS - PELÍCULAS.
  *
  * Este archivo contiene toda la información de las películas en cartelera
  * para diferentes ciudades de Colombia.
@@ -16,7 +16,7 @@
  */
 
 // ========================================
-// PELÍCULAS PARA BOGOTÁ DC
+// PELÍCULAS PARA BOGOTÁ DC.
 // ========================================
 // Array de películas para la ciudad de Bogotá DC
 // Incluye Star Wars Episodio 9 y Terminator Dark Fate como requerido
@@ -64,7 +64,7 @@ export const moviesDataBogota = [
 ];
 
 // ========================================
-// PELÍCULAS PARA IBAGUÉ
+// PELÍCULAS PARA IBAGUÉ.
 // ========================================
 // Array de películas para la ciudad de Ibagué
 export const moviesDataIbague = [
@@ -111,7 +111,7 @@ export const moviesDataIbague = [
 ];
 
 // ========================================
-// PELÍCULAS PARA ARMENIA
+// PELÍCULAS PARA ARMENIA.
 // ========================================
 // Array de películas para la ciudad de Armenia
 export const moviesDataArmenia = [
@@ -138,7 +138,7 @@ export const moviesDataArmenia = [
 ];
 
 // ========================================
-// PELÍCULAS ADICIONALES
+// PELÍCULAS ADICIONALES.
 // ========================================
 /**
  * Array auxiliar con películas adicionales para distribuir
@@ -211,28 +211,28 @@ const additionalMovies = [
 ];
 
 // ========================================
-// PELÍCULAS PARA CALI
+// PELÍCULAS PARA CALI.
 // ========================================
 // Array de películas para Cali usando spread operator para combinar películas
 // Toma las primeras 3 películas y luego las películas 4 y 5 del array adicional
 export const moviesDataCali = [...additionalMovies.slice(0, 3), ...additionalMovies.slice(4, 6)];
 
 // ========================================
-// PELÍCULAS PARA MEDELLÍN
+// PELÍCULAS PARA MEDELLÍN.
 // ========================================
 // Array de películas para Medellín con una combinación diferente
 // Toma películas de la posición 1-3, luego la 0, y finalmente la 5
 export const moviesDataMedellin = [...additionalMovies.slice(1, 4), ...additionalMovies.slice(0, 1), ...additionalMovies.slice(5, 6)];
 
 // ========================================
-// PELÍCULAS PARA VILLAVICENCIO
+// PELÍCULAS PARA VILLAVICENCIO.
 // ========================================
 // Array de películas para Villavicencio con otra combinación
 // Toma películas de la posición 2-5, y luego la película en posición 0
 export const moviesDataVillavicencio = [...additionalMovies.slice(2, 6), ...additionalMovies.slice(0, 1)];
 
 // ========================================
-// OBJETO PRINCIPAL CON TODAS LAS CIUDADES
+// OBJETO PRINCIPAL CON TODAS LAS CIUDADES.
 // ========================================
 /**
  * Objeto que contiene todas las ciudades con sus respectivas películas
