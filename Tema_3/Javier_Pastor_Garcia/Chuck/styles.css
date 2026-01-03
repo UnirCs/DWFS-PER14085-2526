@@ -1,0 +1,32 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+    background-color: #F0F2F3;
+    width: 50%;
+    height: 100vh;
+}
+
+.main_boton {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #C0C0C0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main_boton:hover {
+    background-color: #969696;
+}
+
+.main_parrafo {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #859399;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    min-height: 50px;
+}
