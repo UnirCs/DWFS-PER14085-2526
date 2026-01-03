@@ -1,0 +1,65 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos globales */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+main h2 {
+  margin-bottom: 20px;
+}
+article {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+article img {
+  display: block;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+article button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+article button:hover {
+  background-color: #b20710;
+}
