@@ -1,0 +1,128 @@
+# ========================================
+# GITIGNORE - CINEMA COLOMBIA.
+# ========================================
+# Este archivo indica a Git qué archivos y carpetas NO debe subir al repositorio
+# Evita subir archivos innecesarios, temporales o de configuración local
+
+# ========================================
+# DEPENDENCIAS.
+# ========================================
+# Carpeta de dependencias de Node.js
+# Se instalan con 'npm install', no deben subirse al repositorio
+node_modules/
+
+# Carpetas de dependencias de otros gestores de paquetes
+bower_components/
+
+# ========================================
+# ARCHIVOS DE BUILD Y DISTRIBUCIÓN.
+# ========================================
+# Carpeta de archivos compilados/construidos
+# Se generan con 'npm run build'
+dist/
+dist-ssr/
+build/
+
+# Archivos de producción
+*.production
+
+# ========================================
+# ARCHIVOS DE LOGS.
+# ========================================
+# Logs de errores y debug de diferentes gestores de paquetes
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================================
+# ARCHIVOS TEMPORALES Y DE CACHÉ.
+# ========================================
+# Archivos de caché local
+*.local
+.cache/
+.temp/
+.tmp/
+
+# Archivos temporales del sistema
+*.tmp
+*.temp
+nul
+
+# ========================================
+# ARCHIVOS DE ENTORNO.
+# ========================================
+# Variables de entorno locales (pueden contener claves secretas)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ========================================
+# EDITORES E IDEs.
+# ========================================
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains (WebStorm, IntelliJ IDEA, etc.)
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Visual Studio
+.vs/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ========================================
+# SISTEMAS OPERATIVOS.
+# ========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ========================================
+# TESTING.
+# ========================================
+# Carpetas de cobertura de tests
+coverage/
+*.coverage
+.nyc_output/
+
+# ========================================
+# OTROS ARCHIVOS.
+# ========================================
+# Archivos de bloqueo (lock files) - Opcional
+# Descomenta la siguiente línea si quieres ignorar package-lock.json
+# package-lock.json
+
+# Archivos de respaldo
+*.bak
+*.backup
+*.old

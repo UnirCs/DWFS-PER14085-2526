@@ -1,0 +1,633 @@
+/**
+ * ESTILOS PRINCIPALES - CINEMA COLOMBIA.
+ *
+ * Archivo de estilos CSS para la aplicación de cine.
+ * Contiene todos los estilos para los componentes de la aplicación.
+ *
+ * Secciones:
+ * 1. Reset y configuración base.
+ * 2. Header (Encabezado).
+ * 3. Footer (Pie de página).
+ * 4. Landing (Contenedor principal).
+ * 5. Selector de ciudad.
+ * 6. Lista y tarjetas de películas.
+ * 7. Horarios.
+ * 8. Animaciones y spinner de carga.
+ * 9. Responsive Design (Diseño adaptativo).
+ */
+
+/* ========================================
+   1. RESET Y CONFIGURACIÓN BASE.
+=========================================== */
+
+/**
+ * Reset universal
+ * Elimina márgenes y padding por defecto de todos los elementos
+ * box-sizing: border-box hace que padding y border se incluyan en el width/height
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * Estilos del body
+ * - Gradiente de fondo oscuro
+ * - Tipografía sans-serif moderna
+ * - Altura mínima de 100vh para cubrir toda la pantalla
+ */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/**
+ * Contenedor principal de la aplicación
+ * Flexbox vertical para que el footer siempre esté al final
+ */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ========================================
+   2. HEADER - ENCABEZADO.
+=========================================== */
+
+/**
+ * Encabezado principal
+ * - Gradiente azul oscuro
+ * - Borde inferior rojo para destacar
+ * - Sombra para profundidad
+ */
+header {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #e94560;
+}
+
+/**
+ * Título principal del header
+ * - Fuente grande y en negrita
+ * - Sombra de texto para efecto 3D
+ */
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/**
+* Subtítulo del header.
+*/
+header p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* ========================================
+   3. FOOTER - PIE DE PÁGINA
+=========================================== */
+
+/**
+ * Pie de página.
+ * - Mismo estilo que el header para consistencia.
+ * - margin-top: auto lo empuja al final de la página.
+*/
+footer {
+  background: linear-gradient(135deg, #0F3460 0%, #16213E 100%);
+  color: #FFFFFF;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  border-top: 3px solid #E94560;
+  margin-top: auto; /* Empuja el footer al final */
+}
+
+/**
+* Párrafos del footer.
+*/
+footer p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ========================================
+   4. LANDING - CONTENEDOR PRINCIPAL.
+=========================================== */
+
+/**
+ * Contenedor principal del contenido
+ * - flex: 1 hace que ocupe todo el espacio disponible
+ * - max-width limita el ancho en pantallas grandes
+ * - Centrado horizontal con margin auto
+ */
+.landing {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================================
+   5. SELECTOR DE CIUDAD.
+=========================================== */
+
+/**
+ * Contenedor del selector de ciudades.
+ * - Fondo blanco para contraste con el fondo oscuro.
+ * - Borde rojo para coherencia con el diseño.
+ */
+.cine-selector {
+  margin-bottom: 2.5rem;
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e94560;
+}
+
+/**
+ * Etiqueta del selector.
+ */
+.cine-selector label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #16213e;
+  font-size: 1.2rem;
+}
+
+/**
+ * Elemento select (dropdown).
+ * - Estilo personalizado para el selector.
+ * - Transiciones suaves en hover y focus.
+*/
+.cine-selector select {
+  width: 100%;
+  max-width: 350px;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  background-color: #fff;
+  font-size: 1.1rem;
+  color: #333;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/**
+ * Estado focus del select.
+ * - Borde rojo cuando está enfocado.
+ * - Sombra suave alrededor.
+*/
+.cine-selector select:focus {
+  outline: none;
+  border-color: #e94560;
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.2);
+}
+
+/**
+* Estado hover del select.
+*/
+.cine-selector select:hover {
+  border-color: #E94560;
+}
+
+/* ========================================
+   6. LISTA Y TARJETAS DE PELÍCULAS
+   ======================================== */
+
+/**
+* Contenedor de la lista de películas.
+* - Flexbox vertical con espacio entre elementos.
+*/
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/**
+ * Tarjeta individual de película.
+ * - Fondo blanco con sombra.
+ * - Efecto hover: se eleva y cambia el borde.
+ * - Transición suave para todas las propiedades.
+*/
+.movie {
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+/**
+ * Efecto hover en la tarjeta de película.
+ * - Se eleva 8px (translateY).
+ * - Sombra más pronunciada.
+ * - Borde rojo visible.
+*/
+.movie:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+  border-color: #E94560;
+}
+
+/**
+ * Contenido de la tarjeta de película.
+ * - Layout flex horizontal: imagen a la izquierda, info a la derecha.
+*/
+.movie-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/**
+ * Contenedor de la imagen de la película.
+ * - Tamaño fijo: 300x450px (proporción de poster de cine).
+ * - flex-shrink: 0 evita que se comprima.
+*/
+.movie-image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/**
+ * Imagen de la película.
+ * - object-fit: cover mantiene la proporción sin deformar.
+ * - Transición en transform para efecto zoom.
+*/
+.movie-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/**
+ * Efecto zoom en hover de la imagen.
+ * - Escala 1.05 (5% más grande).
+*/
+.movie:hover .movie-image img {
+  transform: scale(1.05);
+}
+
+/**
+ * Contenedor de información de la película.
+ * - flex: 1 ocupa todo el espacio disponible.
+ * - Flexbox vertical para organizar elementos.
+*/
+.movie-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Título de la película.
+ * - Fuente grande y en negrita.
+ * - Borde inferior rojo decorativo.
+*/
+.movie h2 {
+  margin: 0 0 1.5rem 0;
+  color: #16213E;
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 3px solid #E94560;
+  padding-bottom: 0.8rem;
+}
+
+/**
+ * Párrafos de información (género, duración, etc.).
+*/
+.movie p {
+  margin: 0.6rem 0;
+  color: #555555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/**
+ * Sinopsis de la película.
+ * - Fondo gris claro para diferenciarlo.
+ * - Borde izquierdo rojo.
+ * - Texto en cursiva.
+*/
+.movie p.synopsis {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-left: 4px solid #e94560;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+/**
+* Etiquetas en negrita (Género:, Duración:, etc.).
+*/
+.movie strong {
+  color: #16213E;
+  font-weight: 600;
+}
+
+/* ========================================
+   7. SECCIÓN DE HORARIOS.
+=========================================== */
+
+/**
+ * Contenedor de la sección de horarios.
+ * - margin-top: auto lo empuja al final de movie-info.
+*/
+.sessions {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+/**
+ * Subtítulo de horarios disponibles.
+*/
+.sessions h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #16213E;
+  font-weight: 600;
+}
+
+/**
+ * Contenedor de los botones de horarios.
+ * - Flexbox con wrap para adaptarse al espacio.
+*/
+.showtimes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/**
+ * Botones de horarios.
+ * - Gradiente rojo.
+ * - Bordes redondeados (píldora).
+ * - Efectos hover y active.
+ * - Pseudo-elemento ::before para animación de brillo.
+*/
+.showtime-button {
+  padding: 0.9rem 1.8rem;
+  background: linear-gradient(135deg, #e94560 0%, #d63651 100%);
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/**
+ * Efecto hover en botones de horarios.
+ * - Gradiente más oscuro.
+ * - Se eleva 3px.
+ * - Sombra más intensa.
+*/
+.showtime-button:hover {
+  background: linear-gradient(135deg, #D63651 0%, #C02847 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
+}
+
+/**
+ * Efecto al hacer clic (active)
+ * - Vuelve a la posición original.
+*/
+.showtime-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(233, 69, 96, 0.4);
+}
+
+/**
+ * Pseudo-elemento para efecto de brillo.
+ * - Posicionado absolutamente.
+ * - Inicialmente fuera de vista (left: -100%).
+*/
+.showtime-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+/**
+ * Animación de brillo en hover.
+ * - El pseudo-elemento se desliza de izquierda a derecha.
+*/
+.showtime-button:hover::before {
+  left: 100%;
+}
+
+/* ========================================
+   8. ANIMACIONES Y SPINNER DE CARGA.
+=========================================== */
+
+/**
+ * Contenedor del spinner de carga.
+ * - Centrado vertical y horizontal.
+*/
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/**
+ * Animación de rotación para el spinner.
+ * - De 0 a 360 grados.
+*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/**
+ * Spinner de carga.
+ * - Círculo con borde transparente excepto el top (rojo).
+ * - Animación de rotación infinita.
+*/
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid #e94560;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+/**
+ * Texto del contenedor de carga.
+*/
+.loading-container p {
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   9. RESPONSIVE DESIGN - DISEÑO ADAPTATIVO.
+=========================================== */
+
+/**
+ * TABLETS Y PANTALLAS MEDIANAS (max-width: 1024px).
+ * - Layout de películas cambia a vertical.
+ * - Imagen se centra arriba.
+*/
+@media (max-width: 1024px) {
+  .movie-content {
+    flex-direction: column; /*Vertical en lugar de horizontal.*/
+    align-items: center;
+  }
+
+  .movie-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 2/3;/*Mantiene proporción de poster.*/
+  }
+}
+
+/**
+ * TABLETS PEQUEÑAS Y MÓVILES (max-width: 768px).
+ * - Tamaños de fuente reducidos.
+ * - Padding reducido.
+*/
+@media (max-width: 768px) {
+  .landing {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+  }
+
+  .movie-content {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .movie h2 {
+    font-size: 1.6rem;
+  }
+
+  .movie-image {
+    max-width: 100%;
+  }
+
+  .showtimes {
+    gap: 0.8rem;
+  }
+
+  .showtime-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .cine-selector {
+    padding: 1.5rem;
+  }
+}
+
+/**
+ * MÓVILES PEQUEÑOS (max-width: 480px).
+ * - Adaptación completa para pantallas pequeñas.
+ * - Botones de horarios ocupan todo el ancho.
+*/
+@media (max-width: 480px) {
+  header, footer {
+    padding: 1.2rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header p {
+    font-size: 0.85rem;
+  }
+
+  .landing {
+    padding: 1rem;
+  }
+
+  .movie {
+    border-radius: 15px;
+  }
+
+  .movie-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .movie h2 {
+    font-size: 1.4rem;
+  }
+
+  .movie p {
+    font-size: 0.95rem;
+  }
+
+  /*Botones de horarios en columna (apilados).*/
+  .showtimes {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .showtime-button {
+    width: 100%;/*Ancho completo.*/
+    padding: 0.9rem;
+  }
+
+  .cine-selector select {
+    max-width: 100%;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
