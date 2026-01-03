@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chistes aleatorios de Chuck Norris</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="boton_chiste" id="btnChiste">Dame un chiste</button>
+    <p class="texto_mensaje_chiste" id="mensajeChiste"></p>
+
+    <script>
+        async function fetchSincrono() {
+            let url = "https://api.chucknorris.io/jokes/random";
+            let fetchResponse = await fetch(url);
+            let json = await fetchResponse.json();
+            let chiste = json.value;
+            console.log("Chiste sincrono:", chiste);
+            return chiste;
+        }
+
+        document.getElementById("btnChiste").addEventListener("click", async () => {
+            console.log("Ejecutando fetchSincrono desde el click...");
+            // let chiste = await fetchSincrono();
+            document.getElementById("mensajeChiste").textContent = await fetchSincrono();
+            console.log("fetchSincrono ha terminado.");
+        });
+
+    </script>
+</body>
+</html>

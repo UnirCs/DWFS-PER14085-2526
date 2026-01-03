@@ -1,0 +1,108 @@
+.pantalla {
+    background: darkgray;
+    color: #0055aa;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    height: 150px;
+    border: 1px solid #555;
+    margin: 5px;
+}
+.tarima {
+    background: #444444;
+    height: 80px;
+    border: 1px solid #ffffff;
+    margin: 20px;
+}
+.asientos {
+    background: black;
+    height: 400px;
+    border: 1px solid #ffffff;
+    margin: 0 auto;        /* Centrado */
+    width: 45%
+}
+.silla_ocupada {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: 3px solid white;
+    display: inline-block; /* 👈 clave para que estén en la misma línea */
+    margin: 5px;           /* separa un poco los cuadrados */
+}
+.silla_vacia {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border: 3px solid white;
+    display: inline-block; /* 👈 clave para que estén en la misma línea */
+    margin: 5px;           /* separa un poco los cuadrados */
+}
+.formulario {
+    background: black;
+    height: 200px;
+    border: 1px solid #ffffff;
+    margin: 20px;
+}
+
+
+p{
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    font-family: sans-serif;
+    display: inline-block;
+}
+
+p:hover {background-color: #ffc107}
+
+h1 {
+    color: #0055aa;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    color: red;
+    text-align: center;
+}
+
+h3 {
+    font-size: 14px;
+    color: #0055aa;
+    text-align: left;
+}
+
+h4 {
+    font-size: 10px;
+    font-family: "Bold Italic Art", serif;
+    text-align: left;
+}
+
+h3 + p {
+    background-color: lightgray;
+}
+
+.formulario > h2 {
+    color: yellow;
+    font-size: medium;
+}
+
+.etiquetas {
+    color: yellow;
+}
+
+h4 ~ p {
+    background-color: cornflowerblue;
+}
+
+.body {
+    background-color: whitesmoke;
+}
+
+.pie_pagina{
+    background: black;
+    color: black;
+    text-align:center;
+    padding:10px;
+
+}
