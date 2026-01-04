@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* ================================
+   🎬 UNIR- CHISTES CHUCKNORRIS - ESTILO GENERAL:
+================================ */
+
+/*CUERPO DEL SITIO WEB:*/
+body {
+    background-color: #0F1822;/*Color de fondo.*/
+    font-family: Arial, Helvetica, sans-serif;/*Fuente del texto.*/
+    color: white;/*Color del texto.*/
+    text-align: center;/*Alineación del texto.*/
+    margin-top: 60px;/*Margen superior.*/
+}
+
+/*CONTENEDOR:*/
+.contenedor {
+    width: 80%;/*Anchura del contenedor.*/
+    margin: auto;/*Margen automático.*/
+}
+
+/*BOTÓN:*/
+button {
+    font-size: 22px;/*Tamaño del texto.*/
+    padding: 12px 20px;/*Borde del sitio web (arriba, derecho).*/
+    background-color: #E6E6E6;/*Color de fondo.*/
+    border-radius: 8px;/*Nivel de borde redondeado.*/
+    border: none;/*Desactivación del borde.*/
+    cursor: pointer;/*Activación de cursor cuando se sobreponga.*/
+    margin-bottom: 25px;/*Margen inferior.*/
+}
+
+button:hover {
+    background-color: #F2F2F2;/*Color de fondo.*/
+}
+
+/*PARRAFO DEL CHISTE:*/
+#parrafoChiste {
+    color: #F4C430;/*Color del texto.*/
+    font-size: 26px;/*Alineación del texto.*/
+    font-weight: bold;/*Grosor del texto.*/
+}

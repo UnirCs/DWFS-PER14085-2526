@@ -1,0 +1,485 @@
+/* ============================================
+   CSS RESET & BASE STYLES
+   ============================================ */
+
+/* Universal selector: resets default margins, padding, and sets box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles: sets base typography, colors, and dark cinema-like background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container: centers content and creates the main card */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+/* Header: cinema branding with gradient background */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Cinema name: large, bold heading */
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle: tagline below cinema name */
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+/* Main container: adds padding around content sections */
+main {
+    padding: 30px;
+}
+
+/* Section spacing: adds margin between sections */
+section {
+    margin-bottom: 40px;
+}
+
+/* Section headings: purple color with underline */
+section h2 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+}
+
+/* ============================================
+   MOVIE INFORMATION SECTION
+   ============================================ */
+
+/* Movie details container: flexbox layout for movie info */
+.movie-details {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+/* Movie title section: contains title, location, and showtime */
+.movie-title {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Movie title: large, bold movie name */
+.movie-title h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Location and showtime: styled information text */
+.location, .showtime {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+/* Movie specs: grid layout for movie details */
+.movie-specs {
+    flex: 1;
+    min-width: 300px;
+    display: grid;
+    gap: 15px;
+}
+
+/* Spec item: individual movie detail (duration, director, etc.) */
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Spec item strong: label for each detail */
+.spec-item strong {
+    color: #667eea;
+    font-size: 0.95em;
+}
+
+/* Spec item span: value for each detail */
+.spec-item span {
+    color: #555;
+    font-size: 1em;
+}
+
+/* ============================================
+   SEAT SELECTION SECTION
+   ============================================ */
+
+/* Screen indicator: visual representation of cinema screen */
+.screen {
+    background: linear-gradient(to bottom, #4a5568, #2d3748);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto 30px;
+    border-radius: 5px;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* Seat map: grid container for all seats */
+.seat-map {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px 15px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    align-items: center;
+}
+
+/* Row label: letter identifier for each row */
+.row-label {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #667eea;
+    text-align: center;
+}
+
+/* Seats row: flexbox container for seats in a row */
+.seats-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Seat checkbox: hidden input for seat selection (CSS-only interactivity) */
+.seat-checkbox {
+    display: none;
+}
+
+/* Seat label: visual representation of each seat */
+.seat {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: #4ade80;
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+/* Available seat: green color for free seats */
+.seat.available:hover {
+    background: #22c55e;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Reserved seat: gray color and disabled cursor for taken seats */
+.seat.reserved {
+    background: #94a3b8;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Selected seat: blue color when checkbox is checked (only for available seats) */
+.seat-checkbox:checked + .seat.available {
+    background: #3b82f6;
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Prevent reserved seats from being selected */
+.seat-checkbox:checked + .seat.reserved {
+    background: #94a3b8;
+    transform: none;
+}
+
+/* ============================================
+   LEGEND SECTION
+   ============================================ */
+
+/* Legend container: flexbox layout for seat status explanation */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Legend item: individual legend entry */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Legend seat: small square showing seat color */
+.legend-seat {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Legend seat available: green color */
+.legend-seat.available {
+    background: #4ade80;
+}
+
+/* Legend seat reserved: gray color */
+.legend-seat.reserved {
+    background: #94a3b8;
+}
+
+/* Legend seat selected: blue color */
+.legend-seat.selected {
+    background: #3b82f6;
+}
+
+/* ============================================
+   BUTTON SECTION
+   ============================================ */
+
+/* Button container: centers the next button */
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Modal checkbox: hidden input to control modal visibility */
+.modal-checkbox {
+    display: none;
+}
+
+/* Next button: styled button that triggers modal */
+.btn-next {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    user-select: none;
+}
+
+/* Next button hover: increases shadow and slightly scales */
+.btn-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Next button active: pressed state */
+.btn-next:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   MODAL SECTION
+   ============================================ */
+
+/* Modal overlay: full-screen backdrop (hidden by default) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Modal visible: shows modal when checkbox is checked */
+.modal-checkbox:checked ~ .modal-overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Modal content: centered dialog box */
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+/* Modal content visible: scales up when modal is shown */
+.modal-checkbox:checked ~ .modal-overlay .modal-content {
+    transform: scale(1);
+}
+
+/* Modal heading: title of the confirmation dialog */
+.modal-content h3 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Modal paragraph: confirmation message */
+.modal-content p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* OK button: closes the modal */
+.btn-ok {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 246, 0.4);
+    user-select: none;
+}
+
+/* OK button hover: increases shadow */
+.btn-ok:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Media query for tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .movie-details {
+        flex-direction: column;
+    }
+
+    .seat-map {
+        grid-template-columns: 30px 1fr;
+        gap: 8px 10px;
+    }
+
+    .seat {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 0.9em;
+    }
+
+    .legend {
+        gap: 20px;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+}
+
+#seatInput {
+    padding: 8px;
+    border-radius: 6px;
+    width: 120px;
+}
+
+/* Media query for mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    .movie-title h3 {
+        font-size: 1.4em;
+    }
+
+    .seat {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 0.8em;
+    }
+
+    .seats-row {
+        gap: 5px;
+    }
+
+    .btn-next {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+}
+
