@@ -1,0 +1,52 @@
+html{
+    background-color:rgb(21, 237, 172);
+    width: 90%;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    border-radius: 15px;
+    background: rgba(240, 92, 228, 0.2);
+    font-size: large;
+    padding: 1%;
+    margin: 1%;
+
+}
+
+div {
+    padding: 2%;
+    margin: 2%;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+dd {
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
+
+.cDatos {
+    margin: auto;
+    text-align: center;
+}
+
+.cDatos img {
+    width: 25%;
+    border-radius: 50%;
+}
+
+.bText,.bText2{
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+
+.bText2 ul {
+    columns: 2;
+    column-gap: 2%;
+}
+
+
