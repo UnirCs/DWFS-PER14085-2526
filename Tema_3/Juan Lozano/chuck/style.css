@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#chiste{
+    color: white;
+    background-color: rgb(47, 64, 65);
+    border: none;
+    border-radius: 50px;
+    width: 30%;
+    height: 100px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.chisteTxt{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
