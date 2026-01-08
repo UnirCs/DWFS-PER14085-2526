@@ -1,0 +1,146 @@
+html {
+    background-color: rgb(41, 40, 40);
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    display: flex;
+    text-align: left;
+    background-color: rgba(245, 53, 194, 0.2);
+}
+
+footer {
+    height: auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+table {
+    width: 50%;
+}
+
+td{
+    text-align: right;
+}
+
+tr{
+    margin: auto;
+    width: 25%;
+}
+
+label {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+input{
+    width: 20px;
+    margin: auto;
+}
+
+button {
+    width: 100%;
+    font-size: large;
+    border-radius: 10px;
+    background-color: efb810;
+}
+
+.foto{
+    width: 5%;
+    aspect-ratio: 1/1;
+    background-image: linear-gradient(to bottom, red, purple);
+    margin: 1%;
+}
+
+.sala{
+    width: 95%;
+    margin: auto;
+}
+
+.pantalla{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 95%;
+    aspect-ratio: 64/9;
+    background-color: black;
+    border-style: solid;
+    border-color: whitesmoke;
+    font-size: xx-large;
+    border-radius: 20px;
+}
+
+#butacas {
+    display: grid;
+    grid-template-columns:repeat(8,1fr);
+    padding: 5% 10%;
+    justify-content: center;
+    align-content: start;
+}
+
+.puesto, .puestoA {
+    width: 50%;
+    aspect-ratio: 1/1;
+    margin: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 5%;
+}
+
+.puesto{
+    background-color:green;
+}
+.puestoA{
+    background-color: aqua;
+}
+
+.puesto:hover,.puestoA:hover {
+    background-color: yellow;
+}
+
+.botones{
+    padding-left: 4%;
+    text-align: center;
+}
+
+.total{
+    border-top: solid;
+    text-align: center;
+}
+
+.entradas {
+    background-color: rgba(240, 248, 255, 0.094);
+    margin: 2%;
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.entradas h2 {
+    margin-left: 2%;
+}
+
+.entradas div {
+    display: flex;
+    gap: 5%;
+}
+
+.asiento input:checked + .puesto {
+  background-color: red;
+}
+.asiento input:checked + .puestoA {
+  background-color: orange;
+}
+
+.asiento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.asiento input {
+    display: none;
+}
