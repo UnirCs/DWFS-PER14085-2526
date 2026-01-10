@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cine Juan - Reserva de Asientos</title> </head>
+<body>
+    <main class="CinemaJuan">
+        <div class="cinemaTitulo">
+            <h1 class="titulo">Cinema de Juan</h1>
+        </div>
+
+        <div class="pantalla"></div>
+
+        <section class="sillasSection">
+            <table>
+                <tbody> 
+                    <tr>
+                        <th>Fila 1</th> 
+                        <td class="asiento" ></td>
+                        <td class="asiento" ></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 2</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 3</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 4</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 5</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 6</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 7</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 8</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 9</th> 
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                    <tr>
+                        <th>Fila 10</th>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                        <td class="asiento"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <form class="reservation-form">
+            <label for="asientos-count">Indica cuántos quieres reservar</label>
+            <input type="number" id="asientos-count" name="seats" min="1" max="10">
+            <button type="submit">Confirmar Reserva</button>
+        </form>
+
+        <footer class="cinema-info">
+            <h3>Cine JUAN-CINEMA</h3>
+            <address>
+                Dirección: Calle Falsa de un lugar, 2423. Altair
+            </address>
+            <p>Teléfono: 90084325</p>
+            <p>Email: infocine@juancinema.com</p>
+        </footer>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

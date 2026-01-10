@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine UNIR - Selección de Asientos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cinema-layout">
+        <header>
+            <h1>CINE UNIR - Selección de Asientos</h1>
+            <p>Película: El Misterio del Faro | Hora: 19:30</p>
+        </header>
+
+        <div class="screen-area">
+            <div class="screen">Pantalla</div>
+            <p class="screen-label">Frente de la Sala</p>
+        </div>
+        
+        <div class="seating-area">
+            <h3>Selecciona tus asientos</h3>
+            <div id="seat-matrix" class="seat-matrix">
+                </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="legend">
+                <span class="legend-seat available"></span> Disponible
+                <span class="legend-seat selected"></span> Seleccionado
+                <span class="legend-seat occupied"></span> Ocupado
+            </div>
+
+            <div class="summary">
+                <p>Asientos seleccionados: <span id="selected-count">0</span></p>
+                <p>Total a pagar: <span id="total-price">$0</span></p>
+            </div>
+
+            <button id="btncompra" class="buy-btn">Continuar con la compra</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

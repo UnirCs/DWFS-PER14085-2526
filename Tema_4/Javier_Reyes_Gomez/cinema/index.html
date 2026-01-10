@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UNIR Cinema</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="cinema.js" defer></script>
+</head>
+<body>
+	<header class="header">
+		<h1>UNIR CINEMA</h1>
+		<h2>Frontend Wars: la película</h2>
+		<h3>Sala 1 - Selecciona tus asientos</h3>
+	</header>
+
+	<main>
+		<section class="cinema" aria-labelledby="titulo-sala" role="region">
+			<div class="screen" aria-hidden="true">PANTALLA</div>
+
+			<div class="asiento-map" role="grid" aria-label="Mapa de asientos"></div>
+
+			<div class="legend" aria-label="Leyenda de tipos de asiento">
+				<div><span class="asiento"></span> Disponible</div>
+				<div><span class="asiento selected"></span> Seleccionada</div>
+				<div><span class="asiento blocked"></span> No disponible</div>
+			</div>
+
+			<form class="asiento-form" aria-label="Formulario de reserva de asientos">
+				<label for="numasientos">Número de asientos:</label>
+				<input type="number" id="numasientos" name="numasientos" min="1" max="10" required aria-required="true" onInput="suggest();">
+				<button type="submit" aria-label="Reservar asientos seleccionados">Reservar</button>
+			</form>
+		</section>
+	</main>
+
+	<footer role="contentinfo" aria-label="Información del cine">
+		<div class="footer-container">
+			<p><strong>© 2025 UNIR Cinema</strong></p>
+			<p>Dirección: Calle del Conocimiento 42, Logroño, España</p>
+			<p>Teléfono: <a href="tel:+34941123456" aria-label="Llamar al número 941 123 456">+34 999 99 99 66</a></p>
+			<p>Correo: <a href="mailto:info@unircinema.com" aria-label="Enviar correo a info arroba unir cinema punto com">info@unircinema.com</a></p>
+		</div>
+	</footer>
+</body>
+</html>
