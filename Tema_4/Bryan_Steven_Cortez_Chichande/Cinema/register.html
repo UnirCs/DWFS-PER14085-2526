@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ECUA-CINE - Registro de usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body class="exercise4">
+    <div class="exercise4__container">
+        <div class="card exercise4__card">
+            <div class="card-body">
+                <div class="exercise4__header">
+                    <i class="fa-solid fa-user-shield exercise4__icon"></i>
+                    <h1 class="exercise4__title">Registro de usuario</h1>
+                    <p class="exercise4__subtitle">Completa tus datos para crear una cuenta.</p>
+                </div>
+                <form id="register-form" class="exercise4__form" novalidate>
+                    <div id="register-alert" class="exercise4__alert-box"></div>
+                    <div class="mb-3">
+                        <label for="full-name" class="exercise4__form-label">
+                            <i class="fa-solid fa-id-card-clip me-1"></i>
+                            Nombres y apellidos
+                        </label>
+                        <input type="text" id="full-name" class="form-control form-control-sm exercise4__form-control"
+                            placeholder="Nombre completo" required minlength="3" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="username" class="exercise4__form-label">
+                            <i class="fa-solid fa-user me-1"></i>
+                            Nombre de usuario (5-15 caracteres)
+                        </label>
+                        <input type="text" id="username" class="form-control form-control-sm exercise4__form-control"
+                            placeholder="usuario123" required pattern="^[A-Za-z0-9_]{5,15}$"
+                            title="Entre 5 y 15 caracteres. Solo letras, números y guiones bajos." />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="exercise4__form-label">
+                            <i class="fa-solid fa-lock me-1"></i>
+                            Contraseña (8-15 caracteres)
+                        </label>
+                        <input type="password" id="password"
+                            class="form-control form-control-sm exercise4__form-control" placeholder="********" required
+                            pattern=".{8,15}" title="Entre 8 y 15 caracteres." />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="confirm-password" class="exercise4__form-label">
+                            <i class="fa-solid fa-lock-keyhole me-1"></i>
+                            Confirmar contraseña (8-15 caracteres)
+                        </label>
+                        <input type="password" id="confirm-password"
+                            class="form-control form-control-sm exercise4__form-control" placeholder="********" required
+                            pattern=".{8,15}"
+                            title="Debe coincidir con la contraseña y tener entre 8 y 15 caracteres." />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="exercise4__form-label">
+                            <i class="fa-solid fa-envelope me-1"></i>
+                            Correo electrónico
+                        </label>
+                        <input type="email" id="email" class="form-control form-control-sm exercise4__form-control"
+                            placeholder="usuario@correo.com" required />
+                    </div>
+                    <div class="exercise4__buttons mt-3">
+                        <button type="submit" class="btn exercise4__button--primary">
+                            <i class="fa-solid fa-user-plus me-1"></i>
+                            Registrar
+                        </button>
+                        <button type="reset" id="btn-reset" class="btn exercise4__button--secondary">
+                            <i class="fa-solid fa-eraser me-1"></i>
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer exercise4__footer">
+                <small><i class="fa-solid fa-shield-halved me-1"></i>ECUA-CINE – informacion-boleteria@ecuacine.com</small>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<script src="register.js"></script>
+
+</html>

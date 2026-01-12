@@ -1,0 +1,80 @@
+body {
+    background-color: #f4f6f8;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-container {
+    max-width: 600px;
+    background: #fff;
+    margin: 40px auto;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #3498db;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 2em;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #1c1c1d;
+    margin-bottom: 1.5rem;
+    margin-top: 2px;
+    margin: 10px 5px 15px 0;
+}
+
+
+h2 {
+    color: #3498db;
+    border-bottom: 1px solid #3498db;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+
+.summary p {
+    background: #a391911c;
+    padding: 0px;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #33373b;
+    font-weight: bolder;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.contact-info ul, .experience ul, .skills ul {
+    list-style-type: disc;
+}
+
+section {
+    margin-bottom: 18px;
+}
