@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cine - Selección de Butacas</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="cine">
+    <div class="cine__container">
+
+        <h1 class="cine__titulo">Selección de butacas</h1>
+
+        <div class="cine__pantalla">PANTALLA</div>
+
+        <div class="cine__leyenda">
+            <div class="cine__leyenda-item"><span class="cine__cuadro cine__cuadro--libre"></span>Libre</div>
+            <div class="cine__leyenda-item"><span class="cine__cuadro cine__cuadro--ocupado"></span>Ocupado</div>
+            <div class="cine__leyenda-item"><span class="cine__cuadro cine__cuadro--seleccionado"></span>Seleccionado</div>
+        </div>
+
+        <form class="cine__formulario" action="#" method="get">
+            <div class="cine__sala">
+
+                <div class="cine__fila">
+                    <span class="cine__fila-label">A</span>
+
+                    <input type="checkbox" id="A1" class="cine__asiento-input" name="asientos[]" value="A1">
+                    <label for="A1" class="cine__asiento">A1</label>
+
+                    <input type="checkbox" id="A2" class="cine__asiento-input" name="asientos[]" value="A2">
+                    <label for="A2" class="cine__asiento">A2</label>
+
+                    <input type="checkbox" id="A3" class="cine__asiento-input" disabled>
+                    <label for="A3" class="cine__asiento">X</label>
+
+                    <input type="checkbox" id="A4" class="cine__asiento-input" name="asientos[]" value="A4">
+                    <label for="A4" class="cine__asiento">A4</label>
+
+                    <input type="checkbox" id="A5" class="cine__asiento-input" disabled>
+                    <label for="A5" class="cine__asiento">X</label>
+                </div>
+
+                <div class="cine__fila">
+                    <span class="cine__fila-label">B</span>
+
+                    <input type="checkbox" id="B1" class="cine__asiento-input" name="asientos[]" value="B1">
+                    <label for="B1" class="cine__asiento">B1</label>
+
+                    <input type="checkbox" id="B2" class="cine__asiento-input" name="asientos[]" value="B2">
+                    <label for="B2" class="cine__asiento">B2</label>
+
+                    <input type="checkbox" id="B3" class="cine__asiento-input" name="asientos[]" value="B3">
+                    <label for="B3" class="cine__asiento">B3</label>
+
+                    <input type="checkbox" id="B4" class="cine__asiento-input" disabled>
+                    <label for="B4" class="cine__asiento">X</label>
+
+                    <input type="checkbox" id="B5" class="cine__asiento-input" name="asientos[]" value="B5">
+                    <label for="B5" class="cine__asiento">B5</label>
+                </div>
+
+                <div class="cine__fila">
+                    <span class="cine__fila-label">C</span>
+
+                    <input type="checkbox" id="C1" class="cine__asiento-input" disabled>
+                    <label for="C1" class="cine__asiento">X</label>
+
+                    <input type="checkbox" id="C2" class="cine__asiento-input" name="asientos[]" value="C2">
+                    <label for="C2" class="cine__asiento">C2</label>
+
+                    <input type="checkbox" id="C3" class="cine__asiento-input" disabled>
+                    <label for="C3" class="cine__asiento">X</label>
+
+                    <input type="checkbox" id="C4" class="cine__asiento-input" name="asientos[]" value="C4">
+                    <label for="C4" class="cine__asiento">C4</label>
+
+                    <input type="checkbox" id="C5" class="cine__asiento-input" name="asientos[]" value="C5">
+                    <label for="C5" class="cine__asiento">C5</label>
+                </div>
+
+            </div>
+
+            <div class="cine__campo">
+                <label for="numAsientos" class="cine__campo-label">Número de asientos</label>
+                <input type="number" id="numAsientos" class="cine__campo-input" min="1" max="10" name="numAsientos">
+            </div>
+
+            <button type="submit" class="cine__boton">Confirmar reserva</button>
+        </form>
+
+        <footer class="cine__footer">
+            <p>Cine UNIR · José Luis Leal García</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

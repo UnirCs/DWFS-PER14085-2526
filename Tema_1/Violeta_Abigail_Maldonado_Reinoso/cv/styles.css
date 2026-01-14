@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 5px;
+}
+
+.cv {
+  max-width: auto;
+  margin: 0 auto;
+  background: rgb(234, 231, 231);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Encabezado */
+header {
+  background: linear-gradient(135deg, #2c3e50, #4f78a0);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.header_title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Secciones */
+section {
+  padding: 10px 25px 0px 25px;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #4a6491;
+  font-size: 1.5rem;
+}
+
+h3 {
+  color: #4a6491;
+  margin-bottom: 5px;
+}
+
+/* Contenido */
+.cv_profile p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.cv_profile p:last-child {
+  font-style: italic;
+  background-color: #f0f7ff;
+  padding: 15px;
+  border-left: 4px solid #4a6491;
+  border-radius: 4px;
+}
+
+.cv_contact ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.cv_contact li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.cv_contact li:before {
+  content: "➤";
+  color: #4a6491;
+  position: absolute;
+  left: 0;
+}
+
+.cv_education_item,
+.cv_experience_item {
+  margin-bottom: 25px;
+  padding-left: 15px;
+  border-left: 3px solid #918bc7;
+}
+
+.cv_education_item p,
+.cv_experience_item p {
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.cv_experience ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.cv_experience li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.cv_experience li:before {
+  content: "•";
+  color: #4a6491;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Habilidades */
+.cv_skills ul {
+  list-style-type: none;
+  gap: 10px;
+}
+
+.cv_skills li {
+  width:fit-content;
+  background-color: #f0f6fe;
+  padding: 8px 15px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 255, 0.6);
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 20px;
+  border-radius: 0 0 10px 10px;
+}
