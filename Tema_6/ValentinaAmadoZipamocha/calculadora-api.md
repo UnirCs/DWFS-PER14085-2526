@@ -14,14 +14,18 @@ Entonces cada vez que se hace un cálculo:
 
 ## Endpoints de la API
 
-| Método HTTP | URI | Query Params | Request Body | Response Body | Códigos HTTP de respuesta |
-|------------|-----|--------------|--------------|---------------|---------------------------|
-| POST | /operations/sum | - | `{ "operands": [2,2,2] }` | `{ "id": "op1", "type": "sum", "result": 6 }` | 201, 400 |
-| POST | /operations/subtract | - | `{ "operands": [10,3,2] }` | `{ "id": "op2", "type": "subtract", "result": 5 }` | 201, 400 |
-| POST | /operations/multiply | - | `{ "operands": [3,4] }` | `{ "id": "op3", "type": "multiply", "result": 12 }` | 201, 400 |
-| POST | /operations/divide | - | `{ "operands": [10,2] }` | `{ "id": "op4", "type": "divide", "result": 5 }` | 201, 400 |
-| POST | /operations/root | - | `{ "number": 8, "degree": 3 }` | `{ "id": "op5", "type": "root", "result": 2 }` | 201, 400 |
-| POST | /operations/power | - | `{ "base": 3, "exponent": 3 }` | `{ "id": "op6", "type": "power", "result": 27 }` | 201, 400 |
-| GET | /operations/{id} | - | - | `{ "id": "op1", "type": "sum", "operands": [2,2,2], "result": 6 }` | 200, 404 |
+### Crear una operación
+
+| Método HTTP | URI | Query Params | Request Body | Response Body | Códigos HTTP |
+|------------|-----|--------------|--------------|---------------|-------------|
+| POST | /operations | - | `{ "type": "sum", "operands": [2, 2, 2] }`<br>`{ "type": "subtract", "operands": [10, 2] }`<br>`{ "type": "multiply", "operands": [3, 4] }`<br>`{ "type": "divide", "operands": [10, 2] }`<br>`{ "type": "power", "base": 3, "exponent": 3 }`<br>`{ "type": "root", "number": 8, "degree": 3 }` | `{ "id": "op1", "type": "sum", "result": 6 }`<br>`{ "id": "op2", "type": "subtract", "result": 8 }`<br>`{ "id": "op3", "type": "multiply", "result": 12 }`<br>`{ "id": "op4", "type": "divide", "result": 5 }`<br>`{ "id": "op5", "type": "power", "result": 27 }`<br>`{ "id": "op6", "type": "root", "result": 2 }` | 201, 400 |
+
+---
+
+### Consultar una operación por ID
+
+| Método HTTP | URI | Query Params | Request Body | Response Body | Códigos HTTP |
+|------------|-----|--------------|--------------|---------------|-------------|
+| GET | /operations/{id} | - | - | `{ "id": "op1", "type": "sum", "operands": [2, 2, 2], "result": 6 }`<br>`{ "id": "op2", "type": "subtract", "operands": [10, 2], "result": 8 }`<br>`{ "id": "op3", "type": "multiply", "operands": [3, 4], "result": 12 }`<br>`{ "id": "op4", "type": "divide", "operands": [10, 2], "result": 5 }`<br>`{ "id": "op5", "type": "power", "base": 3, "exponent": 3, "result": 27 }`<br>`{ "id": "op6", "type": "root", "number": 8, "degree": 3, "result": 2 }` | 200, 404 |
 
 ---
