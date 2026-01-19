@@ -8,7 +8,7 @@ GET|`/games/{gamesid}`|-|-|`{id_game: game_4", id_jugador1: "Rainiero", id_jugad
 POST|`/game/{gameid}/user/{userid}`|-|`{ "tipo_barco": "4 cuadrados", "position" : "A8", "direction": "horizaontal"}`|`{ "id_barco": 5, "tipo_barco": "4 cuadrados", "position" : "A8", "direction": "horizaontal" , "message" : "barco agregado"}`|**201 ok**, **500 internal server error**, **400 bad request**||
 DELETE|`/game/{gameid}/user/{userid}/barcos/{barcosid}`|-|-|`{ "message" : "eliminado exitosamente"}`|**200 ok**, **500 internal server error**, **404 not found**|
 GET|`/game/{gameid}/user/{userid}/barcos`|-|-|`{barcos: [{ "id_barco": 5, "tipo_barco": "4 cuadrados"},{ "id_barco": 8, "tipo_barco": " 2 cuadrados"}....]`}|**200 ok**, **500 internal server error**, **404 not found**, |
-POST|`/games/{gamesid}/user/{userid}/disparo`|-|`{ "position" : "A7"}`|{"id_disparo":7, "position" : "A7", "message":" disparo realizado"}`|**201 ok**, **500 internal server error**, **400 not found**|
+POST|`/games/{gamesid}/user/{userid}/disparos`|-|`{ "position" : "A7"}`|{"id_disparo":7, "position" : "A7", "message":" disparo realizado"}`|**201 ok**, **500 internal server error**, **400 not found**|
 POST|`/user`|-|`{"nickename": "Rainiero", "email:"rai@unir.com"}`|{"id_user": "user-rai9","nickename": "Rainiero", "email:"rai@unir.com", "message": "usuario creado"  }`|**201 ok**, **500 internal server error**, **400 bad request**|
 GET|`/user/{userid}`|-|-|`{"id_user": "user-rai9","nickename": "Rainiero", "email:"rai@unir.com"}`|**200 ok**, **500 internal server error**, **404 not found**|
 DELETE|`/user/{userid}`|-|-|{"message": "eliminado correctamente"}`|**200 ok**, **500 internal server error**, **404 not found**|
