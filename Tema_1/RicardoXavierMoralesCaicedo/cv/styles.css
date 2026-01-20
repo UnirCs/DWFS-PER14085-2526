@@ -1,0 +1,120 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.cv-container {
+    max-width: 900px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #05385a;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+header img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #05385a;
+}
+
+.perfil {
+    text-align: center;
+    flex: 1;
+}
+
+.perfil h1 {
+    margin: 5px 0;
+    color: #05385a;
+}
+
+.perfil h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.contacto {
+    text-align: right;
+    font-size: 14px;
+}
+
+.contacto p {
+    margin: 4px 0;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 25px;
+}
+
+section h3 {
+    color: #05385a;
+    border-bottom: 2px solid #05385a;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.item h4 {
+    margin: 0;
+    color: #333;
+    font-size: 17px;
+}
+
+.fecha {
+    color: #777;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Habilidades */
+.habilidades ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.habilidades li {
+    background-color: #05385a;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contacto {
+        text-align: center;
+    }
+}

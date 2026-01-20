@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selección de Butacas – Cine</title>
+
+  <!-- CDN Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4">choose your seat</h1>
+
+    <div class="screen text-center mb-4">
+      SCREEN
+    </div>
+
+    <!-- GRID DE BUTACAS -->
+    <div class="seats d-flex flex-column gap-2 align-items-center">
+
+      <!-- Fila A -->
+      <div class="d-flex gap-2">
+        <div class="seat available">A1</div>
+        <div class="seat available">A2</div>
+        <div class="seat reserved">A3</div>
+        <div class="seat available">A4</div>
+        <div class="seat available">A5</div>
+      </div>
+
+      <!-- Fila B -->
+      <div class="d-flex gap-2">
+        <div class="seat available">B1</div>
+        <div class="seat reserved">B2</div>
+        <div class="seat reserved">B3</div>
+        <div class="seat available">B4</div>
+        <div class="seat available">B5</div>
+      </div>
+
+      <!-- Fila C -->
+      <div class="d-flex gap-2">
+        <div class="seat available">C1</div>
+        <div class="seat available">C2</div>
+        <div class="seat available">C3</div>
+        <div class="seat reserved">C4</div>
+        <div class="seat available">C5</div>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-auto d-flex align-items-center gap-2">
+        <div class="seat available small"></div> <span>available</span>
+      </div>
+      <div class="col-auto d-flex align-items-center gap-2">
+        <div class="seat reserved small"></div> <span>reserved</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Chistes de Chuck Norris</title>
+</head>
+<body>
+    <div>
+        <input type="button" name="btnChiste" value="Dame un chiste!" onclick="dameChiste()"/>
+        <p id="chiste"></p>
+    </div>
+    <script type="text/javascript">
+        function dameChiste() {
+            const url = "https://api.chucknorris.io/jokes/random/";
+            fetch(url)
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
+                    }
+                })
+                .then((data) => {
+                    console.log(data);
+                    document.getElementById("chiste").innerText = data.value;
+                })
+                .catch(error => console.error('Error al obtener el chiste:', error));
+        }
+    </script>
+</body>
+</html>

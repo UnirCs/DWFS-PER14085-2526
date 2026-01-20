@@ -1,0 +1,11 @@
+.header {
+    background-image: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.header__title {
+    margin: 0;
+    font-size: 24px;
+}

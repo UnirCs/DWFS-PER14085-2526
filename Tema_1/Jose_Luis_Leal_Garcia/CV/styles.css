@@ -1,0 +1,188 @@
+/* Layout general */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* Cabecera */
+.cv__header {
+    text-align: center;
+    padding: 32px 16px;
+    background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    color: #f9fafb;
+}
+
+.cv__foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #e5e7eb;
+    object-fit: cover;
+    margin-bottom: 16px;
+    background: #e5e7eb;
+}
+
+.cv__nombre {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+}
+
+.cv__titulacion {
+    font-style: italic;
+}
+
+/* Contenedor principal */
+main {
+    max-width: 900px;
+    margin: 24px auto 40px auto;
+    padding: 0 16px;
+}
+
+/* Secciones del CV */
+.cv__section {
+    background: #ffffff;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.cv__titulo {
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    color: #1d4ed8;
+    border-left: 4px solid #1d4ed8;
+    padding-left: 10px;
+}
+
+/* Contacto */
+.cv__contacto-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    align-items: baseline;
+}
+
+.cv__contacto-item strong {
+    min-width: 90px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.cv__contacto-item p {
+    margin: 0;
+}
+
+/* Resumen */
+.cv__resumen p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Habilidades */
+.cv__habilidades ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px 16px;
+}
+
+.cv__habilidades li {
+    position: relative;
+    padding-left: 18px;
+}
+
+.cv__habilidades li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #1d4ed8;
+}
+
+/* Experiencia */
+.cv__experiencia {
+    margin-top: 20px;
+}
+
+.cv__proyecto {
+    margin-bottom: 20px;
+}
+
+.cv__proyecto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.cv__proyecto-titulo {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.cv__proyecto-enlace {
+    padding: 6px 12px;
+    background: #1d4ed8;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+}
+
+.cv__proyecto-enlace:hover {
+    background: #0f3bb9;
+    transform: translateY(-1px);
+}
+
+.cv__proyecto-subtitulo {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1d4ed8;
+}
+
+.cv__proyecto-descripcion {
+    margin: 6px 0 0 0;
+    line-height: 1.5;
+    color: #374151;
+}
+
+.cv__proyecto p:last-of-type {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .cv__header {
+        padding: 24px 12px;
+    }
+
+    .cv__foto {
+        width: 130px;
+        height: 130px;
+    }
+
+    .cv__nombre {
+        font-size: 1.6rem;
+    }
+
+    .cv__section {
+        padding: 16px 18px;
+    }
+}
