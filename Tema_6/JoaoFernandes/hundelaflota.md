@@ -67,19 +67,19 @@ La API permite crear y administrar partidas, gestionar la colocación de barcos 
 
 ### Iniciar una partida
 
-| Método HTTP | URI | Query Params | Cuerpo de la Petición | Cuerpo de la Respuesta (JSON) | Códigos de Respuesta |
-|------------|-----|--------------|-----------------------|-------------------------------|----------------------|
-| POST | /partidas/{id}/iniciar | - | - | `{ "id": 1, "estado": "en_juego" }` | 200 Correcto<br>404 No encontrado |
+
+| Método HTTP | URI | Query Params | Cuerpo de la Petición (JSON) | Cuerpo de la Respuesta (JSON) | Códigos de Respuesta |
+|------------|-----|--------------|------------------------------|-------------------------------|----------------------|
+| PATCH | /partidas/{id} | - | `{ "estado": "en_juego" }` | `{ "id": 1, "estado": "en_juego" }` | 200 Correcto<br>404 No encontrado |
 
 ---
 
 ### Finalizar una partida
 
-| Método HTTP | URI | Query Params | Cuerpo de la Petición | Cuerpo de la Respuesta (JSON) | Códigos de Respuesta |
-|------------|-----|--------------|-----------------------|-------------------------------|----------------------|
-| POST | /partidas/{id}/finalizar | - | - | `{ "id": 1, "estado": "finalizada", "ganador_id": 1 }` | 200 Correcto<br>404 No encontrado |
+| Método HTTP | URI | Query Params | Cuerpo de la Petición (JSON) | Cuerpo de la Respuesta (JSON) | Códigos de Respuesta |
+|------------|-----|--------------|------------------------------|-------------------------------|----------------------|
+| PATCH | /partidas/{id} | - | `{ "estado": "finalizada", "ganador_id": 1 }` | `{ "id": 1, "estado": "finalizada", "ganador_id": 1 }` | 200 Correcto<br>404 No encontrado |
 
----
 
 ### Eliminar una partida
 
