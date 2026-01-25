@@ -36,7 +36,7 @@ public class Operation {
     private Long id;
 
     @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = Consts.OPERANDS, nullable = false, columnDefinition = "json", unique = true)
+    @Column(name = Consts.OPERANDS, nullable = false, columnDefinition = "json")
     private List<Integer> operands;
 
     @Column(name = Consts.OPERATION, nullable = false, length = 4)
