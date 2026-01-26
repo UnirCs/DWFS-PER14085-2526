@@ -5,62 +5,52 @@ import com.example.calculadora.repository.OperacionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CalculadoraService {
 
-    private final OperacionRepository repository;
+    private final OperacionRepository operacionRepository;
 
-    public CalculadoraService(OperacionRepository repository) {
-        this.repository = repository;
+    public CalculadoraService(OperacionRepository operacionRepository) {
+        this.operacionRepository = operacionRepository;
     }
 
-    // SUMAR N ELEMENTOS
-    public Operacion sumar(double a, double b) {
-        return guardar("SUMA", a, b, a + b);
+    public double sumar(Double a, Double b) {
+        return a + b;
     }
 
-    // RESTAR N ELEMENTOS
-    public Operacion restar(List<Double> valores) {
-        double resultado = valores.get(0);
-        for (int i = 1; i < valores.size(); i++) {
-            resultado -= valores.get(i);
-        }
-        return guardar("RESTA_N", valores.get(0), valores.size(), resultado);
+    public double restar(List<Double> numeros) {
+        return numeros.stream().reduce(0.0, (a, b) -> a - b);
     }
 
-    // MULTIPLICAR 2 ELEMENTOS
-    public Operacion multiplicar(double a, double b) {
-        return guardar("MULTIPLICACION", a, b, a * b);
+    public double multiplicar(Double a, Double b) {
+        return a * b;
     }
 
-    // DIVIDIR 2 ELEMENTOS
-    public Operacion dividir(double a, double b) {
+    public double dividir(Double a, Double b) {
         if (b == 0) {
-            throw new IllegalArgumentException("No se puede dividir entre cero");
+            throw new IllegalArgumentException("No se puede dividir por cero");
         }
-        return guardar("DIVISION", a, b, a / b);
+        return a / b;
     }
 
-    // RAÍZ N-ÉSIMA
-    public Operacion raiz(double numero, double indice) {
-        double resultado = Math.pow(numero, 1 / indice);
-        return guardar("RAIZ_" + indice, numero, indice, resultado);
+    public double potencia(Double a, Double b) {
+        return Math.pow(a, b);
     }
 
-    // POTENCIA N-ÉSIMA
-    public Operacion potencia(double base, double exponente) {
-        double resultado = Math.pow(base, exponente);
-        return guardar("POTENCIA", base, exponente, resultado);
+    public double raiz(Double a, Double b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Índice no puede ser cero");
+        }
+        return Math.pow(a, 1 / b);
     }
 
-    // MÉTODO COMÚN
-    private Operacion guardar(String tipo, double a, double b, double resultado) {
-        Operacion op = new Operacion();
-        op.setTipo(tipo);
-        op.setOperando1(a);
-        op.setOperando2(b);
-        op.setResultado(resultado);
-        return repository.save(op);
+    public Optional<Operacion> obtenerOperacionPorId(Long id) {
+        return operacionRepository.findById(id);
+    }
+
+    public Operacion guardarOperacion(Operacion operacion) {
+        return operacionRepository.save(operacion);
     }
 }

@@ -1,9 +1,6 @@
 package com.example.calculadora.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Operacion {
@@ -17,8 +14,8 @@ public class Operacion {
     private double operando2;
     private double resultado;
 
-
     public Operacion() {
+            // Constructor vacío requerido por JPA
     }
 
     public Long getId() {
