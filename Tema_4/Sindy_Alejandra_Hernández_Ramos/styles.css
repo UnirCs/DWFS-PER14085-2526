@@ -1,0 +1,9 @@
+body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; }
+.form-container, .cinema-container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 80%; max-width: 500px; margin: 20px auto; }
+.screen { background: #333; color: #fff; padding: 10px; margin: 20px 0; text-align: center; }
+.row-seat { display: flex; justify-content: center; }
+.seat { width: 30px; height: 30px; margin: 2px; display: flex; justify-content: center; align-items: center; border: 1px solid #ccc; cursor: pointer; font-size: 10px; }
+.available { background-color: #e0e0e0; }
+.selected { background-color: #4CAF50 !important; color: white; }
+.occupied { background-color: #ff6347; cursor: not-allowed; }
+.reservation-form { margin-top: 20px; text-align: center; }
