@@ -24,7 +24,7 @@ Usuarios, pedidos, pagos y restaurantes
 | Método HTTP | Endpoint | Descripción | Ejemplo de cuerpo JSON | Respuestas posibles |
 |-------------|----------|-------------|------------------------|---------------------|
 | GET | /restaurants | Listar restaurantes por filtros (ubicación, tipo de cocina, etc.) | N/A | 200 OK (lista de restaurantes), 400 Bad Request |
-| GET | /restaurants/{restaurantId}/menu | Listar menú de un restaurante | N/A | 200 OK (lista de platos), 404 Not Found |
+| GET | /restaurants/{restaurantId}/menus | Listar menú de un restaurante | N/A | 200 OK (lista de platos), 404 Not Found |
 
 ---
 
@@ -46,14 +46,14 @@ Usuarios, pedidos, pagos y restaurantes
 ### Seguimiento de pedidos
 | Método HTTP | Endpoint | Descripción | Ejemplo de cuerpo JSON | Respuestas posibles |
 |-------------|----------|-------------|------------------------|---------------------|
-| GET | /orders/{orderId}/status | Consultar estado del pedido | N/A | 200 OK (estado: pending, confirmed, preparing, on_the_way, delivered, cancelled), 404 Not Found |
+| GET | /orders/{orderId}/status | Consultar estado del pedido | N/A | 200 OK (estado: pendiente, confirmado, en proceso, enviado, entregado, cancelled), 404 Not Found |
 
 ---
 
 ### Registro de pagos
 | Método HTTP | Endpoint | Descripción | Ejemplo de cuerpo JSON | Respuestas posibles |
 |-------------|----------|-------------|------------------------|---------------------|
-| POST | /payments | Registrar pago de un pedido | ```json { "orderId": "123", "paymentMethod": "credit_card", "amount": 25.50 } ``` | 201 Created (pago registrado), 400 Bad Request, 402 Payment Required |
+| POST | /pagos | Registrar pago de un pedido | ```json { "orderId": "123", "paymentMethod": "credit_card", "amount": 25.50 } ``` | 201 Created (pago registrado), 400 Bad Request, 402 Payment Required |
 
 ---
 
@@ -62,16 +62,16 @@ Usuarios, pedidos, pagos y restaurantes
 ### Gestionar  menú restaurante
 | Método HTTP | Endpoint | Descripción | Ejemplo de cuerpo JSON | Respuestas posibles |
 |-------------|----------|-------------|------------------------|---------------------|
-| POST | /restaurants/{restaurantId}/menu | Añadir nuevo plato | ```json { "name": "Pizza Margarita", "price": 12.50, "available": true } ``` | 201 Created, 400 Bad Request |
-| PUT | /restaurants/{restaurantId}/menu/{dishId} | Modificar plato | ```json { "price": 13.00 } ``` | 200 OK, 404 Not Found |
-| DELETE | /restaurants/{restaurantId}/menu/{dishId} | Eliminar plato | N/A | 200 OK, 404 Not Found |
+| POST | /restaurants/{restaurantId}/menus| Añadir nuevo plato | ```json { "name": "Pizza Margarita", "price": 12.50, "available": true } ``` | 201 Created, 400 Bad Request |
+| PUT | /restaurants/{restaurantId}/menus/{dishId} | Modificar plato | ```json { "price": 13.00 } ``` | 200 OK, 404 Not Found |
+| DELETE | /restaurants/{restaurantId}/menus/{dishId} | Eliminar plato | N/A | 200 OK, 404 Not Found |
 
 ---
 
 ### Control de disponibilidad
 | Método HTTP | Endpoint | Descripción | Ejemplo de cuerpo JSON | Respuestas posibles |
 |-------------|----------|-------------|------------------------|---------------------|
-| PATCH | /restaurants/{restaurantId}/menu/{dishId}/availability | Actualizar disponibilidad de un plato | ```json { "available": false } ``` | 200 OK, 404 Not Found |
+| PATCH | /restaurants/{restaurantId}/menus/{dishId} | Actualizar los datos del menu | ```json { "Disponible": false } ``` | 200 OK, 404 Not Found |
 
 ---
 
@@ -79,6 +79,6 @@ Usuarios, pedidos, pagos y restaurantes
 | Método HTTP | Endpoint | Descripción | Ejemplo de cuerpo JSON | Respuestas posibles |
 |-------------|----------|-------------|------------------------|---------------------|
 | GET | /restaurants/{restaurantId}/orders | Listar pedidos recibidos | N/A | 200 OK (lista de pedidos) |
-| PUT | /restaurants/{restaurantId}/orders/{orderId}/status | Actualizar estado de un pedido | ```json { "status": "confirmed" } ``` | 200 OK, 404 Not Found |
+| PATCH | /restaurants/{restaurantId}/orders/{orderId} | Actualizar los datos de un pedido | ```json { "status": "Confirmado" } ``` | 200 OK, 404 Not Found |
 
 ---
