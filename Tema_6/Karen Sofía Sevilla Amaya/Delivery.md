@@ -46,7 +46,7 @@ Usuarios, pedidos, pagos y restaurantes
 ### Seguimiento de pedidos
 | Método HTTP | Endpoint | Descripción | Ejemplo de cuerpo JSON | Respuestas posibles |
 |-------------|----------|-------------|------------------------|---------------------|
-| GET | /orders/{orderId}/status | Consultar estado del pedido | N/A | 200 OK (estado: pendiente, confirmado, en proceso, enviado, entregado, cancelled), 404 Not Found |
+| GET | /orders/{orderId} | Consultar estado del pedido | N/A | 200 OK (estado: pendiente, confirmado, en proceso, enviado, entregado, cancelled), 404 Not Found |
 
 ---
 
