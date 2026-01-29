@@ -95,3 +95,16 @@ body {
     height: 15px; 
     border-radius: 3px;
 }
+
+.subtitle {
+	font-size: 0.7rem;
+}
+
+.avalable{
+	background-color: var(--seat-available);
+}
+
+.occupied{
+	background-color: var(--seat-occupied); 
+	border: 1px solid #555;
+}
