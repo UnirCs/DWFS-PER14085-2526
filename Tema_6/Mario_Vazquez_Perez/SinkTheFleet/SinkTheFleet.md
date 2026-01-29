@@ -1,0 +1,28 @@
+## Recursos identificados
+
+- Partidas (games): Recurso principal. Representa una partida del juego.
+- Usuarios (users): Representa los usuarios registrados.
+- Barcos (ships): Representa los barcos de cada jugador en la partida.
+- Disparos (shots): Representa los disparos realizados durante la partida.
+
+## Relaciones identificadas
+
+- Un *game* tiene 2 jugadores (*users* o invitados)
+- Un *game* tiene múltiples *ships* (cada jugador los suyos propios)
+- Un *game* tiene múltiples *shots* (de ambos jugadores)
+- Un *user* puede tener múltiples *games*
+
+| Método HTTP | URI | Query Params | Request Body                                                                                      | Response Body                                                                                                                                                                                         | Códigos HTTP de respuesta |
+|-------------|-----|--------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| POST | /games | - | `{"player1": {"userId": "uuid"}, "player2": {"userId": "uuid"}}`                                  | `{"id": "uuid", "player1": {...}, "player2": {...}, "status": "created", "currentTurn": "player1", "createdAt": "..."}`                                                                               | 201, 400, 404 |
+| GET | /games/{id} | - | -                                                                                                 | `{"id": "uuid", "player1": {...}, "player2": {...}, "status": "in_progress", "currentTurn": "player1", "ships": [...], "shots": [...], "winner": null}`                                               | 200, 404 |
+| PATCH | /games/{id} | - | **Iniciar**: `{"status": "in_progress"}`<br>**Finalizar**: `{"status": "finished", "winner": "uuid"}` | `{"id": "uuid", "status": "...", "winner": "uuid_or_null", "updatedAt": "..."}`                                                                                                                       | 200, 400, 404, 409 |
+| DELETE | /games/{id} | - | -                                                                                                 | -                                                                                                                                                                                                     | 204, 404 |
+| POST | /games/{gameId}/ships | - | `{"playerId": "uuid", "size": 4, "position": {"x": 0, "y": 0}, "orientation": "horizontal"}`      | `{"id": "uuid", "gameId": "uuid", "playerId": "uuid", "size": 4, "position": {"x": 0, "y": 0}, "orientation": "horizontal", "coordinates": [[0,0], [1,0], [2,0], [3,0]], "hits": 0, "isSunk": false}` | 201, 400, 404, 409 |
+| GET | /games/{gameId}/ships | `playerId=uuid` | -                                                                                                 | `{"ships": [{"id": "uuid", "size": 4, "position": {...}, "orientation": "horizontal", "hits": 0, "isSunk": false}]}`                                                                                  | 200, 404 |
+| DELETE | /games/{gameId}/ships/{shipId} | - | -                                                                                                 | -                                                                                                                                                                                                     | 204, 404, 409 |
+| POST | /games/{gameId}/shots | - | `{"shooterId": "uuid", "targetId": "uuid", "position": {"x": 5, "y": 5}}`                         | `{"id": "uuid", "gameId": "uuid", "shooterId": "uuid", "targetId": "uuid", "position": {"x": 5, "y": 5}, "result": "hit", "shipId": "uuid", "timestamp": "..."}`                                      | 201, 400, 404, 409 |
+| GET | /games/{gameId}/shots | `shooterId=uuid&targetId=uuid` | -                                                                                                 | `{"shots": [{"id": "uuid", "position": {"x": 5, "y": 5}, "result": "hit", "timestamp": "..."}]}`                                                                                                      | 200, 404 |
+| POST | /users | - | `{"username": "player1", "email": "player1@example.com", "password": "****"}`                     | `{"id": "uuid", "username": "player1", "email": "player1@example.com", "createdAt": "..."}`                                                                                                           | 201, 400, 409 |
+| GET | /users/{id} | - | -                                                                                                 | `{"id": "uuid", "username": "player1", "email": "player1@example.com", "gamesPlayed": 10, "gamesWon": 5}`                                                                                             | 200, 404 |
+| DELETE | /users/{id} | - | -                                                                                                 | -                                                                                                                                                                                                     | 204, 404 |
