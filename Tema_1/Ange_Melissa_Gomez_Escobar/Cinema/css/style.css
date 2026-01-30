@@ -100,11 +100,19 @@ body {
 	font-size: 0.7rem;
 }
 
-.avalable{
+.avalible{
 	background-color: var(--seat-available);
+    border: 1px solid #555;
+
 }
 
 .occupied{
 	background-color: var(--seat-occupied); 
 	border: 1px solid #555;
 }
+
+.selected{
+    background-color: var(--gold-primary);
+	border: 1px solid #555;
+}
+
