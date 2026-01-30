@@ -1,0 +1,37 @@
+#nombre aplicacion
+spring:
+  application:
+    name: calculadora
+
+  #H2 en memoria
+  datasource:
+    url: jdbc:h2:mem:calculadora;
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+
+  #JPA
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  #H2 consola
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+#puerto
+server:
+  port: 8080
+
+#swagger
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
