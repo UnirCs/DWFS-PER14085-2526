@@ -1,0 +1,161 @@
+html, body {
+  height: 100%;
+}
+
+.page-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 20px;
+}
+
+:root {
+  --primary: #738fb4;
+  --primary-dark: #4e6b89;
+  --primary-light: #a4bedc;
+  --text-dark: #273759;
+}
+
+
+body {
+  background-color: #f4f6fa;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.welcome-header {
+  background-color: #738fb4;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.welcome-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.welcome-logo {
+  position: absolute;
+  right: 30px;
+  height: 90px;
+}
+
+.menu {
+  background: var(--primary-dark);
+  padding: 12px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.menu a:hover {
+  background: var(--primary-dark);
+}
+
+#peliculas {
+  padding: 20px;
+  text-align: center;
+}
+
+#peliculas h2 {
+  color: var(--text-dark);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#peliculas ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 0;
+}
+
+#peliculas li {
+  list-style: none;
+}
+
+.movie-card {
+  background: var(--primary-light);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.movie-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.movie-card .details {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 6px;
+  color: var(--primary-dark);
+}
+
+.btn-go-to-seats {
+  background: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-go-to-seats:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* footer*/
+footer {
+  background: var(--primary-dark);
+  padding: 15px;
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  
+}

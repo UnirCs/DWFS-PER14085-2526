@@ -1,0 +1,82 @@
+[
+    {
+      "title": "Inception (El Origen)",
+      "image": "https://image.tmdb.org/t/p/original/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+      "synopsis": "Dom Cobb es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarles sus secretos.",
+      "duration": 148,
+      "genre": "Ciencia Ficción",
+      "rating": 8.8
+    },
+    {
+      "title": "The Dark Knight (El Caballero de la Noche)",
+      "image": "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "synopsis": "Batman se enfrenta a su mayor desafío cuando el Joker desata el caos y el terror en Gotham City.",
+      "duration": 152,
+      "genre": "Acción",
+      "rating": 9.0
+    },
+    {
+      "title": "Interstellar (Interestelar)",
+      "image": "https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+      "synopsis": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento por asegurar la supervivencia de la humanidad.",
+      "duration": 169,
+      "genre": "Aventura",
+      "rating": 8.7
+    },
+    {
+      "title": "The Matrix",
+      "image": "https://image.tmdb.org/t/p/original/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+      "synopsis": "Un hacker informático aprende de rebeldes misteriosos sobre la verdadera naturaleza de su realidad y su papel en la guerra contra sus controladores.",
+      "duration": 136,
+      "genre": "Ciencia Ficción",
+      "rating": 8.7
+    },
+    {
+      "title": "Parasite (Parásitos)",
+      "image": "https://image.tmdb.org/t/p/original/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+      "synopsis": "La familia Kim, todos desempleados, se infiltra poco a poco en la vida de la adinerada familia Park, con consecuencias inesperadas.",
+      "duration": 132,
+      "genre": "Suspenso",
+      "rating": 8.5
+    },
+    {
+      "title": "Avengers: Endgame",
+      "image": "https://image.tmdb.org/t/p/original/brK8s9r56j7F70s4a3r8u12h4m.jpg",
+      "synopsis": "Tras los eventos devastadores de Infinity War, el universo está en ruinas. Con la ayuda de los aliados restantes, los Vengadores se reúnen una vez más.",
+      "duration": 181,
+      "genre": "Acción",
+      "rating": 8.4
+    },
+    {
+      "title": "Coco",
+      "image": "https://image.tmdb.org/t/p/original/eKi8dIrr8voB60QLnVgTTL76c2W.jpg",
+      "synopsis": "Miguel, un aspirante a músico, se une al encantador embaucador Héctor en un viaje extraordinario a través de la Tierra de los Muertos.",
+      "duration": 105,
+      "genre": "Animación",
+      "rating": 8.4
+    },
+    {
+      "title": "Gladiator (Gladiador)",
+      "image": "https://image.tmdb.org/t/p/original/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg",
+      "synopsis": "Un ex general romano se propone vengarse del emperador corrupto que asesinó a su familia y lo envió a la esclavitud.",
+      "duration": 155,
+      "genre": "Drama",
+      "rating": 8.5
+    },
+    {
+      "title": "Spider-Man: Into the Spider-Verse",
+      "image": "https://image.tmdb.org/t/p/original/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
+      "synopsis": "Miles Morales se convierte en el Spider-Man de su universo y debe unirse a otros individuos con poderes arácnidos de otras dimensiones.",
+      "duration": 117,
+      "genre": "Animación",
+      "rating": 8.4
+    },
+    {
+      "title": "The Lord of the Rings: The Return of the King",
+      "image": "https://image.tmdb.org/t/p/original/rCzpDGLbOoPwLjy3OAm5NUPOtrC.jpg",
+      "synopsis": "Gandalf y Aragorn lideran el Mundo de los Hombres contra el ejército de Sauron para distraer su atención de Frodo y Sam.",
+      "duration": 201,
+      "genre": "Fantasía",
+      "rating": 9.0
+    }
+  ]

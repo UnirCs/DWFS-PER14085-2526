@@ -1,0 +1,70 @@
+/* CSS styles */
+
+body {
+    background: white;
+}
+
+h4 {
+    line-height: 0.1;
+    color: #7dc1fb;
+}
+
+p {
+    line-height: 0.1;
+}
+
+.paging {
+    padding: 19px 19px 60px;
+    margin: 15px auto;
+}
+
+.headers__header {
+    background: #8dcbff;
+    border-radius: 2%;
+    padding: 15px;
+    margin: 15px 0px 15px 0px;
+}
+
+.header__container {
+    text-align: center;
+}
+
+.header__image_circular {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.header__texto {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.header__paragraf {
+    margin-top: 55px;
+    margin-bottom: 57px;
+}
+
+.sujects__suject {
+    width: auto;
+    height: auto;
+}
+
+.suject__redondeado {
+    border: 2px solid #e9e9e9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.suject__texto {
+    font-weight: bold;
+}
+
+.suject__resumen p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.5;
+    word-spacing: 0.1em;
+}
