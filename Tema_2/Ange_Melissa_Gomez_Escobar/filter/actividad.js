@@ -43,8 +43,8 @@ function redConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-    for(i=0; i < pixels.length;i++){
-      for(j=0; j < pixels[i].length; j++){
+    for(let i=0; i < pixels.length;i++){
+      for(let j=0; j < pixels[i].length; j++){
 
         let pixel=pixels[i][j];
         pixel[1]=0;
@@ -66,8 +66,8 @@ function greenConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(i=0; i < pixels.length;i++){
-      for(j=0; j < pixels[i].length; j++){
+  for(let i=0; i < pixels.length;i++){
+      for(let j=0; j < pixels[i].length; j++){
 
         let pixel=pixels[i][j];
         pixel[0]=0;
@@ -89,8 +89,8 @@ function blueConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(i=0; i < pixels.length;i++){
-      for(j=0; j < pixels[i].length; j++){
+  for(let i=0; i < pixels.length;i++){
+      for(let j=0; j < pixels[i].length; j++){
 
         let pixel=pixels[i][j];
         pixel[0]=0;
@@ -115,8 +115,8 @@ function greyConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(i=0; i < pixels.length;i++){
-      for(j=0; j < pixels[i].length; j++){
+  for(let i=0; i < pixels.length;i++){
+      for(let j=0; j < pixels[i].length; j++){
 
         let pixel=pixels[i][j];
         let average= (pixel[0]+pixel[1]+pixel[2]) /3;
@@ -142,8 +142,8 @@ function blackAndWhiteConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(i=0; i < pixels.length;i++){
-      for(j=0; j < pixels[i].length; j++){
+  for(let i=0; i < pixels.length;i++){
+      for(let j=0; j < pixels[i].length; j++){
         let pixel=pixels[i][j];
         let average= (pixel[0]+pixel[1]+pixel[2]) /3;
         let final=average < 128 ? 0 : 255;
@@ -168,11 +168,11 @@ function scaleDown() {
   let finalPixels = [];
 
   //Aqui tu codigo
-  for(i=0; i < pixels.length;i++){
+  for(let i=0; i < pixels.length;i++){
     if(i%2===0){
       let newRow=[];
-      for(j=0; j < pixels[i].length; j++){
-        if(i%2===0 && j%2===0){
+      for(let j=0; j < pixels[i].length; j++){
+        if(j%2===0){
           newRow.push(pixels[i][j]);
         }
       }  
@@ -195,8 +195,8 @@ function dimBrightness(dimFactor) {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(i=0; i < pixels.length;i++){
-      for(j=0; j < pixels[i].length; j++){
+  for(let i=0; i < pixels.length;i++){
+      for(let j=0; j < pixels[i].length; j++){
         let pixel=pixels[i][j];
         pixel[0]=pixel[0]/dimFactor;
         pixel[1]=pixel[1]/dimFactor;
@@ -219,8 +219,8 @@ function invertColors() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(i=0; i < pixels.length;i++){
-      for(j=0; j < pixels[i].length; j++){
+  for(let i=0; i < pixels.length;i++){
+      for(let j=0; j < pixels[i].length; j++){
         let pixel=pixels[i][j];
         pixel[0]=255-pixel[0];
         pixel[1]=255-pixel[1];
@@ -247,10 +247,10 @@ function merge(alphaFirst, alphaSecond) {
   let pixels = [];
 
   //Aqui tu codigo
-  for(i=0; i < catPixels.length;i++){
+  for(let i=0; i < catPixels.length;i++){
       let pixelsFinal=[];
 
-      for(j=0; j < catPixels[i].length; j++){
+      for(let j=0; j < catPixels[i].length; j++){
         let pixelCat=catPixels[i][j];
         pixelCat[0]=pixelCat[0]*alphaSecond;
         pixelCat[1]=pixelCat[1]*alphaSecond;
