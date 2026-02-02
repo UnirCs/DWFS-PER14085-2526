@@ -43,14 +43,10 @@ function redConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-    for(let i=0; i < pixels.length;i++){
-      for(let j=0; j < pixels[i].length; j++){
-
-        let pixel=pixels[i][j];
-        pixel[1]=0;
-        pixel[2]=0;
-      }
-    }
+  mapPixels(pixels, (pixel) => {
+    pixel[1] = 0;
+    pixel[2] = 0;
+  });
 
 
   handler.savePixels(pixels, outputPath);
@@ -66,14 +62,10 @@ function greenConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(let i=0; i < pixels.length;i++){
-      for(let j=0; j < pixels[i].length; j++){
-
-        let pixel=pixels[i][j];
-        pixel[0]=0;
-        pixel[2]=0;
-      }
-    }
+  mapPixels(pixels, (pixel) => {
+    pixel[0]=0;
+    pixel[2]=0;
+  });
 
 
   handler.savePixels(pixels, outputPath);
@@ -89,14 +81,10 @@ function blueConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(let i=0; i < pixels.length;i++){
-      for(let j=0; j < pixels[i].length; j++){
-
-        let pixel=pixels[i][j];
-        pixel[0]=0;
-        pixel[1]=0;
-      }
-    }
+  mapPixels(pixels, (pixel) => {
+    pixel[0]=0;
+    pixel[1]=0;
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -115,17 +103,12 @@ function greyConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(let i=0; i < pixels.length;i++){
-      for(let j=0; j < pixels[i].length; j++){
-
-        let pixel=pixels[i][j];
-        let average= (pixel[0]+pixel[1]+pixel[2]) /3;
-        
-        pixel[0]=average;
-        pixel[1]=average;
-        pixel[2]=average;
-      }
-    }
+  mapPixels(pixels, (pixel) => {
+    let average= (pixel[0]+pixel[1]+pixel[2]) /3;
+    pixel[0]=average;
+    pixel[1]=average;
+    pixel[2]=average;
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -142,16 +125,13 @@ function blackAndWhiteConverter() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(let i=0; i < pixels.length;i++){
-      for(let j=0; j < pixels[i].length; j++){
-        let pixel=pixels[i][j];
-        let average= (pixel[0]+pixel[1]+pixel[2]) /3;
-        let final=average < 128 ? 0 : 255;
-        pixel[0]=final;
-        pixel[1]=final;
-        pixel[2]=final;   
-      }
-  }
+  mapPixels(pixels, (pixel) => {
+    let average= (pixel[0]+pixel[1]+pixel[2]) /3;
+    let final=average < 128 ? 0 : 255;
+    pixel[0]=final;
+    pixel[1]=final;
+    pixel[2]=final;   
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -195,14 +175,11 @@ function dimBrightness(dimFactor) {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(let i=0; i < pixels.length;i++){
-      for(let j=0; j < pixels[i].length; j++){
-        let pixel=pixels[i][j];
-        pixel[0]=pixel[0]/dimFactor;
-        pixel[1]=pixel[1]/dimFactor;
-        pixel[2]=pixel[2]/dimFactor;  
-      }
-  }
+  mapPixels(pixels, (pixel) => {
+    pixel[0]=pixel[0]/dimFactor;
+    pixel[1]=pixel[1]/dimFactor;
+    pixel[2]=pixel[2]/dimFactor;  
+  });
 
   handler.savePixels(pixels, outputPath);
 }
@@ -219,14 +196,11 @@ function invertColors() {
   let pixels = handler.getPixels();
 
   //Aqui tu codigo
-  for(let i=0; i < pixels.length;i++){
-      for(let j=0; j < pixels[i].length; j++){
-        let pixel=pixels[i][j];
-        pixel[0]=255-pixel[0];
-        pixel[1]=255-pixel[1];
-        pixel[2]=255-pixel[2];  
-      }
-  }
+  mapPixels(pixels, (pixel) => {
+    pixel[0]=255-pixel[0];
+    pixel[1]=255-pixel[1];
+    pixel[2]=255-pixel[2];  
+  });
   handler.savePixels(pixels, outputPath);
 }
 
@@ -272,6 +246,16 @@ function merge(alphaFirst, alphaSecond) {
   dogHandler.savePixels(pixels, outputPath);
 }
 
+function mapPixels(pixels, transformFn) {
+  for (let i = 0; i < pixels.length; i++) {
+    for (let j = 0; j < pixels[i].length; j++) {
+      // de acuerdo a la seleccion hace la transformación de pixeles
+      transformFn(pixels[i][j], i, j);
+    }
+  }
+  return pixels;
+}
+
 
 /**
  * Programa de prueba
@@ -291,7 +275,7 @@ function merge(alphaFirst, alphaSecond) {
  *     Negativo: 8
  *     Fusion de imagenes: 9
  */
-let optionN = 6;
+let optionN = 9;
 
 switch (optionN) {
   case 1: redConverter(); break;
