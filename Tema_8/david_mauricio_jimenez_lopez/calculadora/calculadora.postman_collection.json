@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "4d79ca16-879f-4429-86d4-3b171a256ed8",
+    "name": "calculadora",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47331119",
+    "_collection_link": "https://go.postman.co/collection/47331119-4d79ca16-879f-4429-86d4-3b171a256ed8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Obtener todas las operaciones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/operations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "operations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener operaciones con filtros",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/operations?operation='sum'",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "operations"
+          ],
+          "query": [
+            {
+              "key": "operation",
+              "value": "'sum'"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener operaciones por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/operations/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "operations",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear operacion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \r\n    \"operation\": \"POW\", \r\n    \"operands\": [-21, 0,0] \r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/operations",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "operations"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

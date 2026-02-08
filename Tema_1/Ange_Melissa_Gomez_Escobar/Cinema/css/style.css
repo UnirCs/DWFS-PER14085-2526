@@ -1,0 +1,118 @@
+:root {
+    --gold-primary: #d4af37;
+    --gold-hover: #b5952f;
+    --bg-dark: #1a1a1a;
+    --seat-occupied: #313131;
+    --seat-available: #444451;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: #e5e5e5;
+}
+
+
+.screen-container {
+    perspective: 1000px;
+    margin-bottom: 2rem;
+}
+
+.screen {
+    background: linear-gradient(to bottom, #fff, #999);
+    height: 70px;
+    width: 100%;
+    transform: rotateX(-15deg) scale(0.9);
+    box-shadow: 0 25px 40px -10px rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.seat-checkbox {
+    display: none;
+}
+
+.seat {
+    display: inline-block; 
+    width: 30px;
+    height: 36px;
+    background-color: var(--seat-available);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    margin: 0 4px;
+}
+
+.seat:hover {
+    transform: scale(1.15);
+    background-color: #666;
+}
+
+.seat-checkbox:checked + .seat {
+    background-color: var(--gold-primary);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    transform: scale(1.1); /* Pequeño pop al seleccionar */
+}
+
+.seat-occupied {
+    width: 30px;
+    height: 36px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0 4px;
+    background-color: var(--seat-occupied);
+    opacity: 0.5;
+}
+
+.row-label {
+    width: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #777;
+}
+
+.card-custom {
+    background-color: #212529;
+    border: 1px solid #373b3e;
+}
+
+.btn-gold {
+    background-color: var(--gold-primary);
+    color: #000;
+    font-weight: 600;
+    border: none;
+}
+.btn-gold:hover {
+    background-color: var(--gold-hover);
+    color: #000;
+    transform: scale(1.02);
+}
+
+.legend-box {
+    width: 15px; 
+    height: 15px; 
+    border-radius: 3px;
+}
+
+.subtitle {
+	font-size: 0.7rem;
+}
+
+.avalible{
+	background-color: var(--seat-available);
+    border: 1px solid #555;
+
+}
+
+.occupied{
+	background-color: var(--seat-occupied); 
+	border: 1px solid #555;
+}
+
+.selected{
+    background-color: var(--gold-primary);
+	border: 1px solid #555;
+}
+
