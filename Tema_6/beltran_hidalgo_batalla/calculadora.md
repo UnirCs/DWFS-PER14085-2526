@@ -14,26 +14,68 @@ Las operaciones que la API debe soportar son las siguientes:
 
 ## Recursos identificados
 
-- add: Sumar N elementos (2+2, 2+2+2).
-- substract: Restar N elementos (2-2, 2-2-2).
-- multiply: Multiplicar 2 elementos (2x2).
-- divide: Dividir 2 elementos (2/2).
-- root: Raiz N-ésima de un número (Raíz cuadrada de 4, Raíz cúbica de 8).
-- power: Potencia N-ésima de un número (2^2, 3^3, 4^4).
+- `operations`: Representa cada cálculo realizado por la calculadora. Cada recurso tiene un identificador único (`id`) para su consulta posterior.
 
 ## API Endpoints
 
-| Método HTTP | URI        | Query Params | Request Body                             | Response Body                                                   | Códigos HTTP de respuesta |
-| ----------- | ---------- | ------------ | ---------------------------------------- | --------------------------------------------------------------- | ------------------------- |
-| GET         | /add       | -            | -                                        | `{"detail":"Descripción de la operación de la suma"}`           | 200                       |
-| POST        | /add       | -            | {"elements": [4, 5, 6]}                  | `{"result": 15}`                                                | 200, 400                  |
-| GET         | /substract | -            | -                                        | `{"detail":"Descripción de la operación de la resta"}`          | 200                       |
-| POST        | /substract | -            | {"minuend": 4, "substrahend": [4, 5, 6]} | `{"result": -7}`                                                | 200, 400                  |
-| GET         | /multiply  | -            | -                                        | `{"detail":"Descripción de la operación de la multiplicación"}` | 200                       |
-| POST        | /multiply  | -            | {"elements": [4, 5]}                     | `{"result": 20}`                                                | 200, 400                  |
-| GET         | /divide    | -            | -                                        | `{"detail":"Descripción de la operación de la división"}`       | 200                       |
-| POST        | /divide    | -            | {"dividend": 20, "divisor": 4}           | `{"result": 5}`                                                 | 200, 400                  |
-| GET         | /root      | -            | -                                        | `{"detail":"Descripción de la operación de la raíz N-ésima"}`   | 200                       |
-| POST        | /root      | -            | {"number": 8, "index": 3}                | `{"result": 2}`                                                 | 200, 400                  |
-| GET         | /power     | -            | -                                        | `{"detail":"Descripción de la operación de la potencia"}`       | 200                       |
-| POST        | /power     | -            | {"base": 2, "exponent": 3}               | `{"result": 8}`                                                 | 200, 400                  |
+| Método HTTP | URI                | Propósito                | Request Body                                  | Response Body (Ejemplo)                                        | Códigos HTTP |
+| ----------- | ------------------ | ------------------------ | --------------------------------------------- | -------------------------------------------------------------- | ------------ |
+| GET         | `/operations`      | Listar el historial      | -                                             | `[{"id": 1, "result": 10}, ...]`                               | 200          |
+| POST        | `/operations`      | Crear/Ejecutar operación | `{"type": "addition", "operands": [4, 5, 6]}` | `{"id": 101, "result": 15}`                                    | 201, 400     |
+| GET         | `/operations/{id}` | Detalle de operación     | -                                             | `{"id": 101, "type": "addition", "result": 15, "date": "..."}` | 200, 404     |
+| DELETE      | `/operations/{id}` | Borrar de la memoria     | -                                             | -                                                              | 204, 404     |
+
+## Estructura de Request Body por tipo de operación
+
+Para el método POST `/operations`, el campo `"type"` define la lógica matemática:
+
+### 1. Sumar y Multiplicar (N elementos)
+
+```json
+{
+  "type": "addition",
+  "operands": [2, 2, 2]
+}
+```
+
+(Para multiplicación, el type sería `"multiplication"`).
+
+### 2. Restar (N elementos)
+
+Para mantener la claridad entre el número inicial y los que restan:
+
+```json
+{
+  "type": "subtraction",
+  "minuend": 20,
+  "subtrahends": [5, 2, 3]
+}
+```
+
+### 3. Dividir (2 elementos)
+
+```json
+{
+  "type": "division",
+  "dividend": 10,
+  "divisor": 2
+}
+```
+
+### 4. Raíz y Potencia (N-ésima)
+
+```json
+{
+  "type": "root",
+  "radicand": 8,
+  "index": 3
+}
+```
+
+```json
+{
+  "type": "power",
+  "base": 2,
+  "exponent": 10
+}
+```
