@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #ff007f;
+    --secondary-color: #00e6e6;
+    --dark-bg: #0b0b1d;
+    --shadow: #cccccf;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: linear-gradient(100deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 15px var(--shadow);
+}
+
+footer {
+    background-color: #141429;
+    color: #ccc;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+    border-top: 2px solid var(--secondary-color);
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons i:hover {
+    color: var(--primary-color);
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    color: white !important;
+    font-size: 1.2rem !important;
+    background-color: transparent !important;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.screen {
+    background-color: var(--secondary-color);
+    height: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px var(--shadow);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--dark-bg);
+    text-align: center;
+}
+
+.row {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.free,
+.occupied {
+    border: 2px solid var(--primary-color);
+    height: 2em;
+    width: 2em;
+}
+
+.free {
+    background-color: transparent;
+}
+
+.occupied {
+    background-color: var(--primary-color);
+}
+
+.reservations {
+    margin-top: 1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.reserves {
+    font-size: smaller;
+}
+
+button.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

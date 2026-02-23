@@ -1,0 +1,95 @@
+:root {
+  --background-color: #f4f4f4;
+  --decoration-color: rgb(91, 188, 168);
+  --text-color: #333;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-align: justify;
+}
+
+body {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0rem 4rem;
+}
+
+header {
+  display: flex;
+  background-color: var(--decoration-color);
+  height: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.title-section-container {
+  display: flex;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  align-items: center;
+}
+
+.title-section-container h2 {
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.title-section-container > .decoration-box {
+  background-color: var(--decoration-color);
+  height: 1rem;
+  flex: 1;
+}
+
+.experience-list,
+.formation-list,
+.contact-list,
+.languages-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-list,
+.formation-list {
+  gap: 1rem;
+}
+
+.contact-list,
+.languages-list {
+  gap: 0.1rem;
+}
+
+#photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 18rem;
+  width: 18rem;
+  object-fit: cover;
+  border-radius: 10%;
+}
