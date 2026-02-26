@@ -1,0 +1,46 @@
+.foto{
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+	padding-left: 50%;
+    padding-right: 50%;
+}
+
+
+.contenedor{
+	margin: 3%;
+    border-radius: 20px;
+    padding: 30px;
+    font-family: sans-serif;
+	margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+	border: solid #eae9f3;
+}
+
+.perfil{
+	border-radius: 20px;
+    background: #eafeff;
+	padding: 3%;
+}
+.experiencia{
+	border-radius: 20px;
+    background: #eafeff;
+	padding: 3%;
+}
+.educacion{
+	border-radius: 20px;
+    background: #eafeff;
+	padding: 3%;
+}
+.idiomas{
+	border-radius: 20px;
+    background: #eafeff;
+	padding: 3%;
+}
+h1{
+	text-align: center;
+}
+h2{
+	color: #0a66c2;
+}
