@@ -1,0 +1,37 @@
+body {
+    background-color: #EBEBEB;
+    text-align: center;
+}
+
+.header-footer {
+    background-color: #D1D1D1;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.movie-container {
+    max-width: 50%;
+    margin: 10px auto;
+}
+
+.card {
+    background: whitesmoke;
+    border: 2px solid darkgrey;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.data {
+    display: flex;
+}
+
+img {
+    width: 120px;
+    height: auto;
+    margin: 50px;
+    border-radius: 4px;
+}
