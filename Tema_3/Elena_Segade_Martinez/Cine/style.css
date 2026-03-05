@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.container {
+    margin: auto;
+    border: 5px solid #000;
+    background-color: black;
+}
+
+header, footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    border: 5px solid grey;
+    width: 80%;
+    box-shadow: 0 0 15px grey;
+
+}
+
+.container main {
+    padding: 20px;
+}
+
+header h1 {
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+.asientos {
+    color: #f5c400;
+}
+.asientos__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.asientos__label {
+    width: 100px;
+    font-size: 30px;
+}
+.asientos__button {
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    border: 2px solid #f5c400;
+    background-color: transparent;
+    cursor: pointer;
+}
+.asientos__button--selected {
+    background-color: #f5c400;
+}
+
+.reserva {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.reserva__label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.reserva__input {
+    width: 100px;
+    padding: 5px;
+    color: #f5c400;
+    margin-bottom: 10px;
+    background-color: #000000;
+    text-align: center;
+}
+
+.reserva__button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f5c400;
+    font-weight: bold;
+}
+.reserva__button:hover {
+    background-color: #e0b000;
+}
+
+.footer__text {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
